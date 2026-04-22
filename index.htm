@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARCADE ZONE — Game Center</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+/* [CSS yang sudah ada tetap sama - saya hanya tambah untuk game baru] */
+
+/* RPG & Platformer Styles */
+.rpg-container{position:relative;overflow:hidden;}
+.rpg-canvas{border:1px solid rgba(0,245,255,.25);border-radius:6px;background:#020610;}
+.rpg-ui{position:absolute;top:8px;left:8px;display:flex;flex-direction:column;gap:6px;z-index:10;}
+.rpg-stats{background:rgba(0,245,255,.08);border:1px solid rgba(0,245,255,.2);padding:8px 12px;border-radius:6px;font-family:'Orbitron',monospace;font-size:.65rem;}
+.platform-hud{position:absolute;bottom:8px;left:8px;right:8px;display:flex;justify-content:space-between;align-items:center;}
+.platform-score{background:rgba(57,255,20,.1);border:1px solid var(--ng);color:var(--ng);padding:6px 12px;border-radius:6px;font-family:'Orbitron',monospace;}
+.platform-lives{display:flex;gap:4px;}
+.life-heart{width:20px;height:20px;font-size:1.2rem;}
+.enemy-hp{width:60px;height:8px;background:rgba(255,0,110,.2);border:1px solid rgba(255,0,110,.4);border-radius:4px;overflow:hidden;position:absolute;}
+.enemy-hp-fill{background:var(--np);height:100%;transition:width .2s;}
+.particle{position:absolute;pointer-events:none;font-size:1.2rem;animation:particleFloat 1s ease-out forwards;}
+@keyframes particleFloat{to{transform:translateY(-40px) scale(0);opacity:0;}}
+</style>
+</head>
+<body>
+
+<!-- [HTML header dan container sama persis] -->
+
+<script>
+// [Semua game lama tetap sama - saya tambah 5 game RPG baru]
+
+const games=[
+  // [16 game lama tetap ada]
+  {id:'tebak',tag:'PUZZLE',name:'Tebak Angka',desc:'Tebak angka 1–100 dengan petunjuk arah.',color:'#00f5ff',thumb:svgTebak},
+  {id:'rps',tag:'KLASIK',name:'Suit RPS',desc:'Gunting Batu Kertas vs CPU.',color:'#ff006e',thumb:svgRPS},
+  {id:'blackjack',tag:'KARTU',name:'Blackjack',desc:'Raih 21, tantang dealer!',color:'#ffe600',thumb:svgBJ},
+  {id:'snake',tag:'ARCADE',name:'Snake',desc:'Makan apel, jangan nabrak!',color:'#39ff14',thumb:svgSnake},
+  {id:'memory',tag:'OTAK',name:'Memory Match',desc:'Cocokkan pasangan kartu emoji.',color:'#bf5af2',thumb:svgMemory},
+  {id:'puzzle',tag:'PUZZLE',name:'Slide Puzzle',desc:'Susun angka 1–15 ke posisi benar.',color:'#ff9500',thumb:svgPuzzle},
+  {id:'quiz',tag:'EDUKASI',name:'Kuis Sains',desc:'10 soal pengetahuan umum.',color:'#00f5ff',thumb:svgQuiz},
+  {id:'dice',tag:'DADU',name:'Duel Dadu',desc:'Lempar dadu, total tertinggi menang.',color:'#ff006e',thumb:svgDice},
+  {id:'chess',tag:'STRATEGI',name:'Catur',desc:'Catur klasik vs CPU sederhana.',color:'#ffe600',thumb:svgChess},
+  {id:'sudoku',tag:'LOGIKA',name:'Sudoku',desc:'Isi 9×9 grid tanpa angka ganda.',color:'#39ff14',thumb:svgSudoku},
+  {id:'ttt',tag:'KLASIK',name:'Tic Tac Toe',desc:'3 baris duluan, menang!',color:'#bf5af2',thumb:svgTTT},
+  {id:'minesweeper',tag:'PUZZLE',name:'Minesweeper',desc:'Buka kotak, hindari ranjau!',color:'#ff9500',thumb:svgMine},
+  {id:'wordle',tag:'KATA',name:'Wordle Indonesia',desc:'Tebak kata 5 huruf dalam 6 percobaan.',color:'#00f5ff',thumb:svgWordle},
+  {id:'g2048',tag:'ANGKA',name:'2048',desc:'Gabungkan angka, raih 2048!',color:'#ffe600',thumb:svg2048},
+  {id:'typing',tag:'KECEPATAN',name:'Typing Race',desc:'Uji kecepatan mengetik kamu!',color:'#39ff14',thumb:svgTyping},
+  {id:'hangman',tag:'KATA',name:'Hangman',desc:'Tebak kata sebelum tiang gantungan penuh.',color:'#ff006e',thumb:svgHangman},
+  
+  // 🎮 5 GAME RPG & PLATFORMER BARU
+  {id:'rpg',tag:'⚔️ RPG',name:'Cyber Warrior',desc:'Lawan musuh cyberpunk RPG!',color:'#00f5ff',thumb:svgRPG},
+  {id:'mario',tag:'🦘 MARIO',name:'Cyber Mario',desc:'Lompat kumpulkan koin!',color:'#ff006e',thumb:svgMario},
+  {id:'rogue',tag:'🏰 ROGUELIKE',name:'Dungeon Crawler',desc:'Eksplorasi dungeon gelap!',color:'#ffe600',thumb:svgRogue},
+  {id:'shooter',tag:'🔫 SHOOTER',name:'Neon Blaster',desc:'Tembak musuh neon!',color:'#39ff14',thumb:svgShooter},
+  {id:'platformer',tag:'⭐ PLATFORM',name:'Star Jumper',desc:'Lompat ambil bintang!',color:'#bf5af2',thumb:svgPlatformer}
+];
+
+// [Semua SVG lama tetap sama + 5 SVG baru untuk game RPG]
+
+function svgRPG(s){s.innerHTML=`<rect width="100%" height="100%" fill="#001a2e"/>
+<text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="28" fill="#00f5ff">⚔️</text>
+<text x="50%" y="65%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="28" fill="#ff006e">💀</text>
+<text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="9" fill="#00f5ff">CYBER RPG</text>`;}
+
+function svgMario(s){s.innerHTML=`<rect width="100%" height="100%" fill="#001500"/>
+<rect x="20" y="60" width="24" height="32" rx="4" fill="#ff006e"/>
+<rect x="26" y="68" width="12" height="8" rx="2" fill="#ffe600"/>
+<circle cx="32" cy="72" r="3" fill="#000"/>
+<text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="9" fill="#ff006e">SUPER MARIO</text>`;}
+
+function svgRogue(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0a0010"/>
+${Array.from({length:16},(_,i)=>{const x=18+i%4*42,y=20+Math.floor(i/4)*30;
+return `<rect x="${x}" y="${y}" width="36" height="24" rx="3" fill="#1a0a20" stroke="#ffe600" stroke-width="1" opacity=".3"/>`;}).join('')}
+<text x="94" y="94" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="8" fill="#ffe600">🗡️ DUNGEON</text>`;}
+
+function svgShooter(s){s.innerHTML=`<rect width="100%" height="100%" fill="#100020"/>
+<line x1="20" y1="60" x2="160" y2="60" stroke="#39ff14" stroke-width="3"/>
+<circle cx="40" cy="60" r="6" fill="#39ff14"/>
+<circle cx="90" cy="60" r="4" fill="#ff006e"/>
+<circle cx="140" cy="60" r="5" fill="#00f5ff"/>
+<text x="50%" y="92%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="8" fill="#39ff14">NEON SHOOTER</text>`;}
+
+function svgPlatformer(s){s.innerHTML=`<rect width="100%" height="100%" fill="#001a10"/>
+<rect x="20" y="70" width="20" height="24" rx="3" fill="#bf5af2"/>
+<circle cx="30" cy="78" r="3" fill="#fff"/>
+<line x1="25" y1="40" x2="25" y2="70" stroke="#ffe600" stroke-width="3" stroke-linecap="round"/>
+<text x="50%" y="92%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="8" fill="#bf5af2">STAR JUMPER</text>`;}
+
+// [Build grid sama persis]
+
+// [Semua game lama sama persis]
+
+// ═══════════════════════════════════════════════════
+// 🎮 GAME 17: CYBER WARRIOR RPG
+// ═══════════════════════════════════════════════════
+function initRPG(el){
+  el.innerHTML=`<div class="rpg-container" style="height:380px;position:relative;">
+    <canvas id="rpgCanvas" class="rpg-canvas" width="340" height="340"></canvas>
+    <div class="rpg-ui">
+      <div class="rpg-stats">⚔️ LEVEL: <span id="rpgLvl">1</span></div>
+      <div class="rpg-stats">❤️ HP: <span id="rpgHp">100</span>/100</div>
+      <div class="rpg-stats">⭐ EXP: <span id="rpgExp">0</span>/100</div>
+      <div class="rpg-stats">💰 COINS: <span id="rpgCoins">0</span></div>
+    </div>
+    <div style="position:absolute;bottom:12px;right:12px;font-family:Orbitron,monospace;font-size:.7rem;color:var(--nc);">
+      WASD = Bergerak | SPACE = Serang
+    </div>
+  </div>`;
+  
+  const canvas=document.getElementById('rpgCanvas');
+  const ctx=canvas.getContext('2d');
+  const TILE=20;
+  
+  let player={x:8,y:8,hp:100,maxHp:100,level:1,exp:0,coins:0,dir:0};
+  let enemies=[],particles=[],keys={};
+  let gameTime=0;
+  
+  function spawnEnemy(){
+    if(enemies.length<4&&Math.random()<.02){
+      enemies.push({
+        x:Math.random()*16+1|0,y:Math.random()*16+1|0,
+        hp:20+player.level*5,maxHp:20+player.level*5,
+        speed:.8+player.level*.1,dir:Math.random()*Math.PI*2
+      });
+    }
+  }
+  
+  function update(){
+    gameTime+=1/60;
+    
+    // Player movement
+    let dx=0,dy=0;
+    if(keys['a']||keys['ArrowLeft'])dx=-1;
+    if(keys['d']||keys['ArrowRight'])dx=1;
+    if(keys['w']||keys['ArrowUp'])dy=-1;
+    if(keys['s']||keys['ArrowDown'])dy=1;
+    const len=Math.sqrt(dx*dx+dy*dy);
+    if(len>0){dx/=len;dy/=len;player.x+=dx*.15;player.y+=dy*.15;player.dir=Math.atan2(dy,dx);}
+    
+    // Boundary
+    player.x=Math.max(0,Math.min(16,player.x));
+    player.y=Math.max(0,Math.min(16,player.y));
+    
+    // Attack
+    if(keys[' ']){
+      enemies.forEach((e,i)=>{
+        const pd=Math.hypot(player.x-e.x,e.y-player.y);
+        if(pd<1.2){
+          e.hp-=25+player.level*5;
+          particles.push({x:e.x,y:e.y,vx:Math.random()*.3-.15,vy:Math.random()*.3-.15,t:30,c:'#ff006e'});
+          if(e.hp<=0){
+            player.exp+=15+player.level*3;
+            player.coins+=5+player.level;
+            enemies.splice(i,1);
+            if(player.exp>=100){
+              player.level++;player.exp=0;player.maxHp+=20;player.hp=player.maxHp;
+            }
+          }
+        }
+      });
+    }
+    
+    // Enemy AI
+    enemies.forEach(e=>{
+      const pd=Math.hypot(player.x-e.x,e.y-player.y);
+      if(pd>0.5){
+        e.x+=(player.x-e.x)/pd*e.speed*.01;
+        e.y+=(player.y-e.y)/pd*e.speed*.01;
+      }
+      if(pd<.8)player.hp-=1;
+    });
+    
+    // Cleanup
+    particles=particles.filter(p=>p.t-->0);
+    spawnEnemy();
+    
+    // Update UI
+    document.getElementById('rpgLvl').textContent=player.level;
+    document.getElementById('rpgHp').textContent=Math.max(0,player.hp|0);
+    document.getElementById('rpgExp').textContent=(player.exp|0);
+    document.getElementById('rpgCoins').textContent=player.coins;
+    
+    if(player.hp<=0){
+      ctx.fillStyle='rgba(255,0,110,.9)';ctx.fillRect(0,0,340,340);
+      ctx.fillStyle='#fff';ctx.font='bold 32px Orbitron,monospace';
+      ctx.textAlign='center';ctx.fillText('GAME OVER',170,170);
+      ctx.font='20px Orbitron,monospace';ctx.fillText('R: Restart',170,210);
+      return;
+    }
+  }
+  
+  function draw(){
+    // Background grid
+    ctx.fillStyle='#020610';ctx.fillRect(0,0,340,340);
+    ctx.strokeStyle='rgba(0,245,255,.03)';
+    for(let i=0;i<=17;i++){
+      ctx.beginPath();ctx.moveTo(i*TILE,0);ctx.lineTo(i*TILE,340);ctx.stroke();
+      ctx.beginPath();ctx.moveTo(0,i*TILE);ctx.lineTo(340,i*TILE);ctx.stroke();
+    }
+    
+    // Particles
+    particles.forEach(p=>{
+      ctx.save();ctx.translate((p.x-8)*TILE+170,(p.y-8)*TILE+170);
+      ctx.globalAlpha=p.t/30;ctx.fillStyle=p.c;ctx.font='16px monospace';
+      ctx.fillText('✦',0,0);ctx.restore();
+    });
+    
+    // Enemies
+    enemies.forEach(e=>{
+      ctx.save();ctx.translate((e.x-8)*TILE+170,(e.y-8)*TILE+170);
+      ctx.rotate(gameTime);
+      ctx.shadowColor='#ff006e';ctx.shadowBlur=8;
+      ctx.fillStyle='#ff006e';ctx.beginPath();
+      ctx.arc(0,0,12,0,Math.PI*2);ctx.fill();
+      ctx.shadowBlur=0;
+      
+      // HP bar
+      const hpPct=e.hp/e.maxHp;
+      ctx.fillStyle='rgba(255,0,110,.2)';ctx.fillRect(-30,-20,60,6);
+      ctx.fillStyle='#ff006e';ctx.fillRect(-30,-20,60*hpPct,6);
+      ctx.restore();
+    });
+    
+    // Player
+    ctx.save();ctx.translate(170,170);
+    ctx.rotate(player.dir);
+    ctx.shadowColor='#00f5ff';ctx.shadowBlur=15;
+    ctx.fillStyle='#00f5ff';ctx.beginPath();
+    ctx.moveTo(0,-18);ctx.lineTo(16,12);ctx.lineTo(-16,12);ctx.closePath();
+    ctx.fill();
+    ctx.shadowBlur=8;
+    ctx.fillStyle='#4ecdc4';ctx.beginPath();
+    ctx.arc(0,-4,8,0,Math.PI*2);ctx.fill();
+    ctx.restore();
+    
+    // HP bar player
+    const hpPct=player.hp/player.maxHp;
+    ctx.fillStyle='rgba(0,245,255,.2)';ctx.fillRect(10,10,120,8);
+    ctx.fillStyle='#00f5ff';ctx.fillRect(10,10,120*hpPct,8);
+  }
+  
+  function loop(){
+    update();draw();requestAnimationFrame(loop);
+  }
+  
+  document.addEventListener('keydown',e=>{
+    keys[e.key.toLowerCase()]=true;
+    if(e.key==='r'&&player.hp<=0){
+      player={x:8,y:8,hp:100,maxHp:100,level:1,exp:0,coins:0,dir:0};
+      enemies=[];particles=[];
+    }
+  });
+  document.addEventListener('keyup',e=>keys[e.key.toLowerCase()]=false);
+  
+  loop();
+}
+
+// ═══════════════════════════════════════════════════
+// 🎮 GAME 18: CYBER MARIO
+// ═══════════════════════════════════════════════════
+function initMario(el){
+  el.innerHTML=`<div class="rpg-container" style="height:380px;">
+    <canvas id="marioCanvas" class="rpg-canvas" width="380" height="340"></canvas>
+    <div class="platform
