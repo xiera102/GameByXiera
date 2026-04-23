@@ -309,6 +309,47 @@ svg.thumb-svg{width:100%;height:100%;}
 footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(224,232,255,.15);
   letter-spacing:.2em;font-family:'Orbitron',monospace;position:relative;z-index:1;}
 
+/* KRAEPLIN */
+.krp-question{font-family:'Orbitron',monospace;font-size:2.2rem;font-weight:900;color:#fff;
+  text-align:center;letter-spacing:.1em;text-shadow:0 0 20px rgba(0,245,255,.5);}
+.krp-timer-ring{position:relative;width:80px;height:80px;flex-shrink:0;}
+.krp-timer-ring svg{transform:rotate(-90deg);}
+.krp-timer-val{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:'Orbitron',monospace;font-size:.9rem;font-weight:700;color:var(--nc);}
+.krp-ans-btn{background:rgba(0,245,255,.07);border:1px solid rgba(0,245,255,.25);color:#fff;
+  font-family:'Orbitron',monospace;font-size:1.1rem;font-weight:700;padding:12px 10px;
+  border-radius:8px;cursor:pointer;transition:all .2s;text-align:center;min-width:60px;}
+.krp-ans-btn:hover{border-color:var(--nc);background:rgba(0,245,255,.18);transform:scale(1.05);}
+.krp-ans-btn.correct{background:rgba(57,255,20,.25);border-color:var(--ng);color:var(--ng);animation:krpPop .25s ease;}
+.krp-ans-btn.wrong{background:rgba(255,0,110,.25);border-color:var(--np);color:var(--np);animation:krpShake .3s ease;}
+@keyframes krpPop{0%{transform:scale(1);}50%{transform:scale(1.15);}100%{transform:scale(1);}}
+@keyframes krpShake{0%,100%{transform:translateX(0);}25%{transform:translateX(-6px);}75%{transform:translateX(6px);}}
+.krp-stat{display:flex;flex-direction:column;align-items:center;background:rgba(0,245,255,.05);
+  border:1px solid rgba(0,245,255,.15);border-radius:8px;padding:6px 12px;min-width:64px;}
+.krp-stat-val{font-family:'Orbitron',monospace;font-size:1.1rem;font-weight:700;}
+.krp-stat-lbl{font-size:.55rem;letter-spacing:.15em;color:rgba(224,232,255,.4);font-family:'Orbitron',monospace;margin-top:2px;}
+.krp-mode-btn{font-family:'Orbitron',monospace;font-size:.68rem;letter-spacing:.08em;padding:8px 16px;
+  border-radius:6px;border:1px solid rgba(0,245,255,.3);background:rgba(0,245,255,.07);
+  color:var(--nc);cursor:pointer;transition:all .2s;}
+.krp-mode-btn:hover,.krp-mode-btn.active{background:rgba(0,245,255,.2);border-color:var(--nc);box-shadow:0 0 12px rgba(0,245,255,.2);}
+/* LEADERBOARD */
+.krp-lb-row{display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:6px;
+  background:rgba(0,245,255,.04);border:1px solid rgba(0,245,255,.1);margin-bottom:4px;}
+.krp-lb-rank{font-family:'Orbitron',monospace;font-size:.75rem;font-weight:700;color:var(--ny);width:24px;text-align:center;}
+.krp-lb-name{font-size:.82rem;font-weight:600;flex:1;color:var(--tm);}
+.krp-lb-score{font-family:'Orbitron',monospace;font-size:.75rem;color:var(--nc);}
+.krp-lb-detail{font-size:.6rem;color:rgba(224,232,255,.35);font-family:'Orbitron',monospace;}
+/* SUPPORT PANEL */
+.support-panel{background:rgba(0,245,255,.04);border:1px solid rgba(0,245,255,.15);border-radius:10px;
+  padding:14px;margin-top:10px;text-align:center;}
+.support-panel a{color:var(--nc);text-decoration:none;font-family:'Orbitron',monospace;font-size:.72rem;
+  letter-spacing:.08em;border:1px solid rgba(0,245,255,.3);padding:6px 14px;border-radius:6px;
+  display:inline-block;transition:all .2s;}
+.support-panel a:hover{background:rgba(0,245,255,.12);box-shadow:0 0 10px rgba(0,245,255,.2);}
+.donate-txt{font-family:'Orbitron',monospace;font-size:.65rem;color:var(--ny);letter-spacing:.06em;
+  background:rgba(255,230,0,.07);border:1px solid rgba(255,230,0,.2);border-radius:6px;padding:6px 12px;
+  display:inline-block;margin-top:8px;}
+
 /* RPG */
 #rpgCanvas{border:1px solid rgba(57,255,20,.3);border-radius:6px;image-rendering:pixelated;}
 .rpg-hud{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;font-family:'Orbitron',monospace;font-size:.65rem;}
@@ -364,6 +405,13 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(224,
 <div class="container">
   <div class="section-label" id="gameCount">— LOADING GAMES —</div>
   <div class="game-grid" id="gameGrid"></div>
+  <div class="support-panel" style="margin-bottom:16px">
+    <div style="font-family:'Orbitron',monospace;font-size:.62rem;color:rgba(224,232,255,.5);margin-bottom:10px;letter-spacing:.12em">&#9656; DUKUNG &amp; REQUEST GAME &#9666;</div>
+    <a href="https://www.instagram.com/gamebyXieraa__07" target="_blank" rel="noopener">&#128247; @gamebyXieraa__07</a>
+    <div style="margin-top:10px">
+      <div class="donate-txt">&#128155; Donasi via DANA: <strong>0895382174755</strong></div>
+    </div>
+  </div>
 </div>
 
 <div class="modal-bg" id="modalBg">
@@ -376,7 +424,7 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(224,
   </div>
 </div>
 
-<footer>© ARCADE ZONE · 21 GAMES · ALL FOR FUN</footer>
+<footer>© ARCADE ZONE · 22 GAMES · ALL FOR FUN · @gamebyXieraa__07</footer>
 
 <script>
 // ═══════════════════════════════════════════════════
@@ -445,6 +493,7 @@ const games=[
   {id:'pong',tag:'ARCADE',name:'Pong Neon',desc:'Pantulkan bola, kalahkan CPU!',color:'#00f5ff',thumb:svgPong},
   {id:'flappy',tag:'ARCADE',name:'Flappy Pixel',desc:'Terbang melewati pipa tanpa menyentuh!',color:'#39ff14',thumb:svgFlappy},
   {id:'breakout',tag:'ARCADE',name:'Breakout',desc:'Hancurkan semua blok dengan bola!',color:'#ffe600',thumb:svgBreakout},
+  {id:'kraeplin',tag:'MATEMATIKA',name:'Kraeplin Math',desc:'Penjumlahan cepat! Tulis digit terakhir jawaban.',color:'#00f5ff',thumb:svgKraeplin},
 ];
 
 // ═══════════════════════════════════════════════════
@@ -602,6 +651,13 @@ return `<rect x="${x}" y="${y}" width="26" height="10" rx="2" fill="${cols[r%4]}
 <rect x="72" y="108" width="44" height="6" rx="3" fill="#00f5ff" opacity=".9"/>
 <circle cx="94" cy="96" r="5" fill="#ffe600"/>
 <text x="50%" y="96%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ffe600" opacity=".5">BREAK ALL!</text>`;}
+function svgKraeplin(s){s.innerHTML=`<rect width="100%" height="100%" fill="#001a2e"/>
+<text x="30%" y="38%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#00f5ff" opacity=".9">7</text>
+<text x="50%" y="38%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="14" fill="rgba(224,232,255,.4)">+</text>
+<text x="70%" y="38%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#ff006e" opacity=".9">8</text>
+<line x1="20" y1="58" x2="168" y2="58" stroke="rgba(0,245,255,.3)" stroke-width="1"/>
+<text x="50%" y="73%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#39ff14" opacity=".85">5</text>
+<text x="50%" y="90%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ffe600" opacity=".6">DIGIT TERAKHIR</text>`;}
 
 // ═══════════════════════════════════════════════════
 // BUILD GRID
@@ -645,7 +701,8 @@ function openGame(id){
     memory:initMemory,puzzle:initPuzzle,quiz:initQuiz,dice:initDice,
     chess:initChess,sudoku:initSudoku,ttt:initTTT,minesweeper:initMinesweeper,
     wordle:initWordle,g2048:init2048,typing:initTyping,hangman:initHangman,
-    rpg:initRPG,mario:initMario,pong:initPong,flappy:initFlappy,breakout:initBreakout};
+    rpg:initRPG,mario:initMario,pong:initPong,flappy:initFlappy,breakout:initBreakout,
+    kraeplin:initKraeplin};
   if(map[id]) map[id](body);
 }
 function closeModal(){
@@ -2030,6 +2087,244 @@ function initBreakout(el){
   window.bkoStart=function(){if(breakoutLoop)cancelAnimationFrame(breakoutLoop);initGame();breakoutLoop=requestAnimationFrame(loop);};
   initGame();breakoutLoop=requestAnimationFrame(loop);
 }
+// ═══════════════════════════════════════════════════
+// GAME 22: KRAEPLIN MATH
+// ═══════════════════════════════════════════════════
+function initKraeplin(el){
+  // Leaderboard stored in localStorage
+  const LB_KEY = 'kraeplin_leaderboard';
+  function getLB(){try{return JSON.parse(localStorage.getItem(LB_KEY))||[];}catch{return[];}}
+  function saveLB(arr){try{localStorage.setItem(LB_KEY,JSON.stringify(arr));}catch{}}
+  function addToLB(entry){
+    let lb=getLB();
+    lb.push(entry);
+    lb.sort((a,b)=>b.correct-a.correct||(a.wrong-b.wrong)||(b.duration-a.duration));
+    lb=lb.slice(0,10);
+    saveLB(lb);
+    return lb;
+  }
+
+  let krpA=0,krpB=0,krpCorrect=0,krpWrong=0,krpTotal=0;
+  let krpDuration=120,krpRemain=0,krpTimer=null,krpRunning=false;
+
+  function genQuestion(){
+    krpA=Math.floor(Math.random()*9)+1;
+    krpB=Math.floor(Math.random()*9)+1;
+    const sum=krpA+krpB;
+    const correctAns=sum%10;
+    return {a:krpA,b:krpB,correct:correctAns};
+  }
+
+  function renderLB(){
+    const lb=getLB();
+    if(!lb.length) return '<div style="text-align:center;color:rgba(224,232,255,.3);font-size:.75rem;padding:12px;font-family:Orbitron,monospace">Belum ada data</div>';
+    const medal=['🥇','🥈','🥉'];
+    return lb.map((e,i)=>`
+      <div class="krp-lb-row">
+        <div class="krp-lb-rank">${medal[i]||i+1}</div>
+        <div>
+          <div class="krp-lb-name">${e.name||'Anonim'}</div>
+          <div class="krp-lb-detail">${e.durLabel} · ${new Date(e.date).toLocaleDateString('id-ID')}</div>
+        </div>
+        <div style="text-align:right">
+          <div class="krp-lb-score">✅ ${e.correct}</div>
+          <div class="krp-lb-detail">❌ ${e.wrong}</div>
+        </div>
+      </div>`).join('');
+  }
+
+  function renderHome(){
+    el.innerHTML=`<div class="game-area" style="gap:12px;padding:18px">
+      <div class="game-msg" style="font-size:1.1rem">&#9889; KRAEPLIN MATH</div>
+      <div style="font-size:.75rem;color:rgba(224,232,255,.45);text-align:center;line-height:1.6;max-width:300px">
+        Jumlahkan dua angka (1&#8211;9). Tulis <span style="color:var(--ny);font-weight:700">digit terakhir</span> saja!<br>
+        Contoh: 7+8=15 &#8594; Jawab <span style="color:var(--ng);font-weight:700">5</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;align-items:center;width:100%">
+        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(224,232,255,.4);letter-spacing:.2em;margin-bottom:2px">PILIH DURASI</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+          <button class="krp-mode-btn ${krpDuration===120?'active':''}" onclick="krpSetDur(120)">&#9201; 2 MENIT</button>
+          <button class="krp-mode-btn ${krpDuration===180?'active':''}" onclick="krpSetDur(180)">&#9201; 3 MENIT</button>
+          <button class="krp-mode-btn ${krpDuration===240?'active':''}" onclick="krpSetDur(240)">&#9201; 4 MENIT</button>
+        </div>
+      </div>
+      <button class="btn btn-cyan" onclick="krpStart()" style="margin-top:4px">&#9654; MULAI GAME</button>
+      <div style="width:100%">
+        <div style="font-family:Orbitron,monospace;font-size:.62rem;color:var(--nc);letter-spacing:.2em;text-align:center;margin-bottom:8px;opacity:.7">&#127942; LEADERBOARD TOP 10</div>
+        <div id="krpLbList">${renderLB()}</div>
+      </div>
+    </div>`;
+    window.krpSetDur=function(d){krpDuration=d;renderHome();};
+    window.krpStart=startGame;
+  }
+
+  function startGame(){
+    krpRunning=true;krpCorrect=0;krpWrong=0;krpTotal=0;krpRemain=krpDuration;
+    const q=genQuestion();
+    renderGame(q);
+    krpTimer=setInterval(()=>{
+      krpRemain--;
+      const tEl=document.getElementById('krpTimerVal');
+      const ringEl=document.getElementById('krpTimerRing');
+      if(tEl) tEl.textContent=fmtTime(krpRemain);
+      if(ringEl){
+        const pct=krpRemain/krpDuration;
+        const circ=2*Math.PI*34;
+        ringEl.style.strokeDashoffset=(circ*(1-pct)).toFixed(2);
+        ringEl.style.stroke=pct>.5?'#00f5ff':pct>.25?'#ffe600':'#ff006e';
+      }
+      const cEl=document.getElementById('krpCorrect');
+      const wEl=document.getElementById('krpWrong');
+      if(cEl) cEl.textContent=krpCorrect;
+      if(wEl) wEl.textContent=krpWrong;
+      if(krpRemain<=0){clearInterval(krpTimer);krpTimer=null;krpRunning=false;showResult();}
+    },1000);
+  }
+
+  function fmtTime(s){const m=Math.floor(s/60);const sec=s%60;return m+':'+(sec<10?'0':'')+sec;}
+
+  function renderGame(q){
+    const circ=2*Math.PI*34;
+    const durLabel={120:'2 Menit',180:'3 Menit',240:'4 Menit'}[krpDuration]||'';
+    el.innerHTML=`<div class="game-area" style="gap:10px;padding:14px">
+      <div style="display:flex;align-items:center;justify-content:space-between;width:100%;gap:8px">
+        <div style="display:flex;gap:8px;flex:1;justify-content:flex-start">
+          <div class="krp-stat"><div class="krp-stat-val" id="krpCorrect" style="color:var(--ng)">${krpCorrect}</div><div class="krp-stat-lbl">BENAR</div></div>
+          <div class="krp-stat"><div class="krp-stat-val" id="krpWrong" style="color:var(--np)">${krpWrong}</div><div class="krp-stat-lbl">SALAH</div></div>
+        </div>
+        <div class="krp-timer-ring">
+          <svg width="80" height="80" viewBox="0 0 80 80">
+            <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(0,245,255,.12)" stroke-width="6"/>
+            <circle id="krpTimerRing" cx="40" cy="40" r="34" fill="none" stroke="#00f5ff" stroke-width="6"
+              stroke-dasharray="${circ.toFixed(2)}" stroke-dashoffset="0"
+              style="transition:stroke-dashoffset .9s linear,stroke .5s ease"/>
+          </svg>
+          <div class="krp-timer-val" id="krpTimerVal">${fmtTime(krpRemain)}</div>
+        </div>
+        <div style="flex:1;display:flex;justify-content:flex-end">
+          <div class="krp-stat"><div class="krp-stat-val" id="krpTotal" style="color:var(--ny)">${krpTotal}</div><div class="krp-stat-lbl">TOTAL</div></div>
+        </div>
+      </div>
+      <div style="background:rgba(0,245,255,.04);border:1px solid rgba(0,245,255,.12);border-radius:10px;padding:14px 20px;text-align:center;width:100%">
+        <div style="font-size:.6rem;font-family:Orbitron,monospace;color:rgba(224,232,255,.3);letter-spacing:.2em;margin-bottom:8px">BERAPA DIGIT TERAKHIRNYA?</div>
+        <div class="krp-question" id="krpQText">${q.a} + ${q.b} = ?</div>
+      </div>
+      <div id="krpFeedback" style="font-family:Orbitron,monospace;font-size:1rem;font-weight:900;min-height:28px;text-align:center"></div>
+      <div style="display:flex;align-items:center;gap:10px;justify-content:center">
+        <input id="krpInput" type="number" min="0" max="9"
+          class="num-input" style="width:80px;font-size:2rem;text-align:center;padding:10px 6px"
+          placeholder="?" autocomplete="off" inputmode="numeric">
+        <button class="btn btn-cyan" onclick="krpSubmit()" style="padding:12px 18px;font-size:.8rem">OK</button>
+      </div>
+      <div style="font-size:.62rem;color:rgba(224,232,255,.25);font-family:Orbitron,monospace;text-align:center">${durLabel} &middot; Ketik digit terakhir lalu OK / Enter</div>
+    </div>`;
+    const inp=document.getElementById('krpInput');
+    if(inp){
+      inp.focus();
+      inp.addEventListener('keydown',function(e){
+        if(e.key==='Enter'){krpSubmit();}
+        // only allow 0-9 and control keys
+        if(e.key.length===1&&!/[0-9]/.test(e.key)) e.preventDefault();
+      });
+      inp.addEventListener('input',function(){
+        // auto-submit when a single digit typed
+        const v=this.value.trim();
+        if(v.length===1&&/[0-9]/.test(v)) krpSubmit();
+      });
+    }
+    window._krpCurrentCorrect=q.correct;
+  }
+
+  window.krpSubmit=function(){
+    if(!krpRunning) return;
+    const inp=document.getElementById('krpInput');
+    if(!inp) return;
+    const val=inp.value.trim();
+    if(val===''||!/^[0-9]$/.test(val)) return;
+    const chosen=parseInt(val);
+    const correct=window._krpCurrentCorrect;
+    krpTotal++;
+    const fb=document.getElementById('krpFeedback');
+    if(chosen===correct){
+      krpCorrect++;
+      if(fb){fb.textContent='&#10003; BENAR!';fb.style.color='var(--ng)';}
+    } else {
+      krpWrong++;
+      if(fb){fb.textContent='&#10007; SALAH! Jawaban: '+correct;fb.style.color='var(--np)';}
+    }
+    const cEl=document.getElementById('krpCorrect');
+    const wEl=document.getElementById('krpWrong');
+    const totEl=document.getElementById('krpTotal');
+    if(cEl) cEl.textContent=krpCorrect;
+    if(wEl) wEl.textContent=krpWrong;
+    if(totEl) totEl.textContent=krpTotal;
+    inp.value='';
+    inp.disabled=true;
+    document.querySelector('[onclick="krpSubmit()"]').disabled=true;
+    setTimeout(()=>{
+      if(!krpRunning) return;
+      const nq=genQuestion();
+      window._krpCurrentCorrect=nq.correct;
+      const qEl=document.getElementById('krpQText');
+      const fbEl=document.getElementById('krpFeedback');
+      const newInp=document.getElementById('krpInput');
+      const btn=document.querySelector('[onclick="krpSubmit()"]');
+      if(qEl) qEl.textContent=nq.a+' + '+nq.b+' = ?';
+      if(fbEl){fbEl.textContent='';fbEl.style.color='';}
+      if(newInp){newInp.disabled=false;newInp.value='';newInp.focus();}
+      if(btn) btn.disabled=false;
+    },400);
+  };
+
+  function showResult(){
+    const durLabel={120:'2 Menit',180:'3 Menit',240:'4 Menit'}[krpDuration]||'';
+    const accuracy=krpTotal>0?Math.round(krpCorrect/krpTotal*100):0;
+    // ask for name then save
+    el.innerHTML=`<div class="game-area" style="gap:12px;padding:16px">
+      <div class="result-banner result-win" style="font-size:1rem">🎉 WAKTU HABIS!</div>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <div class="krp-stat"><div class="krp-stat-val" style="color:var(--ng);font-size:1.6rem">${krpCorrect}</div><div class="krp-stat-lbl">BENAR</div></div>
+        <div class="krp-stat"><div class="krp-stat-val" style="color:var(--np);font-size:1.6rem">${krpWrong}</div><div class="krp-stat-lbl">SALAH</div></div>
+        <div class="krp-stat"><div class="krp-stat-val" style="color:var(--ny);font-size:1.6rem">${krpTotal}</div><div class="krp-stat-lbl">TOTAL</div></div>
+        <div class="krp-stat"><div class="krp-stat-val" style="color:var(--nc);font-size:1.6rem">${accuracy}%</div><div class="krp-stat-lbl">AKURASI</div></div>
+      </div>
+      <div style="font-family:Orbitron,monospace;font-size:.65rem;color:rgba(224,232,255,.45);text-align:center">${durLabel}</div>
+      <div style="width:100%;max-width:320px">
+        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(224,232,255,.4);margin-bottom:5px;text-align:center">MASUKKAN NAMAMU UNTUK LEADERBOARD</div>
+        <div style="display:flex;gap:6px">
+          <input id="krpNameInput" type="text" placeholder="Nama kamu..." maxlength="16"
+            class="num-input" style="width:100%;font-size:.85rem;text-align:left;padding:8px 12px"
+            value="">
+          <button class="btn btn-cyan btn-sm" onclick="krpSaveLB()">💾 SIMPAN</button>
+        </div>
+      </div>
+      <div style="width:100%">
+        <div style="font-family:Orbitron,monospace;font-size:.62rem;color:var(--nc);letter-spacing:.2em;text-align:center;margin-bottom:8px;opacity:.7">🏆 LEADERBOARD</div>
+        <div id="krpLbList">${renderLB()}</div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+        <button class="btn btn-cyan btn-sm" onclick="krpStart()">&#128260; MAIN LAGI</button>
+        <button class="btn btn-outline btn-sm" onclick="krpHome()">&#127968; HOME</button>
+      </div>
+    </div>`;
+
+    window.krpSaveLB=function(){
+      const name=(document.getElementById('krpNameInput').value.trim()||'Anonim').substring(0,16);
+      const lb=addToLB({name,correct:krpCorrect,wrong:krpWrong,total:krpTotal,accuracy,duration:krpDuration,durLabel,date:Date.now()});
+      document.getElementById('krpLbList').innerHTML=renderLB();
+      document.getElementById('krpNameInput').disabled=true;
+      document.querySelector('[onclick="krpSaveLB()"]').disabled=true;
+      document.querySelector('[onclick="krpSaveLB()"]').textContent='✅ Tersimpan!';
+    };
+    window.krpHome=renderHome;
+  }
+
+  window.krpStart=startGame;
+  window.krpHome=renderHome;
+  renderHome();
+}
+
+
 </script>
 </body>
 </html>
