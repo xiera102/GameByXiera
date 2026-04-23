@@ -7,10 +7,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --nc:#00f5ff;--np:#ff006e;--ny:#ffe600;--ng:#39ff14;
-  --bg:#040812;--bc:#0a0f1e;--bc2:#0d1428;--tm:#e0e8ff;
-  --gc:0 0 18px #00f5ff88,0 0 36px #00f5ff33;
-  --gp:0 0 18px #ff006e88,0 0 36px #ff006e33;
+  --nc:#ff69b4;--np:#ff1493;--ny:#ffb6c1;--ng:#ff85c2;
+  --bg:#1a0011;--bc:#2a0520;--bc2:#200318;--tm:#ffe0f0;
+  --gc:0 0 18px #ff69b488,0 0 36px #ff69b433;
+  --gp:0 0 18px #ff149388,0 0 36px #ff149333;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 body{background:var(--bg);font-family:'Rajdhani',sans-serif;color:var(--tm);min-height:100vh;overflow-x:hidden;}
@@ -21,30 +21,29 @@ body::before{content:'';position:fixed;inset:0;
     radial-gradient(1px 1px at 52% 18%,rgba(255,255,255,.6) 0%,transparent 100%),
     radial-gradient(1px 1px at 73% 72%,rgba(255,255,255,.4) 0%,transparent 100%),
     radial-gradient(1px 1px at 88% 38%,rgba(255,255,255,.5) 0%,transparent 100%),
-    radial-gradient(2px 2px at 18% 82%,rgba(0,245,255,.3) 0%,transparent 100%),
-    radial-gradient(2px 2px at 62% 92%,rgba(255,0,110,.3) 0%,transparent 100%),
+    radial-gradient(2px 2px at 18% 82%,rgba(255,105,180,.4) 0%,transparent 100%),
+    radial-gradient(2px 2px at 62% 92%,rgba(255,20,147,.35) 0%,transparent 100%),
     radial-gradient(1px 1px at 42% 65%,rgba(255,255,255,.25) 0%,transparent 100%),
-    radial-gradient(1px 1px at 95% 10%,rgba(255,230,0,.3) 0%,transparent 100%),
-    radial-gradient(1px 1px at 35% 30%,rgba(57,255,20,.25) 0%,transparent 100%);
+    radial-gradient(1px 1px at 95% 10%,rgba(255,182,193,.4) 0%,transparent 100%),
+    radial-gradient(1px 1px at 35% 30%,rgba(255,105,180,.3) 0%,transparent 100%);
   pointer-events:none;z-index:0;}
 
-/* ── MUSIC PLAYER ── */
 #musicBar{
   position:fixed;bottom:0;left:0;right:0;z-index:500;
-  background:rgba(4,8,18,.92);border-top:1px solid rgba(0,245,255,.2);
+  background:rgba(26,0,17,.92);border-top:1px solid rgba(255,105,180,.2);
   backdrop-filter:blur(12px);
   display:flex;align-items:center;gap:10px;padding:8px 16px;
   font-family:'Orbitron',monospace;
 }
 #musicBar .mb-title{font-size:.6rem;color:var(--nc);letter-spacing:.15em;flex:1;min-width:0;
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-#musicBar .mb-btn{background:none;border:1px solid rgba(0,245,255,.3);color:var(--nc);
+#musicBar .mb-btn{background:none;border:1px solid rgba(255,105,180,.3);color:var(--nc);
   width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:.75rem;
   display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;}
-#musicBar .mb-btn:hover{background:rgba(0,245,255,.15);box-shadow:0 0 10px rgba(0,245,255,.3);}
-#musicBar .mb-btn.active{background:rgba(0,245,255,.18);border-color:var(--nc);}
+#musicBar .mb-btn:hover{background:rgba(255,105,180,.15);box-shadow:0 0 10px rgba(255,105,180,.3);}
+#musicBar .mb-btn.active{background:rgba(255,105,180,.18);border-color:var(--nc);}
 #musicBar .mb-vol{-webkit-appearance:none;appearance:none;width:70px;height:3px;
-  background:rgba(0,245,255,.2);border-radius:2px;outline:none;cursor:pointer;flex-shrink:0;}
+  background:rgba(255,105,180,.2);border-radius:2px;outline:none;cursor:pointer;flex-shrink:0;}
 #musicBar .mb-vol::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;
   border-radius:50%;background:var(--nc);cursor:pointer;}
 .mb-viz{display:flex;align-items:flex-end;gap:2px;height:20px;flex-shrink:0;}
@@ -58,10 +57,10 @@ body::before{content:'';position:fixed;inset:0;
 
 header{position:relative;text-align:center;padding:36px 20px 24px;z-index:1;}
 .logo-title{font-family:'Orbitron',monospace;font-size:clamp(2rem,7vw,4rem);font-weight:900;letter-spacing:.1em;
-  background:linear-gradient(90deg,var(--nc),var(--np),var(--ny));
+  background:linear-gradient(90deg,#ff69b4,#ff1493,#ffb6c1);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  filter:drop-shadow(0 0 18px #00f5ff88);animation:titlePulse 3s ease-in-out infinite;}
-@keyframes titlePulse{0%,100%{filter:drop-shadow(0 0 18px #00f5ff88);}50%{filter:drop-shadow(0 0 36px #ff006e88);}}
+  filter:drop-shadow(0 0 18px #ff69b488);animation:titlePulse 3s ease-in-out infinite;}
+@keyframes titlePulse{0%,100%{filter:drop-shadow(0 0 18px #ff69b488);}50%{filter:drop-shadow(0 0 36px #ff149388);}}
 .logo-sub{font-family:'Orbitron',monospace;font-size:clamp(.6rem,1.5vw,.85rem);letter-spacing:.5em;color:var(--nc);opacity:.65;margin-top:6px;}
 .scan-line{width:150px;height:2px;background:linear-gradient(90deg,transparent,var(--nc),transparent);margin:14px auto;animation:scanMove 2s ease-in-out infinite;}
 @keyframes scanMove{0%,100%{width:80px;opacity:.4;}50%{width:260px;opacity:1;}}
@@ -72,7 +71,7 @@ header{position:relative;text-align:center;padding:36px 20px 24px;z-index:1;}
 
 .game-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:40px;}
 
-.game-card{background:var(--bc);border:1px solid rgba(0,245,255,.12);border-radius:10px;overflow:hidden;
+.game-card{background:var(--bc);border:1px solid rgba(255,105,180,.12);border-radius:10px;overflow:hidden;
   cursor:pointer;transition:all .25s ease;position:relative;display:flex;flex-direction:column;
   animation:fadeInUp .5s ease both;}
 .game-card:hover{border-color:var(--nc);box-shadow:var(--gc);transform:translateY(-4px) scale(1.02);}
@@ -81,21 +80,21 @@ header{position:relative;text-align:center;padding:36px 20px 24px;z-index:1;}
 .game-card:hover .game-thumb{transform:scale(1.06);}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 
-.game-thumb-wrap{position:relative;height:90px;overflow:hidden;background:#050a18;flex-shrink:0;}
+.game-thumb-wrap{position:relative;height:90px;overflow:hidden;background:#1a0011;flex-shrink:0;}
 .game-thumb{width:100%;height:100%;transition:transform .4s ease;display:flex;align-items:center;justify-content:center;}
-.card-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,245,255,.18),rgba(255,0,110,.18));
+.card-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,105,180,.18),rgba(255,20,147,.18));
   opacity:0;transition:opacity .3s ease;display:flex;align-items:center;justify-content:center;}
-.play-btn{background:var(--nc);color:#000;font-family:'Orbitron',monospace;font-size:.6rem;font-weight:700;
+.play-btn{background:var(--nc);color:#fff;font-family:'Orbitron',monospace;font-size:.6rem;font-weight:700;
   letter-spacing:.15em;padding:7px 16px;border-radius:4px;border:none;cursor:pointer;
   transform:scale(.8) translateY(8px);opacity:0;transition:all .25s ease;}
 .card-info{padding:8px 10px 10px;flex:1;}
 .card-tag{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--np);margin-bottom:2px;font-family:'Orbitron',monospace;}
 .card-name{font-family:'Orbitron',monospace;font-size:.75rem;font-weight:700;color:#fff;margin-bottom:3px;line-height:1.2;}
-.card-desc{font-size:.72rem;color:rgba(224,232,255,.5);line-height:1.4;}
+.card-desc{font-size:.72rem;color:rgba(255,224,240,.5);line-height:1.4;}
 svg.thumb-svg{width:100%;height:100%;}
 
 /* ── MODAL ── */
-.modal-bg{display:none;position:fixed;inset:0;background:rgba(4,8,18,.95);z-index:1000;
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(26,0,17,.95);z-index:1000;
   align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(8px);}
 .modal-bg.active{display:flex;}
 .modal{background:var(--bc2);border:1px solid var(--nc);border-radius:14px;
@@ -103,40 +102,40 @@ svg.thumb-svg{width:100%;height:100%;}
   box-shadow:var(--gc);animation:modalIn .3s cubic-bezier(.34,1.56,.64,1) both;}
 @keyframes modalIn{from{transform:scale(.88);opacity:0;}to{transform:scale(1);opacity:1;}}
 .modal-header{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;
-  border-bottom:1px solid rgba(0,245,255,.15);}
+  border-bottom:1px solid rgba(255,105,180,.15);}
 .modal-title{font-family:'Orbitron',monospace;font-size:1rem;font-weight:700;color:var(--nc);}
-.modal-close{background:none;border:1px solid rgba(255,0,110,.4);color:var(--np);font-size:1rem;
+.modal-close{background:none;border:1px solid rgba(255,20,147,.4);color:var(--np);font-size:1rem;
   width:32px;height:32px;border-radius:6px;cursor:pointer;transition:all .2s;
   display:flex;align-items:center;justify-content:center;}
 .modal-close:hover{background:var(--np);color:#fff;}
 .modal-body{padding:18px;}
 
 /* ── GAME COMMON ── */
-.game-area{background:#020610;border:1px solid rgba(0,245,255,.1);border-radius:10px;
+.game-area{background:#150010;border:1px solid rgba(255,105,180,.1);border-radius:10px;
   padding:16px;min-height:260px;display:flex;flex-direction:column;align-items:center;
   justify-content:center;gap:14px;}
 .game-msg{font-family:'Orbitron',monospace;font-size:.9rem;color:var(--nc);text-align:center;}
-.game-score-line{font-size:.75rem;color:rgba(224,232,255,.5);letter-spacing:.1em;text-align:center;}
+.game-score-line{font-size:.75rem;color:rgba(255,224,240,.5);letter-spacing:.1em;text-align:center;}
 .btn{font-family:'Orbitron',monospace;font-size:.72rem;letter-spacing:.12em;padding:9px 20px;
   border-radius:6px;border:none;cursor:pointer;transition:all .2s;}
-.btn-cyan{background:var(--nc);color:#000;font-weight:700;}
+.btn-cyan{background:var(--nc);color:#fff;font-weight:700;}
 .btn-cyan:hover{box-shadow:var(--gc);transform:translateY(-2px);}
 .btn-pink{background:var(--np);color:#fff;font-weight:700;}
 .btn-pink:hover{box-shadow:var(--gp);transform:translateY(-2px);}
 .btn-outline{background:transparent;border:1px solid var(--nc);color:var(--nc);}
-.btn-outline:hover{background:rgba(0,245,255,.1);}
+.btn-outline:hover{background:rgba(255,105,180,.1);}
 .btn-sm{padding:6px 14px;font-size:.65rem;}
 .choice-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
-.choice-btn{background:rgba(0,245,255,.07);border:1px solid rgba(0,245,255,.25);color:var(--tm);
+.choice-btn{background:rgba(255,105,180,.07);border:1px solid rgba(255,105,180,.25);color:var(--tm);
   font-family:'Rajdhani',sans-serif;font-size:.9rem;font-weight:600;padding:10px 16px;
   border-radius:8px;cursor:pointer;transition:all .2s;min-width:70px;text-align:center;}
-.choice-btn:hover{border-color:var(--nc);background:rgba(0,245,255,.15);}
-.num-input{background:rgba(0,245,255,.05);border:1px solid rgba(0,245,255,.3);color:var(--tm);
+.choice-btn:hover{border-color:var(--nc);background:rgba(255,105,180,.15);}
+.num-input{background:rgba(255,105,180,.05);border:1px solid rgba(255,105,180,.3);color:var(--tm);
   font-family:'Orbitron',monospace;font-size:1.1rem;padding:10px 16px;border-radius:8px;
   width:110px;text-align:center;outline:none;}
-.num-input:focus{border-color:var(--nc);box-shadow:0 0 10px rgba(0,245,255,.25);}
-.score-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,245,255,.07);
-  border:1px solid rgba(0,245,255,.2);border-radius:6px;padding:5px 12px;
+.num-input:focus{border-color:var(--nc);box-shadow:0 0 10px rgba(255,105,180,.25);}
+.score-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,105,180,.07);
+  border:1px solid rgba(255,105,180,.2);border-radius:6px;padding:5px 12px;
   font-family:'Orbitron',monospace;font-size:.68rem;color:var(--nc);letter-spacing:.08em;}
 .result-banner{font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:900;text-align:center;padding:10px;border-radius:8px;}
 .result-win{color:var(--ng);text-shadow:0 0 16px var(--ng);}
@@ -158,122 +157,122 @@ svg.thumb-svg{width:100%;height:100%;}
 .mem-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .35s;}
 .mem-card.flipped .mem-inner,.mem-card.matched .mem-inner{transform:rotateY(180deg);}
 .mem-front,.mem-back{position:absolute;inset:0;border-radius:7px;display:flex;align-items:center;justify-content:center;backface-visibility:hidden;}
-.mem-front{background:linear-gradient(135deg,#0a1628,#1a2a4a);border:1px solid rgba(0,245,255,.2);
+.mem-front{background:linear-gradient(135deg,#2a0018,#3a0a28);border:1px solid rgba(255,105,180,.2);
   color:var(--nc);font-size:.8rem;font-family:'Orbitron',monospace;}
-.mem-back{background:rgba(0,245,255,.07);border:1px solid rgba(0,245,255,.35);transform:rotateY(180deg);font-size:1.6rem;}
-.mem-card.matched .mem-back{background:rgba(57,255,20,.1);border-color:var(--ng);}
+.mem-back{background:rgba(255,105,180,.07);border:1px solid rgba(255,105,180,.35);transform:rotateY(180deg);font-size:1.6rem;}
+.mem-card.matched .mem-back{background:rgba(255,105,180,.15);border-color:var(--nc);}
 
 /* puzzle */
 .puzzle-grid{display:grid;grid-template-columns:repeat(4,54px);gap:5px;}
-.puzzle-tile{width:54px;height:54px;background:rgba(0,245,255,.09);border:1px solid rgba(0,245,255,.25);
+.puzzle-tile{width:54px;height:54px;background:rgba(255,105,180,.09);border:1px solid rgba(255,105,180,.25);
   border-radius:6px;font-family:'Orbitron',monospace;font-size:1rem;font-weight:700;color:var(--nc);
   cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;user-select:none;}
-.puzzle-tile:hover{background:rgba(0,245,255,.18);}
+.puzzle-tile:hover{background:rgba(255,105,180,.18);}
 .puzzle-tile.empty{background:transparent;border-color:transparent;cursor:default;}
 
 /* quiz */
 .quiz-question{font-size:.9rem;color:var(--tm);line-height:1.6;text-align:center;margin-bottom:16px;
-  padding:14px;background:rgba(0,245,255,.04);border-radius:8px;border:1px solid rgba(0,245,255,.1);}
+  padding:14px;background:rgba(255,105,180,.04);border-radius:8px;border:1px solid rgba(255,105,180,.1);}
 .quiz-options{display:grid;gap:8px;width:100%;}
-.quiz-opt{background:rgba(0,245,255,.04);border:1px solid rgba(0,245,255,.18);color:var(--tm);
+.quiz-opt{background:rgba(255,105,180,.04);border:1px solid rgba(255,105,180,.18);color:var(--tm);
   font-family:'Rajdhani',sans-serif;font-size:.88rem;font-weight:600;padding:10px 16px;
   border-radius:8px;cursor:pointer;transition:all .2s;text-align:left;}
-.quiz-opt:hover{border-color:var(--nc);background:rgba(0,245,255,.1);}
-.quiz-opt.correct{border-color:var(--ng);background:rgba(57,255,20,.1);color:var(--ng);}
-.quiz-opt.wrong{border-color:var(--np);background:rgba(255,0,110,.1);color:var(--np);}
+.quiz-opt:hover{border-color:var(--nc);background:rgba(255,105,180,.1);}
+.quiz-opt.correct{border-color:var(--ng);background:rgba(255,105,180,.15);color:var(--nc);}
+.quiz-opt.wrong{border-color:var(--np);background:rgba(255,20,147,.1);color:var(--np);}
 
 /* snake */
 #snakeCanvas{border:1px solid rgba(0,245,255,.25);border-radius:6px;background:#020610;}
 
-/* CHESS */
-.chess-board{display:grid;grid-template-columns:repeat(8,44px);grid-template-rows:repeat(8,44px);
-  border:2px solid rgba(0,245,255,.4);border-radius:4px;overflow:hidden;}
-.chess-cell{width:44px;height:44px;display:flex;align-items:center;justify-content:center;
-  font-size:1.6rem;cursor:pointer;transition:background .15s;user-select:none;position:relative;}
-.chess-cell.light{background:#1a2a3a;}
-.chess-cell.dark{background:#0a1520;}
-.chess-cell.selected{background:rgba(0,245,255,.35)!important;}
-.chess-cell.possible{background:rgba(57,255,20,.2)!important;}
-.chess-cell.possible::after{content:'';position:absolute;width:14px;height:14px;border-radius:50%;background:rgba(57,255,20,.5);}
-.chess-cell:hover{filter:brightness(1.3);}
-.chess-label-row{display:flex;}
-.chess-label{width:44px;height:18px;display:flex;align-items:center;justify-content:center;
-  font-family:'Orbitron',monospace;font-size:.5rem;color:rgba(0,245,255,.4);}
-
-/* SUDOKU */
-.sudoku-grid{display:grid;grid-template-columns:repeat(9,36px);grid-template-rows:repeat(9,36px);
-  border:2px solid rgba(0,245,255,.5);border-radius:4px;overflow:hidden;}
-.sudoku-cell{width:36px;height:36px;display:flex;align-items:center;justify-content:center;
-  font-family:'Orbitron',monospace;font-size:.85rem;cursor:pointer;
-  border:1px solid rgba(0,245,255,.08);transition:all .15s;user-select:none;}
-.sudoku-cell.given{color:var(--nc);}
-.sudoku-cell.player-cell{color:var(--ny);cursor:pointer;}
-.sudoku-cell.selected{background:rgba(0,245,255,.2)!important;}
-.sudoku-cell.error{color:var(--np)!important;}
-.sudoku-cell.box-right{border-right:2px solid rgba(0,245,255,.4);}
-.sudoku-cell.box-bottom{border-bottom:2px solid rgba(0,245,255,.4);}
-.sudoku-cell.light{background:#0d1525;}
-.sudoku-cell.dark{background:#060e1a;}
-.num-pad{display:grid;grid-template-columns:repeat(5,38px);gap:5px;margin-top:8px;}
-.num-pad-btn{width:38px;height:34px;background:rgba(0,245,255,.08);border:1px solid rgba(0,245,255,.2);
-  color:var(--nc);font-family:'Orbitron',monospace;font-size:.8rem;border-radius:5px;cursor:pointer;transition:all .15s;}
-.num-pad-btn:hover{background:rgba(0,245,255,.2);}
-.num-pad-btn.erase{color:var(--np);border-color:rgba(255,0,110,.3);}
-
 /* WORDLE */
 .wordle-grid{display:grid;grid-template-columns:repeat(5,48px);gap:5px;}
 .wordle-row{display:contents;}
-.wordle-cell{width:48px;height:48px;border:2px solid rgba(0,245,255,.2);border-radius:5px;
+.wordle-cell{width:48px;height:48px;border:2px solid rgba(255,105,180,.2);border-radius:5px;
   display:flex;align-items:center;justify-content:center;font-family:'Orbitron',monospace;
   font-size:1.2rem;font-weight:700;color:#fff;transition:all .3s;text-transform:uppercase;}
-.wordle-cell.correct{background:#1a5c1a;border-color:var(--ng);color:var(--ng);}
-.wordle-cell.present{background:#5c4a00;border-color:var(--ny);color:var(--ny);}
-.wordle-cell.absent{background:#1a1a2e;border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.4);}
+.wordle-cell.correct{background:#5c1a3a;border-color:var(--nc);color:var(--nc);}
+.wordle-cell.present{background:#4a2a00;border-color:var(--ny);color:var(--ny);}
+.wordle-cell.absent{background:#2a1a2e;border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.4);}
 .wordle-cell.current{border-color:var(--nc);}
 .wordle-keys{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;max-width:340px;}
-.wkey{background:rgba(0,245,255,.08);border:1px solid rgba(0,245,255,.2);color:var(--tm);
+.wkey{background:rgba(255,105,180,.08);border:1px solid rgba(255,105,180,.2);color:var(--tm);
   font-family:'Orbitron',monospace;font-size:.6rem;padding:8px 6px;min-width:30px;
   border-radius:4px;cursor:pointer;transition:all .15s;text-align:center;}
-.wkey:hover{background:rgba(0,245,255,.2);}
-.wkey.correct{background:rgba(57,255,20,.2);border-color:var(--ng);color:var(--ng);}
-.wkey.present{background:rgba(255,230,0,.15);border-color:var(--ny);color:var(--ny);}
+.wkey:hover{background:rgba(255,105,180,.2);}
+.wkey.correct{background:rgba(255,105,180,.2);border-color:var(--nc);color:var(--nc);}
+.wkey.present{background:rgba(255,182,193,.15);border-color:var(--ny);color:var(--ny);}
 .wkey.absent{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.08);color:rgba(255,255,255,.3);}
 
 /* MINESWEEPER */
-.mine-grid{display:inline-grid;gap:2px;border:1px solid rgba(0,245,255,.2);border-radius:6px;padding:6px;background:rgba(0,0,0,.3);}
-.mine-cell{width:34px;height:34px;background:rgba(0,245,255,.08);border:1px solid rgba(0,245,255,.15);
+.mine-grid{display:inline-grid;gap:2px;border:1px solid rgba(255,105,180,.2);border-radius:6px;padding:6px;background:rgba(0,0,0,.3);}
+.mine-cell{width:34px;height:34px;background:rgba(255,105,180,.08);border:1px solid rgba(255,105,180,.15);
   border-radius:3px;display:flex;align-items:center;justify-content:center;cursor:pointer;
   font-family:'Orbitron',monospace;font-size:.8rem;font-weight:700;transition:all .15s;user-select:none;}
-.mine-cell:hover:not(.revealed){background:rgba(0,245,255,.18);}
-.mine-cell.revealed{background:rgba(0,0,0,.4);border-color:rgba(0,245,255,.08);cursor:default;}
-.mine-cell.flagged{background:rgba(255,0,110,.1);border-color:rgba(255,0,110,.3);}
-.mine-cell.mine-exp{background:rgba(255,0,110,.3);border-color:var(--np);}
-.mine-1{color:#00f5ff;} .mine-2{color:#39ff14;} .mine-3{color:#ff006e;}
-.mine-4{color:#ffe600;} .mine-5{color:#ff9500;} .mine-6{color:#bf5af2;}
-.mine-7{color:#ff006e;} .mine-8{color:rgba(255,255,255,.5);}
+.mine-cell:hover:not(.revealed){background:rgba(255,105,180,.18);}
+.mine-cell.revealed{background:rgba(0,0,0,.4);border-color:rgba(255,105,180,.08);cursor:default;}
+.mine-cell.flagged{background:rgba(255,20,147,.1);border-color:rgba(255,20,147,.3);}
+.mine-cell.mine-exp{background:rgba(255,20,147,.3);border-color:var(--np);}
+.mine-1{color:#ff69b4;} .mine-2{color:#ff85c2;} .mine-3{color:#ff1493;}
+.mine-4{color:#ffb6c1;} .mine-5{color:#ff9500;} .mine-6{color:#ff69b4;}
+.mine-7{color:#ff1493;} .mine-8{color:rgba(255,255,255,.5);}
 
 /* TYPING */
 .typing-text{font-family:'Rajdhani',sans-serif;font-size:1.1rem;line-height:1.8;max-width:480px;
-  text-align:center;padding:12px;background:rgba(0,245,255,.04);border-radius:8px;
-  border:1px solid rgba(0,245,255,.1);}
+  text-align:center;padding:12px;background:rgba(255,105,180,.04);border-radius:8px;
+  border:1px solid rgba(255,105,180,.1);}
 .typing-char.correct{color:var(--ng);}
 .typing-char.wrong{color:var(--np);text-decoration:underline;}
-.typing-char.current{color:#000;background:var(--nc);border-radius:2px;}
-.typing-char.pending{color:rgba(224,232,255,.3);}
-.typing-input{background:rgba(0,245,255,.05);border:1px solid rgba(0,245,255,.3);color:var(--tm);
+.typing-char.current{color:#fff;background:var(--nc);border-radius:2px;}
+.typing-char.pending{color:rgba(255,224,240,.3);}
+.typing-input{background:rgba(255,105,180,.05);border:1px solid rgba(255,105,180,.3);color:var(--tm);
   font-family:'Rajdhani',sans-serif;font-size:1rem;padding:10px 14px;border-radius:8px;
   width:100%;max-width:480px;outline:none;}
 .typing-input:focus{border-color:var(--nc);}
 
 /* TIC TAC TOE */
 .ttt-grid{display:grid;grid-template-columns:repeat(3,80px);grid-template-rows:repeat(3,80px);gap:6px;}
-.ttt-cell{width:80px;height:80px;background:rgba(0,245,255,.06);border:1px solid rgba(0,245,255,.2);
+.ttt-cell{width:80px;height:80px;background:rgba(255,105,180,.06);border:1px solid rgba(255,105,180,.2);
   border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;
   font-family:'Orbitron',monospace;font-size:2rem;font-weight:900;transition:all .2s;}
-.ttt-cell:hover:not(.taken){background:rgba(0,245,255,.15);}
+.ttt-cell:hover:not(.taken){background:rgba(255,105,180,.15);}
 .ttt-cell.x-cell{color:var(--np);text-shadow:0 0 10px var(--np);}
 .ttt-cell.o-cell{color:var(--nc);text-shadow:0 0 10px var(--nc);}
-.ttt-cell.win-cell{background:rgba(57,255,20,.12);border-color:var(--ng);}
+.ttt-cell.win-cell{background:rgba(255,105,180,.12);border-color:var(--nc);}
+
+/* CHESS */
+.chess-board{display:grid;grid-template-columns:repeat(8,44px);grid-template-rows:repeat(8,44px);
+  border:2px solid rgba(255,105,180,.4);border-radius:4px;overflow:hidden;}
+.chess-cell{width:44px;height:44px;display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;cursor:pointer;transition:background .15s;user-select:none;position:relative;}
+.chess-cell.light{background:#2a0a1a;}
+.chess-cell.dark{background:#1a0510;}
+.chess-cell.selected{background:rgba(255,105,180,.35)!important;}
+.chess-cell.possible{background:rgba(255,182,193,.2)!important;}
+.chess-cell.possible::after{content:'';position:absolute;width:14px;height:14px;border-radius:50%;background:rgba(255,105,180,.5);}
+.chess-cell:hover{filter:brightness(1.3);}
+.chess-label-row{display:flex;}
+.chess-label{width:44px;height:18px;display:flex;align-items:center;justify-content:center;
+  font-family:'Orbitron',monospace;font-size:.5rem;color:rgba(255,105,180,.4);}
+
+/* SUDOKU */
+.sudoku-grid{display:grid;grid-template-columns:repeat(9,36px);grid-template-rows:repeat(9,36px);
+  border:2px solid rgba(255,105,180,.5);border-radius:4px;overflow:hidden;}
+.sudoku-cell{width:36px;height:36px;display:flex;align-items:center;justify-content:center;
+  font-family:'Orbitron',monospace;font-size:.85rem;cursor:pointer;
+  border:1px solid rgba(255,105,180,.08);transition:all .15s;user-select:none;}
+.sudoku-cell.given{color:var(--nc);}
+.sudoku-cell.player-cell{color:var(--ny);cursor:pointer;}
+.sudoku-cell.selected{background:rgba(255,105,180,.2)!important;}
+.sudoku-cell.error{color:var(--np)!important;}
+.sudoku-cell.box-right{border-right:2px solid rgba(255,105,180,.4);}
+.sudoku-cell.box-bottom{border-bottom:2px solid rgba(255,105,180,.4);}
+.sudoku-cell.light{background:#2a0518;}
+.sudoku-cell.dark{background:#1a030e;}
+.num-pad{display:grid;grid-template-columns:repeat(5,38px);gap:5px;margin-top:8px;}
+.num-pad-btn{width:38px;height:34px;background:rgba(255,105,180,.08);border:1px solid rgba(255,105,180,.2);
+  color:var(--nc);font-family:'Orbitron',monospace;font-size:.8rem;border-radius:5px;cursor:pointer;transition:all .15s;}
+.num-pad-btn:hover{background:rgba(255,105,180,.2);}
+.num-pad-btn.erase{color:var(--np);border-color:rgba(255,20,147,.3);}
 
 /* 2048 */
 .g2048-grid{display:grid;grid-template-columns:repeat(4,68px);grid-template-rows:repeat(4,68px);gap:6px;
@@ -304,50 +303,50 @@ svg.thumb-svg{width:100%;height:100%;}
 
 ::-webkit-scrollbar{width:5px;}
 ::-webkit-scrollbar-track{background:var(--bg);}
-::-webkit-scrollbar-thumb{background:rgba(0,245,255,.25);border-radius:3px;}
+::-webkit-scrollbar-thumb{background:rgba(255,105,180,.25);border-radius:3px;}
 
-footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(224,232,255,.15);
+footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(255,224,240,.15);
   letter-spacing:.2em;font-family:'Orbitron',monospace;position:relative;z-index:1;}
 
 /* KRAEPLIN */
 .krp-question{font-family:'Orbitron',monospace;font-size:2.2rem;font-weight:900;color:#fff;
-  text-align:center;letter-spacing:.1em;text-shadow:0 0 20px rgba(0,245,255,.5);}
+  text-align:center;letter-spacing:.1em;text-shadow:0 0 20px rgba(255,105,180,.5);}
 .krp-timer-ring{position:relative;width:80px;height:80px;flex-shrink:0;}
 .krp-timer-ring svg{transform:rotate(-90deg);}
 .krp-timer-val{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
   font-family:'Orbitron',monospace;font-size:.9rem;font-weight:700;color:var(--nc);}
-.krp-ans-btn{background:rgba(0,245,255,.07);border:1px solid rgba(0,245,255,.25);color:#fff;
+.krp-ans-btn{background:rgba(255,105,180,.07);border:1px solid rgba(255,105,180,.25);color:#fff;
   font-family:'Orbitron',monospace;font-size:1.1rem;font-weight:700;padding:12px 10px;
   border-radius:8px;cursor:pointer;transition:all .2s;text-align:center;min-width:60px;}
-.krp-ans-btn:hover{border-color:var(--nc);background:rgba(0,245,255,.18);transform:scale(1.05);}
-.krp-ans-btn.correct{background:rgba(57,255,20,.25);border-color:var(--ng);color:var(--ng);animation:krpPop .25s ease;}
-.krp-ans-btn.wrong{background:rgba(255,0,110,.25);border-color:var(--np);color:var(--np);animation:krpShake .3s ease;}
+.krp-ans-btn:hover{border-color:var(--nc);background:rgba(255,105,180,.18);transform:scale(1.05);}
+.krp-ans-btn.correct{background:rgba(255,105,180,.25);border-color:var(--ng);color:var(--ng);animation:krpPop .25s ease;}
+.krp-ans-btn.wrong{background:rgba(255,20,147,.25);border-color:var(--np);color:var(--np);animation:krpShake .3s ease;}
 @keyframes krpPop{0%{transform:scale(1);}50%{transform:scale(1.15);}100%{transform:scale(1);}}
 @keyframes krpShake{0%,100%{transform:translateX(0);}25%{transform:translateX(-6px);}75%{transform:translateX(6px);}}
-.krp-stat{display:flex;flex-direction:column;align-items:center;background:rgba(0,245,255,.05);
-  border:1px solid rgba(0,245,255,.15);border-radius:8px;padding:6px 12px;min-width:64px;}
+.krp-stat{display:flex;flex-direction:column;align-items:center;background:rgba(255,105,180,.05);
+  border:1px solid rgba(255,105,180,.15);border-radius:8px;padding:6px 12px;min-width:64px;}
 .krp-stat-val{font-family:'Orbitron',monospace;font-size:1.1rem;font-weight:700;}
-.krp-stat-lbl{font-size:.55rem;letter-spacing:.15em;color:rgba(224,232,255,.4);font-family:'Orbitron',monospace;margin-top:2px;}
+.krp-stat-lbl{font-size:.55rem;letter-spacing:.15em;color:rgba(255,224,240,.4);font-family:'Orbitron',monospace;margin-top:2px;}
 .krp-mode-btn{font-family:'Orbitron',monospace;font-size:.68rem;letter-spacing:.08em;padding:8px 16px;
-  border-radius:6px;border:1px solid rgba(0,245,255,.3);background:rgba(0,245,255,.07);
+  border-radius:6px;border:1px solid rgba(255,105,180,.3);background:rgba(255,105,180,.07);
   color:var(--nc);cursor:pointer;transition:all .2s;}
-.krp-mode-btn:hover,.krp-mode-btn.active{background:rgba(0,245,255,.2);border-color:var(--nc);box-shadow:0 0 12px rgba(0,245,255,.2);}
+.krp-mode-btn:hover,.krp-mode-btn.active{background:rgba(255,105,180,.2);border-color:var(--nc);box-shadow:0 0 12px rgba(255,105,180,.2);}
 /* LEADERBOARD */
 .krp-lb-row{display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:6px;
-  background:rgba(0,245,255,.04);border:1px solid rgba(0,245,255,.1);margin-bottom:4px;}
+  background:rgba(255,105,180,.04);border:1px solid rgba(255,105,180,.1);margin-bottom:4px;}
 .krp-lb-rank{font-family:'Orbitron',monospace;font-size:.75rem;font-weight:700;color:var(--ny);width:24px;text-align:center;}
 .krp-lb-name{font-size:.82rem;font-weight:600;flex:1;color:var(--tm);}
 .krp-lb-score{font-family:'Orbitron',monospace;font-size:.75rem;color:var(--nc);}
-.krp-lb-detail{font-size:.6rem;color:rgba(224,232,255,.35);font-family:'Orbitron',monospace;}
+.krp-lb-detail{font-size:.6rem;color:rgba(255,224,240,.35);font-family:'Orbitron',monospace;}
 /* SUPPORT PANEL */
-.support-panel{background:rgba(0,245,255,.04);border:1px solid rgba(0,245,255,.15);border-radius:10px;
+.support-panel{background:rgba(255,105,180,.04);border:1px solid rgba(255,105,180,.15);border-radius:10px;
   padding:14px;margin-top:10px;text-align:center;}
 .support-panel a{color:var(--nc);text-decoration:none;font-family:'Orbitron',monospace;font-size:.72rem;
-  letter-spacing:.08em;border:1px solid rgba(0,245,255,.3);padding:6px 14px;border-radius:6px;
+  letter-spacing:.08em;border:1px solid rgba(255,105,180,.3);padding:6px 14px;border-radius:6px;
   display:inline-block;transition:all .2s;}
-.support-panel a:hover{background:rgba(0,245,255,.12);box-shadow:0 0 10px rgba(0,245,255,.2);}
+.support-panel a:hover{background:rgba(255,105,180,.12);box-shadow:0 0 10px rgba(255,105,180,.2);}
 .donate-txt{font-family:'Orbitron',monospace;font-size:.65rem;color:var(--ny);letter-spacing:.06em;
-  background:rgba(255,230,0,.07);border:1px solid rgba(255,230,0,.2);border-radius:6px;padding:6px 12px;
+  background:rgba(255,182,193,.07);border:1px solid rgba(255,182,193,.2);border-radius:6px;padding:6px 12px;
   display:inline-block;margin-top:8px;}
 
 /* RPG */
@@ -424,7 +423,7 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(224,
   </div>
 </div>
 
-<footer>© ARCADE ZONE · 22 GAMES · ALL FOR FUN · @gamebyXieraa__07</footer>
+<footer>© ARCADE ZONE · 25 GAMES · ALL FOR FUN · @gamebyXieraa__07</footer>
 
 <script>
 // ═══════════════════════════════════════════════════
@@ -493,7 +492,10 @@ const games=[
   {id:'pong',tag:'ARCADE',name:'Pong Neon',desc:'Pantulkan bola, kalahkan CPU!',color:'#00f5ff',thumb:svgPong},
   {id:'flappy',tag:'ARCADE',name:'Flappy Pixel',desc:'Terbang melewati pipa tanpa menyentuh!',color:'#39ff14',thumb:svgFlappy},
   {id:'breakout',tag:'ARCADE',name:'Breakout',desc:'Hancurkan semua blok dengan bola!',color:'#ffe600',thumb:svgBreakout},
-  {id:'kraeplin',tag:'MATEMATIKA',name:'Kraeplin Math',desc:'Penjumlahan cepat! Tulis digit terakhir jawaban.',color:'#00f5ff',thumb:svgKraeplin},
+  {id:'kraeplin',tag:'MATEMATIKA',name:'Kraeplin Math',desc:'Penjumlahan cepat! Tulis digit terakhir jawaban.',color:'#ff69b4',thumb:svgKraeplin},
+  {id:'logmath',tag:'MATEMATIKA',name:'Soal Logaritma',desc:'Uji kemampuan log & eksponen dalam waktu terbatas!',color:'#ff69b4',thumb:svgLogMath},
+  {id:'aritmatika',tag:'MATEMATIKA',name:'Baris Aritmatika',desc:'Temukan suku berikutnya dalam deret aritmatika!',color:'#ffb6c1',thumb:svgAritmatika},
+  {id:'dasarmath',tag:'MATEMATIKA',name:'Matematika Dasar',desc:'Operasi dasar: +, -, ×, ÷. Cepat & tepat!',color:'#ff1493',thumb:svgDasarMath},
 ];
 
 // ═══════════════════════════════════════════════════
@@ -651,13 +653,30 @@ return `<rect x="${x}" y="${y}" width="26" height="10" rx="2" fill="${cols[r%4]}
 <rect x="72" y="108" width="44" height="6" rx="3" fill="#00f5ff" opacity=".9"/>
 <circle cx="94" cy="96" r="5" fill="#ffe600"/>
 <text x="50%" y="96%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ffe600" opacity=".5">BREAK ALL!</text>`;}
-function svgKraeplin(s){s.innerHTML=`<rect width="100%" height="100%" fill="#001a2e"/>
-<text x="30%" y="38%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#00f5ff" opacity=".9">7</text>
-<text x="50%" y="38%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="14" fill="rgba(224,232,255,.4)">+</text>
-<text x="70%" y="38%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#ff006e" opacity=".9">8</text>
-<line x1="20" y1="58" x2="168" y2="58" stroke="rgba(0,245,255,.3)" stroke-width="1"/>
-<text x="50%" y="73%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#39ff14" opacity=".85">5</text>
-<text x="50%" y="90%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ffe600" opacity=".6">DIGIT TERAKHIR</text>`;}
+function svgKraeplin(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a0011"/>
+<text x="30%" y="38%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#ff69b4" opacity=".9">7</text>
+<text x="50%" y="38%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="14" fill="rgba(255,224,240,.4)">+</text>
+<text x="70%" y="38%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#ff1493" opacity=".9">8</text>
+<line x1="20" y1="58" x2="168" y2="58" stroke="rgba(255,105,180,.3)" stroke-width="1"/>
+<text x="50%" y="73%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#ffb6c1" opacity=".85">5</text>
+<text x="50%" y="90%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff85c2" opacity=".6">DIGIT TERAKHIR</text>`;}
+function svgLogMath(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a0011"/>
+<text x="50%" y="32%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="13" fill="#ff69b4" opacity=".9">log₂(8) = ?</text>
+<line x1="20" y1="50" x2="168" y2="50" stroke="rgba(255,105,180,.2)" stroke-width="1"/>
+<text x="50%" y="65%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#ffb6c1" opacity=".9">3</text>
+<text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff1493" opacity=".6">LOG & EKSPONEN</text>`;}
+function svgAritmatika(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a0011"/>
+<text x="50%" y="28%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="8" fill="rgba(255,182,193,.5)">DERET</text>
+<text x="50%" y="48%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#ff69b4" opacity=".9">2, 5, 8, 11, ?</text>
+<line x1="20" y1="62" x2="168" y2="62" stroke="rgba(255,105,180,.2)" stroke-width="1"/>
+<text x="50%" y="77%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#ffb6c1" opacity=".9">14</text>
+<text x="50%" y="91%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff1493" opacity=".6">BARIS ARITMATIKA</text>`;}
+function svgDasarMath(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a0011"/>
+<text x="25%" y="42%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#ff69b4" opacity=".8">+</text>
+<text x="50%" y="42%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#ff85c2" opacity=".8">−</text>
+<text x="75%" y="42%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#ffb6c1" opacity=".8">×</text>
+<text x="50%" y="68%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#ff1493" opacity=".8">÷</text>
+<text x="50%" y="88%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff69b4" opacity=".6">MATEMATIKA DASAR</text>`;}
 
 // ═══════════════════════════════════════════════════
 // BUILD GRID
@@ -702,7 +721,7 @@ function openGame(id){
     chess:initChess,sudoku:initSudoku,ttt:initTTT,minesweeper:initMinesweeper,
     wordle:initWordle,g2048:init2048,typing:initTyping,hangman:initHangman,
     rpg:initRPG,mario:initMario,pong:initPong,flappy:initFlappy,breakout:initBreakout,
-    kraeplin:initKraeplin};
+    kraeplin:initKraeplin,logmath:initLogMath,aritmatika:initAritmatika,dasarmath:initDasarMath};
   if(map[id]) map[id](body);
 }
 function closeModal(){
@@ -2145,7 +2164,7 @@ function initKraeplin(el){
         <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
           <button class="krp-mode-btn ${krpDuration===120?'active':''}" onclick="krpSetDur(120)">&#9201; 2 MENIT</button>
           <button class="krp-mode-btn ${krpDuration===180?'active':''}" onclick="krpSetDur(180)">&#9201; 3 MENIT</button>
-          <button class="krp-mode-btn ${krpDuration===240?'active':''}" onclick="krpSetDur(240)">&#9201; 4 MENIT</button>
+          <button class="krp-mode-btn ${krpDuration===300?'active':''}" onclick="krpSetDur(300)">&#9201; 5 MENIT</button>
         </div>
       </div>
       <button class="btn btn-cyan" onclick="krpStart()" style="margin-top:4px">&#9654; MULAI GAME</button>
@@ -2171,7 +2190,7 @@ function initKraeplin(el){
         const pct=krpRemain/krpDuration;
         const circ=2*Math.PI*34;
         ringEl.style.strokeDashoffset=(circ*(1-pct)).toFixed(2);
-        ringEl.style.stroke=pct>.5?'#00f5ff':pct>.25?'#ffe600':'#ff006e';
+        ringEl.style.stroke=pct>.5?'#ff69b4':pct>.25?'#ffb6c1':'#ff1493';
       }
       const cEl=document.getElementById('krpCorrect');
       const wEl=document.getElementById('krpWrong');
@@ -2185,7 +2204,7 @@ function initKraeplin(el){
 
   function renderGame(q){
     const circ=2*Math.PI*34;
-    const durLabel={120:'2 Menit',180:'3 Menit',240:'4 Menit'}[krpDuration]||'';
+    const durLabel={120:'2 Menit',180:'3 Menit',300:'5 Menit'}[krpDuration]||'';
     el.innerHTML=`<div class="game-area" style="gap:10px;padding:14px">
       <div style="display:flex;align-items:center;justify-content:space-between;width:100%;gap:8px">
         <div style="display:flex;gap:8px;flex:1;justify-content:flex-start">
@@ -2277,7 +2296,7 @@ function initKraeplin(el){
   };
 
   function showResult(){
-    const durLabel={120:'2 Menit',180:'3 Menit',240:'4 Menit'}[krpDuration]||'';
+    const durLabel={120:'2 Menit',180:'3 Menit',300:'5 Menit'}[krpDuration]||'';
     const accuracy=krpTotal>0?Math.round(krpCorrect/krpTotal*100):0;
     // ask for name then save
     el.innerHTML=`<div class="game-area" style="gap:12px;padding:16px">
@@ -2321,6 +2340,468 @@ function initKraeplin(el){
 
   window.krpStart=startGame;
   window.krpHome=renderHome;
+  renderHome();
+}
+
+
+// ═══════════════════════════════════════════════════
+// GAME 23: SOAL LOGARITMA
+// ═══════════════════════════════════════════════════
+function initLogMath(el){
+  const LB_KEY='logmath_lb';
+  function getLB(){try{return JSON.parse(localStorage.getItem(LB_KEY))||[];}catch{return[];}}
+  function saveLB(arr){try{localStorage.setItem(LB_KEY,JSON.stringify(arr));}catch{}}
+  function addToLB(entry){let lb=getLB();lb.push(entry);lb.sort((a,b)=>b.correct-a.correct);lb=lb.slice(0,10);saveLB(lb);return lb;}
+
+  let correct=0,wrong=0,total=0,duration=120,remain=0,timer=null,running=false;
+  let currentAns=0;
+
+  function genQ(){
+    const type=Math.floor(Math.random()*4);
+    let q,ans;
+    if(type===0){
+      // log_b(x) = ? where b^n = x
+      const b=[2,3,4,5][Math.floor(Math.random()*4)];
+      const n=[1,2,3][Math.floor(Math.random()*3)];
+      const x=Math.pow(b,n);
+      q=`log<sub>${b}</sub>(${x}) = ?`;ans=n;
+    } else if(type===1){
+      // b^n = ?
+      const b=[2,3,4,5][Math.floor(Math.random()*4)];
+      const n=[2,3,4][Math.floor(Math.random()*3)];
+      q=`${b}<sup>${n}</sup> = ?`;ans=Math.pow(b,n);
+    } else if(type===2){
+      // log10 simple
+      const vals=[[10,1],[100,2],[1000,3],[10000,4],[1,0]];
+      const [x,a]=vals[Math.floor(Math.random()*vals.length)];
+      q=`log<sub>10</sub>(${x}) = ?`;ans=a;
+    } else {
+      // 2^? = x
+      const b=[2,3][Math.floor(Math.random()*2)];
+      const n=[1,2,3,4][Math.floor(Math.random()*4)];
+      const x=Math.pow(b,n);
+      q=`${b}<sup>?</sup> = ${x}`;ans=n;
+    }
+    // Generate wrong choices
+    const choices=new Set([ans]);
+    while(choices.size<4){choices.add(ans+Math.floor(Math.random()*7)-3);}
+    return{q,ans,choices:[...choices].sort(()=>Math.random()-.5)};
+  }
+
+  function renderHome(){
+    el.innerHTML=`<div class="game-area" style="gap:12px;padding:18px">
+      <div class="game-msg" style="font-size:1rem">📐 SOAL LOGARITMA</div>
+      <div style="font-size:.75rem;color:rgba(255,224,240,.45);text-align:center;line-height:1.6;max-width:300px">
+        Jawab soal <span style="color:var(--nc);font-weight:700">logaritma & eksponen</span> secepat mungkin!
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;align-items:center;width:100%">
+        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(255,224,240,.4);letter-spacing:.2em;margin-bottom:2px">PILIH DURASI</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+          <button class="krp-mode-btn ${duration===120?'active':''}" onclick="lmSetDur(120)">⏱ 2 MENIT</button>
+          <button class="krp-mode-btn ${duration===180?'active':''}" onclick="lmSetDur(180)">⏱ 3 MENIT</button>
+          <button class="krp-mode-btn ${duration===300?'active':''}" onclick="lmSetDur(300)">⏱ 5 MENIT</button>
+        </div>
+      </div>
+      <button class="btn btn-cyan" onclick="lmStart()">▶ MULAI GAME</button>
+      <div style="width:100%">
+        <div style="font-family:Orbitron,monospace;font-size:.62rem;color:var(--nc);letter-spacing:.2em;text-align:center;margin-bottom:8px;opacity:.7">🏆 LEADERBOARD</div>
+        <div id="lmLb">${renderLB()}</div>
+      </div>
+    </div>`;
+    window.lmSetDur=function(d){duration=d;renderHome();};
+    window.lmStart=startGame;
+  }
+
+  function renderLB(){
+    const lb=getLB();if(!lb.length)return '<div style="text-align:center;color:rgba(255,224,240,.3);font-size:.75rem;padding:12px;font-family:Orbitron,monospace">Belum ada data</div>';
+    const medal=['🥇','🥈','🥉'];
+    return lb.map((e,i)=>`<div class="krp-lb-row"><div class="krp-lb-rank">${medal[i]||i+1}</div><div><div class="krp-lb-name">${e.name||'Anonim'}</div><div class="krp-lb-detail">${e.durLabel}</div></div><div style="text-align:right"><div class="krp-lb-score">✅ ${e.correct}</div><div class="krp-lb-detail">❌ ${e.wrong}</div></div></div>`).join('');
+  }
+
+  function fmtTime(s){return Math.floor(s/60)+':'+(s%60<10?'0':'')+(s%60);}
+
+  function startGame(){
+    running=true;correct=0;wrong=0;total=0;remain=duration;
+    const qd=genQ();currentAns=qd.ans;
+    renderGame(qd);
+    timer=setInterval(()=>{
+      remain--;
+      const tv=document.getElementById('lmTimer');if(tv)tv.textContent=fmtTime(remain);
+      const circ=2*Math.PI*34;
+      const ring=document.getElementById('lmRing');
+      if(ring){ring.style.strokeDashoffset=(circ*(1-remain/duration)).toFixed(2);ring.style.stroke=remain/duration>.5?'#ff69b4':remain/duration>.25?'#ffb6c1':'#ff1493';}
+      if(remain<=0){clearInterval(timer);timer=null;running=false;showResult();}
+    },1000);
+  }
+
+  function renderGame(qd){
+    const circ=2*Math.PI*34;
+    el.innerHTML=`<div class="game-area" style="gap:10px;padding:14px">
+      <div style="display:flex;align-items:center;justify-content:space-between;width:100%;gap:8px">
+        <div style="display:flex;gap:8px;flex:1">
+          <div class="krp-stat"><div class="krp-stat-val" id="lmC" style="color:var(--ng)">${correct}</div><div class="krp-stat-lbl">BENAR</div></div>
+          <div class="krp-stat"><div class="krp-stat-val" id="lmW" style="color:var(--np)">${wrong}</div><div class="krp-stat-lbl">SALAH</div></div>
+        </div>
+        <div class="krp-timer-ring">
+          <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="34" fill="none" stroke="rgba(255,105,180,.12)" stroke-width="6"/>
+          <circle id="lmRing" cx="40" cy="40" r="34" fill="none" stroke="#ff69b4" stroke-width="6" stroke-dasharray="${circ.toFixed(2)}" stroke-dashoffset="0" style="transition:stroke-dashoffset .9s linear,stroke .5s ease"/></svg>
+          <div class="krp-timer-val" id="lmTimer">${fmtTime(remain)}</div>
+        </div>
+        <div style="flex:1;display:flex;justify-content:flex-end">
+          <div class="krp-stat"><div class="krp-stat-val" id="lmT" style="color:var(--ny)">${total}</div><div class="krp-stat-lbl">TOTAL</div></div>
+        </div>
+      </div>
+      <div style="background:rgba(255,105,180,.04);border:1px solid rgba(255,105,180,.12);border-radius:10px;padding:14px 20px;text-align:center;width:100%">
+        <div style="font-size:.6rem;font-family:Orbitron,monospace;color:rgba(255,224,240,.3);letter-spacing:.2em;margin-bottom:10px">HITUNG & PILIH JAWABAN</div>
+        <div style="font-family:Orbitron,monospace;font-size:1.6rem;font-weight:900;color:#fff;text-shadow:0 0 20px rgba(255,105,180,.5)" id="lmQ">${qd.q}</div>
+      </div>
+      <div id="lmFb" style="font-family:Orbitron,monospace;font-size:1rem;font-weight:900;min-height:28px;text-align:center"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;max-width:280px" id="lmChoices">
+        ${qd.choices.map(c=>`<button class="krp-ans-btn" onclick="lmAnswer(${c})">${c}</button>`).join('')}
+      </div>
+    </div>`;
+  }
+
+  window.lmAnswer=function(val){
+    if(!running)return;
+    total++;
+    const fb=document.getElementById('lmFb');
+    const btns=document.querySelectorAll('#lmChoices .krp-ans-btn');
+    btns.forEach(b=>{b.disabled=true;if(parseInt(b.textContent)===currentAns)b.classList.add('correct');});
+    if(val===currentAns){correct++;if(fb){fb.textContent='✓ BENAR!';fb.style.color='var(--ng)';}}
+    else{wrong++;if(fb){fb.textContent='✗ SALAH! Jawaban: '+currentAns;fb.style.color='var(--np)';}}
+    const cE=document.getElementById('lmC'),wE=document.getElementById('lmW'),tE=document.getElementById('lmT');
+    if(cE)cE.textContent=correct;if(wE)wE.textContent=wrong;if(tE)tE.textContent=total;
+    setTimeout(()=>{if(!running)return;const qd=genQ();currentAns=qd.ans;renderGame(qd);},500);
+  };
+
+  function showResult(){
+    const acc=total>0?Math.round(correct/total*100):0;
+    const durLabel={120:'2 Menit',180:'3 Menit',300:'5 Menit'}[duration]||'';
+    el.innerHTML=`<div class="game-area" style="gap:12px;padding:16px">
+      <div class="result-banner result-win" style="font-size:1rem">🎉 WAKTU HABIS!</div>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <div class="krp-stat"><div class="krp-stat-val" style="color:var(--ng);font-size:1.6rem">${correct}</div><div class="krp-stat-lbl">BENAR</div></div>
+        <div class="krp-stat"><div class="krp-stat-val" style="color:var(--np);font-size:1.6rem">${wrong}</div><div class="krp-stat-lbl">SALAH</div></div>
+        <div class="krp-stat"><div class="krp-stat-val" style="color:var(--ny);font-size:1.6rem">${total}</div><div class="krp-stat-lbl">TOTAL</div></div>
+        <div class="krp-stat"><div class="krp-stat-val" style="color:var(--nc);font-size:1.6rem">${acc}%</div><div class="krp-stat-lbl">AKURASI</div></div>
+      </div>
+      <div style="width:100%;max-width:320px">
+        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(255,224,240,.4);margin-bottom:5px;text-align:center">MASUKKAN NAMAMU UNTUK LEADERBOARD</div>
+        <div style="display:flex;gap:6px">
+          <input id="lmName" type="text" placeholder="Nama kamu..." maxlength="16" class="num-input" style="width:100%;font-size:.85rem;text-align:left;padding:8px 12px">
+          <button class="btn btn-cyan btn-sm" onclick="lmSave()">💾 SIMPAN</button>
+        </div>
+      </div>
+      <div style="width:100%"><div style="font-family:Orbitron,monospace;font-size:.62rem;color:var(--nc);letter-spacing:.2em;text-align:center;margin-bottom:8px;opacity:.7">🏆 LEADERBOARD</div><div id="lmLb">${renderLB()}</div></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+        <button class="btn btn-cyan btn-sm" onclick="lmStart()">🔁 MAIN LAGI</button>
+        <button class="btn btn-outline btn-sm" onclick="lmHome()">🏠 HOME</button>
+      </div>
+    </div>`;
+    window.lmSave=function(){
+      const name=(document.getElementById('lmName').value.trim()||'Anonim').substring(0,16);
+      addToLB({name,correct,wrong,total,accuracy:acc,duration,durLabel,date:Date.now()});
+      document.getElementById('lmLb').innerHTML=renderLB();
+      document.getElementById('lmName').disabled=true;
+      document.querySelector('[onclick="lmSave()"]').disabled=true;
+      document.querySelector('[onclick="lmSave()"]').textContent='✅ Tersimpan!';
+    };
+    window.lmHome=renderHome;
+  }
+  window.lmStart=startGame;window.lmHome=renderHome;
+  renderHome();
+}
+
+// ═══════════════════════════════════════════════════
+// GAME 24: BARIS ARITMATIKA
+// ═══════════════════════════════════════════════════
+function initAritmatika(el){
+  const LB_KEY='aritmatika_lb';
+  function getLB(){try{return JSON.parse(localStorage.getItem(LB_KEY))||[];}catch{return[];}}
+  function saveLB(arr){try{localStorage.setItem(LB_KEY,JSON.stringify(arr));}catch{}}
+  function addToLB(entry){let lb=getLB();lb.push(entry);lb.sort((a,b)=>b.correct-a.correct);lb=lb.slice(0,10);saveLB(lb);return lb;}
+
+  let correct=0,wrong=0,total=0,duration=120,remain=0,timer=null,running=false,currentAns=0;
+
+  function genQ(){
+    // Generate arithmetic sequence, ask for next term or nth term
+    const a1=Math.floor(Math.random()*10)+1;
+    const d=Math.floor(Math.random()*8)+1;
+    const n=3+Math.floor(Math.random()*3); // show n terms
+    const seq=Array.from({length:n},(_,i)=>a1+i*d);
+    const ans=a1+n*d;
+    const choices=new Set([ans]);
+    while(choices.size<4){choices.add(ans+d*(Math.floor(Math.random()*5)-2));}
+    return{seq,ans,choices:[...choices].sort(()=>Math.random()-.5),d};
+  }
+
+  function renderLB(){
+    const lb=getLB();if(!lb.length)return '<div style="text-align:center;color:rgba(255,224,240,.3);font-size:.75rem;padding:12px;font-family:Orbitron,monospace">Belum ada data</div>';
+    const medal=['🥇','🥈','🥉'];
+    return lb.map((e,i)=>`<div class="krp-lb-row"><div class="krp-lb-rank">${medal[i]||i+1}</div><div><div class="krp-lb-name">${e.name||'Anonim'}</div><div class="krp-lb-detail">${e.durLabel}</div></div><div style="text-align:right"><div class="krp-lb-score">✅ ${e.correct}</div><div class="krp-lb-detail">❌ ${e.wrong}</div></div></div>`).join('');
+  }
+
+  function fmtTime(s){return Math.floor(s/60)+':'+(s%60<10?'0':'')+(s%60);}
+
+  function renderHome(){
+    el.innerHTML=`<div class="game-area" style="gap:12px;padding:18px">
+      <div class="game-msg" style="font-size:1rem">📊 BARIS ARITMATIKA</div>
+      <div style="font-size:.75rem;color:rgba(255,224,240,.45);text-align:center;line-height:1.6;max-width:300px">
+        Temukan <span style="color:var(--nc);font-weight:700">suku berikutnya</span> dari deret aritmatika secepat mungkin!
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;align-items:center;width:100%">
+        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(255,224,240,.4);letter-spacing:.2em;margin-bottom:2px">PILIH DURASI</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+          <button class="krp-mode-btn ${duration===120?'active':''}" onclick="arSetDur(120)">⏱ 2 MENIT</button>
+          <button class="krp-mode-btn ${duration===180?'active':''}" onclick="arSetDur(180)">⏱ 3 MENIT</button>
+          <button class="krp-mode-btn ${duration===300?'active':''}" onclick="arSetDur(300)">⏱ 5 MENIT</button>
+        </div>
+      </div>
+      <button class="btn btn-cyan" onclick="arStart()">▶ MULAI GAME</button>
+      <div style="width:100%">
+        <div style="font-family:Orbitron,monospace;font-size:.62rem;color:var(--nc);letter-spacing:.2em;text-align:center;margin-bottom:8px;opacity:.7">🏆 LEADERBOARD</div>
+        <div id="arLb">${renderLB()}</div>
+      </div>
+    </div>`;
+    window.arSetDur=function(d){duration=d;renderHome();};
+    window.arStart=startGame;
+  }
+
+  function startGame(){
+    running=true;correct=0;wrong=0;total=0;remain=duration;
+    const qd=genQ();currentAns=qd.ans;renderGame(qd);
+    timer=setInterval(()=>{
+      remain--;
+      const tv=document.getElementById('arTimer');if(tv)tv.textContent=fmtTime(remain);
+      const circ=2*Math.PI*34;const ring=document.getElementById('arRing');
+      if(ring){ring.style.strokeDashoffset=(circ*(1-remain/duration)).toFixed(2);ring.style.stroke=remain/duration>.5?'#ff69b4':remain/duration>.25?'#ffb6c1':'#ff1493';}
+      if(remain<=0){clearInterval(timer);timer=null;running=false;showResult();}
+    },1000);
+  }
+
+  function renderGame(qd){
+    const circ=2*Math.PI*34;
+    el.innerHTML=`<div class="game-area" style="gap:10px;padding:14px">
+      <div style="display:flex;align-items:center;justify-content:space-between;width:100%;gap:8px">
+        <div style="display:flex;gap:8px;flex:1">
+          <div class="krp-stat"><div class="krp-stat-val" id="arC" style="color:var(--ng)">${correct}</div><div class="krp-stat-lbl">BENAR</div></div>
+          <div class="krp-stat"><div class="krp-stat-val" id="arW" style="color:var(--np)">${wrong}</div><div class="krp-stat-lbl">SALAH</div></div>
+        </div>
+        <div class="krp-timer-ring">
+          <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="34" fill="none" stroke="rgba(255,105,180,.12)" stroke-width="6"/>
+          <circle id="arRing" cx="40" cy="40" r="34" fill="none" stroke="#ff69b4" stroke-width="6" stroke-dasharray="${circ.toFixed(2)}" stroke-dashoffset="0" style="transition:stroke-dashoffset .9s linear,stroke .5s ease"/></svg>
+          <div class="krp-timer-val" id="arTimer">${fmtTime(remain)}</div>
+        </div>
+        <div style="flex:1;display:flex;justify-content:flex-end">
+          <div class="krp-stat"><div class="krp-stat-val" id="arT" style="color:var(--ny)">${total}</div><div class="krp-stat-lbl">TOTAL</div></div>
+        </div>
+      </div>
+      <div style="background:rgba(255,105,180,.04);border:1px solid rgba(255,105,180,.12);border-radius:10px;padding:14px 20px;text-align:center;width:100%">
+        <div style="font-size:.6rem;font-family:Orbitron,monospace;color:rgba(255,224,240,.3);letter-spacing:.2em;margin-bottom:10px">SUKU BERIKUTNYA ADALAH?</div>
+        <div style="font-family:Orbitron,monospace;font-size:1.5rem;font-weight:900;color:#fff;text-shadow:0 0 20px rgba(255,105,180,.5)">${qd.seq.join(', ')}, <span style="color:var(--np)">?</span></div>
+        <div style="font-size:.6rem;color:rgba(255,224,240,.3);font-family:Orbitron,monospace;margin-top:6px">beda = ${qd.d}</div>
+      </div>
+      <div id="arFb" style="font-family:Orbitron,monospace;font-size:1rem;font-weight:900;min-height:28px;text-align:center"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;max-width:280px" id="arChoices">
+        ${qd.choices.map(c=>`<button class="krp-ans-btn" onclick="arAnswer(${c})">${c}</button>`).join('')}
+      </div>
+    </div>`;
+  }
+
+  window.arAnswer=function(val){
+    if(!running)return;
+    total++;
+    const fb=document.getElementById('arFb');
+    document.querySelectorAll('#arChoices .krp-ans-btn').forEach(b=>{b.disabled=true;if(parseInt(b.textContent)===currentAns)b.classList.add('correct');});
+    if(val===currentAns){correct++;if(fb){fb.textContent='✓ BENAR!';fb.style.color='var(--ng)';}}
+    else{wrong++;if(fb){fb.textContent='✗ SALAH! Jawaban: '+currentAns;fb.style.color='var(--np)';}}
+    const cE=document.getElementById('arC'),wE=document.getElementById('arW'),tE=document.getElementById('arT');
+    if(cE)cE.textContent=correct;if(wE)wE.textContent=wrong;if(tE)tE.textContent=total;
+    setTimeout(()=>{if(!running)return;const qd=genQ();currentAns=qd.ans;renderGame(qd);},500);
+  };
+
+  function showResult(){
+    const acc=total>0?Math.round(correct/total*100):0;
+    const durLabel={120:'2 Menit',180:'3 Menit',300:'5 Menit'}[duration]||'';
+    el.innerHTML=`<div class="game-area" style="gap:12px;padding:16px">
+      <div class="result-banner result-win" style="font-size:1rem">🎉 WAKTU HABIS!</div>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <div class="krp-stat"><div class="krp-stat-val" style="color:var(--ng);font-size:1.6rem">${correct}</div><div class="krp-stat-lbl">BENAR</div></div>
+        <div class="krp-stat"><div class="krp-stat-val" style="color:var(--np);font-size:1.6rem">${wrong}</div><div class="krp-stat-lbl">SALAH</div></div>
+        <div class="krp-stat"><div class="krp-stat-val" style="color:var(--ny);font-size:1.6rem">${total}</div><div class="krp-stat-lbl">TOTAL</div></div>
+        <div class="krp-stat"><div class="krp-stat-val" style="color:var(--nc);font-size:1.6rem">${acc}%</div><div class="krp-stat-lbl">AKURASI</div></div>
+      </div>
+      <div style="width:100%;max-width:320px">
+        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(255,224,240,.4);margin-bottom:5px;text-align:center">MASUKKAN NAMAMU UNTUK LEADERBOARD</div>
+        <div style="display:flex;gap:6px">
+          <input id="arName" type="text" placeholder="Nama kamu..." maxlength="16" class="num-input" style="width:100%;font-size:.85rem;text-align:left;padding:8px 12px">
+          <button class="btn btn-cyan btn-sm" onclick="arSave()">💾 SIMPAN</button>
+        </div>
+      </div>
+      <div style="width:100%"><div style="font-family:Orbitron,monospace;font-size:.62rem;color:var(--nc);letter-spacing:.2em;text-align:center;margin-bottom:8px;opacity:.7">🏆 LEADERBOARD</div><div id="arLb">${renderLB()}</div></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+        <button class="btn btn-cyan btn-sm" onclick="arStart()">🔁 MAIN LAGI</button>
+        <button class="btn btn-outline btn-sm" onclick="arHome()">🏠 HOME</button>
+      </div>
+    </div>`;
+    window.arSave=function(){
+      const name=(document.getElementById('arName').value.trim()||'Anonim').substring(0,16);
+      addToLB({name,correct,wrong,total,accuracy:acc,duration,durLabel,date:Date.now()});
+      document.getElementById('arLb').innerHTML=renderLB();
+      document.getElementById('arName').disabled=true;
+      document.querySelector('[onclick="arSave()"]').disabled=true;
+      document.querySelector('[onclick="arSave()"]').textContent='✅ Tersimpan!';
+    };
+    window.arHome=renderHome;
+  }
+  window.arStart=startGame;window.arHome=renderHome;
+  renderHome();
+}
+
+// ═══════════════════════════════════════════════════
+// GAME 25: MATEMATIKA DASAR
+// ═══════════════════════════════════════════════════
+function initDasarMath(el){
+  const LB_KEY='dasarmath_lb';
+  function getLB(){try{return JSON.parse(localStorage.getItem(LB_KEY))||[];}catch{return[];}}
+  function saveLB(arr){try{localStorage.setItem(LB_KEY,JSON.stringify(arr));}catch{}}
+  function addToLB(entry){let lb=getLB();lb.push(entry);lb.sort((a,b)=>b.correct-a.correct);lb=lb.slice(0,10);saveLB(lb);return lb;}
+
+  let correct=0,wrong=0,total=0,duration=120,remain=0,timer=null,running=false,currentAns=0;
+
+  function genQ(){
+    const op=Math.floor(Math.random()*4);
+    let a,b,ans,qStr;
+    if(op===0){a=Math.floor(Math.random()*50)+1;b=Math.floor(Math.random()*50)+1;ans=a+b;qStr=`${a} + ${b} = ?`;}
+    else if(op===1){a=Math.floor(Math.random()*50)+10;b=Math.floor(Math.random()*(a-1))+1;ans=a-b;qStr=`${a} − ${b} = ?`;}
+    else if(op===2){a=Math.floor(Math.random()*12)+1;b=Math.floor(Math.random()*12)+1;ans=a*b;qStr=`${a} × ${b} = ?`;}
+    else{b=Math.floor(Math.random()*10)+1;ans=Math.floor(Math.random()*10)+1;a=b*ans;qStr=`${a} ÷ ${b} = ?`;}
+    const choices=new Set([ans]);
+    const range=[1,2,3,4,5,6,-1,-2,-3,-4,-5,-6];
+    while(choices.size<4){const c=ans+range[Math.floor(Math.random()*range.length)];if(c>0)choices.add(c);}
+    return{qStr,ans,choices:[...choices].sort(()=>Math.random()-.5)};
+  }
+
+  function renderLB(){
+    const lb=getLB();if(!lb.length)return '<div style="text-align:center;color:rgba(255,224,240,.3);font-size:.75rem;padding:12px;font-family:Orbitron,monospace">Belum ada data</div>';
+    const medal=['🥇','🥈','🥉'];
+    return lb.map((e,i)=>`<div class="krp-lb-row"><div class="krp-lb-rank">${medal[i]||i+1}</div><div><div class="krp-lb-name">${e.name||'Anonim'}</div><div class="krp-lb-detail">${e.durLabel}</div></div><div style="text-align:right"><div class="krp-lb-score">✅ ${e.correct}</div><div class="krp-lb-detail">❌ ${e.wrong}</div></div></div>`).join('');
+  }
+
+  function fmtTime(s){return Math.floor(s/60)+':'+(s%60<10?'0':'')+(s%60);}
+
+  function renderHome(){
+    el.innerHTML=`<div class="game-area" style="gap:12px;padding:18px">
+      <div class="game-msg" style="font-size:1rem">🧮 MATEMATIKA DASAR</div>
+      <div style="font-size:.75rem;color:rgba(255,224,240,.45);text-align:center;line-height:1.6;max-width:300px">
+        Jawab soal <span style="color:var(--nc);font-weight:700">+, −, ×, ÷</span> secepat dan setepat mungkin!
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;align-items:center;width:100%">
+        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(255,224,240,.4);letter-spacing:.2em;margin-bottom:2px">PILIH DURASI</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+          <button class="krp-mode-btn ${duration===120?'active':''}" onclick="dmSetDur(120)">⏱ 2 MENIT</button>
+          <button class="krp-mode-btn ${duration===180?'active':''}" onclick="dmSetDur(180)">⏱ 3 MENIT</button>
+          <button class="krp-mode-btn ${duration===300?'active':''}" onclick="dmSetDur(300)">⏱ 5 MENIT</button>
+        </div>
+      </div>
+      <button class="btn btn-cyan" onclick="dmStart()">▶ MULAI GAME</button>
+      <div style="width:100%">
+        <div style="font-family:Orbitron,monospace;font-size:.62rem;color:var(--nc);letter-spacing:.2em;text-align:center;margin-bottom:8px;opacity:.7">🏆 LEADERBOARD</div>
+        <div id="dmLb">${renderLB()}</div>
+      </div>
+    </div>`;
+    window.dmSetDur=function(d){duration=d;renderHome();};
+    window.dmStart=startGame;
+  }
+
+  function startGame(){
+    running=true;correct=0;wrong=0;total=0;remain=duration;
+    const qd=genQ();currentAns=qd.ans;renderGame(qd);
+    timer=setInterval(()=>{
+      remain--;
+      const tv=document.getElementById('dmTimer');if(tv)tv.textContent=fmtTime(remain);
+      const circ=2*Math.PI*34;const ring=document.getElementById('dmRing');
+      if(ring){ring.style.strokeDashoffset=(circ*(1-remain/duration)).toFixed(2);ring.style.stroke=remain/duration>.5?'#ff69b4':remain/duration>.25?'#ffb6c1':'#ff1493';}
+      if(remain<=0){clearInterval(timer);timer=null;running=false;showResult();}
+    },1000);
+  }
+
+  function renderGame(qd){
+    const circ=2*Math.PI*34;
+    el.innerHTML=`<div class="game-area" style="gap:10px;padding:14px">
+      <div style="display:flex;align-items:center;justify-content:space-between;width:100%;gap:8px">
+        <div style="display:flex;gap:8px;flex:1">
+          <div class="krp-stat"><div class="krp-stat-val" id="dmC" style="color:var(--ng)">${correct}</div><div class="krp-stat-lbl">BENAR</div></div>
+          <div class="krp-stat"><div class="krp-stat-val" id="dmW" style="color:var(--np)">${wrong}</div><div class="krp-stat-lbl">SALAH</div></div>
+        </div>
+        <div class="krp-timer-ring">
+          <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="34" fill="none" stroke="rgba(255,105,180,.12)" stroke-width="6"/>
+          <circle id="dmRing" cx="40" cy="40" r="34" fill="none" stroke="#ff69b4" stroke-width="6" stroke-dasharray="${circ.toFixed(2)}" stroke-dashoffset="0" style="transition:stroke-dashoffset .9s linear,stroke .5s ease"/></svg>
+          <div class="krp-timer-val" id="dmTimer">${fmtTime(remain)}</div>
+        </div>
+        <div style="flex:1;display:flex;justify-content:flex-end">
+          <div class="krp-stat"><div class="krp-stat-val" id="dmT" style="color:var(--ny)">${total}</div><div class="krp-stat-lbl">TOTAL</div></div>
+        </div>
+      </div>
+      <div style="background:rgba(255,105,180,.04);border:1px solid rgba(255,105,180,.12);border-radius:10px;padding:14px 20px;text-align:center;width:100%">
+        <div style="font-size:.6rem;font-family:Orbitron,monospace;color:rgba(255,224,240,.3);letter-spacing:.2em;margin-bottom:10px">PILIH JAWABAN YANG BENAR</div>
+        <div style="font-family:Orbitron,monospace;font-size:2rem;font-weight:900;color:#fff;text-shadow:0 0 20px rgba(255,105,180,.5)">${qd.qStr}</div>
+      </div>
+      <div id="dmFb" style="font-family:Orbitron,monospace;font-size:1rem;font-weight:900;min-height:28px;text-align:center"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;max-width:280px" id="dmChoices">
+        ${qd.choices.map(c=>`<button class="krp-ans-btn" onclick="dmAnswer(${c})">${c}</button>`).join('')}
+      </div>
+    </div>`;
+  }
+
+  window.dmAnswer=function(val){
+    if(!running)return;
+    total++;
+    const fb=document.getElementById('dmFb');
+    document.querySelectorAll('#dmChoices .krp-ans-btn').forEach(b=>{b.disabled=true;if(parseInt(b.textContent)===currentAns)b.classList.add('correct');});
+    if(val===currentAns){correct++;if(fb){fb.textContent='✓ BENAR!';fb.style.color='var(--ng)';}}
+    else{wrong++;if(fb){fb.textContent='✗ SALAH! Jawaban: '+currentAns;fb.style.color='var(--np)';}}
+    const cE=document.getElementById('dmC'),wE=document.getElementById('dmW'),tE=document.getElementById('dmT');
+    if(cE)cE.textContent=correct;if(wE)wE.textContent=wrong;if(tE)tE.textContent=total;
+    setTimeout(()=>{if(!running)return;const qd=genQ();currentAns=qd.ans;renderGame(qd);},500);
+  };
+
+  function showResult(){
+    const acc=total>0?Math.round(correct/total*100):0;
+    const durLabel={120:'2 Menit',180:'3 Menit',300:'5 Menit'}[duration]||'';
+    el.innerHTML=`<div class="game-area" style="gap:12px;padding:16px">
+      <div class="result-banner result-win" style="font-size:1rem">🎉 WAKTU HABIS!</div>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <div class="krp-stat"><div class="krp-stat-val" style="color:var(--ng);font-size:1.6rem">${correct}</div><div class="krp-stat-lbl">BENAR</div></div>
+        <div class="krp-stat"><div class="krp-stat-val" style="color:var(--np);font-size:1.6rem">${wrong}</div><div class="krp-stat-lbl">SALAH</div></div>
+        <div class="krp-stat"><div class="krp-stat-val" style="color:var(--ny);font-size:1.6rem">${total}</div><div class="krp-stat-lbl">TOTAL</div></div>
+        <div class="krp-stat"><div class="krp-stat-val" style="color:var(--nc);font-size:1.6rem">${acc}%</div><div class="krp-stat-lbl">AKURASI</div></div>
+      </div>
+      <div style="width:100%;max-width:320px">
+        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(255,224,240,.4);margin-bottom:5px;text-align:center">MASUKKAN NAMAMU UNTUK LEADERBOARD</div>
+        <div style="display:flex;gap:6px">
+          <input id="dmName" type="text" placeholder="Nama kamu..." maxlength="16" class="num-input" style="width:100%;font-size:.85rem;text-align:left;padding:8px 12px">
+          <button class="btn btn-cyan btn-sm" onclick="dmSave()">💾 SIMPAN</button>
+        </div>
+      </div>
+      <div style="width:100%"><div style="font-family:Orbitron,monospace;font-size:.62rem;color:var(--nc);letter-spacing:.2em;text-align:center;margin-bottom:8px;opacity:.7">🏆 LEADERBOARD</div><div id="dmLb">${renderLB()}</div></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+        <button class="btn btn-cyan btn-sm" onclick="dmStart()">🔁 MAIN LAGI</button>
+        <button class="btn btn-outline btn-sm" onclick="dmHome()">🏠 HOME</button>
+      </div>
+    </div>`;
+    window.dmSave=function(){
+      const name=(document.getElementById('dmName').value.trim()||'Anonim').substring(0,16);
+      addToLB({name,correct,wrong,total,accuracy:acc,duration,durLabel,date:Date.now()});
+      document.getElementById('dmLb').innerHTML=renderLB();
+      document.getElementById('dmName').disabled=true;
+      document.querySelector('[onclick="dmSave()"]').disabled=true;
+      document.querySelector('[onclick="dmSave()"]').textContent='✅ Tersimpan!';
+    };
+    window.dmHome=renderHome;
+  }
+  window.dmStart=startGame;window.dmHome=renderHome;
   renderHome();
 }
 
