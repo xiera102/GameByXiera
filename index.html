@@ -308,6 +308,79 @@ svg.thumb-svg{width:100%;height:100%;}
 footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(255,224,240,.15);
   letter-spacing:.2em;font-family:'Orbitron',monospace;position:relative;z-index:1;}
 
+/* ── REG OVERLAY ── */
+#regOverlay{position:fixed;inset:0;z-index:9999;background:rgba(10,0,8,.96);
+  display:flex;align-items:center;justify-content:center;
+  backdrop-filter:blur(8px);}
+#regOverlay.hidden{display:none;}
+.reg-box{background:var(--bc2);border:2px solid var(--nc);border-radius:18px;
+  padding:30px 26px 26px;max-width:340px;width:92%;
+  box-shadow:0 0 40px rgba(255,105,180,.3),0 0 80px rgba(255,105,180,.1);
+  animation:modalIn .4s cubic-bezier(.34,1.56,.64,1);}
+.reg-logo{font-family:'Orbitron',monospace;font-size:1.5rem;font-weight:900;text-align:center;
+  background:linear-gradient(90deg,#ff69b4,#ff1493,#ffb6c1);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  filter:drop-shadow(0 0 14px #ff69b488);margin-bottom:4px;}
+.reg-sub{font-family:'Orbitron',monospace;font-size:.55rem;letter-spacing:.3em;
+  color:rgba(255,105,180,.5);text-align:center;margin-bottom:22px;}
+.reg-tabs{display:flex;border:1px solid rgba(255,105,180,.2);border-radius:8px;overflow:hidden;margin-bottom:18px;}
+.reg-tab{flex:1;padding:9px 0;font-family:'Orbitron',monospace;font-size:.6rem;letter-spacing:.1em;
+  background:none;border:none;color:rgba(255,224,240,.35);cursor:pointer;transition:all .2s;}
+.reg-tab.active{background:rgba(255,105,180,.2);color:var(--nc);}
+.reg-field label{display:block;font-family:'Orbitron',monospace;font-size:.55rem;letter-spacing:.12em;
+  color:rgba(255,224,240,.4);margin-bottom:6px;}
+.reg-inp{width:100%;background:rgba(255,105,180,.05);border:1px solid rgba(255,105,180,.25);
+  color:var(--tm);font-family:'Rajdhani',sans-serif;font-size:1rem;padding:11px 14px;
+  border-radius:8px;outline:none;transition:border-color .2s;margin-bottom:14px;}
+.reg-inp:focus{border-color:var(--nc);box-shadow:0 0 10px rgba(255,105,180,.2);}
+.reg-inp::placeholder{color:rgba(255,224,240,.18);}
+.reg-btn{width:100%;padding:13px;
+  background:linear-gradient(135deg,#ff1493,#ff69b4);
+  color:#fff;font-family:'Orbitron',monospace;font-size:.7rem;font-weight:700;letter-spacing:.15em;
+  border:none;border-radius:8px;cursor:pointer;transition:all .2s;
+  box-shadow:0 4px 18px rgba(255,20,147,.3);}
+.reg-btn:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(255,20,147,.45);}
+.reg-msg{font-family:'Orbitron',monospace;font-size:.6rem;text-align:center;margin-top:10px;min-height:18px;}
+.reg-msg.ok{color:#ff85c2;} .reg-msg.err{color:#ff1493;}
+.saved-title{font-family:'Orbitron',monospace;font-size:.5rem;letter-spacing:.2em;
+  color:rgba(255,224,240,.3);text-align:center;margin:10px 0 8px;}
+.saved-list{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-bottom:12px;}
+.saved-chip{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;
+  background:rgba(255,105,180,.06);border:1px solid rgba(255,105,180,.22);border-radius:20px;
+  font-family:'Orbitron',monospace;font-size:.58rem;color:var(--nc);
+  cursor:pointer;transition:all .18s;}
+.saved-chip:hover{background:rgba(255,105,180,.2);border-color:var(--nc);transform:scale(1.04);}
+.or-line{text-align:center;font-family:'Orbitron',monospace;font-size:.5rem;
+  color:rgba(255,224,240,.2);letter-spacing:.2em;margin:4px 0 12px;}
+
+/* ── PLAYER BADGE ── */
+#playerBadge{position:fixed;top:12px;left:12px;z-index:800;
+  display:none;align-items:center;gap:7px;
+  background:rgba(26,0,17,.9);border:1px solid rgba(255,105,180,.4);
+  border-radius:30px;padding:5px 13px 5px 7px;
+  backdrop-filter:blur(12px);cursor:pointer;transition:all .2s;
+  box-shadow:0 0 14px rgba(255,105,180,.15);}
+#playerBadge:hover{border-color:var(--nc);box-shadow:0 0 20px rgba(255,105,180,.3);}
+.pb-av{width:26px;height:26px;border-radius:50%;
+  background:linear-gradient(135deg,var(--np),var(--nc));
+  display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0;}
+.pb-lbl{font-family:'Orbitron',monospace;font-size:.38rem;letter-spacing:.15em;color:rgba(255,224,240,.35);}
+.pb-nm{font-family:'Orbitron',monospace;font-size:.62rem;font-weight:700;color:var(--nc);
+  max-width:100px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+/* ── PLAYER DROPDOWN ── */
+#playerDrop{position:fixed;top:54px;left:12px;z-index:801;
+  display:none;background:rgba(20,0,15,.97);border:1px solid rgba(255,105,180,.3);
+  border-radius:10px;padding:6px;min-width:170px;
+  backdrop-filter:blur(14px);box-shadow:0 8px 32px rgba(0,0,0,.6);}
+#playerDrop.open{display:block;}
+.pd-item{display:flex;align-items:center;gap:7px;width:100%;padding:8px 11px;
+  background:none;border:none;border-radius:7px;color:var(--tm);
+  font-family:'Orbitron',monospace;font-size:.58rem;letter-spacing:.06em;
+  cursor:pointer;transition:background .15s;text-align:left;}
+.pd-item:hover{background:rgba(255,105,180,.12);color:var(--nc);}
+.pd-sep{height:1px;background:rgba(255,105,180,.1);margin:3px 0;}
+
 /* KRAEPLIN */
 .krp-question{font-family:'Orbitron',monospace;font-size:2.2rem;font-weight:900;color:#fff;
   text-align:center;letter-spacing:.1em;text-shadow:0 0 20px rgba(255,105,180,.5);}
@@ -380,6 +453,53 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(255,
 </style>
 </head>
 <body>
+
+<!-- REGISTRATION OVERLAY -->
+<div id="regOverlay">
+  <div class="reg-box">
+    <div class="reg-logo">ARCADE ZONE</div>
+    <div class="reg-sub">▸ GAME CENTER ◂</div>
+    <div class="reg-tabs">
+      <button class="reg-tab active" id="tabA" onclick="regTab('login')">MASUK</button>
+      <button class="reg-tab" id="tabB" onclick="regTab('reg')">DAFTAR BARU</button>
+    </div>
+
+    <!-- LOGIN -->
+    <div id="pLogin">
+      <div id="savedWrap"></div>
+      <div class="reg-field">
+        <label>NAMA PEMAIN</label>
+        <input class="reg-inp" id="inpLogin" type="text" maxlength="24" placeholder="Ketik nama kamu..." autocomplete="off">
+      </div>
+      <button class="reg-btn" onclick="doLogin()">▶ MAIN SEKARANG</button>
+      <div class="reg-msg" id="msgLogin"></div>
+    </div>
+
+    <!-- REGISTER -->
+    <div id="pReg" style="display:none">
+      <div class="reg-field">
+        <label>NAMA PEMAIN BARU</label>
+        <input class="reg-inp" id="inpReg" type="text" maxlength="24" placeholder="Masukkan nama kamu..." autocomplete="off">
+      </div>
+      <button class="reg-btn" onclick="doRegister()">✦ DAFTAR &amp; MAIN</button>
+      <div class="reg-msg" id="msgReg"></div>
+    </div>
+  </div>
+</div>
+
+<!-- PLAYER BADGE -->
+<div id="playerBadge" onclick="toggleDrop()">
+  <div class="pb-av" id="pbAv">👾</div>
+  <div>
+    <div class="pb-lbl">PEMAIN AKTIF</div>
+    <div class="pb-nm" id="pbNm">-</div>
+  </div>
+</div>
+<div id="playerDrop">
+  <button class="pd-item" onclick="editName()">✏️ Ganti Nama</button>
+  <div class="pd-sep"></div>
+  <button class="pd-item" onclick="doLogout()">🚪 Ganti Akun</button>
+</div>
 
 <!-- ═══ MUSIC PLAYER BAR ═══ -->
 <div id="musicBar">
@@ -1025,103 +1145,165 @@ function initDice(el){
 }
 
 // ═══════════════════════════════════════════════════
-// GAME 9: CHESS
+// GAME 9: CHESS (mode 2P & VS AI + skakmat)
 // ═══════════════════════════════════════════════════
 function initChess(el){
-  let board=[
-    ['r','n','b','q','k','b','n','r'],['p','p','p','p','p','p','p','p'],
-    ['.','.','.','.','.','.','.','.'],['.','.','.','.','.','.','.','.'],
-    ['.','.','.','.','.','.','.','.'],['.','.','.','.','.','.','.','.'],
-    ['P','P','P','P','P','P','P','P'],['R','N','B','Q','K','B','N','R'],
-  ];
-  let sel=null,turn='w',status='',moves=0;
+  let gameMode=null,board,sel,turn,status,moves,possible,inCheck;
+  const pieces={'K':'♔','Q':'♕','R':'♖','B':'♗','N':'♘','P':'♙','k':'♚','q':'♛','r':'♜','b':'♝','n':'♞','p':'♟'};
   function isW(p){return p!=='.'&&p===p.toUpperCase();}
   function isB(p){return p!=='.'&&p===p.toLowerCase();}
-  function isEmpty(r,c){return r>=0&&r<8&&c>=0&&c<8&&board[r][c]==='.';}
-  function isEnemy(r,c,myW){return r>=0&&r<8&&c>=0&&c<8&&board[r][c]!=='.'&&(myW?isB(board[r][c]):isW(board[r][c]));}
-  function getMoves(r,c){
-    const p=board[r][c],w=isW(p),mv=[];const pp=p.toLowerCase();
-    if(pp==='p'){const dir=w?-1:1;const start=w?6:1;
-      if(isEmpty(r+dir,c))mv.push([r+dir,c]);
-      if(r===start&&isEmpty(r+dir,c)&&isEmpty(r+2*dir,c))mv.push([r+2*dir,c]);
-      for(const dc of[-1,1])if(isEnemy(r+dir,c+dc,w))mv.push([r+dir,c+dc]);
-    }else if(pp==='r'){
-      for(const[dr,dc] of[[0,1],[0,-1],[1,0],[-1,0]]){let nr=r+dr,nc=c+dc;
-        while(nr>=0&&nr<8&&nc>=0&&nc<8){if(board[nr][nc]!=='.'){if(isEnemy(nr,nc,w))mv.push([nr,nc]);break;}else mv.push([nr,nc]);nr+=dr;nc+=dc;}}
-    }else if(pp==='b'){
-      for(const[dr,dc] of[[1,1],[1,-1],[-1,1],[-1,-1]]){let nr=r+dr,nc=c+dc;
-        while(nr>=0&&nr<8&&nc>=0&&nc<8){if(board[nr][nc]!=='.'){if(isEnemy(nr,nc,w))mv.push([nr,nc]);break;}else mv.push([nr,nc]);nr+=dr;nc+=dc;}}
-    }else if(pp==='q'){
-      for(const[dr,dc] of[[0,1],[0,-1],[1,0],[-1,0],[1,1],[1,-1],[-1,1],[-1,-1]]){let nr=r+dr,nc=c+dc;
-        while(nr>=0&&nr<8&&nc>=0&&nc<8){if(board[nr][nc]!=='.'){if(isEnemy(nr,nc,w))mv.push([nr,nc]);break;}else mv.push([nr,nc]);nr+=dr;nc+=dc;}}
-    }else if(pp==='n'){
-      for(const[dr,dc] of[[-2,-1],[-2,1],[2,-1],[2,1],[-1,-2],[-1,2],[1,-2],[1,2]]){
-        const nr=r+dr,nc=c+dc;if(nr>=0&&nr<8&&nc>=0&&nc<8&&(isEmpty(nr,nc)||isEnemy(nr,nc,w)))mv.push([nr,nc]);}
-    }else if(pp==='k'){
-      for(const[dr,dc] of[[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]]){
-        const nr=r+dr,nc=c+dc;if(nr>=0&&nr<8&&nc>=0&&nc<8&&(isEmpty(nr,nc)||isEnemy(nr,nc,w)))mv.push([nr,nc]);}
+  function ok(r,c){return r>=0&&r<8&&c>=0&&c<8;}
+  function raw(b,r,c){
+    const p=b[r][c];if(p==='.')return[];
+    const w=isW(p),mv=[],pp=p.toLowerCase();
+    if(pp==='p'){const d=w?-1:1,s=w?6:1;
+      if(ok(r+d,c)&&b[r+d][c]==='.')mv.push([r+d,c]);
+      if(r===s&&b[r+d][c]==='.'&&b[r+2*d][c]==='.')mv.push([r+2*d,c]);
+      for(const dc of[-1,1])if(ok(r+d,c+dc)&&b[r+d][c+dc]!=='.'&&(w?isB(b[r+d][c+dc]):isW(b[r+d][c+dc])))mv.push([r+d,c+dc]);
     }
+    if('rq'.includes(pp))for(const[dr,dc]of[[0,1],[0,-1],[1,0],[-1,0]]){let nr=r+dr,nc=c+dc;
+      while(ok(nr,nc)){if(b[nr][nc]!=='.'){if(w?isB(b[nr][nc]):isW(b[nr][nc]))mv.push([nr,nc]);break;}mv.push([nr,nc]);nr+=dr;nc+=dc;}}
+    if('bq'.includes(pp))for(const[dr,dc]of[[1,1],[1,-1],[-1,1],[-1,-1]]){let nr=r+dr,nc=c+dc;
+      while(ok(nr,nc)){if(b[nr][nc]!=='.'){if(w?isB(b[nr][nc]):isW(b[nr][nc]))mv.push([nr,nc]);break;}mv.push([nr,nc]);nr+=dr;nc+=dc;}}
+    if(pp==='n')for(const[dr,dc]of[[-2,-1],[-2,1],[2,-1],[2,1],[-1,-2],[-1,2],[1,-2],[1,2]]){
+      const nr=r+dr,nc=c+dc;if(ok(nr,nc)&&(b[nr][nc]==='.'||(w?isB(b[nr][nc]):isW(b[nr][nc]))))mv.push([nr,nc]);}
+    if(pp==='k')for(const[dr,dc]of[[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]]){
+      const nr=r+dr,nc=c+dc;if(ok(nr,nc)&&(b[nr][nc]==='.'||(w?isB(b[nr][nc]):isW(b[nr][nc]))))mv.push([nr,nc]);}
     return mv;
   }
-  const pieces={'K':'♔','Q':'♕','R':'♖','B':'♗','N':'♘','P':'♙','k':'♚','q':'♛','r':'♜','b':'♝','n':'♞','p':'♟'};
-  let possible=[];
+  function applyMv(b,r,c,tr,tc){
+    const nb=b.map(row=>[...row]);nb[tr][tc]=nb[r][c];nb[r][c]='.';
+    if(nb[tr][tc]==='P'&&tr===0)nb[tr][tc]='Q';
+    if(nb[tr][tc]==='p'&&tr===7)nb[tr][tc]='q';
+    return nb;
+  }
+  function checked(b,white){
+    const k=white?'K':'k';let kr=-1,kc=-1;
+    for(let r=0;r<8;r++)for(let c=0;c<8;c++)if(b[r][c]===k){kr=r;kc=c;}
+    if(kr<0)return true;
+    for(let r=0;r<8;r++)for(let c=0;c<8;c++){
+      const p=b[r][c];if(p==='.'||(white?isW(p):isB(p)))continue;
+      if(raw(b,r,c).some(([tr,tc])=>tr===kr&&tc===kc))return true;}
+    return false;
+  }
+  function legal(b,r,c){
+    const w=isW(b[r][c]);
+    return raw(b,r,c).filter(([tr,tc])=>!checked(applyMv(b,r,c,tr,tc),w));
+  }
+  function hasAny(b,white){
+    for(let r=0;r<8;r++)for(let c=0;c<8;c++){
+      const p=b[r][c];if(p==='.'||(white?!isW(p):!isB(p)))continue;
+      if(legal(b,r,c).length)return true;}
+    return false;
+  }
+  function pVal(p){return{'p':10,'n':30,'b':30,'r':50,'q':90,'k':900}[p.toLowerCase()]||0;}
+
   function cpuMove(){
     const all=[];
-    for(let r=0;r<8;r++)for(let c=0;c<8;c++)if(isB(board[r][c])){getMoves(r,c).forEach(([tr,tc])=>all.push({r,c,tr,tc}));}
-    if(!all.length){status='Kamu Menang!';render();return;}
-    const caps=all.filter(m=>isW(board[m.tr][m.tc]));
-    const mv=(caps.length?caps:all)[Math.floor(Math.random()*(caps.length||all.length))];
-    board[mv.tr][mv.tc]=board[mv.r][mv.c];board[mv.r][mv.c]='.';
-    turn='w';moves++;
-    if(board[mv.tr][mv.tc]==='k'||board[mv.tr][mv.tc]==='K'){status=board[mv.tr][mv.tc]==='k'?'CPU Menang!':'Kamu Menang!';}
+    for(let r=0;r<8;r++)for(let c=0;c<8;c++)if(isB(board[r][c]))
+      legal(board,r,c).forEach(([tr,tc])=>all.push({r,c,tr,tc,sc:pVal(board[tr][tc])}));
+    if(!all.length){inCheck=checked(board,false);status=inCheck?'♔ SKAKMAT! Putih Menang!':'⚖️ SERI (Pat)';render();return;}
+    all.sort((a,b)=>b.sc-a.sc);
+    const best=all[0].sc,pool=all.filter(m=>m.sc===best);
+    const mv=pool[Math.floor(Math.random()*pool.length)];
+    board=applyMv(board,mv.r,mv.c,mv.tr,mv.tc);moves++;turn='w';
+    inCheck=checked(board,true);
+    if(!hasAny(board,true))status=inCheck?'♚ SKAKMAT! Hitam Menang!':'⚖️ SERI (Pat)';
     render();
   }
+
+  function startGame(){
+    board=[['r','n','b','q','k','b','n','r'],['p','p','p','p','p','p','p','p'],
+      ['.','.','.','.','.','.','.','.'],['.','.','.','.','.','.','.','.'],
+      ['.','.','.','.','.','.','.','.'],['.','.','.','.','.','.','.','.'],
+      ['P','P','P','P','P','P','P','P'],['R','N','B','Q','K','B','N','R']];
+    sel=null;turn='w';status='';moves=0;possible=[];inCheck=false;render();
+  }
+
+  function renderMenu(){
+    el.innerHTML=`<div class="game-area" style="gap:18px;padding:22px">
+      <div style="font-family:Orbitron,monospace;font-size:1rem;font-weight:700;color:var(--nc);text-align:center">♟ CATUR</div>
+      <div style="font-size:.7rem;color:rgba(255,224,240,.45);text-align:center">PILIH MODE PERMAINAN</div>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <button onclick="cMode('ai')" style="background:rgba(255,105,180,.07);border:2px solid rgba(255,105,180,.3);color:var(--tm);font-family:Orbitron,monospace;font-size:.68rem;padding:16px 20px;border-radius:12px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;min-width:110px;transition:all .2s" onmouseover="this.style.borderColor='#ff69b4';this.style.background='rgba(255,105,180,.18)'" onmouseout="this.style.borderColor='rgba(255,105,180,.3)';this.style.background='rgba(255,105,180,.07)'">
+          <span style="font-size:2rem">🤖</span><span>VS AI</span>
+          <span style="font-family:Rajdhani,sans-serif;font-size:.65rem;color:rgba(255,224,240,.4)">Lawan komputer</span>
+        </button>
+        <button onclick="cMode('2p')" style="background:rgba(255,105,180,.07);border:2px solid rgba(255,105,180,.3);color:var(--tm);font-family:Orbitron,monospace;font-size:.68rem;padding:16px 20px;border-radius:12px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;min-width:110px;transition:all .2s" onmouseover="this.style.borderColor='#ff69b4';this.style.background='rgba(255,105,180,.18)'" onmouseout="this.style.borderColor='rgba(255,105,180,.3)';this.style.background='rgba(255,105,180,.07)'">
+          <span style="font-size:2rem">👥</span><span>2 PEMAIN</span>
+          <span style="font-family:Rajdhani,sans-serif;font-size:.65rem;color:rgba(255,224,240,.4)">Lokal bersama</span>
+        </button>
+      </div>
+    </div>`;
+  }
+  window.cMode=function(m){gameMode=m;startGame();};
+
   function render(){
+    if(!gameMode){renderMenu();return;}
     const labels=['a','b','c','d','e','f','g','h'];
-    el.innerHTML=`<div class="game-area" style="gap:10px">
-      <div style="display:flex;gap:10px;justify-content:center">
-        <div class="score-badge">${turn==='w'?'♟ GILIRAN KAMU':'🤖 CPU BERPIKIR...'}</div>
-        <div class="score-badge">LANGKAH: ${moves}</div>
+    const ai=gameMode==='ai';
+    let tl='';
+    if(!status)tl=ai?(turn==='w'?'♙ GILIRAN KAMU':'🤖 CPU...'):(turn==='w'?'♙ GILIRAN PUTIH':'♟ GILIRAN HITAM');
+    let wkr=-1,wkc=-1,bkr=-1,bkc=-1;
+    for(let r=0;r<8;r++)for(let c=0;c<8;c++){if(board[r][c]==='K'){wkr=r;wkc=c;}if(board[r][c]==='k'){bkr=r;bkc=c;}}
+    const ck=!status&&inCheck;
+    el.innerHTML=`<div class="game-area" style="gap:8px;padding:10px">
+      <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+        ${tl?`<div class="score-badge" style="font-size:.58rem">${tl}</div>`:''}
+        <div class="score-badge" style="font-size:.58rem">LANGKAH: ${moves}</div>
+        <div class="score-badge" style="font-size:.58rem">${ai?'🤖 VS AI':'👥 2P'}</div>
       </div>
-      ${status?`<div class="result-banner ${status.includes('Kamu')?'result-win':'result-lose'}">${status}</div>`:''}
+      ${ck?`<div style="font-family:Orbitron,monospace;font-size:.7rem;color:#ff9500;text-align:center;text-shadow:0 0 10px #ff9500">⚠️ SKAK!</div>`:''}
+      ${status?`<div class="result-banner ${status.includes('SERI')?'result-tie':'result-win'}" style="font-size:.82rem;padding:8px">${status}</div>`:''}
       <div style="display:flex;flex-direction:column;align-items:center">
-        <div style="display:flex;margin-bottom:2px">${labels.map(l=>`<div class="chess-label">${l}</div>`).join('')}</div>
+        <div style="display:flex">${labels.map(l=>`<div class="chess-label">${l}</div>`).join('')}</div>
         <div class="chess-board" id="cb"></div>
+        <div style="display:flex">${labels.map(l=>`<div class="chess-label">${l}</div>`).join('')}</div>
       </div>
-      <div class="choice-row"><button class="btn btn-pink btn-sm" onclick="chessNew()">🔄 BARU</button></div></div>`;
+      <div style="display:flex;gap:8px;justify-content:center">
+        <button class="btn btn-pink btn-sm" onclick="chessNew()">🔄 ULANG</button>
+        <button class="btn btn-outline btn-sm" onclick="chessMenu()">🏠 MENU</button>
+      </div>
+    </div>`;
     const cb=document.getElementById('cb');
     for(let r=0;r<8;r++)for(let c=0;c<8;c++){
       const div=document.createElement('div');
       const isSel=sel&&sel[0]===r&&sel[1]===c;
       const isPoss=possible.some(([pr,pc])=>pr===r&&pc===c);
+      let bg='';
+      if(ck&&((turn==='w'&&r===wkr&&c===wkc)||(turn==='b'&&r===bkr&&c===bkc)))bg='rgba(255,80,0,.55)';
       div.className=`chess-cell ${(r+c)%2===0?'light':'dark'}${isSel?' selected':''}${isPoss?' possible':''}`;
+      if(bg)div.style.background=bg;
       const p=board[r][c];div.textContent=p!=='.'?(pieces[p]||p):'';
-      if(p!=='.'||(isPoss&&sel)){div.addEventListener('click',()=>chessClick(r,c));}
+      div.addEventListener('click',()=>chessClick(r,c));
       cb.appendChild(div);}
   }
   window.chessClick=function(r,c){
-    if(status||turn!=='w')return;
-    const p=board[r][c];
+    if(status)return;
+    if(gameMode==='ai'&&turn!=='w')return;
+    const myW=turn==='w',p=board[r][c];
     if(sel){
       const mv=possible.find(([pr,pc])=>pr===r&&pc===c);
       if(mv){
-        const cap=board[r][c];board[r][c]=board[sel[0]][sel[1]];board[sel[0]][sel[1]]='.';
-        if(board[r][c]==='P'&&r===0)board[r][c]='Q';
-        if(cap.toLowerCase()==='k'){status='Kamu Menang!';}
-        sel=null;possible=[];moves++;
-        if(!status){turn='b';render();setTimeout(cpuMove,400);}else render();return;
+        board=applyMv(board,sel[0],sel[1],r,c);moves++;sel=null;possible=[];
+        turn=turn==='w'?'b':'w';const nw=turn==='w';
+        inCheck=checked(board,nw);
+        if(!hasAny(board,nw))status=inCheck?(nw?'♚ SKAKMAT! Hitam Menang!':'♔ SKAKMAT! Putih Menang!'):'⚖️ SERI (Pat)';
+        render();
+        if(gameMode==='ai'&&turn==='b'&&!status)setTimeout(cpuMove,450);
+        return;
       }
+      sel=null;possible=[];
     }
-    if(p!=='.'&&isW(p)){sel=[r,c];possible=getMoves(r,c);render();}
-    else{sel=null;possible=[];render();}
+    if(p!=='.'&&(myW?isW(p):isB(p))){
+      const lm=legal(board,r,c);
+      if(lm.length){sel=[r,c];possible=lm;}else{sel=null;possible=[];}
+    }else{sel=null;possible=[];}
+    render();
   };
-  window.chessNew=function(){
-    board=[['r','n','b','q','k','b','n','r'],['p','p','p','p','p','p','p','p'],
-      ['.','.','.','.','.','.','.','.'],['.','.','.','.','.','.','.','.'],
-      ['.','.','.','.','.','.','.','.'],['.','.','.','.','.','.','.','.'],
-      ['P','P','P','P','P','P','P','P'],['R','N','B','Q','K','B','N','R']];
-    sel=null;turn='w';status='';moves=0;possible=[];render();};
-  render();
+  window.chessNew=function(){startGame();};
+  window.chessMenu=function(){gameMode=null;renderMenu();};
+  renderMenu();
 }
 
 // ═══════════════════════════════════════════════════
@@ -3064,6 +3246,117 @@ function initSoalCerita(el){
   window.scHome=renderHome;
   renderHome();
 }
+// ═══════════════════════════════════════════════════
+// PLAYER SYSTEM
+// ═══════════════════════════════════════════════════
+(function initPlayerSystem(){
+  const SK='az_players', SS='az_session';
+  const AVS=['👾','🎮','🕹️','🏆','⚡','🌸','🦊','🐉','🌙','🔥','💎','🎯','🚀','🌈','🦋'];
+  function getAll(){try{return JSON.parse(localStorage.getItem(SK)||'[]');}catch{return[];}}
+  function saveAll(a){localStorage.setItem(SK,JSON.stringify(a));}
+  function getSession(){try{return JSON.parse(sessionStorage.getItem(SS)||'null');}catch{return null;}}
+  function setSession(p){sessionStorage.setItem(SS,JSON.stringify(p));}
+  function avatar(n){let s=0;for(const c of n)s+=c.charCodeAt(0);return AVS[s%AVS.length];}
+  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+  function buildSavedChips(){
+    const all=getAll();
+    const w=document.getElementById('savedWrap');
+    if(!all.length){w.innerHTML='';return;}
+    w.innerHTML=`<div class="saved-title">— PEMAIN TERSIMPAN —</div><div class="saved-list">`
+      +all.map(p=>`<button class="saved-chip" onclick="qLogin('${esc(p.name)}')">${avatar(p.name)} ${esc(p.name)}</button>`).join('')
+      +`</div><div class="or-line">— ATAU KETIK NAMA —</div>`;
+  }
+
+  window.regTab=function(t){
+    document.getElementById('pLogin').style.display=t==='login'?'':'none';
+    document.getElementById('pReg').style.display=t==='reg'?'':'none';
+    document.getElementById('tabA').classList.toggle('active',t==='login');
+    document.getElementById('tabB').classList.toggle('active',t==='reg');
+    document.getElementById('msgLogin').textContent='';
+    document.getElementById('msgReg').textContent='';
+    if(t==='login')buildSavedChips();
+  };
+
+  window.qLogin=function(name){loginAs(name);};
+
+  window.doLogin=function(){
+    const name=document.getElementById('inpLogin').value.trim();
+    const msg=document.getElementById('msgLogin');
+    if(!name){msg.className='reg-msg err';msg.textContent='⚠ Nama tidak boleh kosong!';return;}
+    loginAs(name);
+  };
+
+  window.doRegister=function(){
+    const name=document.getElementById('inpReg').value.trim();
+    const msg=document.getElementById('msgReg');
+    if(!name){msg.className='reg-msg err';msg.textContent='⚠ Nama tidak boleh kosong!';return;}
+    const all=getAll();
+    if(!all.find(p=>p.name.toLowerCase()===name.toLowerCase())){
+      all.push({name,joined:Date.now()});saveAll(all);
+    }
+    msg.className='reg-msg ok';msg.textContent='✅ Selamat datang, '+name+'!';
+    setTimeout(()=>loginAs(name),600);
+  };
+
+  function loginAs(name){
+    const all=getAll();
+    if(!all.find(p=>p.name.toLowerCase()===name.toLowerCase())){
+      all.push({name,joined:Date.now()});saveAll(all);
+    }
+    const p={name,av:avatar(name)};
+    setSession(p);showBadge(p);
+    document.getElementById('regOverlay').classList.add('hidden');
+  }
+
+  function showBadge(p){
+    document.getElementById('pbNm').textContent=p.name;
+    document.getElementById('pbAv').textContent=p.av||avatar(p.name);
+    document.getElementById('playerBadge').style.display='flex';
+  }
+
+  window.toggleDrop=function(){
+    document.getElementById('playerDrop').classList.toggle('open');
+  };
+  document.addEventListener('click',function(e){
+    const d=document.getElementById('playerDrop'),b=document.getElementById('playerBadge');
+    if(d.classList.contains('open')&&!b.contains(e.target)&&!d.contains(e.target))d.classList.remove('open');
+  });
+
+  window.editName=function(){
+    document.getElementById('playerDrop').classList.remove('open');
+    const cur=getSession();
+    const n=(prompt('Masukkan nama baru:',(cur&&cur.name)||'')||'').trim();
+    if(!n)return;
+    const all=getAll();
+    if(!all.find(p=>p.name.toLowerCase()===n.toLowerCase())){all.push({name:n,joined:Date.now()});saveAll(all);}
+    const p={name:n,av:avatar(n)};setSession(p);showBadge(p);
+  };
+
+  window.doLogout=function(){
+    document.getElementById('playerDrop').classList.remove('open');
+    document.getElementById('playerBadge').style.display='none';
+    sessionStorage.removeItem(SS);
+    document.getElementById('inpLogin').value='';
+    document.getElementById('msgLogin').textContent='';
+    buildSavedChips();
+    document.getElementById('regOverlay').classList.remove('hidden');
+  };
+
+  // keyboard enter support
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Enter')return;
+    const ov=document.getElementById('regOverlay');
+    if(ov.classList.contains('hidden'))return;
+    if(document.getElementById('pLogin').style.display!=='none')doLogin();
+    else doRegister();
+  });
+
+  // init
+  const cur=getSession();
+  if(cur&&cur.name){showBadge(cur);document.getElementById('regOverlay').classList.add('hidden');}
+  else{buildSavedChips();}
+})();
 
 </script>
 </body>
