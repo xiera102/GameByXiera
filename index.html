@@ -591,9 +591,7 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(237,
   background:linear-gradient(90deg,#a855f7,#c084fc,#e9d5ff);
   background-size:200% auto;
   box-shadow:0 0 10px rgba(168,85,247,.6);
-  animation:glBarFill 10s linear forwards, glBarShine 1s linear infinite;
 }
-@keyframes glBarFill{from{width:0%;}to{width:100%;}}
 @keyframes glBarShine{to{background-position:200% center;}}
 
 .gl-status{font-family:'Orbitron',monospace;font-size:.58rem;letter-spacing:.15em;color:var(--nc);text-align:center;min-height:16px;}
@@ -615,8 +613,8 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(237,
 </head>
 <body>
 
-<!-- GAME LOADING SCREEN — tampil 10 detik saat pertama masuk -->
-<div id="gameLoader">
+<!-- GAME LOADING SCREEN — ditampilkan oleh JS saat init -->
+<div id="gameLoader" style="display:none">
   <div class="gl-scanlines"></div>
   <div class="gl-content">
     <div class="gl-logo">ARCADE ZONE</div>
@@ -4920,166 +4918,142 @@ function initLogicGrid(el){
     });
   }
 
-  function showLoader(p,onDone){
-    const loader=document.getElementById('gameLoader');
-    if(!loader){onDone();return;}
+  function showLoader(p, onDone){
+    const loader = document.getElementById('gameLoader');
+    if(!loader){ onDone(); return; }
 
-    const TIPS=['Siapkan strategi terbaikmu!','Fokus dan percaya diri!','Nikmati setiap permainan!','Pemain hebat pantang menyerah!','Semangat belajar dan bermain!'];
-    const STATUSES=['MEMUAT DATA...','MENYIAPKAN ARENA...','MENGAKTIFKAN ENGINE...','SINKRONISASI PROFIL...','MENGATUR TAMPILAN...','MEMUAT GAME...','MENYIAPKAN MUSIK...','HAMPIR SIAP...','SEBENTAR LAGI...','✅ SIAP MAIN!'];
+    const TIPS = ['Siapkan strategi terbaikmu!','Fokus dan percaya diri!','Nikmati setiap permainan!','Pemain hebat pantang menyerah!','Semangat belajar dan bermain!'];
+    const STATUSES = ['MEMUAT DATA...','MENYIAPKAN ARENA...','MENGAKTIFKAN ENGINE...','SINKRONISASI PROFIL...','MENGATUR TAMPILAN...','MEMUAT GAME...','MENYIAPKAN MUSIK...','HAMPIR SIAP...','SEBENTAR LAGI...','✅ SIAP MAIN!'];
 
-    var el=function(id){return document.getElementById(id);};
-    if(el('glAvatar'))el('glAvatar').textContent=p.av||'👾';
-    if(el('glName'))el('glName').textContent=p.name.toUpperCase();
-    if(el('glTip'))el('glTip').textContent=TIPS[Math.floor(Math.random()*TIPS.length)];
-    if(el('glStatus'))el('glStatus').textContent=STATUSES[0];
-    if(el('glCounter'))el('glCounter').textContent='10s';
+    function g(id){ return document.getElementById(id); }
 
-    var bar=el('glBar');
-    if(bar){bar.style.cssText='height:100%;width:0%;border-radius:20px;background:linear-gradient(90deg,#a855f7,#c084fc,#e9d5ff);box-shadow:0 0 10px rgba(168,85,247,.6);transition:width 10s linear;';}
+    // Reset & set content
+    var bar = g('glBar');
+    if(bar){ bar.style.transition = 'none'; bar.style.width = '0%'; }
+    if(g('glAvatar')) g('glAvatar').textContent = (p && p.av) ? p.av : '🎮';
+    if(g('glName'))   g('glName').textContent   = (p && p.name) ? p.name.toUpperCase() : 'ARCADE ZONE';
+    if(g('glTip'))    g('glTip').textContent    = TIPS[Math.floor(Math.random() * TIPS.length)];
+    if(g('glStatus')) g('glStatus').textContent = STATUSES[0];
+    if(g('glCounter'))g('glCounter').textContent = '10s';
 
-    loader.classList.remove('hidden','fade-out');
+    // Make loader visible
+    loader.style.display  = 'flex';
+    loader.style.opacity  = '1';
+    loader.style.pointerEvents = 'auto';
 
-    setTimeout(function(){if(bar)bar.style.width='100%';},50);
+    // Start bar fill after 1 frame
+    setTimeout(function(){
+      if(bar){ bar.style.transition = 'width 10s linear'; bar.style.width = '100%'; }
+    }, 30);
 
-    var elapsed=0;
-    var iv=setInterval(function(){
+    var elapsed = 0;
+    var iv = setInterval(function(){
       elapsed++;
-      if(el('glCounter'))el('glCounter').textContent=Math.max(0,10-elapsed)+'s';
-      if(el('glStatus'))el('glStatus').textContent=STATUSES[Math.min(elapsed,STATUSES.length-1)];
-      if(elapsed>=10){
+      var left = Math.max(0, 10 - elapsed);
+      if(g('glCounter')) g('glCounter').textContent = left + 's';
+      if(g('glStatus'))  g('glStatus').textContent  = STATUSES[Math.min(elapsed, STATUSES.length - 1)];
+      if(elapsed >= 10){
         clearInterval(iv);
-        if(el('glStatus'))el('glStatus').textContent='✅ SIAP MAIN!';
-        if(el('glCounter'))el('glCounter').textContent='0s';
+        if(g('glStatus'))  g('glStatus').textContent  = '✅ SIAP!';
+        if(g('glCounter')) g('glCounter').textContent = '0s';
         setTimeout(function(){
-          loader.style.transition='opacity .8s';
-          loader.style.opacity='0';
+          loader.style.transition = 'opacity .7s ease';
+          loader.style.opacity = '0';
           setTimeout(function(){
-            loader.classList.add('hidden');
-            loader.style.opacity='';
-            loader.style.transition='';
+            loader.style.display = 'none';
+            loader.style.opacity = '1';
+            loader.style.transition = '';
+            if(bar){ bar.style.transition = 'none'; bar.style.width = '0%'; }
             onDone();
-          },800);
-        },300);
+          }, 700);
+        }, 300);
       }
-    },1000);
+    }, 1000);
   }
 
   function showBadge(p){
-    document.getElementById('pbNm').textContent=p.name;
-    document.getElementById('pbAv').textContent=p.av||avatar(p.name);
-    document.getElementById('playerBadge').style.display='flex';
+    document.getElementById('pbNm').textContent = p.name;
+    document.getElementById('pbAv').textContent = p.av || avatar(p.name);
+    document.getElementById('playerBadge').style.display = 'flex';
   }
 
   function showGroupSelection(p){
-    const ov=document.getElementById('groupOverlay');
-    const nm=document.getElementById('groupPlayerName');
-    if(nm)nm.textContent=p.name.toUpperCase();
-    if(ov)ov.classList.remove('hidden');
+    const ov = document.getElementById('groupOverlay');
+    const nm = document.getElementById('groupPlayerName');
+    if(nm) nm.textContent = p.name.toUpperCase();
+    if(ov) ov.classList.remove('hidden');
   }
 
-  window.selectGroup=function(group){
+  window.selectGroup = function(group){
     document.getElementById('groupOverlay').classList.add('hidden');
     renderGrid(group);
-    // Update header subtitle
-    const sub=document.querySelector('.logo-sub');
-    if(sub)sub.textContent=group==='game'?'▸ PILIH GAME KAMU ◂':'▸ PILIH PELAJARAN KAMU ◂';
+    const sub = document.querySelector('.logo-sub');
+    if(sub) sub.textContent = group === 'game' ? '▸ PILIH GAME KAMU ◂' : '▸ PILIH PELAJARAN KAMU ◂';
   };
 
-  window.switchGroup=function(){
+  window.switchGroup = function(){
     document.getElementById('playerDrop').classList.remove('open');
-    const cur=getSession();
-    if(cur)showGroupSelection(cur);
+    const cur = getSession();
+    if(cur) showGroupSelection(cur);
     else document.getElementById('groupOverlay').classList.remove('hidden');
   };
 
-  window.toggleDrop=function(){
+  window.toggleDrop = function(){
     document.getElementById('playerDrop').classList.toggle('open');
   };
-  document.addEventListener('click',function(e){
-    const d=document.getElementById('playerDrop'),b=document.getElementById('playerBadge');
-    if(d.classList.contains('open')&&!b.contains(e.target)&&!d.contains(e.target))d.classList.remove('open');
+  document.addEventListener('click', function(e){
+    const d = document.getElementById('playerDrop'), b = document.getElementById('playerBadge');
+    if(d.classList.contains('open') && !b.contains(e.target) && !d.contains(e.target)) d.classList.remove('open');
   });
 
-  window.editName=function(){
+  window.editName = function(){
     document.getElementById('playerDrop').classList.remove('open');
-    const cur=getSession();
-    const n=(prompt('Masukkan nama baru:',(cur&&cur.name)||'')||'').trim();
-    if(!n)return;
-    const all=getAll();
-    if(!all.find(p=>p.name.toLowerCase()===n.toLowerCase())){all.push({name:n,joined:Date.now()});saveAll(all);}
-    const p={name:n,av:avatar(n)};setSession(p);showBadge(p);
+    const cur = getSession();
+    const n = (prompt('Masukkan nama baru:', (cur && cur.name) || '') || '').trim();
+    if(!n) return;
+    const all = getAll();
+    if(!all.find(p => p.name.toLowerCase() === n.toLowerCase())){ all.push({name:n, joined:Date.now()}); saveAll(all); }
+    const p = {name:n, av:avatar(n)}; setSession(p); showBadge(p);
   };
 
-  window.doLogout=function(){
+  window.doLogout = function(){
     document.getElementById('playerDrop').classList.remove('open');
-    document.getElementById('playerBadge').style.display='none';
+    document.getElementById('playerBadge').style.display = 'none';
     sessionStorage.removeItem(SS);
-    document.getElementById('inpLogin').value='';
-    document.getElementById('msgLogin').textContent='';
+    document.getElementById('inpLogin').value = '';
+    document.getElementById('msgLogin').textContent = '';
     buildSavedChips();
-    document.getElementById('regOverlay').style.display='flex';
+    document.getElementById('regOverlay').style.display = 'flex';
   };
 
   // keyboard enter support
-  document.addEventListener('keydown',function(e){
-    if(e.key!=='Enter')return;
-    const ov=document.getElementById('regOverlay');
-    if(ov.classList.contains('hidden'))return;
-    if(document.getElementById('pLogin').style.display!=='none')doLogin();
+  document.addEventListener('keydown', function(e){
+    if(e.key !== 'Enter') return;
+    const ov = document.getElementById('regOverlay');
+    if(ov.style.display === 'none' || ov.style.display === '') return;
+    const pLogin = document.getElementById('pLogin');
+    if(pLogin && pLogin.style.display !== 'none') doLogin();
     else doRegister();
   });
 
-  // ── SITE INTRO LOADER — muncul 10 detik saat pertama buka website ──
-  function showIntroLoader(onDone){
-    const loader=document.getElementById('gameLoader');
-    if(!loader){onDone();return;}
-    const TIPS=['Siapkan strategi terbaikmu!','Fokus dan percaya diri!','Nikmati setiap permainan!','Semangat belajar dan bermain!','Selamat datang di Arcade Zone!'];
-    const STATUSES=['MEMUAT DATA...','MENYIAPKAN ARENA...','MENGAKTIFKAN ENGINE...','MEMUAT GAME...','MENYIAPKAN MUSIK...','MENGATUR TAMPILAN...','MEMUAT ASSET...','SINKRONISASI...','HAMPIR SELESAI...','✅ SIAP!'];
-    var getEl=function(id){return document.getElementById(id);};
-    // Set tampilan intro (tanpa nama pemain, generic)
-    if(getEl('glAvatar'))getEl('glAvatar').textContent='🎮';
-    if(getEl('glName'))getEl('glName').textContent='ARCADE ZONE';
-    if(getEl('glTip'))getEl('glTip').textContent=TIPS[Math.floor(Math.random()*TIPS.length)];
-    if(getEl('glStatus'))getEl('glStatus').textContent=STATUSES[0];
-    if(getEl('glCounter'))getEl('glCounter').textContent='10s';
-    var bar=getEl('glBar');
-    if(bar){bar.style.cssText='height:100%;width:0%;border-radius:20px;background:linear-gradient(90deg,#a855f7,#c084fc,#e9d5ff);box-shadow:0 0 10px rgba(168,85,247,.6);transition:width 10s linear;';}
-    loader.classList.remove('hidden','fade-out');
-    setTimeout(function(){if(bar)bar.style.width='100%';},50);
-    var elapsed=0;
-    var iv=setInterval(function(){
-      elapsed++;
-      if(getEl('glCounter'))getEl('glCounter').textContent=Math.max(0,10-elapsed)+'s';
-      if(getEl('glStatus'))getEl('glStatus').textContent=STATUSES[Math.min(elapsed,STATUSES.length-1)];
-      if(elapsed>=10){
-        clearInterval(iv);
-        if(getEl('glStatus'))getEl('glStatus').textContent='✅ SELAMAT DATANG!';
-        if(getEl('glCounter'))getEl('glCounter').textContent='0s';
-        setTimeout(function(){
-          loader.style.transition='opacity .8s';
-          loader.style.opacity='0';
-          setTimeout(function(){
-            loader.classList.add('hidden');
-            loader.style.opacity='';loader.style.transition='';
-            onDone();
-          },800);
-        },400);
-      }
-    },1000);
-  }
+  // ── INIT: tampilkan loading screen lalu lanjut ke login/game ──
+  const cur = getSession();
+  // Sembunyikan loader dulu (akan ditampilkan ulang oleh showLoader)
+  (function(){
+    const loader = document.getElementById('gameLoader');
+    if(loader) loader.style.display = 'none';
+  })();
+  document.getElementById('regOverlay').style.display = 'none';
 
-  // init
-  const cur=getSession();
-  // Selalu tampilkan intro loader 10 detik saat buka website
-  showIntroLoader(function(){
-    if(cur&&cur.name){
+  // Jalankan intro loader 10 detik
+  showLoader(null, function(){
+    if(cur && cur.name){
       showBadge(cur);
-      document.getElementById('regOverlay').style.display='none';
+      document.getElementById('regOverlay').style.display = 'none';
       showGroupSelection(cur);
     } else {
       buildSavedChips();
-      // Tampilkan reg overlay setelah loader selesai
-      document.getElementById('regOverlay').style.display='flex';
+      document.getElementById('regOverlay').style.display = 'flex';
     }
   });
 })();
