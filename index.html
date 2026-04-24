@@ -506,8 +506,13 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(255,
   <div class="mb-viz paused" id="mbViz">
     <span></span><span></span><span></span><span></span><span></span>
   </div>
-  <div class="mb-title" id="mbTitle">🎵 ARCADE BGM — Klik ▶ untuk putar musik</div>
+  <div style="display:flex;flex-direction:column;flex:1;min-width:0;gap:1px">
+    <div class="mb-title" id="mbTitle">🎵 Klik ▶ untuk putar musik</div>
+    <div id="mbCredit" style="font-size:.48rem;color:rgba(255,105,180,.4);font-family:'Orbitron',monospace;letter-spacing:.08em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">by —</div>
+  </div>
+  <button class="mb-btn" id="mbPrevBtn" onclick="mbPrev()" title="Lagu Sebelumnya" style="font-size:.6rem">⏮</button>
   <button class="mb-btn" id="mbPlayBtn" onclick="mbToggle()" title="Play/Pause">▶</button>
+  <button class="mb-btn" id="mbNextBtn" onclick="mbNext()" title="Lagu Berikutnya" style="font-size:.6rem">⏭</button>
   <button class="mb-btn" id="mbMuteBtn" onclick="mbMute()" title="Mute">🔊</button>
   <input type="range" class="mb-vol" id="mbVol" min="0" max="1" step="0.05" value="0.6" oninput="mbVolumeChange(this.value)">
   <audio id="bgMusic" loop>
@@ -547,21 +552,58 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(255,
 
 <script>
 // ═══════════════════════════════════════════════════
-// MUSIC PLAYER
+// MUSIC PLAYER — Multi Track with Credits
 // ═══════════════════════════════════════════════════
-let musicMuted = false;
-const bgMusic = document.getElementById("bgMusic");
+const MB_TRACKS = [
+  { src: 'music.mp3',  title: 'Game Casino Simulator', credit: 'by Game Casino Simulator' },
+  { src: 'music2.mp3', title: 'Sharou',                credit: 'by Sharou'                },
+];
+let mbTrackIdx = 0;
+let mbPlaying = false;
+const bgMusic = document.getElementById('bgMusic');
+
+function mbLoadTrack(idx, autoplay){
+  const t = MB_TRACKS[idx];
+  bgMusic.src = t.src;
+  bgMusic.load();
+  document.getElementById('mbTitle').textContent = '🎵 ' + t.title;
+  document.getElementById('mbCredit').textContent = t.credit;
+  const viz = document.getElementById('mbViz');
+  if(autoplay){
+    bgMusic.play().catch(()=>{});
+    mbPlaying = true;
+    document.getElementById('mbPlayBtn').textContent = '⏸';
+    viz.classList.remove('paused');
+  } else {
+    mbPlaying = false;
+    document.getElementById('mbPlayBtn').textContent = '▶';
+    viz.classList.add('paused');
+  }
+}
 
 function mbToggle(){
-  if(musicMuted){
-    bgMusic.play();
-    musicMuted = false;
-    document.getElementById('mbPlayBtn').textContent='⏸';
-  } else {
+  const viz = document.getElementById('mbViz');
+  if(mbPlaying){
     bgMusic.pause();
-    musicMuted = true;
-    document.getElementById('mbPlayBtn').textContent='▶';
+    mbPlaying = false;
+    document.getElementById('mbPlayBtn').textContent = '▶';
+    viz.classList.add('paused');
+  } else {
+    bgMusic.play().catch(()=>{});
+    mbPlaying = true;
+    document.getElementById('mbPlayBtn').textContent = '⏸';
+    viz.classList.remove('paused');
   }
+}
+
+function mbNext(){
+  mbTrackIdx = (mbTrackIdx + 1) % MB_TRACKS.length;
+  mbLoadTrack(mbTrackIdx, mbPlaying);
+}
+
+function mbPrev(){
+  mbTrackIdx = (mbTrackIdx - 1 + MB_TRACKS.length) % MB_TRACKS.length;
+  mbLoadTrack(mbTrackIdx, mbPlaying);
 }
 
 function mbMute(){
@@ -572,6 +614,15 @@ function mbMute(){
 function mbVolumeChange(v){
   bgMusic.volume = parseFloat(v);
 }
+
+// auto-advance to next track when current ends
+bgMusic.addEventListener('ended', function(){
+  mbTrackIdx = (mbTrackIdx + 1) % MB_TRACKS.length;
+  mbLoadTrack(mbTrackIdx, true);
+});
+
+// init display
+mbLoadTrack(0, false);
 
 // ═══════════════════════════════════════════════════
 // GAME DEFINITIONS
