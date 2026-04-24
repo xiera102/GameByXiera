@@ -7,10 +7,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --nc:#ff69b4;--np:#ff1493;--ny:#ffb6c1;--ng:#ff85c2;
-  --bg:#1a0011;--bc:#2a0520;--bc2:#200318;--tm:#ffe0f0;
-  --gc:0 0 18px #ff69b488,0 0 36px #ff69b433;
-  --gp:0 0 18px #ff149388,0 0 36px #ff149333;
+  --nc:#c084fc;--np:#a855f7;--ny:#e9d5ff;--ng:#d8b4fe;
+  --bg:#0d0520;--bc:#180a35;--bc2:#120728;--tm:#f3e8ff;
+  --gc:0 0 18px #c084fc88,0 0 36px #c084fc33;
+  --gp:0 0 18px #a855f788,0 0 36px #a855f733;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 body{background:var(--bg);font-family:'Rajdhani',sans-serif;color:var(--tm);min-height:100vh;overflow-x:hidden;}
@@ -21,29 +21,29 @@ body::before{content:'';position:fixed;inset:0;
     radial-gradient(1px 1px at 52% 18%,rgba(255,255,255,.6) 0%,transparent 100%),
     radial-gradient(1px 1px at 73% 72%,rgba(255,255,255,.4) 0%,transparent 100%),
     radial-gradient(1px 1px at 88% 38%,rgba(255,255,255,.5) 0%,transparent 100%),
-    radial-gradient(2px 2px at 18% 82%,rgba(255,105,180,.4) 0%,transparent 100%),
-    radial-gradient(2px 2px at 62% 92%,rgba(255,20,147,.35) 0%,transparent 100%),
+    radial-gradient(2px 2px at 18% 82%,rgba(192,132,252,.4) 0%,transparent 100%),
+    radial-gradient(2px 2px at 62% 92%,rgba(168,85,247,.35) 0%,transparent 100%),
     radial-gradient(1px 1px at 42% 65%,rgba(255,255,255,.25) 0%,transparent 100%),
-    radial-gradient(1px 1px at 95% 10%,rgba(255,182,193,.4) 0%,transparent 100%),
-    radial-gradient(1px 1px at 35% 30%,rgba(255,105,180,.3) 0%,transparent 100%);
+    radial-gradient(1px 1px at 95% 10%,rgba(216,180,254,.4) 0%,transparent 100%),
+    radial-gradient(1px 1px at 35% 30%,rgba(192,132,252,.3) 0%,transparent 100%);
   pointer-events:none;z-index:0;}
 
 #musicBar{
   position:fixed;bottom:0;left:0;right:0;z-index:500;
-  background:rgba(26,0,17,.92);border-top:1px solid rgba(255,105,180,.2);
+  background:rgba(13,5,32,.92);border-top:1px solid rgba(168,85,247,.2);
   backdrop-filter:blur(12px);
   display:flex;align-items:center;gap:10px;padding:8px 16px;
   font-family:'Orbitron',monospace;
 }
 #musicBar .mb-title{font-size:.6rem;color:var(--nc);letter-spacing:.15em;flex:1;min-width:0;
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-#musicBar .mb-btn{background:none;border:1px solid rgba(255,105,180,.3);color:var(--nc);
+#musicBar .mb-btn{background:none;border:1px solid rgba(168,85,247,.3);color:var(--nc);
   width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:.75rem;
   display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;}
-#musicBar .mb-btn:hover{background:rgba(255,105,180,.15);box-shadow:0 0 10px rgba(255,105,180,.3);}
-#musicBar .mb-btn.active{background:rgba(255,105,180,.18);border-color:var(--nc);}
+#musicBar .mb-btn:hover{background:rgba(168,85,247,.15);box-shadow:0 0 10px rgba(168,85,247,.3);}
+#musicBar .mb-btn.active{background:rgba(168,85,247,.18);border-color:var(--nc);}
 #musicBar .mb-vol{-webkit-appearance:none;appearance:none;width:70px;height:3px;
-  background:rgba(255,105,180,.2);border-radius:2px;outline:none;cursor:pointer;flex-shrink:0;}
+  background:rgba(168,85,247,.2);border-radius:2px;outline:none;cursor:pointer;flex-shrink:0;}
 #musicBar .mb-vol::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;
   border-radius:50%;background:var(--nc);cursor:pointer;}
 .mb-viz{display:flex;align-items:flex-end;gap:2px;height:20px;flex-shrink:0;}
@@ -57,10 +57,10 @@ body::before{content:'';position:fixed;inset:0;
 
 header{position:relative;text-align:center;padding:36px 20px 24px;z-index:1;}
 .logo-title{font-family:'Orbitron',monospace;font-size:clamp(2rem,7vw,4rem);font-weight:900;letter-spacing:.1em;
-  background:linear-gradient(90deg,#ff69b4,#ff1493,#ffb6c1);
+  background:linear-gradient(90deg,#c084fc,#a855f7,#e9d5ff);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  filter:drop-shadow(0 0 18px #ff69b488);animation:titlePulse 3s ease-in-out infinite;}
-@keyframes titlePulse{0%,100%{filter:drop-shadow(0 0 18px #ff69b488);}50%{filter:drop-shadow(0 0 36px #ff149388);}}
+  filter:drop-shadow(0 0 18px #c084fc88);animation:titlePulse 3s ease-in-out infinite;}
+@keyframes titlePulse{0%,100%{filter:drop-shadow(0 0 18px #c084fc88);}50%{filter:drop-shadow(0 0 36px #a855f788);}}
 .logo-sub{font-family:'Orbitron',monospace;font-size:clamp(.6rem,1.5vw,.85rem);letter-spacing:.5em;color:var(--nc);opacity:.65;margin-top:6px;}
 .scan-line{width:150px;height:2px;background:linear-gradient(90deg,transparent,var(--nc),transparent);margin:14px auto;animation:scanMove 2s ease-in-out infinite;}
 @keyframes scanMove{0%,100%{width:80px;opacity:.4;}50%{width:260px;opacity:1;}}
@@ -71,7 +71,7 @@ header{position:relative;text-align:center;padding:36px 20px 24px;z-index:1;}
 
 .game-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:40px;}
 
-.game-card{background:var(--bc);border:1px solid rgba(255,105,180,.12);border-radius:10px;overflow:hidden;
+.game-card{background:var(--bc);border:1px solid rgba(168,85,247,.12);border-radius:10px;overflow:hidden;
   cursor:pointer;transition:all .25s ease;position:relative;display:flex;flex-direction:column;
   animation:fadeInUp .5s ease both;}
 .game-card:hover{border-color:var(--nc);box-shadow:var(--gc);transform:translateY(-4px) scale(1.02);}
@@ -80,9 +80,9 @@ header{position:relative;text-align:center;padding:36px 20px 24px;z-index:1;}
 .game-card:hover .game-thumb{transform:scale(1.06);}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 
-.game-thumb-wrap{position:relative;height:90px;overflow:hidden;background:#1a0011;flex-shrink:0;}
+.game-thumb-wrap{position:relative;height:90px;overflow:hidden;background:#0d0520;flex-shrink:0;}
 .game-thumb{width:100%;height:100%;transition:transform .4s ease;display:flex;align-items:center;justify-content:center;}
-.card-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,105,180,.18),rgba(255,20,147,.18));
+.card-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(168,85,247,.18),rgba(139,92,246,.18));
   opacity:0;transition:opacity .3s ease;display:flex;align-items:center;justify-content:center;}
 .play-btn{background:var(--nc);color:#fff;font-family:'Orbitron',monospace;font-size:.6rem;font-weight:700;
   letter-spacing:.15em;padding:7px 16px;border-radius:4px;border:none;cursor:pointer;
@@ -90,11 +90,11 @@ header{position:relative;text-align:center;padding:36px 20px 24px;z-index:1;}
 .card-info{padding:8px 10px 10px;flex:1;}
 .card-tag{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--np);margin-bottom:2px;font-family:'Orbitron',monospace;}
 .card-name{font-family:'Orbitron',monospace;font-size:.75rem;font-weight:700;color:#fff;margin-bottom:3px;line-height:1.2;}
-.card-desc{font-size:.72rem;color:rgba(255,224,240,.5);line-height:1.4;}
+.card-desc{font-size:.72rem;color:rgba(237,225,255,.5);line-height:1.4;}
 svg.thumb-svg{width:100%;height:100%;}
 
 /* ── MODAL ── */
-.modal-bg{display:none;position:fixed;inset:0;background:rgba(26,0,17,.95);z-index:1000;
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(13,5,32,.95);z-index:1000;
   align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(8px);}
 .modal-bg.active{display:flex;}
 .modal{background:var(--bc2);border:1px solid var(--nc);border-radius:14px;
@@ -102,20 +102,20 @@ svg.thumb-svg{width:100%;height:100%;}
   box-shadow:var(--gc);animation:modalIn .3s cubic-bezier(.34,1.56,.64,1) both;}
 @keyframes modalIn{from{transform:scale(.88);opacity:0;}to{transform:scale(1);opacity:1;}}
 .modal-header{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;
-  border-bottom:1px solid rgba(255,105,180,.15);}
+  border-bottom:1px solid rgba(168,85,247,.15);}
 .modal-title{font-family:'Orbitron',monospace;font-size:1rem;font-weight:700;color:var(--nc);}
-.modal-close{background:none;border:1px solid rgba(255,20,147,.4);color:var(--np);font-size:1rem;
+.modal-close{background:none;border:1px solid rgba(139,92,246,.4);color:var(--np);font-size:1rem;
   width:32px;height:32px;border-radius:6px;cursor:pointer;transition:all .2s;
   display:flex;align-items:center;justify-content:center;}
 .modal-close:hover{background:var(--np);color:#fff;}
 .modal-body{padding:18px;}
 
 /* ── GAME COMMON ── */
-.game-area{background:#150010;border:1px solid rgba(255,105,180,.1);border-radius:10px;
+.game-area{background:#12062a;border:1px solid rgba(168,85,247,.1);border-radius:10px;
   padding:16px;min-height:260px;display:flex;flex-direction:column;align-items:center;
   justify-content:center;gap:14px;}
 .game-msg{font-family:'Orbitron',monospace;font-size:.9rem;color:var(--nc);text-align:center;}
-.game-score-line{font-size:.75rem;color:rgba(255,224,240,.5);letter-spacing:.1em;text-align:center;}
+.game-score-line{font-size:.75rem;color:rgba(237,225,255,.5);letter-spacing:.1em;text-align:center;}
 .btn{font-family:'Orbitron',monospace;font-size:.72rem;letter-spacing:.12em;padding:9px 20px;
   border-radius:6px;border:none;cursor:pointer;transition:all .2s;}
 .btn-cyan{background:var(--nc);color:#fff;font-weight:700;}
@@ -123,19 +123,19 @@ svg.thumb-svg{width:100%;height:100%;}
 .btn-pink{background:var(--np);color:#fff;font-weight:700;}
 .btn-pink:hover{box-shadow:var(--gp);transform:translateY(-2px);}
 .btn-outline{background:transparent;border:1px solid var(--nc);color:var(--nc);}
-.btn-outline:hover{background:rgba(255,105,180,.1);}
+.btn-outline:hover{background:rgba(168,85,247,.1);}
 .btn-sm{padding:6px 14px;font-size:.65rem;}
 .choice-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
-.choice-btn{background:rgba(255,105,180,.07);border:1px solid rgba(255,105,180,.25);color:var(--tm);
+.choice-btn{background:rgba(168,85,247,.07);border:1px solid rgba(168,85,247,.25);color:var(--tm);
   font-family:'Rajdhani',sans-serif;font-size:.9rem;font-weight:600;padding:10px 16px;
   border-radius:8px;cursor:pointer;transition:all .2s;min-width:70px;text-align:center;}
-.choice-btn:hover{border-color:var(--nc);background:rgba(255,105,180,.15);}
-.num-input{background:rgba(255,105,180,.05);border:1px solid rgba(255,105,180,.3);color:var(--tm);
+.choice-btn:hover{border-color:var(--nc);background:rgba(168,85,247,.15);}
+.num-input{background:rgba(168,85,247,.05);border:1px solid rgba(168,85,247,.3);color:var(--tm);
   font-family:'Orbitron',monospace;font-size:1.1rem;padding:10px 16px;border-radius:8px;
   width:110px;text-align:center;outline:none;}
-.num-input:focus{border-color:var(--nc);box-shadow:0 0 10px rgba(255,105,180,.25);}
-.score-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,105,180,.07);
-  border:1px solid rgba(255,105,180,.2);border-radius:6px;padding:5px 12px;
+.num-input:focus{border-color:var(--nc);box-shadow:0 0 10px rgba(168,85,247,.25);}
+.score-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(168,85,247,.07);
+  border:1px solid rgba(168,85,247,.2);border-radius:6px;padding:5px 12px;
   font-family:'Orbitron',monospace;font-size:.68rem;color:var(--nc);letter-spacing:.08em;}
 .result-banner{font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:900;text-align:center;padding:10px;border-radius:8px;}
 .result-win{color:var(--ng);text-shadow:0 0 16px var(--ng);}
@@ -157,29 +157,29 @@ svg.thumb-svg{width:100%;height:100%;}
 .mem-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .35s;}
 .mem-card.flipped .mem-inner,.mem-card.matched .mem-inner{transform:rotateY(180deg);}
 .mem-front,.mem-back{position:absolute;inset:0;border-radius:7px;display:flex;align-items:center;justify-content:center;backface-visibility:hidden;}
-.mem-front{background:linear-gradient(135deg,#2a0018,#3a0a28);border:1px solid rgba(255,105,180,.2);
+.mem-front{background:linear-gradient(135deg,#1a0a35,#220d40);border:1px solid rgba(168,85,247,.2);
   color:var(--nc);font-size:.8rem;font-family:'Orbitron',monospace;}
-.mem-back{background:rgba(255,105,180,.07);border:1px solid rgba(255,105,180,.35);transform:rotateY(180deg);font-size:1.6rem;}
-.mem-card.matched .mem-back{background:rgba(255,105,180,.15);border-color:var(--nc);}
+.mem-back{background:rgba(168,85,247,.07);border:1px solid rgba(168,85,247,.35);transform:rotateY(180deg);font-size:1.6rem;}
+.mem-card.matched .mem-back{background:rgba(168,85,247,.15);border-color:var(--nc);}
 
 /* puzzle */
 .puzzle-grid{display:grid;grid-template-columns:repeat(4,54px);gap:5px;}
-.puzzle-tile{width:54px;height:54px;background:rgba(255,105,180,.09);border:1px solid rgba(255,105,180,.25);
+.puzzle-tile{width:54px;height:54px;background:rgba(168,85,247,.09);border:1px solid rgba(168,85,247,.25);
   border-radius:6px;font-family:'Orbitron',monospace;font-size:1rem;font-weight:700;color:var(--nc);
   cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;user-select:none;}
-.puzzle-tile:hover{background:rgba(255,105,180,.18);}
+.puzzle-tile:hover{background:rgba(168,85,247,.18);}
 .puzzle-tile.empty{background:transparent;border-color:transparent;cursor:default;}
 
 /* quiz */
 .quiz-question{font-size:.9rem;color:var(--tm);line-height:1.6;text-align:center;margin-bottom:16px;
-  padding:14px;background:rgba(255,105,180,.04);border-radius:8px;border:1px solid rgba(255,105,180,.1);}
+  padding:14px;background:rgba(168,85,247,.04);border-radius:8px;border:1px solid rgba(168,85,247,.1);}
 .quiz-options{display:grid;gap:8px;width:100%;}
-.quiz-opt{background:rgba(255,105,180,.04);border:1px solid rgba(255,105,180,.18);color:var(--tm);
+.quiz-opt{background:rgba(168,85,247,.04);border:1px solid rgba(168,85,247,.18);color:var(--tm);
   font-family:'Rajdhani',sans-serif;font-size:.88rem;font-weight:600;padding:10px 16px;
   border-radius:8px;cursor:pointer;transition:all .2s;text-align:left;}
-.quiz-opt:hover{border-color:var(--nc);background:rgba(255,105,180,.1);}
-.quiz-opt.correct{border-color:var(--ng);background:rgba(255,105,180,.15);color:var(--nc);}
-.quiz-opt.wrong{border-color:var(--np);background:rgba(255,20,147,.1);color:var(--np);}
+.quiz-opt:hover{border-color:var(--nc);background:rgba(168,85,247,.1);}
+.quiz-opt.correct{border-color:var(--ng);background:rgba(168,85,247,.15);color:var(--nc);}
+.quiz-opt.wrong{border-color:var(--np);background:rgba(139,92,246,.1);color:var(--np);}
 
 /* snake */
 #snakeCanvas{border:1px solid rgba(0,245,255,.25);border-radius:6px;background:#020610;}
@@ -187,57 +187,57 @@ svg.thumb-svg{width:100%;height:100%;}
 /* WORDLE */
 .wordle-grid{display:grid;grid-template-columns:repeat(5,48px);gap:5px;}
 .wordle-row{display:contents;}
-.wordle-cell{width:48px;height:48px;border:2px solid rgba(255,105,180,.2);border-radius:5px;
+.wordle-cell{width:48px;height:48px;border:2px solid rgba(168,85,247,.2);border-radius:5px;
   display:flex;align-items:center;justify-content:center;font-family:'Orbitron',monospace;
   font-size:1.2rem;font-weight:700;color:#fff;transition:all .3s;text-transform:uppercase;}
-.wordle-cell.correct{background:#5c1a3a;border-color:var(--nc);color:var(--nc);}
-.wordle-cell.present{background:#4a2a00;border-color:var(--ny);color:var(--ny);}
-.wordle-cell.absent{background:#2a1a2e;border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.4);}
+.wordle-cell.correct{background:#2d1a5c;border-color:var(--nc);color:var(--nc);}
+.wordle-cell.present{background:#1a1050;border-color:var(--ny);color:var(--ny);}
+.wordle-cell.absent{background:#1a1040;border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.4);}
 .wordle-cell.current{border-color:var(--nc);}
 .wordle-keys{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;max-width:340px;}
-.wkey{background:rgba(255,105,180,.08);border:1px solid rgba(255,105,180,.2);color:var(--tm);
+.wkey{background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.2);color:var(--tm);
   font-family:'Orbitron',monospace;font-size:.6rem;padding:8px 6px;min-width:30px;
   border-radius:4px;cursor:pointer;transition:all .15s;text-align:center;}
-.wkey:hover{background:rgba(255,105,180,.2);}
-.wkey.correct{background:rgba(255,105,180,.2);border-color:var(--nc);color:var(--nc);}
-.wkey.present{background:rgba(255,182,193,.15);border-color:var(--ny);color:var(--ny);}
+.wkey:hover{background:rgba(168,85,247,.2);}
+.wkey.correct{background:rgba(168,85,247,.2);border-color:var(--nc);color:var(--nc);}
+.wkey.present{background:rgba(196,167,255,.15);border-color:var(--ny);color:var(--ny);}
 .wkey.absent{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.08);color:rgba(255,255,255,.3);}
 
 /* MINESWEEPER */
-.mine-grid{display:inline-grid;gap:2px;border:1px solid rgba(255,105,180,.2);border-radius:6px;padding:6px;background:rgba(0,0,0,.3);}
-.mine-cell{width:34px;height:34px;background:rgba(255,105,180,.08);border:1px solid rgba(255,105,180,.15);
+.mine-grid{display:inline-grid;gap:2px;border:1px solid rgba(168,85,247,.2);border-radius:6px;padding:6px;background:rgba(0,0,0,.3);}
+.mine-cell{width:34px;height:34px;background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.15);
   border-radius:3px;display:flex;align-items:center;justify-content:center;cursor:pointer;
   font-family:'Orbitron',monospace;font-size:.8rem;font-weight:700;transition:all .15s;user-select:none;}
-.mine-cell:hover:not(.revealed){background:rgba(255,105,180,.18);}
-.mine-cell.revealed{background:rgba(0,0,0,.4);border-color:rgba(255,105,180,.08);cursor:default;}
-.mine-cell.flagged{background:rgba(255,20,147,.1);border-color:rgba(255,20,147,.3);}
-.mine-cell.mine-exp{background:rgba(255,20,147,.3);border-color:var(--np);}
-.mine-1{color:#ff69b4;} .mine-2{color:#ff85c2;} .mine-3{color:#ff1493;}
-.mine-4{color:#ffb6c1;} .mine-5{color:#ff9500;} .mine-6{color:#ff69b4;}
-.mine-7{color:#ff1493;} .mine-8{color:rgba(255,255,255,.5);}
+.mine-cell:hover:not(.revealed){background:rgba(168,85,247,.18);}
+.mine-cell.revealed{background:rgba(0,0,0,.4);border-color:rgba(168,85,247,.08);cursor:default;}
+.mine-cell.flagged{background:rgba(139,92,246,.1);border-color:rgba(139,92,246,.3);}
+.mine-cell.mine-exp{background:rgba(139,92,246,.3);border-color:var(--np);}
+.mine-1{color:#c084fc;} .mine-2{color:#d8b4fe;} .mine-3{color:#a855f7;}
+.mine-4{color:#e9d5ff;} .mine-5{color:#ff9500;} .mine-6{color:#c084fc;}
+.mine-7{color:#a855f7;} .mine-8{color:rgba(255,255,255,.5);}
 
 /* TYPING */
 .typing-text{font-family:'Rajdhani',sans-serif;font-size:1.1rem;line-height:1.8;max-width:480px;
-  text-align:center;padding:12px;background:rgba(255,105,180,.04);border-radius:8px;
-  border:1px solid rgba(255,105,180,.1);}
+  text-align:center;padding:12px;background:rgba(168,85,247,.04);border-radius:8px;
+  border:1px solid rgba(168,85,247,.1);}
 .typing-char.correct{color:var(--ng);}
 .typing-char.wrong{color:var(--np);text-decoration:underline;}
 .typing-char.current{color:#fff;background:var(--nc);border-radius:2px;}
-.typing-char.pending{color:rgba(255,224,240,.3);}
-.typing-input{background:rgba(255,105,180,.05);border:1px solid rgba(255,105,180,.3);color:var(--tm);
+.typing-char.pending{color:rgba(237,225,255,.3);}
+.typing-input{background:rgba(168,85,247,.05);border:1px solid rgba(168,85,247,.3);color:var(--tm);
   font-family:'Rajdhani',sans-serif;font-size:1rem;padding:10px 14px;border-radius:8px;
   width:100%;max-width:480px;outline:none;}
 .typing-input:focus{border-color:var(--nc);}
 
 /* TIC TAC TOE */
 .ttt-grid{display:grid;grid-template-columns:repeat(3,80px);grid-template-rows:repeat(3,80px);gap:6px;}
-.ttt-cell{width:80px;height:80px;background:rgba(255,105,180,.06);border:1px solid rgba(255,105,180,.2);
+.ttt-cell{width:80px;height:80px;background:rgba(168,85,247,.06);border:1px solid rgba(168,85,247,.2);
   border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;
   font-family:'Orbitron',monospace;font-size:2rem;font-weight:900;transition:all .2s;}
-.ttt-cell:hover:not(.taken){background:rgba(255,105,180,.15);}
+.ttt-cell:hover:not(.taken){background:rgba(168,85,247,.15);}
 .ttt-cell.x-cell{color:var(--np);text-shadow:0 0 10px var(--np);}
 .ttt-cell.o-cell{color:var(--nc);text-shadow:0 0 10px var(--nc);}
-.ttt-cell.win-cell{background:rgba(255,105,180,.12);border-color:var(--nc);}
+.ttt-cell.win-cell{background:rgba(168,85,247,.12);border-color:var(--nc);}
 
 /* CHESS */
 .chess-board{display:grid;grid-template-columns:repeat(8,44px);grid-template-rows:repeat(8,44px);
@@ -260,23 +260,23 @@ svg.thumb-svg{width:100%;height:100%;}
 
 /* SUDOKU */
 .sudoku-grid{display:grid;grid-template-columns:repeat(9,36px);grid-template-rows:repeat(9,36px);
-  border:2px solid rgba(255,105,180,.5);border-radius:4px;overflow:hidden;}
+  border:2px solid rgba(168,85,247,.5);border-radius:4px;overflow:hidden;}
 .sudoku-cell{width:36px;height:36px;display:flex;align-items:center;justify-content:center;
   font-family:'Orbitron',monospace;font-size:.85rem;cursor:pointer;
-  border:1px solid rgba(255,105,180,.08);transition:all .15s;user-select:none;}
+  border:1px solid rgba(168,85,247,.08);transition:all .15s;user-select:none;}
 .sudoku-cell.given{color:var(--nc);}
 .sudoku-cell.player-cell{color:var(--ny);cursor:pointer;}
-.sudoku-cell.selected{background:rgba(255,105,180,.2)!important;}
+.sudoku-cell.selected{background:rgba(168,85,247,.2)!important;}
 .sudoku-cell.error{color:var(--np)!important;}
-.sudoku-cell.box-right{border-right:2px solid rgba(255,105,180,.4);}
-.sudoku-cell.box-bottom{border-bottom:2px solid rgba(255,105,180,.4);}
-.sudoku-cell.light{background:#2a0518;}
-.sudoku-cell.dark{background:#1a030e;}
+.sudoku-cell.box-right{border-right:2px solid rgba(168,85,247,.4);}
+.sudoku-cell.box-bottom{border-bottom:2px solid rgba(168,85,247,.4);}
+.sudoku-cell.light{background:#1a0a35;}
+.sudoku-cell.dark{background:#120728;}
 .num-pad{display:grid;grid-template-columns:repeat(5,38px);gap:5px;margin-top:8px;}
-.num-pad-btn{width:38px;height:34px;background:rgba(255,105,180,.08);border:1px solid rgba(255,105,180,.2);
+.num-pad-btn{width:38px;height:34px;background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.2);
   color:var(--nc);font-family:'Orbitron',monospace;font-size:.8rem;border-radius:5px;cursor:pointer;transition:all .15s;}
-.num-pad-btn:hover{background:rgba(255,105,180,.2);}
-.num-pad-btn.erase{color:var(--np);border-color:rgba(255,20,147,.3);}
+.num-pad-btn:hover{background:rgba(168,85,247,.2);}
+.num-pad-btn.erase{color:var(--np);border-color:rgba(139,92,246,.3);}
 
 /* 2048 */
 .g2048-grid{display:grid;grid-template-columns:repeat(4,68px);grid-template-rows:repeat(4,68px);gap:6px;
@@ -287,13 +287,13 @@ svg.thumb-svg{width:100%;height:100%;}
 .g2048-2{background:#0a2a3a;color:#00f5ff;font-size:1.2rem;}
 .g2048-4{background:#0a3a2a;color:#39ff14;}
 .g2048-8{background:#2a1a0a;color:#ff9500;}
-.g2048-16{background:#3a0a1a;color:#ff006e;}
+.g2048-16{background:#3a0a1a;color:#a855f7;}
 .g2048-32{background:#2a0a3a;color:#bf5af2;}
 .g2048-64{background:#3a2a00;color:#ffe600;}
 .g2048-128{background:#1a3a1a;color:#39ff14;font-size:.9rem;}
 .g2048-256{background:#1a1a3a;color:#00f5ff;font-size:.85rem;}
 .g2048-512{background:#3a1a00;color:#ff9500;font-size:.8rem;}
-.g2048-1024{background:#3a0a0a;color:#ff006e;font-size:.72rem;}
+.g2048-1024{background:#3a0a0a;color:#a855f7;font-size:.72rem;}
 .g2048-2048{background:#2a2a00;color:#ffe600;font-size:.68rem;}
 
 /* PONG */
@@ -307,9 +307,9 @@ svg.thumb-svg{width:100%;height:100%;}
 
 ::-webkit-scrollbar{width:5px;}
 ::-webkit-scrollbar-track{background:var(--bg);}
-::-webkit-scrollbar-thumb{background:rgba(255,105,180,.25);border-radius:3px;}
+::-webkit-scrollbar-thumb{background:rgba(168,85,247,.25);border-radius:3px;}
 
-footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(255,224,240,.15);
+footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(237,225,255,.15);
   letter-spacing:.2em;font-family:'Orbitron',monospace;position:relative;z-index:1;}
 
 /* ── REG OVERLAY ── */
@@ -319,62 +319,62 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(255,
 #regOverlay.hidden{display:none;}
 .reg-box{background:var(--bc2);border:2px solid var(--nc);border-radius:18px;
   padding:30px 26px 26px;max-width:340px;width:92%;
-  box-shadow:0 0 40px rgba(255,105,180,.3),0 0 80px rgba(255,105,180,.1);
+  box-shadow:0 0 40px rgba(168,85,247,.3),0 0 80px rgba(168,85,247,.1);
   animation:modalIn .4s cubic-bezier(.34,1.56,.64,1);}
 .reg-logo{font-family:'Orbitron',monospace;font-size:1.5rem;font-weight:900;text-align:center;
-  background:linear-gradient(90deg,#ff69b4,#ff1493,#ffb6c1);
+  background:linear-gradient(90deg,#c084fc,#a855f7,#e9d5ff);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  filter:drop-shadow(0 0 14px #ff69b488);margin-bottom:4px;}
+  filter:drop-shadow(0 0 14px #c084fc88);margin-bottom:4px;}
 .reg-sub{font-family:'Orbitron',monospace;font-size:.55rem;letter-spacing:.3em;
-  color:rgba(255,105,180,.5);text-align:center;margin-bottom:22px;}
-.reg-tabs{display:flex;border:1px solid rgba(255,105,180,.2);border-radius:8px;overflow:hidden;margin-bottom:18px;}
+  color:rgba(168,85,247,.5);text-align:center;margin-bottom:22px;}
+.reg-tabs{display:flex;border:1px solid rgba(168,85,247,.2);border-radius:8px;overflow:hidden;margin-bottom:18px;}
 .reg-tab{flex:1;padding:9px 0;font-family:'Orbitron',monospace;font-size:.6rem;letter-spacing:.1em;
-  background:none;border:none;color:rgba(255,224,240,.35);cursor:pointer;transition:all .2s;}
-.reg-tab.active{background:rgba(255,105,180,.2);color:var(--nc);}
+  background:none;border:none;color:rgba(237,225,255,.35);cursor:pointer;transition:all .2s;}
+.reg-tab.active{background:rgba(168,85,247,.2);color:var(--nc);}
 .reg-field label{display:block;font-family:'Orbitron',monospace;font-size:.55rem;letter-spacing:.12em;
-  color:rgba(255,224,240,.4);margin-bottom:6px;}
-.reg-inp{width:100%;background:rgba(255,105,180,.05);border:1px solid rgba(255,105,180,.25);
+  color:rgba(237,225,255,.4);margin-bottom:6px;}
+.reg-inp{width:100%;background:rgba(168,85,247,.05);border:1px solid rgba(168,85,247,.25);
   color:var(--tm);font-family:'Rajdhani',sans-serif;font-size:1rem;padding:11px 14px;
   border-radius:8px;outline:none;transition:border-color .2s;margin-bottom:14px;}
-.reg-inp:focus{border-color:var(--nc);box-shadow:0 0 10px rgba(255,105,180,.2);}
-.reg-inp::placeholder{color:rgba(255,224,240,.18);}
+.reg-inp:focus{border-color:var(--nc);box-shadow:0 0 10px rgba(168,85,247,.2);}
+.reg-inp::placeholder{color:rgba(237,225,255,.18);}
 .reg-btn{width:100%;padding:13px;
-  background:linear-gradient(135deg,#ff1493,#ff69b4);
+  background:linear-gradient(135deg,#a855f7,#c084fc);
   color:#fff;font-family:'Orbitron',monospace;font-size:.7rem;font-weight:700;letter-spacing:.15em;
   border:none;border-radius:8px;cursor:pointer;transition:all .2s;
-  box-shadow:0 4px 18px rgba(255,20,147,.3);}
-.reg-btn:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(255,20,147,.45);}
+  box-shadow:0 4px 18px rgba(139,92,246,.3);}
+.reg-btn:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(139,92,246,.45);}
 .reg-msg{font-family:'Orbitron',monospace;font-size:.6rem;text-align:center;margin-top:10px;min-height:18px;}
-.reg-msg.ok{color:#ff85c2;} .reg-msg.err{color:#ff1493;}
+.reg-msg.ok{color:#c084fc;} .reg-msg.err{color:#a855f7;}
 .saved-title{font-family:'Orbitron',monospace;font-size:.5rem;letter-spacing:.2em;
-  color:rgba(255,224,240,.3);text-align:center;margin:10px 0 8px;}
+  color:rgba(237,225,255,.3);text-align:center;margin:10px 0 8px;}
 .saved-list{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-bottom:12px;}
 .saved-chip{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;
-  background:rgba(255,105,180,.06);border:1px solid rgba(255,105,180,.22);border-radius:20px;
+  background:rgba(168,85,247,.06);border:1px solid rgba(168,85,247,.22);border-radius:20px;
   font-family:'Orbitron',monospace;font-size:.58rem;color:var(--nc);
   cursor:pointer;transition:all .18s;}
-.saved-chip:hover{background:rgba(255,105,180,.2);border-color:var(--nc);transform:scale(1.04);}
+.saved-chip:hover{background:rgba(168,85,247,.2);border-color:var(--nc);transform:scale(1.04);}
 .or-line{text-align:center;font-family:'Orbitron',monospace;font-size:.5rem;
-  color:rgba(255,224,240,.2);letter-spacing:.2em;margin:4px 0 12px;}
+  color:rgba(237,225,255,.2);letter-spacing:.2em;margin:4px 0 12px;}
 
 /* ── PLAYER BADGE ── */
 #playerBadge{position:fixed;top:12px;left:12px;z-index:800;
   display:none;align-items:center;gap:7px;
-  background:rgba(26,0,17,.9);border:1px solid rgba(255,105,180,.4);
+  background:rgba(13,5,32,.9);border:1px solid rgba(168,85,247,.4);
   border-radius:30px;padding:5px 13px 5px 7px;
   backdrop-filter:blur(12px);cursor:pointer;transition:all .2s;
-  box-shadow:0 0 14px rgba(255,105,180,.15);}
-#playerBadge:hover{border-color:var(--nc);box-shadow:0 0 20px rgba(255,105,180,.3);}
+  box-shadow:0 0 14px rgba(168,85,247,.15);}
+#playerBadge:hover{border-color:var(--nc);box-shadow:0 0 20px rgba(168,85,247,.3);}
 .pb-av{width:26px;height:26px;border-radius:50%;
   background:linear-gradient(135deg,var(--np),var(--nc));
   display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0;}
-.pb-lbl{font-family:'Orbitron',monospace;font-size:.38rem;letter-spacing:.15em;color:rgba(255,224,240,.35);}
+.pb-lbl{font-family:'Orbitron',monospace;font-size:.38rem;letter-spacing:.15em;color:rgba(237,225,255,.35);}
 .pb-nm{font-family:'Orbitron',monospace;font-size:.62rem;font-weight:700;color:var(--nc);
   max-width:100px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 
 /* ── PLAYER DROPDOWN ── */
 #playerDrop{position:fixed;top:54px;left:12px;z-index:801;
-  display:none;background:rgba(20,0,15,.97);border:1px solid rgba(255,105,180,.3);
+  display:none;background:rgba(20,0,15,.97);border:1px solid rgba(168,85,247,.3);
   border-radius:10px;padding:6px;min-width:170px;
   backdrop-filter:blur(14px);box-shadow:0 8px 32px rgba(0,0,0,.6);}
 #playerDrop.open{display:block;}
@@ -382,48 +382,48 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(255,
   background:none;border:none;border-radius:7px;color:var(--tm);
   font-family:'Orbitron',monospace;font-size:.58rem;letter-spacing:.06em;
   cursor:pointer;transition:background .15s;text-align:left;}
-.pd-item:hover{background:rgba(255,105,180,.12);color:var(--nc);}
-.pd-sep{height:1px;background:rgba(255,105,180,.1);margin:3px 0;}
+.pd-item:hover{background:rgba(168,85,247,.12);color:var(--nc);}
+.pd-sep{height:1px;background:rgba(168,85,247,.1);margin:3px 0;}
 
 /* KRAEPLIN */
 .krp-question{font-family:'Orbitron',monospace;font-size:2.2rem;font-weight:900;color:#fff;
-  text-align:center;letter-spacing:.1em;text-shadow:0 0 20px rgba(255,105,180,.5);}
+  text-align:center;letter-spacing:.1em;text-shadow:0 0 20px rgba(168,85,247,.5);}
 .krp-timer-ring{position:relative;width:80px;height:80px;flex-shrink:0;}
 .krp-timer-ring svg{transform:rotate(-90deg);}
 .krp-timer-val{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
   font-family:'Orbitron',monospace;font-size:.9rem;font-weight:700;color:var(--nc);}
-.krp-ans-btn{background:rgba(255,105,180,.07);border:1px solid rgba(255,105,180,.25);color:#fff;
+.krp-ans-btn{background:rgba(168,85,247,.07);border:1px solid rgba(168,85,247,.25);color:#fff;
   font-family:'Orbitron',monospace;font-size:1.1rem;font-weight:700;padding:12px 10px;
   border-radius:8px;cursor:pointer;transition:all .2s;text-align:center;min-width:60px;}
-.krp-ans-btn:hover{border-color:var(--nc);background:rgba(255,105,180,.18);transform:scale(1.05);}
-.krp-ans-btn.correct{background:rgba(255,105,180,.25);border-color:var(--ng);color:var(--ng);animation:krpPop .25s ease;}
-.krp-ans-btn.wrong{background:rgba(255,20,147,.25);border-color:var(--np);color:var(--np);animation:krpShake .3s ease;}
+.krp-ans-btn:hover{border-color:var(--nc);background:rgba(168,85,247,.18);transform:scale(1.05);}
+.krp-ans-btn.correct{background:rgba(168,85,247,.25);border-color:var(--ng);color:var(--ng);animation:krpPop .25s ease;}
+.krp-ans-btn.wrong{background:rgba(139,92,246,.25);border-color:var(--np);color:var(--np);animation:krpShake .3s ease;}
 @keyframes krpPop{0%{transform:scale(1);}50%{transform:scale(1.15);}100%{transform:scale(1);}}
 @keyframes krpShake{0%,100%{transform:translateX(0);}25%{transform:translateX(-6px);}75%{transform:translateX(6px);}}
-.krp-stat{display:flex;flex-direction:column;align-items:center;background:rgba(255,105,180,.05);
-  border:1px solid rgba(255,105,180,.15);border-radius:8px;padding:6px 12px;min-width:64px;}
+.krp-stat{display:flex;flex-direction:column;align-items:center;background:rgba(168,85,247,.05);
+  border:1px solid rgba(168,85,247,.15);border-radius:8px;padding:6px 12px;min-width:64px;}
 .krp-stat-val{font-family:'Orbitron',monospace;font-size:1.1rem;font-weight:700;}
-.krp-stat-lbl{font-size:.55rem;letter-spacing:.15em;color:rgba(255,224,240,.4);font-family:'Orbitron',monospace;margin-top:2px;}
+.krp-stat-lbl{font-size:.55rem;letter-spacing:.15em;color:rgba(237,225,255,.4);font-family:'Orbitron',monospace;margin-top:2px;}
 .krp-mode-btn{font-family:'Orbitron',monospace;font-size:.68rem;letter-spacing:.08em;padding:8px 16px;
-  border-radius:6px;border:1px solid rgba(255,105,180,.3);background:rgba(255,105,180,.07);
+  border-radius:6px;border:1px solid rgba(168,85,247,.3);background:rgba(168,85,247,.07);
   color:var(--nc);cursor:pointer;transition:all .2s;}
-.krp-mode-btn:hover,.krp-mode-btn.active{background:rgba(255,105,180,.2);border-color:var(--nc);box-shadow:0 0 12px rgba(255,105,180,.2);}
+.krp-mode-btn:hover,.krp-mode-btn.active{background:rgba(168,85,247,.2);border-color:var(--nc);box-shadow:0 0 12px rgba(168,85,247,.2);}
 /* LEADERBOARD */
 .krp-lb-row{display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:6px;
-  background:rgba(255,105,180,.04);border:1px solid rgba(255,105,180,.1);margin-bottom:4px;}
+  background:rgba(168,85,247,.04);border:1px solid rgba(168,85,247,.1);margin-bottom:4px;}
 .krp-lb-rank{font-family:'Orbitron',monospace;font-size:.75rem;font-weight:700;color:var(--ny);width:24px;text-align:center;}
 .krp-lb-name{font-size:.82rem;font-weight:600;flex:1;color:var(--tm);}
 .krp-lb-score{font-family:'Orbitron',monospace;font-size:.75rem;color:var(--nc);}
-.krp-lb-detail{font-size:.6rem;color:rgba(255,224,240,.35);font-family:'Orbitron',monospace;}
+.krp-lb-detail{font-size:.6rem;color:rgba(237,225,255,.35);font-family:'Orbitron',monospace;}
 /* SUPPORT PANEL */
-.support-panel{background:rgba(255,105,180,.04);border:1px solid rgba(255,105,180,.15);border-radius:10px;
+.support-panel{background:rgba(168,85,247,.04);border:1px solid rgba(168,85,247,.15);border-radius:10px;
   padding:14px;margin-top:10px;text-align:center;}
 .support-panel a{color:var(--nc);text-decoration:none;font-family:'Orbitron',monospace;font-size:.72rem;
-  letter-spacing:.08em;border:1px solid rgba(255,105,180,.3);padding:6px 14px;border-radius:6px;
+  letter-spacing:.08em;border:1px solid rgba(168,85,247,.3);padding:6px 14px;border-radius:6px;
   display:inline-block;transition:all .2s;}
-.support-panel a:hover{background:rgba(255,105,180,.12);box-shadow:0 0 10px rgba(255,105,180,.2);}
+.support-panel a:hover{background:rgba(168,85,247,.12);box-shadow:0 0 10px rgba(168,85,247,.2);}
 .donate-txt{font-family:'Orbitron',monospace;font-size:.65rem;color:var(--ny);letter-spacing:.06em;
-  background:rgba(255,182,193,.07);border:1px solid rgba(255,182,193,.2);border-radius:6px;padding:6px 12px;
+  background:rgba(196,167,255,.07);border:1px solid rgba(196,167,255,.2);border-radius:6px;padding:6px 12px;
   display:inline-block;margin-top:8px;}
 
 /* RPG */
@@ -432,7 +432,7 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(255,
 .rpg-bar-wrap{display:flex;align-items:center;gap:6px;}
 .rpg-bar{height:12px;border-radius:3px;border:1px solid rgba(0,0,0,.4);overflow:hidden;width:100px;}
 .rpg-bar-fill{height:100%;transition:width .3s;}
-.rpg-hp .rpg-bar-fill{background:linear-gradient(90deg,#ff006e,#ff4488);}
+.rpg-hp .rpg-bar-fill{background:linear-gradient(90deg,#a855f7,#ff4488);}
 .rpg-mp .rpg-bar-fill{background:linear-gradient(90deg,#00f5ff,#0088ff);}
 .rpg-xp .rpg-bar-fill{background:linear-gradient(90deg,#ffe600,#ff9500);}
 .rpg-dpad{display:grid;grid-template-columns:repeat(3,36px);grid-template-rows:repeat(2,36px);gap:3px;}
@@ -451,9 +451,9 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(255,
   font-family:'Orbitron',monospace;font-size:.8rem;border-radius:6px;cursor:pointer;
   display:flex;align-items:center;justify-content:center;transition:all .15s;user-select:none;}
 .mario-btn:active{background:rgba(255,149,0,.3);transform:scale(.93);}
-.mario-jump-btn{width:60px;height:60px;background:rgba(255,0,110,.15);border:2px solid rgba(255,0,110,.5);
+.mario-jump-btn{width:60px;height:60px;background:rgba(168,85,247,.15);border:2px solid rgba(168,85,247,.5);
   color:var(--np);font-size:.7rem;border-radius:50%;font-family:'Orbitron',monospace;}
-.mario-jump-btn:active{background:rgba(255,0,110,.35);transform:scale(.93);}
+.mario-jump-btn:active{background:rgba(168,85,247,.35);transform:scale(.93);}
 
 /* ── KELOMPOK / GROUP SELECTION ── */
 #groupOverlay{position:fixed;inset:0;z-index:9998;background:rgba(10,0,8,.97);
@@ -462,42 +462,42 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(255,
 #groupOverlay.hidden{display:none;}
 .group-box{background:var(--bc2);border:2px solid var(--nc);border-radius:20px;
   padding:32px 26px 28px;max-width:380px;width:92%;
-  box-shadow:0 0 50px rgba(255,105,180,.35),0 0 100px rgba(255,105,180,.1);
+  box-shadow:0 0 50px rgba(168,85,247,.35),0 0 100px rgba(168,85,247,.1);
   animation:modalIn .4s cubic-bezier(.34,1.56,.64,1);}
 .group-welcome{font-family:'Orbitron',monospace;font-size:.58rem;letter-spacing:.3em;
-  color:rgba(255,224,240,.4);text-align:center;margin-bottom:6px;}
+  color:rgba(237,225,255,.4);text-align:center;margin-bottom:6px;}
 .group-player-name{font-family:'Orbitron',monospace;font-size:1.3rem;font-weight:900;
-  text-align:center;color:#fff;text-shadow:0 0 18px rgba(255,105,180,.6);margin-bottom:4px;}
+  text-align:center;color:#fff;text-shadow:0 0 18px rgba(168,85,247,.6);margin-bottom:4px;}
 .group-title{font-family:'Orbitron',monospace;font-size:.7rem;letter-spacing:.2em;
-  color:rgba(255,224,240,.5);text-align:center;margin-bottom:24px;}
+  color:rgba(237,225,255,.5);text-align:center;margin-bottom:24px;}
 .group-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:6px;}
-.group-card{background:rgba(255,105,180,.04);border:2px solid rgba(255,105,180,.2);
+.group-card{background:rgba(168,85,247,.04);border:2px solid rgba(168,85,247,.2);
   border-radius:14px;padding:22px 14px 18px;text-align:center;cursor:pointer;
   transition:all .25s ease;position:relative;overflow:hidden;}
 .group-card:hover{transform:translateY(-4px) scale(1.03);border-color:var(--nc);
-  box-shadow:0 0 30px rgba(255,105,180,.3);}
+  box-shadow:0 0 30px rgba(168,85,247,.3);}
 .group-card:hover .group-card-bg{opacity:1;}
 .group-card-bg{position:absolute;inset:0;opacity:0;transition:opacity .3s;pointer-events:none;}
 .group-card.game-card-g .group-card-bg{background:radial-gradient(circle at center,rgba(0,245,255,.08),transparent);}
 .group-card.learn-card .group-card-bg{background:radial-gradient(circle at center,rgba(57,255,20,.08),transparent);}
 .group-card-icon{font-size:2.8rem;margin-bottom:10px;display:block;
-  filter:drop-shadow(0 0 10px rgba(255,105,180,.4));}
+  filter:drop-shadow(0 0 10px rgba(168,85,247,.4));}
 .group-card-label{font-family:'Orbitron',monospace;font-size:.78rem;font-weight:700;
   color:#fff;letter-spacing:.1em;margin-bottom:6px;}
-.group-card-desc{font-size:.68rem;color:rgba(255,224,240,.45);line-height:1.4;}
+.group-card-desc{font-size:.68rem;color:rgba(237,225,255,.45);line-height:1.4;}
 .group-card-count{font-family:'Orbitron',monospace;font-size:.55rem;letter-spacing:.15em;
   color:var(--nc);margin-top:8px;opacity:.7;}
 
 /* ── FILTER BAR ── */
 .filter-bar{display:flex;align-items:center;gap:8px;margin-bottom:18px;flex-wrap:wrap;justify-content:center;}
 .filter-badge{display:inline-flex;align-items:center;gap:5px;
-  background:rgba(255,105,180,.06);border:1px solid rgba(255,105,180,.25);
+  background:rgba(168,85,247,.06);border:1px solid rgba(168,85,247,.25);
   border-radius:20px;padding:5px 14px;font-family:'Orbitron',monospace;font-size:.58rem;
   color:var(--nc);letter-spacing:.1em;}
-.group-switch-btn{background:rgba(255,105,180,.08);border:1px solid rgba(255,105,180,.3);
+.group-switch-btn{background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.3);
   color:var(--nc);font-family:'Orbitron',monospace;font-size:.55rem;letter-spacing:.1em;
   padding:5px 12px;border-radius:20px;cursor:pointer;transition:all .2s;}
-.group-switch-btn:hover{background:rgba(255,105,180,.2);border-color:var(--nc);}
+.group-switch-btn:hover{background:rgba(168,85,247,.2);border-color:var(--nc);}
 
 /* ── SIMON SAYS ── */
 .simon-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:280px;}
@@ -505,7 +505,7 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(255,
 .simon-btn.lit{filter:brightness(1.8);transform:scale(1.04);box-shadow:0 0 30px currentColor;}
 .simon-btn.wrong-flash{animation:simonWrong .3s ease;}
 @keyframes simonWrong{0%,100%{transform:scale(1);}50%{transform:scale(.95);filter:brightness(2) saturate(3);}}
-.simon-0{background:rgba(255,20,147,.25);border-color:rgba(255,20,147,.5);color:#ff1493;}
+.simon-0{background:rgba(139,92,246,.25);border-color:rgba(139,92,246,.5);color:#a855f7;}
 .simon-1{background:rgba(0,245,255,.18);border-color:rgba(0,245,255,.4);color:#00f5ff;}
 .simon-2{background:rgba(57,255,20,.18);border-color:rgba(57,255,20,.4);color:#39ff14;}
 .simon-3{background:rgba(255,230,0,.18);border-color:rgba(255,230,0,.4);color:#ffe600;}
@@ -515,37 +515,37 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(255,
 /* ── PATTERN SEQUENCE ── */
 .pattern-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:8px 0;}
 .pattern-item{width:44px;height:44px;border-radius:8px;display:flex;align-items:center;
-  justify-content:center;font-size:1.3rem;border:2px solid rgba(255,105,180,.3);
-  background:rgba(255,105,180,.06);}
-.pattern-item.question{border-color:var(--nc);background:rgba(255,105,180,.1);
+  justify-content:center;font-size:1.3rem;border:2px solid rgba(168,85,247,.3);
+  background:rgba(168,85,247,.06);}
+.pattern-item.question{border-color:var(--nc);background:rgba(168,85,247,.1);
   font-family:'Orbitron',monospace;font-size:1.2rem;color:var(--nc);font-weight:900;}
 .pattern-choice{width:54px;height:54px;border-radius:10px;display:flex;align-items:center;
-  justify-content:center;font-size:1.5rem;border:2px solid rgba(255,105,180,.25);
-  background:rgba(255,105,180,.04);cursor:pointer;transition:all .2s;}
-.pattern-choice:hover{border-color:var(--nc);background:rgba(255,105,180,.15);transform:scale(1.08);}
+  justify-content:center;font-size:1.5rem;border:2px solid rgba(168,85,247,.25);
+  background:rgba(168,85,247,.04);cursor:pointer;transition:all .2s;}
+.pattern-choice:hover{border-color:var(--nc);background:rgba(168,85,247,.15);transform:scale(1.08);}
 .pattern-choice.correct-ans{border-color:var(--ng);background:rgba(57,255,20,.12);}
-.pattern-choice.wrong-ans{border-color:var(--np);background:rgba(255,20,147,.12);}
+.pattern-choice.wrong-ans{border-color:var(--np);background:rgba(139,92,246,.12);}
 
 /* ── LOGIC GRID ── */
-.logic-clues{background:rgba(255,105,180,.04);border:1px solid rgba(255,105,180,.12);
+.logic-clues{background:rgba(168,85,247,.04);border:1px solid rgba(168,85,247,.12);
   border-radius:8px;padding:12px;width:100%;max-width:400px;}
-.logic-clue{font-size:.82rem;color:rgba(255,224,240,.7);line-height:1.7;padding:2px 0;}
+.logic-clue{font-size:.82rem;color:rgba(237,225,255,.7);line-height:1.7;padding:2px 0;}
 .logic-clue span{color:var(--nc);font-weight:600;}
 .logic-grid-table{border-collapse:collapse;margin:10px auto;}
 .logic-grid-table th{font-family:'Orbitron',monospace;font-size:.6rem;color:var(--nc);
-  padding:6px 10px;border:1px solid rgba(255,105,180,.15);background:rgba(255,105,180,.06);}
-.logic-grid-table td{width:42px;height:36px;border:1px solid rgba(255,105,180,.12);
+  padding:6px 10px;border:1px solid rgba(168,85,247,.15);background:rgba(168,85,247,.06);}
+.logic-grid-table td{width:42px;height:36px;border:1px solid rgba(168,85,247,.12);
   text-align:center;cursor:pointer;transition:all .15s;font-size:.9rem;}
-.logic-grid-table td:hover{background:rgba(255,105,180,.1);}
+.logic-grid-table td:hover{background:rgba(168,85,247,.1);}
 .logic-grid-table td.marked-yes{background:rgba(57,255,20,.15);color:#39ff14;font-weight:700;}
-.logic-grid-table td.marked-no{background:rgba(255,20,147,.08);color:rgba(255,20,147,.5);}
+.logic-grid-table td.marked-no{background:rgba(139,92,246,.08);color:rgba(139,92,246,.5);}
 
 /* ── GAME LOADING SCREEN ── */
 #gameLoader{
   position:fixed;inset:0;z-index:99999;
-  background:#0d0008;
+  background:linear-gradient(135deg,#0d0520 0%,#180a35 50%,#0d0520 100%);
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;
-  opacity:1;transition:opacity .5s ease;
+  opacity:1;transition:opacity .8s ease;
 }
 #gameLoader.fade-out{opacity:0;pointer-events:none;}
 #gameLoader.hidden{display:none;}
@@ -559,60 +559,64 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(255,
 
 .gl-logo{
   font-family:'Orbitron',monospace;font-size:2.2rem;font-weight:900;letter-spacing:.12em;
-  background:linear-gradient(90deg,#ff69b4,#ff1493,#ffb6c1,#ff69b4);
+  background:linear-gradient(90deg,#c084fc,#a855f7,#e9d5ff,#c084fc);
   background-size:200% auto;
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
   animation:glShine 1.8s linear infinite,glPulse 2s ease-in-out infinite;
   text-align:center;
 }
 @keyframes glShine{to{background-position:200% center;}}
-@keyframes glPulse{0%,100%{filter:drop-shadow(0 0 12px #ff69b488);}50%{filter:drop-shadow(0 0 28px #ff1493cc);}}
+@keyframes glPulse{0%,100%{filter:drop-shadow(0 0 12px #c084fc88);}50%{filter:drop-shadow(0 0 28px #a855f7cc);}}
 
 .gl-avatar{
   width:80px;height:80px;border-radius:50%;
   background:linear-gradient(135deg,#3a0020,#1a000e);
-  border:2px solid rgba(255,105,180,.4);
+  border:2px solid rgba(168,85,247,.4);
   display:flex;align-items:center;justify-content:center;
   font-size:2.4rem;
-  box-shadow:0 0 24px rgba(255,105,180,.3),0 0 60px rgba(255,105,180,.1);
+  box-shadow:0 0 24px rgba(168,85,247,.3),0 0 60px rgba(168,85,247,.1);
   animation:glAvatarPop .4s cubic-bezier(.34,1.56,.64,1) both;
 }
 @keyframes glAvatarPop{from{transform:scale(0) rotate(-30deg);opacity:0;}to{transform:scale(1) rotate(0deg);opacity:1;}}
 
-.gl-welcome{font-family:'Orbitron',monospace;font-size:.58rem;letter-spacing:.3em;color:rgba(255,224,240,.4);text-align:center;}
+.gl-welcome{font-family:'Orbitron',monospace;font-size:.58rem;letter-spacing:.3em;color:rgba(237,225,255,.4);text-align:center;}
 .gl-name{font-family:'Orbitron',monospace;font-size:1.1rem;font-weight:700;color:#fff;text-align:center;
-  text-shadow:0 0 16px rgba(255,105,180,.6);letter-spacing:.08em;
+  text-shadow:0 0 16px rgba(168,85,247,.6);letter-spacing:.08em;
   animation:glNameIn .5s .2s cubic-bezier(.34,1.56,.64,1) both;
 }
 @keyframes glNameIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
 
-.gl-bar-wrap{width:100%;background:rgba(255,105,180,.08);border:1px solid rgba(255,105,180,.2);border-radius:20px;height:8px;overflow:hidden;}
+.gl-bar-wrap{width:100%;background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.2);border-radius:20px;height:8px;overflow:hidden;}
 .gl-bar{height:100%;width:0%;border-radius:20px;
-  background:linear-gradient(90deg,#ff1493,#ff69b4,#ffb6c1);
+  background:linear-gradient(90deg,#a855f7,#c084fc,#e9d5ff);
   background-size:200% auto;
-  box-shadow:0 0 10px rgba(255,105,180,.6);
-  animation:glBarFill 5s linear forwards, glBarShine 1s linear infinite;
+  box-shadow:0 0 10px rgba(168,85,247,.6);
+  animation:glBarFill 10s linear forwards, glBarShine 1s linear infinite;
 }
 @keyframes glBarFill{from{width:0%;}to{width:100%;}}
 @keyframes glBarShine{to{background-position:200% center;}}
 
 .gl-status{font-family:'Orbitron',monospace;font-size:.58rem;letter-spacing:.15em;color:var(--nc);text-align:center;min-height:16px;}
-.gl-counter{font-family:'Orbitron',monospace;font-size:.62rem;color:rgba(255,224,240,.3);letter-spacing:.2em;}
+.gl-counter{font-family:'Orbitron',monospace;font-size:.62rem;color:rgba(237,225,255,.3);letter-spacing:.2em;}
 
 .gl-dots{display:flex;gap:6px;justify-content:center;}
-.gl-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,105,180,.3);animation:glDotPulse 1.2s ease-in-out infinite;}
+.gl-dot{width:6px;height:6px;border-radius:50%;background:rgba(168,85,247,.3);animation:glDotPulse 1.2s ease-in-out infinite;}
 .gl-dot:nth-child(1){animation-delay:0s;}
 .gl-dot:nth-child(2){animation-delay:.2s;}
 .gl-dot:nth-child(3){animation-delay:.4s;}
-@keyframes glDotPulse{0%,100%{background:rgba(255,105,180,.2);transform:scale(.8);}50%{background:#ff69b4;transform:scale(1.2);box-shadow:0 0 6px #ff69b4;}}
+@keyframes glDotPulse{0%,100%{background:rgba(168,85,247,.2);transform:scale(.8);}50%{background:#c084fc;transform:scale(1.2);box-shadow:0 0 6px #c084fc;}}
 
-.gl-tip{font-family:'Rajdhani',sans-serif;font-size:.78rem;color:rgba(255,224,240,.25);text-align:center;letter-spacing:.04em;max-width:260px;line-height:1.5;}
+.gl-tip{font-family:'Rajdhani',sans-serif;font-size:.78rem;color:rgba(237,225,255,.25);text-align:center;letter-spacing:.04em;max-width:260px;line-height:1.5;}
+.gl-welcome-msg{font-family:'Rajdhani',sans-serif;font-size:.82rem;color:rgba(237,225,255,.45);
+  text-align:center;line-height:1.7;max-width:280px;letter-spacing:.02em;
+  background:rgba(168,85,247,.07);border:1px solid rgba(168,85,247,.18);
+  border-radius:10px;padding:10px 14px;margin-top:4px;}
 </style>
 </head>
 <body>
 
-<!-- GAME LOADING SCREEN -->
-<div id="gameLoader" class="hidden">
+<!-- GAME LOADING SCREEN — tampil 10 detik saat pertama masuk -->
+<div id="gameLoader">
   <div class="gl-scanlines"></div>
   <div class="gl-content">
     <div class="gl-logo">ARCADE ZONE</div>
@@ -621,11 +625,18 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(255,
       <div class="gl-welcome">SELAMAT DATANG</div>
       <div class="gl-name" id="glName">PLAYER</div>
     </div>
+
+    <!-- Pesan selamat bermain -->
+    <div class="gl-welcome-msg">
+      🎮 Selamat Bermain/belajar!<br>
+      <span style="font-size:.75rem;color:rgba(237,225,255,.35)">Website ini masih dalam tahap pengembangan, maaf jika ada bug/gangguan 😇</span>
+    </div>
+
     <div style="width:100%;display:flex;flex-direction:column;gap:8px">
       <div class="gl-bar-wrap"><div class="gl-bar" id="glBar"></div></div>
       <div style="display:flex;justify-content:space-between;align-items:center">
         <div class="gl-status" id="glStatus">MEMUAT DATA...</div>
-        <div class="gl-counter" id="glCounter">0%</div>
+        <div class="gl-counter" id="glCounter">10s</div>
       </div>
     </div>
     <div class="gl-dots">
@@ -637,8 +648,8 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(255,
   </div>
 </div>
 
-<!-- REGISTRATION OVERLAY -->
-<div id="regOverlay">
+<!-- REGISTRATION OVERLAY — tampil setelah loading screen -->
+<div id="regOverlay" style="display:none">
   <div class="reg-box">
     <div class="reg-logo">ARCADE ZONE</div>
     <div class="reg-sub">▸ GAME CENTER ◂</div>
@@ -717,7 +728,7 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(255,
   </div>
   <div style="display:flex;flex-direction:column;flex:1;min-width:0;gap:1px">
     <div class="mb-title" id="mbTitle">🎵 Klik ▶ untuk putar musik</div>
-    <div id="mbCredit" style="font-size:.48rem;color:rgba(255,105,180,.4);font-family:'Orbitron',monospace;letter-spacing:.08em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">by —</div>
+    <div id="mbCredit" style="font-size:.48rem;color:rgba(168,85,247,.4);font-family:'Orbitron',monospace;letter-spacing:.08em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">by —</div>
   </div>
   <button class="mb-btn" id="mbPrevBtn" onclick="mbPrev()" title="Lagu Sebelumnya" style="font-size:.6rem">⏮</button>
   <button class="mb-btn" id="mbPlayBtn" onclick="mbToggle()" title="Play/Pause">▶</button>
@@ -744,21 +755,50 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(255,
   <div class="game-grid" id="gameGrid"></div>
   <div class="support-panel" style="margin-bottom:16px">
     <div style="font-family:'Orbitron',monospace;font-size:.62rem;color:rgba(224,232,255,.5);margin-bottom:10px;letter-spacing:.12em">&#9656; DUKUNG &amp; REQUEST GAME &#9666;</div>
-    <a href="https://www.instagram.com/gamebyXieraa__07" target="_blank" rel="noopener">&#128247; @gamebyXieraa__07</a>
+
+    <!-- Instagram — buka app langsung -->
+    <div onclick="openInstagram()" style="cursor:pointer;display:inline-flex;align-items:center;gap:9px;
+      background:linear-gradient(135deg,rgba(193,53,132,.15),rgba(131,58,180,.15),rgba(253,159,29,.1));
+      border:1px solid rgba(193,53,132,.4);border-radius:8px;padding:9px 16px;
+      transition:all .2s;text-decoration:none;"
+      onmouseover="this.style.borderColor='#e1306c';this.style.background='linear-gradient(135deg,rgba(193,53,132,.28),rgba(131,58,180,.28),rgba(253,159,29,.18))';this.style.boxShadow='0 0 18px rgba(193,53,132,.35)'"
+      onmouseout="this.style.borderColor='rgba(193,53,132,.4)';this.style.background='linear-gradient(135deg,rgba(193,53,132,.15),rgba(131,58,180,.15),rgba(253,159,29,.1))';this.style.boxShadow='none'">
+      <span style="font-size:1.3rem">📸</span>
+      <div style="display:flex;flex-direction:column;align-items:flex-start">
+        <span style="font-family:'Orbitron',monospace;font-size:.58rem;color:rgba(237,225,255,.4);letter-spacing:.12em">INSTAGRAM</span>
+        <span style="font-family:'Orbitron',monospace;font-size:.7rem;font-weight:700;color:#e1306c">@gamebyXieraa__07</span>
+      </div>
+      <span style="font-size:.55rem;background:rgba(193,53,132,.2);border:1px solid rgba(193,53,132,.4);border-radius:4px;padding:2px 8px;color:#e1306c;font-family:'Orbitron',monospace;letter-spacing:.05em">BUKA APP ▶</span>
+    </div>
+
     <div style="margin-top:10px">
-      <div class="donate-txt" onclick="openDANA()" style="cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px" onmouseover="this.style.background='rgba(0,186,96,.18)';this.style.borderColor='rgba(0,186,96,.5)'" onmouseout="this.style.background='rgba(255,182,193,.07)';this.style.borderColor='rgba(255,182,193,.2)'">
+      <div class="donate-txt" onclick="openDANA()" style="cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px" onmouseover="this.style.background='rgba(0,186,96,.18)';this.style.borderColor='rgba(0,186,96,.5)'" onmouseout="this.style.background='rgba(196,167,255,.07)';this.style.borderColor='rgba(196,167,255,.2)'">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Logo_dana_blue.svg/120px-Logo_dana_blue.svg.png" alt="DANA" style="height:20px;vertical-align:middle;filter:drop-shadow(0 0 4px rgba(0,186,96,.4))">
         <span>&#128155; Donasi ke DANA: <strong>0895382174755</strong></span>
         <span style="font-size:.55rem;background:rgba(0,186,96,.2);border:1px solid rgba(0,186,96,.4);border-radius:4px;padding:2px 6px;color:#00ba60">KETUK ▶</span>
       </div>
     </div>
     <script>
+    function openInstagram(){
+      const user='gamebyXieraa__07';
+      // Coba buka app Instagram dulu via deep link
+      const igApp='instagram://user?username='+user;
+      const igWeb='https://www.instagram.com/'+user;
+      // Simpan waktu sekarang
+      const t=Date.now();
+      // Deep link — jika app ada, langsung terbuka
+      window.location.href=igApp;
+      // Fallback ke web jika app tidak ada setelah 1.5 detik
+      setTimeout(function(){
+        if(Date.now()-t<2000){
+          window.open(igWeb,'_blank');
+        }
+      },1500);
+    }
     function openDANA(){
-      // Coba buka app DANA langsung via deep link
       const phone='0895382174755';
       const danaDeep='dana://transfer?to='+phone;
       const danaWeb='https://link.dana.id/transfer?to='+phone;
-      // Coba deep link dulu
       const iframe=document.createElement('iframe');
       iframe.style.display='none';
       document.body.appendChild(iframe);
@@ -766,7 +806,6 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(255,
         window.location.href=danaDeep;
         setTimeout(function(){
           document.body.removeChild(iframe);
-          // Jika deep link gagal (user tidak punya app DANA), buka web
           window.open(danaWeb,'_blank');
         },1500);
       }catch(e){
@@ -788,7 +827,15 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(255,
   </div>
 </div>
 
-<footer>© ARCADE ZONE · 26 GAMES · ALL FOR FUN · @gamebyXieraa__07</footer>
+<footer>
+  <div style="font-family:'Rajdhani',sans-serif;font-size:.85rem;color:rgba(237,225,255,.5);
+    letter-spacing:.04em;line-height:1.7;margin-bottom:10px;
+    background:rgba(168,85,247,.06);border:1px solid rgba(168,85,247,.15);
+    border-radius:10px;padding:14px 18px;max-width:480px;margin:0 auto 14px;text-align:center;">
+    🎮 Selamat Bermain/belajar, website ini masih dalam tahap pengembangan jadi maaf jika ada bug/gangguan 😇
+  </div>
+  <div style="font-size:.65rem;color:rgba(237,225,255,.15);letter-spacing:.2em;font-family:'Orbitron',monospace;">© ARCADE ZONE · 27 GAMES · ALL FOR FUN · @gamebyXieraa__07</div>
+</footer>
 
 <script>
 // ═══════════════════════════════════════════════════
@@ -879,7 +926,7 @@ function svgRPS(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a0010"/
 <text x="22%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="24">✊</text>
 <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="24">✋</text>
 <text x="78%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="24">✌️</text>
-<text x="50%" y="82%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff006e" opacity=".6">SUIT GAME</text>`;}
+<text x="50%" y="82%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#a855f7" opacity=".6">SUIT GAME</text>`;}
 function svgBJ(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a1400"/>
 <rect x="22" y="18" width="42" height="58" rx="5" fill="#fff" opacity=".9"/>
 <text x="43" y="52" dominant-baseline="middle" text-anchor="middle" font-size="20" fill="#e00" font-weight="bold">♥</text>
@@ -891,7 +938,7 @@ function svgSnake(s){s.innerHTML=`<rect width="100%" height="100%" fill="#001500
 <rect x="54" y="50" width="12" height="12" rx="2" fill="#39ff14" opacity=".7"/>
 <rect x="70" y="50" width="12" height="12" rx="2" fill="#39ff14" opacity=".5"/>
 <rect x="70" y="34" width="12" height="12" rx="2" fill="#39ff14" opacity=".35"/>
-<rect x="130" y="38" width="10" height="10" rx="2" fill="#ff006e" opacity=".8"/>
+<rect x="130" y="38" width="10" height="10" rx="2" fill="#a855f7" opacity=".8"/>
 <text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#39ff14" opacity=".5">ARROW KEYS</text>`;}
 function svgMemory(s){s.innerHTML=`<rect width="100%" height="100%" fill="#120020"/>
 ${[0,1,2,3].map(i=>`<rect x="${20+i*42}" y="22" width="34" height="40" rx="5" fill="#1a0a30" stroke="#bf5af2" stroke-width="1" opacity=".5"/>
@@ -913,7 +960,7 @@ function svgDice(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a0010"
 <circle cx="40" cy="67" r="5" fill="#c00"/><circle cx="67" cy="67" r="5" fill="#c00"/>
 <rect x="100" y="30" width="66" height="66" rx="9" fill="white" opacity=".9"/>
 <circle cx="133" cy="45" r="5" fill="#333"/><circle cx="133" cy="63" r="5" fill="#333"/><circle cx="133" cy="81" r="5" fill="#333"/>
-<text x="50%" y="90%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff006e" opacity=".6">ROLL THE DICE</text>`;}
+<text x="50%" y="90%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#a855f7" opacity=".6">ROLL THE DICE</text>`;}
 function svgChess(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0a1200"/>
 ${Array.from({length:64},(_,i)=>{const c=i%8,r=Math.floor(i/8),x=18+c*22,y=8+r*11;
 return `<rect x="${x}" y="${y}" width="22" height="11" fill="${(c+r)%2===0?'#1a3a1a':'#0a1a0a'}"/>`;}).join('')}
@@ -929,16 +976,16 @@ function svgTTT(s){s.innerHTML=`<rect width="100%" height="100%" fill="#120020"/
 <line x1="105" y1="20" x2="105" y2="110" stroke="#bf5af2" stroke-width="2" opacity=".5"/>
 <line x1="20" y1="56" x2="150" y2="56" stroke="#bf5af2" stroke-width="2" opacity=".5"/>
 <line x1="20" y1="86" x2="150" y2="86" stroke="#bf5af2" stroke-width="2" opacity=".5"/>
-<text x="39" y="42" dominant-baseline="middle" text-anchor="middle" font-size="18" fill="#ff006e" opacity=".8">X</text>
+<text x="39" y="42" dominant-baseline="middle" text-anchor="middle" font-size="18" fill="#a855f7" opacity=".8">X</text>
 <text x="85" y="42" dominant-baseline="middle" text-anchor="middle" font-size="18" fill="#00f5ff" opacity=".8">O</text>
-<text x="124" y="42" dominant-baseline="middle" text-anchor="middle" font-size="18" fill="#ff006e" opacity=".8">X</text>
+<text x="124" y="42" dominant-baseline="middle" text-anchor="middle" font-size="18" fill="#a855f7" opacity=".8">X</text>
 <text x="39" y="71" dominant-baseline="middle" text-anchor="middle" font-size="18" fill="#00f5ff" opacity=".8">O</text>
-<text x="85" y="71" dominant-baseline="middle" text-anchor="middle" font-size="18" fill="#ff006e" opacity=".8">X</text>
+<text x="85" y="71" dominant-baseline="middle" text-anchor="middle" font-size="18" fill="#a855f7" opacity=".8">X</text>
 <text x="50%" y="92%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#bf5af2" opacity=".5">3 IN A ROW</text>`;}
 function svgMine(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a0a00"/>
 ${Array.from({length:25},(_,i)=>{const c=i%5,r=Math.floor(i/5),x=20+c*30,y=14+r*22;
 const ismine=[4,12,18].includes(i);
-return `<rect x="${x}" y="${y}" width="24" height="16" rx="3" fill="${ismine?'rgba(255,0,110,.15)':'rgba(255,149,0,.08)'}" stroke="${ismine?'rgba(255,0,110,.35)':'rgba(255,149,0,.2)'}" stroke-width="1"/>
+return `<rect x="${x}" y="${y}" width="24" height="16" rx="3" fill="${ismine?'rgba(168,85,247,.15)':'rgba(255,149,0,.08)'}" stroke="${ismine?'rgba(168,85,247,.35)':'rgba(255,149,0,.2)'}" stroke-width="1"/>
 ${ismine?`<text x="${x+12}" y="${y+11}" dominant-baseline="middle" text-anchor="middle" font-size="9">💣</text>`:
 `<text x="${x+12}" y="${y+11}" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff9500" opacity=".5">${[1,2,3][Math.floor(Math.random()*3)]}</text>`}`;}).join('')}
 <text x="50%" y="95%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff9500" opacity=".5">AVOID MINES</text>`;}
@@ -952,7 +999,7 @@ return `<rect x="${18+i*34}" y="35" width="28" height="28" rx="4" fill="${bg}" s
 <text x="50%" y="83%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#00f5ff" opacity=".5">TEBAK 5 HURUF</text>`;}
 function svg2048(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a1400"/>
 ${[[2,4,8,16],[32,64,128,256],[2,512,1024,2],[4,8,32,16]].map((row,r)=>row.map((v,c)=>{
-const colors={2:'#00f5ff',4:'#39ff14',8:'#ff9500',16:'#ff006e',32:'#bf5af2',64:'#ffe600',128:'#39ff14',256:'#00f5ff',512:'#ff9500',1024:'#ff006e'};
+const colors={2:'#00f5ff',4:'#39ff14',8:'#ff9500',16:'#a855f7',32:'#bf5af2',64:'#ffe600',128:'#39ff14',256:'#00f5ff',512:'#ff9500',1024:'#a855f7'};
 return `<rect x="${12+c*38}" y="${8+r*24}" width="34" height="19" rx="3" fill="rgba(0,0,0,.4)" stroke="${colors[v]||'#fff'}" stroke-width="1" opacity=".5"/>
 <text x="${29+c*38}" y="${20+r*24}" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="${v>99?'6':v>9?'7':'9'}" fill="${colors[v]||'#fff'}" opacity=".7">${v}</text>`;}).join('')).join('')}
 <text x="50%" y="96%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ffe600" opacity=".5">REACH 2048</text>`;}
@@ -963,22 +1010,22 @@ function svgTyping(s){s.innerHTML=`<rect width="100%" height="100%" fill="#00150
 <rect x="14" y="82" width="100" height="14" rx="4" fill="rgba(57,255,20,.08)" stroke="rgba(57,255,20,.25)" stroke-width="1"/>
 <text x="94" y="112" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#39ff14" opacity=".5">WPM COUNTER</text>`;}
 function svgHangman(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a0010"/>
-<line x1="30" y1="110" x2="150" y2="110" stroke="#ff006e" stroke-width="2" opacity=".5"/>
-<line x1="60" y1="110" x2="60" y2="20" stroke="#ff006e" stroke-width="2" opacity=".5"/>
-<line x1="60" y1="20" x2="110" y2="20" stroke="#ff006e" stroke-width="2" opacity=".5"/>
-<line x1="110" y1="20" x2="110" y2="38" stroke="#ff006e" stroke-width="2" opacity=".5"/>
-<circle cx="110" cy="48" r="10" fill="none" stroke="#ff006e" stroke-width="2" opacity=".7"/>
-<line x1="110" y1="58" x2="110" y2="85" stroke="#ff006e" stroke-width="2" opacity=".6"/>
-<line x1="110" y1="68" x2="95" y2="80" stroke="#ff006e" stroke-width="2" opacity=".5"/>
-<line x1="110" y1="85" x2="98" y2="100" stroke="#ff006e" stroke-width="2" opacity=".5"/>
-<text x="50%" y="92%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff006e" opacity=".5">TEBAK KATA</text>`;}
+<line x1="30" y1="110" x2="150" y2="110" stroke="#a855f7" stroke-width="2" opacity=".5"/>
+<line x1="60" y1="110" x2="60" y2="20" stroke="#a855f7" stroke-width="2" opacity=".5"/>
+<line x1="60" y1="20" x2="110" y2="20" stroke="#a855f7" stroke-width="2" opacity=".5"/>
+<line x1="110" y1="20" x2="110" y2="38" stroke="#a855f7" stroke-width="2" opacity=".5"/>
+<circle cx="110" cy="48" r="10" fill="none" stroke="#a855f7" stroke-width="2" opacity=".7"/>
+<line x1="110" y1="58" x2="110" y2="85" stroke="#a855f7" stroke-width="2" opacity=".6"/>
+<line x1="110" y1="68" x2="95" y2="80" stroke="#a855f7" stroke-width="2" opacity=".5"/>
+<line x1="110" y1="85" x2="98" y2="100" stroke="#a855f7" stroke-width="2" opacity=".5"/>
+<text x="50%" y="92%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#a855f7" opacity=".5">TEBAK KATA</text>`;}
 function svgRPG(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0a001a"/>
 <rect x="14" y="60" width="160" height="50" rx="3" fill="#0d1a10" stroke="rgba(57,255,20,.2)" stroke-width="1"/>
 <rect x="24" y="68" width="16" height="16" rx="2" fill="#1a3a1a" stroke="rgba(57,255,20,.3)" stroke-width="1"/>
 <text x="32" y="79" dominant-baseline="middle" text-anchor="middle" font-size="10">🧙</text>
-<rect x="148" y="64" width="20" height="22" rx="2" fill="rgba(255,0,110,.1)" stroke="rgba(255,0,110,.4)" stroke-width="1"/>
+<rect x="148" y="64" width="20" height="22" rx="2" fill="rgba(168,85,247,.1)" stroke="rgba(168,85,247,.4)" stroke-width="1"/>
 <text x="158" y="78" dominant-baseline="middle" text-anchor="middle" font-size="13">👹</text>
-<rect x="24" y="88" width="60" height="5" rx="2" fill="#1a0010"/><rect x="24" y="88" width="42" height="5" rx="2" fill="#ff006e" opacity=".8"/>
+<rect x="24" y="88" width="60" height="5" rx="2" fill="#1a0010"/><rect x="24" y="88" width="42" height="5" rx="2" fill="#a855f7" opacity=".8"/>
 <rect x="24" y="96" width="60" height="5" rx="2" fill="#001a2e"/><rect x="24" y="96" width="55" height="5" rx="2" fill="#00f5ff" opacity=".7"/>
 <text x="50%" y="22%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="8" fill="#bf5af2" opacity=".7">DUNGEON QUEST</text>
 <text x="50%" y="40%" dominant-baseline="middle" text-anchor="middle" font-size="18" opacity=".6">⚔️🛡️🗝️</text>
@@ -1003,7 +1050,7 @@ function svgMario(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a0800
 function svgPong(s){s.innerHTML=`<rect width="100%" height="100%" fill="#001828"/>
 <line x1="94" y1="0" x2="94" y2="120" stroke="rgba(0,245,255,.15)" stroke-width="1" stroke-dasharray="6 4"/>
 <rect x="10" y="35" width="8" height="50" rx="3" fill="#00f5ff" opacity=".8"/>
-<rect x="170" y="40" width="8" height="50" rx="3" fill="#ff006e" opacity=".8"/>
+<rect x="170" y="40" width="8" height="50" rx="3" fill="#a855f7" opacity=".8"/>
 <circle cx="94" cy="60" r="7" fill="#ffe600" opacity=".9"/>
 <circle cx="94" cy="60" r="7" fill="none" stroke="#ffe600" stroke-width="2" opacity=".4"/>
 <text x="50%" y="88%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#00f5ff" opacity=".5">VS CPU</text>`;}
@@ -1018,47 +1065,47 @@ function svgFlappy(s){s.innerHTML=`<rect width="100%" height="100%" fill="#00151
 <text x="50%" y="88%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#39ff14" opacity=".5">TAP TO FLY</text>`;}
 function svgBreakout(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a1400"/>
 ${Array.from({length:24},(_,i)=>{const c=i%6,r=Math.floor(i/6),x=16+c*30,y=10+r*14;
-const cols=['#ff006e','#ff9500','#ffe600','#39ff14'];
+const cols=['#a855f7','#ff9500','#ffe600','#39ff14'];
 return `<rect x="${x}" y="${y}" width="26" height="10" rx="2" fill="${cols[r%4]}" opacity="${0.5+r*0.08}"/>`;}).join('')}
 <rect x="72" y="108" width="44" height="6" rx="3" fill="#00f5ff" opacity=".9"/>
 <circle cx="94" cy="96" r="5" fill="#ffe600"/>
 <text x="50%" y="96%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ffe600" opacity=".5">BREAK ALL!</text>`;}
-function svgKraeplin(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a0011"/>
-<text x="30%" y="38%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#ff69b4" opacity=".9">7</text>
-<text x="50%" y="38%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="14" fill="rgba(255,224,240,.4)">+</text>
-<text x="70%" y="38%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#ff1493" opacity=".9">8</text>
-<line x1="20" y1="58" x2="168" y2="58" stroke="rgba(255,105,180,.3)" stroke-width="1"/>
-<text x="50%" y="73%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#ffb6c1" opacity=".85">5</text>
-<text x="50%" y="90%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff85c2" opacity=".6">DIGIT TERAKHIR</text>`;}
-function svgLogMath(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a0011"/>
-<text x="50%" y="32%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="13" fill="#ff69b4" opacity=".9">log₂(8) = ?</text>
-<line x1="20" y1="50" x2="168" y2="50" stroke="rgba(255,105,180,.2)" stroke-width="1"/>
-<text x="50%" y="65%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#ffb6c1" opacity=".9">3</text>
-<text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff1493" opacity=".6">LOG & EKSPONEN</text>`;}
-function svgAritmatika(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a0011"/>
-<text x="50%" y="28%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="8" fill="rgba(255,182,193,.5)">DERET</text>
-<text x="50%" y="48%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#ff69b4" opacity=".9">2, 5, 8, 11, ?</text>
-<line x1="20" y1="62" x2="168" y2="62" stroke="rgba(255,105,180,.2)" stroke-width="1"/>
-<text x="50%" y="77%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#ffb6c1" opacity=".9">14</text>
-<text x="50%" y="91%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff1493" opacity=".6">BARIS ARITMATIKA</text>`;}
-function svgDasarMath(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a0011"/>
-<text x="25%" y="42%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#ff69b4" opacity=".8">+</text>
-<text x="50%" y="42%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#ff85c2" opacity=".8">−</text>
-<text x="75%" y="42%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#ffb6c1" opacity=".8">×</text>
-<text x="50%" y="68%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#ff1493" opacity=".8">÷</text>
-<text x="50%" y="88%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff69b4" opacity=".6">MATEMATIKA DASAR</text>`;}
+function svgKraeplin(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0d0520"/>
+<text x="30%" y="38%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#c084fc" opacity=".9">7</text>
+<text x="50%" y="38%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="14" fill="rgba(237,225,255,.4)">+</text>
+<text x="70%" y="38%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#a855f7" opacity=".9">8</text>
+<line x1="20" y1="58" x2="168" y2="58" stroke="rgba(168,85,247,.3)" stroke-width="1"/>
+<text x="50%" y="73%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#e9d5ff" opacity=".85">5</text>
+<text x="50%" y="90%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#d8b4fe" opacity=".6">DIGIT TERAKHIR</text>`;}
+function svgLogMath(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0d0520"/>
+<text x="50%" y="32%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="13" fill="#c084fc" opacity=".9">log₂(8) = ?</text>
+<line x1="20" y1="50" x2="168" y2="50" stroke="rgba(168,85,247,.2)" stroke-width="1"/>
+<text x="50%" y="65%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#e9d5ff" opacity=".9">3</text>
+<text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#a855f7" opacity=".6">LOG & EKSPONEN</text>`;}
+function svgAritmatika(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0d0520"/>
+<text x="50%" y="28%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="8" fill="rgba(196,167,255,.5)">DERET</text>
+<text x="50%" y="48%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#c084fc" opacity=".9">2, 5, 8, 11, ?</text>
+<line x1="20" y1="62" x2="168" y2="62" stroke="rgba(168,85,247,.2)" stroke-width="1"/>
+<text x="50%" y="77%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#e9d5ff" opacity=".9">14</text>
+<text x="50%" y="91%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#a855f7" opacity=".6">BARIS ARITMATIKA</text>`;}
+function svgDasarMath(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0d0520"/>
+<text x="25%" y="42%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#c084fc" opacity=".8">+</text>
+<text x="50%" y="42%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#d8b4fe" opacity=".8">−</text>
+<text x="75%" y="42%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#e9d5ff" opacity=".8">×</text>
+<text x="50%" y="68%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#a855f7" opacity=".8">÷</text>
+<text x="50%" y="88%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#c084fc" opacity=".6">MATEMATIKA DASAR</text>`;}
 
-function svgSoalCerita(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a0011"/>
+function svgSoalCerita(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0d0520"/>
 <text x="50%" y="22%" dominant-baseline="middle" text-anchor="middle" font-size="18">📖</text>
-<rect x="14" y="34" width="160" height="42" rx="5" fill="rgba(255,105,180,.06)" stroke="rgba(255,105,180,.2)" stroke-width="1"/>
-<text x="94" y="48" dominant-baseline="middle" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="7" fill="rgba(255,224,240,.5)">Adi membeli 5 buku</text>
-<text x="94" y="60" dominant-baseline="middle" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="7" fill="rgba(255,224,240,.5)">@ Rp2.000. Berapa total?</text>
-<rect x="54" y="82" width="80" height="14" rx="4" fill="rgba(255,105,180,.08)" stroke="rgba(255,105,180,.3)" stroke-width="1"/>
-<text x="94" y="90" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff69b4" opacity=".8">Rp 10.000</text>
-<text x="50%" y="96%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff1493" opacity=".6">SOAL CERITA</text>`;}
+<rect x="14" y="34" width="160" height="42" rx="5" fill="rgba(168,85,247,.06)" stroke="rgba(168,85,247,.2)" stroke-width="1"/>
+<text x="94" y="48" dominant-baseline="middle" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="7" fill="rgba(237,225,255,.5)">Adi membeli 5 buku</text>
+<text x="94" y="60" dominant-baseline="middle" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="7" fill="rgba(237,225,255,.5)">@ Rp2.000. Berapa total?</text>
+<rect x="54" y="82" width="80" height="14" rx="4" fill="rgba(168,85,247,.08)" stroke="rgba(168,85,247,.3)" stroke-width="1"/>
+<text x="94" y="90" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#c084fc" opacity=".8">Rp 10.000</text>
+<text x="50%" y="96%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#a855f7" opacity=".6">SOAL CERITA</text>`;}
 
-function svgSimon(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0a000f"/>
-<rect x="14" y="10" width="74" height="50" rx="6" fill="rgba(255,20,147,.2)" stroke="#ff1493" stroke-width="1.5" opacity=".8"/>
+function svgSimon(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0a0520"/>
+<rect x="14" y="10" width="74" height="50" rx="6" fill="rgba(139,92,246,.2)" stroke="#a855f7" stroke-width="1.5" opacity=".8"/>
 <rect x="100" y="10" width="74" height="50" rx="6" fill="rgba(0,245,255,.15)" stroke="#00f5ff" stroke-width="1.5" opacity=".8"/>
 <rect x="14" y="68" width="74" height="50" rx="6" fill="rgba(57,255,20,.15)" stroke="#39ff14" stroke-width="1.5" opacity=".8"/>
 <rect x="100" y="68" width="74" height="50" rx="6" fill="rgba(255,230,0,.15)" stroke="#ffe600" stroke-width="1.5" opacity=".8"/>
@@ -1066,16 +1113,16 @@ function svgSimon(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0a000f
 <text x="137" y="40" dominant-baseline="middle" text-anchor="middle" font-size="18">🔵</text>
 <text x="51" y="98" dominant-baseline="middle" text-anchor="middle" font-size="18">🟢</text>
 <text x="137" y="98" dominant-baseline="middle" text-anchor="middle" font-size="18">🟡</text>
-<text x="50%" y="96%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff69b4" opacity=".6">IKUTI POLA!</text>`;}
+<text x="50%" y="96%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#c084fc" opacity=".6">IKUTI POLA!</text>`;}
 
 function svgPattern(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0a0015"/>
 <text x="19%" y="44%" dominant-baseline="middle" text-anchor="middle" font-size="20">🔷</text>
 <text x="38%" y="44%" dominant-baseline="middle" text-anchor="middle" font-size="20">🔶</text>
 <text x="57%" y="44%" dominant-baseline="middle" text-anchor="middle" font-size="20">🔷</text>
 <text x="76%" y="44%" dominant-baseline="middle" text-anchor="middle" font-size="20">🔶</text>
-<rect x="138" y="26" width="30" height="30" rx="5" fill="rgba(255,105,180,.15)" stroke="#ff69b4" stroke-width="1.5"/>
-<text x="153" y="47" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="14" fill="#ff69b4" font-weight="900">?</text>
-<text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="rgba(255,224,240,.4)">PILIH YANG TEPAT:</text>
+<rect x="138" y="26" width="30" height="30" rx="5" fill="rgba(168,85,247,.15)" stroke="#c084fc" stroke-width="1.5"/>
+<text x="153" y="47" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="14" fill="#c084fc" font-weight="900">?</text>
+<text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="rgba(237,225,255,.4)">PILIH YANG TEPAT:</text>
 <text x="25%" y="88%" dominant-baseline="middle" text-anchor="middle" font-size="16">🔶</text>
 <text x="50%" y="88%" dominant-baseline="middle" text-anchor="middle" font-size="16">🟥</text>
 <text x="75%" y="88%" dominant-baseline="middle" text-anchor="middle" font-size="16">🔷</text>
@@ -1086,9 +1133,9 @@ function svgLogicGrid(s){s.innerHTML=`<rect width="100%" height="100%" fill="#00
 <text x="44" y="28" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="6" fill="rgba(0,245,255,.5)">MERAH</text>
 <text x="94" y="28" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="6" fill="rgba(0,245,255,.5)">BIRU</text>
 <text x="144" y="28" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="6" fill="rgba(0,245,255,.5)">HIJAU</text>
-<text x="20" y="50" dominant-baseline="middle" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="8" fill="rgba(255,224,240,.5)">Ani</text>
-<text x="20" y="70" dominant-baseline="middle" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="8" fill="rgba(255,224,240,.5)">Budi</text>
-<text x="20" y="90" dominant-baseline="middle" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="8" fill="rgba(255,224,240,.5)">Cici</text>
+<text x="20" y="50" dominant-baseline="middle" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="8" fill="rgba(237,225,255,.5)">Ani</text>
+<text x="20" y="70" dominant-baseline="middle" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="8" fill="rgba(237,225,255,.5)">Budi</text>
+<text x="20" y="90" dominant-baseline="middle" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="8" fill="rgba(237,225,255,.5)">Cici</text>
 <rect x="32" y="42" width="24" height="16" rx="2" fill="rgba(57,255,20,.2)" stroke="rgba(57,255,20,.4)" stroke-width="1"/>
 <text x="44" y="52" dominant-baseline="middle" text-anchor="middle" font-size="8">✓</text>
 <rect x="82" y="62" width="24" height="16" rx="2" fill="rgba(57,255,20,.2)" stroke="rgba(57,255,20,.4)" stroke-width="1"/>
@@ -1101,37 +1148,79 @@ function svgLogicGrid(s){s.innerHTML=`<rect width="100%" height="100%" fill="#00
 // ═══════════════════════════════════════════════════
 // GAME DEFINITIONS
 // ═══════════════════════════════════════════════════
+function svgWhack(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0a0520"/>
+${[0,1,2,3,4,5,6,7,8].map((i)=>{const c=i%3,r=Math.floor(i/3),x=20+c*56,y=12+r*34;
+const active=i===4;
+return `<ellipse cx="${x+22}" cy="${y+20}" rx="22" ry="12" fill="${active?'rgba(192,132,252,.3)':'rgba(100,60,180,.2)'}" stroke="${active?'#c084fc':'rgba(100,60,180,.4)'}" stroke-width="1.5"/>
+${active?`<text x="${x+22}" y="${y+10}" dominant-baseline="middle" text-anchor="middle" font-size="14">🐭</text>`:''}`;}).join('')}
+<text x="50%" y="95%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#c084fc" opacity=".6">PUKUL TIKUSNYA!</text>`;}
+
+function svgSpace(s){s.innerHTML=`<rect width="100%" height="100%" fill="#020818"/>
+<circle cx="20" cy="15" r="1" fill="white" opacity=".6"/><circle cx="55" cy="8" r="1.2" fill="white" opacity=".8"/>
+<circle cx="140" cy="20" r="1" fill="white" opacity=".5"/><circle cx="170" cy="10" r="1.5" fill="white"/>
+<circle cx="90" cy="5" r="1" fill="white" opacity=".7"/><circle cx="160" cy="55" r="1" fill="white" opacity=".6"/>
+<circle cx="30" cy="60" r="1.2" fill="white" opacity=".4"/><circle cx="120" cy="35" r="1" fill="white" opacity=".8"/>
+<!-- alien enemies -->
+<text x="28" y="28" dominant-baseline="middle" text-anchor="middle" font-size="13">👾</text>
+<text x="78" y="22" dominant-baseline="middle" text-anchor="middle" font-size="13">👾</text>
+<text x="128" y="28" dominant-baseline="middle" text-anchor="middle" font-size="13">👾</text>
+<text x="163" y="22" dominant-baseline="middle" text-anchor="middle" font-size="13">👾</text>
+<!-- bullet -->
+<rect x="92" y="50" width="4" height="12" rx="2" fill="#00f5ff" opacity=".9"/>
+<line x1="94" y1="50" x2="94" y2="42" stroke="#00f5ff" stroke-width="1" opacity=".4"/>
+<!-- player ship -->
+<polygon points="94,90 80,110 108,110" fill="#a855f7" stroke="#c084fc" stroke-width="1.5"/>
+<rect x="88" y="108" width="12" height="5" rx="2" fill="#7c3aed"/>
+<text x="50%" y="97%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#00f5ff" opacity=".6">SPACE SHOOTER!</text>`;}
+
+function svgTKR(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0a0520"/>
+<!-- car body -->
+<rect x="20" y="55" width="150" height="40" rx="8" fill="rgba(255,149,0,.15)" stroke="#ff9500" stroke-width="1.5"/>
+<rect x="45" y="35" width="95" height="28" rx="6" fill="rgba(255,149,0,.1)" stroke="#ff9500" stroke-width="1"/>
+<!-- wheels -->
+<circle cx="50" cy="96" r="14" fill="rgba(255,149,0,.1)" stroke="#ff9500" stroke-width="1.5"/>
+<circle cx="50" cy="96" r="6" fill="rgba(255,149,0,.2)"/>
+<circle cx="140" cy="96" r="14" fill="rgba(255,149,0,.1)" stroke="#ff9500" stroke-width="1.5"/>
+<circle cx="140" cy="96" r="6" fill="rgba(255,149,0,.2)"/>
+<!-- engine icon -->
+<text x="94" y="72" dominant-baseline="middle" text-anchor="middle" font-size="14">🔧</text>
+<text x="50%" y="25%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff9500" opacity=".8">TKR OTOMOTIF</text>
+<text x="50%" y="97%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="6" fill="#ff9500" opacity=".5">100 SOAL • TEKNIK KENDARAAN</text>`;}
+
 const games=[
   // ── KELOMPOK: GAME ──
   {id:'tebak',tag:'PUZZLE',name:'Tebak Angka',desc:'Tebak angka 1–100 dengan petunjuk arah.',color:'#00f5ff',thumb:svgTebak,group:'game'},
-  {id:'rps',tag:'KLASIK',name:'Suit RPS',desc:'Gunting Batu Kertas vs CPU.',color:'#ff006e',thumb:svgRPS,group:'game'},
+  {id:'rps',tag:'KLASIK',name:'Suit RPS',desc:'Gunting Batu Kertas vs CPU.',color:'#a855f7',thumb:svgRPS,group:'game'},
   {id:'blackjack',tag:'KARTU',name:'Blackjack',desc:'Raih 21, tantang dealer!',color:'#ffe600',thumb:svgBJ,group:'game'},
   {id:'snake',tag:'ARCADE',name:'Snake',desc:'Makan apel, jangan nabrak!',color:'#39ff14',thumb:svgSnake,group:'game'},
   {id:'memory',tag:'OTAK',name:'Memory Match',desc:'Cocokkan pasangan kartu emoji.',color:'#bf5af2',thumb:svgMemory,group:'game'},
   {id:'puzzle',tag:'PUZZLE',name:'Slide Puzzle',desc:'Susun angka 1–15 ke posisi benar.',color:'#ff9500',thumb:svgPuzzle,group:'game'},
-  {id:'dice',tag:'DADU',name:'Duel Dadu',desc:'Lempar dadu, total tertinggi menang.',color:'#ff006e',thumb:svgDice,group:'game'},
-  {id:'chess',tag:'STRATEGI',name:'Catur',desc:'Catur klasik vs CPU sederhana.',color:'#ffe600',thumb:svgChess,group:'game'},
+  {id:'dice',tag:'DADU',name:'Duel Dadu',desc:'Lempar dadu, total tertinggi menang.',color:'#a855f7',thumb:svgDice,group:'game'},
+  {id:'chess',tag:'STRATEGI',name:'Catur',desc:'Catur klasik vs CPU + Rokade Raja-Benteng.',color:'#ffe600',thumb:svgChess,group:'game'},
   {id:'ttt',tag:'KLASIK',name:'Tic Tac Toe',desc:'3 baris duluan, menang!',color:'#bf5af2',thumb:svgTTT,group:'game'},
   {id:'minesweeper',tag:'PUZZLE',name:'Minesweeper',desc:'Buka kotak, hindari ranjau!',color:'#ff9500',thumb:svgMine,group:'game'},
   {id:'g2048',tag:'ANGKA',name:'2048',desc:'Gabungkan angka, raih 2048!',color:'#ffe600',thumb:svg2048,group:'game'},
   {id:'typing',tag:'KECEPATAN',name:'Typing Race',desc:'Uji kecepatan mengetik kamu!',color:'#39ff14',thumb:svgTyping,group:'game'},
-  {id:'hangman',tag:'KATA',name:'Hangman',desc:'Tebak kata sebelum tiang gantungan penuh.',color:'#ff006e',thumb:svgHangman,group:'game'},
+  {id:'hangman',tag:'KATA',name:'Hangman',desc:'Tebak kata sebelum tiang gantungan penuh.',color:'#a855f7',thumb:svgHangman,group:'game'},
   {id:'rpg',tag:'RPG',name:'Dungeon Quest',desc:'Jelajahi dungeon, lawan monster, naik level!',color:'#bf5af2',thumb:svgRPG,group:'game'},
   {id:'mario',tag:'PLATFORMER',name:'Super Pixel Run',desc:'Lompat, hindari musuh, capai bendera!',color:'#ff9500',thumb:svgMario,group:'game'},
   {id:'pong',tag:'ARCADE',name:'Pong Neon',desc:'Pantulkan bola, kalahkan CPU!',color:'#00f5ff',thumb:svgPong,group:'game'},
   {id:'flappy',tag:'ARCADE',name:'Flappy Pixel',desc:'Terbang melewati pipa tanpa menyentuh!',color:'#39ff14',thumb:svgFlappy,group:'game'},
   {id:'breakout',tag:'ARCADE',name:'Breakout',desc:'Hancurkan semua blok dengan bola!',color:'#ffe600',thumb:svgBreakout,group:'game'},
+  {id:'whackamole',tag:'ARCADE',name:'Whack-a-Mole',desc:'Pukul tikus yang muncul secepat mungkin!',color:'#c084fc',thumb:svgWhack,group:'game'},
+  {id:'spaceshooter',tag:'SHOOTER',name:'Space Shooter',desc:'Tembak alien! Hindari tembakan balik & raih skor tertinggi!',color:'#00f5ff',thumb:svgSpace,group:'game'},
   // ── KELOMPOK: BELAJAR ──
   {id:'quiz',tag:'EDUKASI',name:'Kuis Sains',desc:'100 soal sains, random 10 per sesi.',color:'#00f5ff',thumb:svgQuiz,group:'belajar'},
+  {id:'quiztkr',tag:'OTOMOTIF',name:'Kuis TKR Otomotif',desc:'100 soal Teknik Kendaraan Ringan! Mesin, transmisi, rem, kelistrikan.',color:'#ff9500',thumb:svgTKR,group:'belajar'},
   {id:'sudoku',tag:'LOGIKA',name:'Sudoku',desc:'Isi 9×9 grid tanpa angka ganda.',color:'#39ff14',thumb:svgSudoku,group:'belajar'},
   {id:'wordle',tag:'KATA',name:'Wordle Indonesia',desc:'Tebak kata 5 huruf dalam 6 percobaan.',color:'#00f5ff',thumb:svgWordle,group:'belajar'},
-  {id:'kraeplin',tag:'MATEMATIKA',name:'Kraeplin Math',desc:'Penjumlahan cepat! Tulis digit terakhir jawaban.',color:'#ff69b4',thumb:svgKraeplin,group:'belajar'},
-  {id:'logmath',tag:'MATEMATIKA',name:'Soal Logaritma',desc:'Uji kemampuan log & eksponen dalam waktu terbatas!',color:'#ff69b4',thumb:svgLogMath,group:'belajar'},
-  {id:'aritmatika',tag:'MATEMATIKA',name:'Baris Aritmatika',desc:'Temukan suku berikutnya dalam deret aritmatika!',color:'#ffb6c1',thumb:svgAritmatika,group:'belajar'},
-  {id:'dasarmath',tag:'MATEMATIKA',name:'Matematika Dasar',desc:'Operasi dasar: +, -, ×, ÷. Cepat & tepat!',color:'#ff1493',thumb:svgDasarMath,group:'belajar'},
-  {id:'soalcerita',tag:'MATEMATIKA',name:'Soal Cerita',desc:'Selesaikan soal cerita matematika! Ketik jawaban kamu.',color:'#ff69b4',thumb:svgSoalCerita,group:'belajar'},
+  {id:'kraeplin',tag:'MATEMATIKA',name:'Kraeplin Math',desc:'Penjumlahan cepat! Tulis digit terakhir jawaban.',color:'#c084fc',thumb:svgKraeplin,group:'belajar'},
+  {id:'logmath',tag:'MATEMATIKA',name:'Soal Logaritma',desc:'Uji kemampuan log & eksponen dalam waktu terbatas!',color:'#c084fc',thumb:svgLogMath,group:'belajar'},
+  {id:'aritmatika',tag:'MATEMATIKA',name:'Baris Aritmatika',desc:'Temukan suku berikutnya dalam deret aritmatika!',color:'#e9d5ff',thumb:svgAritmatika,group:'belajar'},
+  {id:'dasarmath',tag:'MATEMATIKA',name:'Matematika Dasar',desc:'Operasi dasar: +, -, ×, ÷. Cepat & tepat!',color:'#a855f7',thumb:svgDasarMath,group:'belajar'},
+  {id:'soalcerita',tag:'MATEMATIKA',name:'Soal Cerita',desc:'Selesaikan soal cerita matematika! Ketik jawaban kamu.',color:'#c084fc',thumb:svgSoalCerita,group:'belajar'},
   // ── ASAH OTAK (BELAJAR) ──
-  {id:'simon',tag:'MEMORI',name:'Simon Says',desc:'Ikuti urutan warna & suara yang makin panjang!',color:'#ff1493',thumb:svgSimon,group:'belajar'},
+  {id:'simon',tag:'MEMORI',name:'Simon Says',desc:'Ikuti urutan warna & suara yang makin panjang!',color:'#a855f7',thumb:svgSimon,group:'belajar'},
   {id:'pattern',tag:'LOGIKA',name:'Pola Urutan',desc:'Temukan pola dan pilih jawaban yang tepat!',color:'#bf5af2',thumb:svgPattern,group:'belajar'},
   {id:'logicgrid',tag:'DEDUKSI',name:'Grid Logika',desc:'Gunakan petunjuk untuk memecahkan teka-teki deduksi!',color:'#00f5ff',thumb:svgLogicGrid,group:'belajar'},
 ];
@@ -1201,7 +1290,8 @@ function openGame(id){
     wordle:initWordle,g2048:init2048,typing:initTyping,hangman:initHangman,
     rpg:initRPG,mario:initMario,pong:initPong,flappy:initFlappy,breakout:initBreakout,
     kraeplin:initKraeplin,logmath:initLogMath,aritmatika:initAritmatika,dasarmath:initDasarMath,soalcerita:initSoalCerita,
-    simon:initSimon,pattern:initPattern,logicgrid:initLogicGrid};
+    simon:initSimon,pattern:initPattern,logicgrid:initLogicGrid,whackamole:initWhackAMole,
+    spaceshooter:initSpaceShooter,quiztkr:initQuizTKR};
   if(map[id]) map[id](body);
 }
 function closeModal(){
@@ -1250,7 +1340,7 @@ function initTebak(el){
     if(v===secret){wins++;games++;th.innerHTML=`<span class="result-win">🎉 BENAR! Angka ${secret} dalam ${tries}x!</span>`;
       setTimeout(()=>{secret=Math.floor(Math.random()*100)+1;tries=0;hist=[];render();},2200);}
     else if(v<secret){th.textContent='⬆ Terlalu kecil!';th.style.color='#ff9500';}
-    else{th.textContent='⬇ Terlalu besar!';th.style.color='#ff006e';}
+    else{th.textContent='⬇ Terlalu besar!';th.style.color='#a855f7';}
     document.getElementById('ti').value='';document.getElementById('ti').focus();
   };
   render();
@@ -1353,7 +1443,7 @@ function initSnake(el){
     ctx.strokeStyle='rgba(0,245,255,.04)';
     for(let i=0;i<=CL;i++){ctx.beginPath();ctx.moveTo(i*C,0);ctx.lineTo(i*C,280);ctx.stroke();}
     for(let i=0;i<=RW;i++){ctx.beginPath();ctx.moveTo(0,i*C);ctx.lineTo(280,i*C);ctx.stroke();}
-    ctx.fillStyle='#ff006e';ctx.shadowColor='#ff006e';ctx.shadowBlur=10;
+    ctx.fillStyle='#a855f7';ctx.shadowColor='#a855f7';ctx.shadowBlur=10;
     ctx.fillRect(food.x*C+3,food.y*C+3,C-6,C-6);ctx.shadowBlur=0;
     snake.forEach((s,i)=>{ctx.fillStyle=i===0?'#39ff14':`rgba(57,255,20,${Math.max(.25,1-i*.07)})`;
       if(i===0){ctx.shadowColor='#39ff14';ctx.shadowBlur=8;}
@@ -1569,7 +1659,7 @@ function initQuiz(el){
         </div>
         <div style="font-family:Orbitron,monospace;font-size:2rem;color:var(--ny);text-shadow:0 0 16px var(--ny)">${score}/${TOTAL}</div>
         <div style="font-family:Orbitron,monospace;font-size:.9rem;color:${gradeCol};text-shadow:0 0 10px ${gradeCol}">${grade}</div>
-        <div style="font-size:.7rem;color:rgba(255,224,240,.4);font-family:Orbitron,monospace">dari 100 soal tersedia · acak tiap sesi</div>
+        <div style="font-size:.7rem;color:rgba(237,225,255,.4);font-family:Orbitron,monospace">dari 100 soal tersedia · acak tiap sesi</div>
         <button class="btn btn-cyan" onclick="qReset()">🔄 MAIN LAGI</button>
       </div>`;return;}
     const q=sessionQs[idx];
@@ -1581,7 +1671,7 @@ function initQuiz(el){
           <div class="score-badge" style="border-color:var(--np);color:var(--np)">❌ ${wrong}</div>
         </div>
       </div>
-      <div style="width:100%;background:rgba(255,105,180,.1);border-radius:4px;height:4px;overflow:hidden">
+      <div style="width:100%;background:rgba(168,85,247,.1);border-radius:4px;height:4px;overflow:hidden">
         <div style="height:4px;background:var(--nc);width:${Math.round(idx/TOTAL*100)}%;transition:width .3s;border-radius:4px"></div>
       </div>
       <div class="quiz-question">${q.q}</div>
@@ -1636,6 +1726,8 @@ function initDice(el){
 function initChess(el){
   let gameMode=null,board,sel,turn,status,moves,possible,inCheck;
   let timeMode=null,timeW=0,timeB=0,clockInterval=null;
+  // castling rights: {wK, wQ, bK, bQ} = king/queen side still possible
+  let castling={wK:true,wQ:true,bK:true,bQ:true};
   const TIME_OPTIONS=[{label:'30 Detik',val:30},{label:'1 Menit',val:60},{label:'2 Menit',val:120},{label:'5 Menit',val:300},{label:'10 Menit',val:600}];
   const PIECES={'K':'♔','Q':'♕','R':'♖','B':'♗','N':'♘','P':'♙','k':'♚','q':'♛','r':'♜','b':'♝','n':'♞','p':'♟'};
 
@@ -1673,10 +1765,10 @@ function initChess(el){
     const wLow=timeW<=10,bLow=timeB<=10;
     wEl.textContent=fmtClock(timeW);
     bEl.textContent=fmtClock(timeB);
-    wEl.style.color=wLow?'#ff3333':(turn==='w'?'#39ff14':'rgba(255,224,240,.45)');
-    bEl.style.color=bLow?'#ff3333':(turn==='b'?'#39ff14':'rgba(255,224,240,.45)');
-    if(wBox){wBox.style.borderColor=turn==='w'?'rgba(57,255,20,.7)':'rgba(255,105,180,.18)';}
-    if(bBox){bBox.style.borderColor=turn==='b'?'rgba(57,255,20,.7)':'rgba(255,105,180,.18)';}
+    wEl.style.color=wLow?'#ff3333':(turn==='w'?'#39ff14':'rgba(237,225,255,.45)');
+    bEl.style.color=bLow?'#ff3333':(turn==='b'?'#39ff14':'rgba(237,225,255,.45)');
+    if(wBox){wBox.style.borderColor=turn==='w'?'rgba(57,255,20,.7)':'rgba(168,85,247,.18)';}
+    if(bBox){bBox.style.borderColor=turn==='b'?'rgba(57,255,20,.7)':'rgba(168,85,247,.18)';}
   }
 
   function isW(p){return p!=='.'&&p===p.toUpperCase();}
@@ -1698,14 +1790,33 @@ function initChess(el){
       const nr=r+dr,nc=c+dc;if(ok(nr,nc)&&(b[nr][nc]==='.'||(w?isB(b[nr][nc]):isW(b[nr][nc]))))mv.push([nr,nc]);}
     if(pp==='k')for(const[dr,dc]of[[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]]){
       const nr=r+dr,nc=c+dc;if(ok(nr,nc)&&(b[nr][nc]==='.'||(w?isB(b[nr][nc]):isW(b[nr][nc]))))mv.push([nr,nc]);}
+    // CASTLING
+    if(pp==='k'&&b===board){
+      if(w&&r===7&&c===4&&castling.wK&&b[7][5]==='.'&&b[7][6]==='.'&&b[7][7]==='R'&&!checked(b,true)&&!checked(applyMv(b,7,4,7,5),true))mv.push([7,6]);
+      if(w&&r===7&&c===4&&castling.wQ&&b[7][3]==='.'&&b[7][2]==='.'&&b[7][1]==='.'&&b[7][0]==='R'&&!checked(b,true)&&!checked(applyMv(b,7,4,7,3),true))mv.push([7,2]);
+      if(!w&&r===0&&c===4&&castling.bK&&b[0][5]==='.'&&b[0][6]==='.'&&b[0][7]==='r'&&!checked(b,false)&&!checked(applyMv(b,0,4,0,5),false))mv.push([0,6]);
+      if(!w&&r===0&&c===4&&castling.bQ&&b[0][3]==='.'&&b[0][2]==='.'&&b[0][1]==='.'&&b[0][0]==='r'&&!checked(b,false)&&!checked(applyMv(b,0,4,0,3),false))mv.push([0,2]);
+    }
     return mv;
   }
 
   function applyMv(b,r,c,tr,tc){
-    const nb=b.map(row=>[...row]);nb[tr][tc]=nb[r][c];nb[r][c]='.';
+    const nb=b.map(row=>[...row]);
+    const piece=nb[r][c];
+    nb[tr][tc]=piece;nb[r][c]='.';
     if(nb[tr][tc]==='P'&&tr===0)nb[tr][tc]='Q';
     if(nb[tr][tc]==='p'&&tr===7)nb[tr][tc]='q';
+    // Move rook when castling
+    if(piece==='K'&&r===7&&c===4){if(tr===7&&tc===6){nb[7][5]=nb[7][7];nb[7][7]='.';}if(tr===7&&tc===2){nb[7][3]=nb[7][0];nb[7][0]='.';}}
+    if(piece==='k'&&r===0&&c===4){if(tr===0&&tc===6){nb[0][5]=nb[0][7];nb[0][7]='.';}if(tr===0&&tc===2){nb[0][3]=nb[0][0];nb[0][0]='.';}}
     return nb;
+  }
+
+  function updateCastling(r,c,p){
+    if(p==='K'||(r===7&&c===4))castling.wK=castling.wQ=false;
+    if(p==='k'||(r===0&&c===4))castling.bK=castling.bQ=false;
+    if(r===7&&c===7)castling.wK=false; if(r===7&&c===0)castling.wQ=false;
+    if(r===0&&c===7)castling.bK=false; if(r===0&&c===0)castling.bQ=false;
   }
 
   function checked(b,white){
@@ -1758,6 +1869,7 @@ function initChess(el){
       ['.','.','.','.','.','.','.','.'],['.','.','.','.','.','.','.','.'],
       ['P','P','P','P','P','P','P','P'],['R','N','B','Q','K','B','N','R']];
     sel=null;turn='w';status='';moves=0;possible=[];inCheck=false;
+    castling={wK:true,wQ:true,bK:true,bQ:true};
     if(timeMode){timeW=timeMode;timeB=timeMode;}
     renderBoard();
     if(timeMode)startClock();
@@ -1767,21 +1879,21 @@ function initChess(el){
     stopClock();
     el.innerHTML=`<div class="game-area" style="gap:16px;padding:22px">
       <div style="font-family:Orbitron,monospace;font-size:1rem;font-weight:700;color:var(--nc);text-align:center">♟ CATUR</div>
-      <div style="font-size:.7rem;color:rgba(255,224,240,.45);text-align:center">PILIH MODE PERMAINAN</div>
+      <div style="font-size:.7rem;color:rgba(237,225,255,.45);text-align:center">PILIH MODE PERMAINAN</div>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-        <button onclick="cMode('ai')" style="background:rgba(255,105,180,.07);border:2px solid rgba(255,105,180,.3);color:var(--tm);font-family:Orbitron,monospace;font-size:.68rem;padding:16px 20px;border-radius:12px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;min-width:110px;transition:all .2s" onmouseover="this.style.borderColor='#ff69b4';this.style.background='rgba(255,105,180,.18)'" onmouseout="this.style.borderColor='rgba(255,105,180,.3)';this.style.background='rgba(255,105,180,.07)'">
+        <button onclick="cMode('ai')" style="background:rgba(168,85,247,.07);border:2px solid rgba(168,85,247,.3);color:var(--tm);font-family:Orbitron,monospace;font-size:.68rem;padding:16px 20px;border-radius:12px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;min-width:110px;transition:all .2s" onmouseover="this.style.borderColor='#c084fc';this.style.background='rgba(168,85,247,.18)'" onmouseout="this.style.borderColor='rgba(168,85,247,.3)';this.style.background='rgba(168,85,247,.07)'">
           <span style="font-size:2rem">🤖</span><span>VS AI</span>
-          <span style="font-family:Rajdhani,sans-serif;font-size:.65rem;color:rgba(255,224,240,.4)">Lawan komputer</span>
+          <span style="font-family:Rajdhani,sans-serif;font-size:.65rem;color:rgba(237,225,255,.4)">Lawan komputer</span>
         </button>
-        <button onclick="cMode('2p')" style="background:rgba(255,105,180,.07);border:2px solid rgba(255,105,180,.3);color:var(--tm);font-family:Orbitron,monospace;font-size:.68rem;padding:16px 20px;border-radius:12px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;min-width:110px;transition:all .2s" onmouseover="this.style.borderColor='#ff69b4';this.style.background='rgba(255,105,180,.18)'" onmouseout="this.style.borderColor='rgba(255,105,180,.3)';this.style.background='rgba(255,105,180,.07)'">
+        <button onclick="cMode('2p')" style="background:rgba(168,85,247,.07);border:2px solid rgba(168,85,247,.3);color:var(--tm);font-family:Orbitron,monospace;font-size:.68rem;padding:16px 20px;border-radius:12px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;min-width:110px;transition:all .2s" onmouseover="this.style.borderColor='#c084fc';this.style.background='rgba(168,85,247,.18)'" onmouseout="this.style.borderColor='rgba(168,85,247,.3)';this.style.background='rgba(168,85,247,.07)'">
           <span style="font-size:2rem">👥</span><span>2 PEMAIN</span>
-          <span style="font-family:Rajdhani,sans-serif;font-size:.65rem;color:rgba(255,224,240,.4)">Lokal bersama</span>
+          <span style="font-family:Rajdhani,sans-serif;font-size:.65rem;color:rgba(237,225,255,.4)">Lokal bersama</span>
         </button>
       </div>
-      <div style="font-size:.65rem;color:rgba(255,224,240,.5);text-align:center;font-family:Orbitron,monospace;letter-spacing:.1em">⏱ PILIH WAKTU PER PEMAIN</div>
+      <div style="font-size:.65rem;color:rgba(237,225,255,.5);text-align:center;font-family:Orbitron,monospace;letter-spacing:.1em">⏱ PILIH WAKTU PER PEMAIN</div>
       <div style="display:flex;gap:7px;flex-wrap:wrap;justify-content:center">
-        <button onclick="cSetTime(null)" style="background:${timeMode===null?'rgba(255,105,180,.3)':'rgba(255,105,180,.07)'};border:1.5px solid ${timeMode===null?'#ff69b4':'rgba(255,105,180,.3)'};color:var(--tm);font-family:Orbitron,monospace;font-size:.58rem;padding:7px 12px;border-radius:8px;cursor:pointer">∞ Bebas</button>
-        ${TIME_OPTIONS.map(t=>`<button onclick="cSetTime(${t.val})" style="background:${timeMode===t.val?'rgba(255,105,180,.3)':'rgba(255,105,180,.07)'};border:1.5px solid ${timeMode===t.val?'#ff69b4':'rgba(255,105,180,.3)'};color:var(--tm);font-family:Orbitron,monospace;font-size:.58rem;padding:7px 12px;border-radius:8px;cursor:pointer">${t.label}</button>`).join('')}
+        <button onclick="cSetTime(null)" style="background:${timeMode===null?'rgba(168,85,247,.3)':'rgba(168,85,247,.07)'};border:1.5px solid ${timeMode===null?'#c084fc':'rgba(168,85,247,.3)'};color:var(--tm);font-family:Orbitron,monospace;font-size:.58rem;padding:7px 12px;border-radius:8px;cursor:pointer">∞ Bebas</button>
+        ${TIME_OPTIONS.map(t=>`<button onclick="cSetTime(${t.val})" style="background:${timeMode===t.val?'rgba(168,85,247,.3)':'rgba(168,85,247,.07)'};border:1.5px solid ${timeMode===t.val?'#c084fc':'rgba(168,85,247,.3)'};color:var(--tm);font-family:Orbitron,monospace;font-size:.58rem;padding:7px 12px;border-radius:8px;cursor:pointer">${t.label}</button>`).join('')}
       </div>
     </div>`;
     window.cSetTime=function(v){timeMode=v;renderMenu();};
@@ -1804,13 +1916,13 @@ function initChess(el){
 
     const clockBlock=timeMode?`
       <div style="display:flex;gap:8px;justify-content:center;width:100%">
-        <div id="cc-box-w" style="display:flex;flex-direction:column;align-items:center;background:rgba(0,0,0,.4);border:1.5px solid ${wAct?'rgba(57,255,20,.7)':'rgba(255,105,180,.18)'};border-radius:8px;padding:4px 16px;min-width:78px;transition:border-color .3s">
-          <div style="font-size:.5rem;font-family:Orbitron,monospace;color:rgba(255,224,240,.35);letter-spacing:.12em">♙ PUTIH</div>
-          <div id="cc-w" style="font-family:Orbitron,monospace;font-size:1.15rem;font-weight:700;color:${wLow?'#ff3333':wAct?'#39ff14':'rgba(255,224,240,.45)'}">${fmtClock(timeW)}</div>
+        <div id="cc-box-w" style="display:flex;flex-direction:column;align-items:center;background:rgba(0,0,0,.4);border:1.5px solid ${wAct?'rgba(57,255,20,.7)':'rgba(168,85,247,.18)'};border-radius:8px;padding:4px 16px;min-width:78px;transition:border-color .3s">
+          <div style="font-size:.5rem;font-family:Orbitron,monospace;color:rgba(237,225,255,.35);letter-spacing:.12em">♙ PUTIH</div>
+          <div id="cc-w" style="font-family:Orbitron,monospace;font-size:1.15rem;font-weight:700;color:${wLow?'#ff3333':wAct?'#39ff14':'rgba(237,225,255,.45)'}">${fmtClock(timeW)}</div>
         </div>
-        <div id="cc-box-b" style="display:flex;flex-direction:column;align-items:center;background:rgba(0,0,0,.4);border:1.5px solid ${bAct?'rgba(57,255,20,.7)':'rgba(255,105,180,.18)'};border-radius:8px;padding:4px 16px;min-width:78px;transition:border-color .3s">
-          <div style="font-size:.5rem;font-family:Orbitron,monospace;color:rgba(255,224,240,.35);letter-spacing:.12em">${ai?'🤖 CPU':'♟ HITAM'}</div>
-          <div id="cc-b" style="font-family:Orbitron,monospace;font-size:1.15rem;font-weight:700;color:${bLow?'#ff3333':bAct?'#39ff14':'rgba(255,224,240,.45)'}">${fmtClock(timeB)}</div>
+        <div id="cc-box-b" style="display:flex;flex-direction:column;align-items:center;background:rgba(0,0,0,.4);border:1.5px solid ${bAct?'rgba(57,255,20,.7)':'rgba(168,85,247,.18)'};border-radius:8px;padding:4px 16px;min-width:78px;transition:border-color .3s">
+          <div style="font-size:.5rem;font-family:Orbitron,monospace;color:rgba(237,225,255,.35);letter-spacing:.12em">${ai?'🤖 CPU':'♟ HITAM'}</div>
+          <div id="cc-b" style="font-family:Orbitron,monospace;font-size:1.15rem;font-weight:700;color:${bLow?'#ff3333':bAct?'#39ff14':'rgba(237,225,255,.45)'}">${fmtClock(timeB)}</div>
         </div>
       </div>`:'';
 
@@ -1822,6 +1934,10 @@ function initChess(el){
         <div class="score-badge" style="font-size:.58rem">${ai?'🤖 VS AI':'👥 2P'}${timeLbl}</div>
       </div>
       ${ck?`<div style="font-family:Orbitron,monospace;font-size:.7rem;color:#ff9500;text-align:center;text-shadow:0 0 10px #ff9500">⚠️ SKAK!</div>`:''}
+      ${(!status&&!ck)?`<div style="font-size:.58rem;color:rgba(192,132,252,.5);font-family:Orbitron,monospace;text-align:center;letter-spacing:.05em">${
+        turn==='w'?(castling.wK||castling.wQ?'🏰 Rokade: '+(castling.wK?'Kanan ':'')+(castling.wQ?'Kiri':''):'')
+        :(castling.bK||castling.bQ?'🏰 Rokade: '+(castling.bK?'Kanan ':'')+(castling.bQ?'Kiri':''):'')
+      }</div>`:''}
       ${status?`<div class="result-banner ${status.includes('SERI')?'result-tie':'result-win'}" style="font-size:.82rem;padding:8px">${status}</div>`:''}
       <div style="display:flex;flex-direction:column;align-items:center">
         <div style="display:flex">${labels.map(l=>`<div class="chess-label">${l}</div>`).join('')}</div>
@@ -1862,6 +1978,7 @@ function initChess(el){
     if(sel){
       const mv=possible.find(function([pr,pc]){return pr===r&&pc===c;});
       if(mv){
+        updateCastling(sel[0],sel[1],board[sel[0]][sel[1]]);
         board=applyMv(board,sel[0],sel[1],r,c);moves++;
         // +1 detik bonus untuk pemain yang baru jalan jika waktunya < 10 detik
         if(timeMode){
@@ -1892,8 +2009,559 @@ function initChess(el){
 }
 
 // ═══════════════════════════════════════════════════
-// GAME 10: SUDOKU
+// GAME: WHACK-A-MOLE 🐭
 // ═══════════════════════════════════════════════════
+function initWhackAMole(el){
+  const LEVELS=[
+    {name:'MUDAH',moleTime:1400,interval:1600,duration:30},
+    {name:'NORMAL',moleTime:1000,interval:1100,duration:30},
+    {name:'SUSAH',moleTime:650,interval:750,duration:30},
+    {name:'GILA',moleTime:380,interval:450,duration:25},
+  ];
+  let score=0,miss=0,combo=0,maxCombo=0,timeLeft=0,activeMole=-1,moleTimer=null,gameTimer=null,lvl=1,running=false,hi=0;
+
+  function renderMenu(){
+    el.innerHTML=`<div class="game-area" style="gap:14px;padding:20px">
+      <div style="font-family:Orbitron,monospace;font-size:1.1rem;font-weight:900;color:#c084fc;text-align:center">🐭 WHACK-A-MOLE</div>
+      <div style="font-size:.7rem;color:rgba(237,225,255,.5);text-align:center">Pukul tikus yang muncul dari lubang!</div>
+      <div style="font-size:.7rem;font-family:Orbitron,monospace;color:rgba(237,225,255,.4);text-align:center">PILIH LEVEL</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+        ${LEVELS.map((l,i)=>`<button onclick="wamStart(${i})" style="background:${lvl===i?'rgba(192,132,252,.3)':'rgba(192,132,252,.07)'};border:2px solid ${lvl===i?'#c084fc':'rgba(192,132,252,.3)'};color:#f3e8ff;font-family:Orbitron,monospace;font-size:.65rem;padding:10px 14px;border-radius:10px;cursor:pointer;transition:all .2s" onmouseover="this.style.background='rgba(192,132,252,.2)'" onmouseout="this.style.background='${lvl===i?'rgba(192,132,252,.3)':'rgba(192,132,252,.07)'}'">${l.name}<br><span style="font-size:.55rem;opacity:.6">${l.duration}s</span></button>`).join('')}
+      </div>
+      ${hi>0?`<div style="font-family:Orbitron,monospace;font-size:.7rem;color:#c084fc;text-align:center">🏆 REKOR: ${hi}</div>`:''}
+    </div>`;
+    window.wamStart=function(i){lvl=i;startGame();};
+  }
+
+  function startGame(){
+    const L=LEVELS[lvl];
+    score=0;miss=0;combo=0;maxCombo=0;timeLeft=L.duration;activeMole=-1;running=true;
+    clearInterval(moleTimer);clearInterval(gameTimer);
+    renderBoard();
+    gameTimer=setInterval(function(){
+      timeLeft--;
+      if(timeLeft<=0){endGame();return;}
+      updateHUD();
+    },1000);
+    spawnMole();
+  }
+
+  function spawnMole(){
+    if(!running)return;
+    const L=LEVELS[lvl];
+    hideMole();
+    const next=Math.floor(Math.random()*9);
+    activeMole=next;
+    renderHoles();
+    moleTimer=setTimeout(function(){
+      if(activeMole===next){miss++;combo=0;activeMole=-1;renderHoles();updateHUD();}
+      if(running)setTimeout(spawnMole,100);
+    },L.moleTime);
+  }
+
+  function hideMole(){activeMole=-1;}
+
+  function whack(i){
+    if(!running||activeMole!==i)return;
+    clearTimeout(moleTimer);
+    score+=10+(combo*2);combo++;if(combo>maxCombo)maxCombo=combo;
+    activeMole=-1;
+    renderHoles();updateHUD();
+    // flash
+    const hole=document.getElementById('wam-'+i);
+    if(hole){hole.style.transform='scale(1.3)';hole.style.background='rgba(192,132,252,.5)';setTimeout(()=>{hole.style.transform='';hole.style.background='';},180);}
+    if(running)setTimeout(spawnMole,100);
+  }
+
+  function endGame(){
+    running=false;clearInterval(moleTimer);clearInterval(gameTimer);
+    if(score>hi)hi=score;
+    el.innerHTML=`<div class="game-area" style="gap:12px">
+      <div style="font-family:Orbitron,monospace;font-size:1.1rem;color:#c084fc;text-align:center">🎯 SELESAI!</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+        <div class="score-badge" style="border-color:#c084fc;color:#c084fc">SKOR: ${score}</div>
+        <div class="score-badge">MISS: ${miss}</div>
+        <div class="score-badge">MAX COMBO: ${maxCombo}x</div>
+      </div>
+      <div style="font-family:Orbitron,monospace;font-size:.75rem;color:#c084fc;text-align:center">🏆 REKOR: ${hi}</div>
+      <div class="choice-row">
+        <button class="btn btn-cyan" onclick="wamStart(${lvl})">🔄 MAIN LAGI</button>
+        <button class="btn btn-outline btn-sm" onclick="wamMenu()">🏠 MENU</button>
+      </div></div>`;
+    window.wamMenu=function(){renderMenu();};
+  }
+
+  function updateHUD(){
+    const hud=document.getElementById('wam-hud');
+    if(hud)hud.innerHTML=`
+      <div class="score-badge" style="border-color:#c084fc;color:#c084fc">⭐ ${score}</div>
+      <div class="score-badge" style="color:${timeLeft<=5?'#ff4444':'inherit'}">⏱ ${timeLeft}s</div>
+      <div class="score-badge">🔥 x${combo}</div>
+      <div class="score-badge">✗ ${miss}</div>`;
+  }
+
+  function renderHoles(){
+    const grid=document.getElementById('wam-grid');
+    if(!grid)return;
+    grid.innerHTML='';
+    for(let i=0;i<9;i++){
+      const div=document.createElement('div');
+      const isActive=activeMole===i;
+      div.id='wam-'+i;
+      div.style.cssText=`width:82px;height:82px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+        background:${isActive?'rgba(192,132,252,.2)':'rgba(50,20,100,.4)'};
+        border:2px solid ${isActive?'#c084fc':'rgba(100,60,180,.4)'};
+        cursor:${isActive?'pointer':'default'};font-size:${isActive?'2.6rem':'1rem'};
+        transition:all .15s;user-select:none;box-shadow:${isActive?'0 0 18px rgba(192,132,252,.5)':'none'};`;
+      div.textContent=isActive?'🐭':'🕳️';
+      if(isActive)div.addEventListener('click',function(){whack(i);});
+      grid.appendChild(div);
+    }
+  }
+
+  function renderBoard(){
+    el.innerHTML=`<div class="game-area" style="gap:10px;padding:14px">
+      <div id="wam-hud" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center"></div>
+      <div id="wam-grid" style="display:grid;grid-template-columns:repeat(3,82px);gap:10px"></div>
+      <div style="font-size:.6rem;color:rgba(237,225,255,.3);font-family:Orbitron,monospace;text-align:center">LEVEL: ${LEVELS[lvl].name}</div>
+      <button class="btn btn-outline btn-sm" onclick="wamStopEarly()">⏹ BERHENTI</button>
+    </div>`;
+    window.wamStopEarly=function(){running=false;clearInterval(moleTimer);clearInterval(gameTimer);endGame();};
+    updateHUD();renderHoles();
+  }
+
+  renderMenu();
+}
+
+  renderMenu();
+}
+
+// ═══════════════════════════════════════════════════
+// GAME: SPACE SHOOTER 🚀
+// ═══════════════════════════════════════════════════
+function initSpaceShooter(el){
+  let canvas,ctx,animId,gameRunning=false;
+  let player,bullets,enemies,enemyBullets,stars,score,lives,level,enemyDir,enemySpeed,shootTimer,enemyShootTimer,hiScore=0;
+  const W=320,H=480;
+
+  function init(){
+    score=0;lives=3;level=1;enemyDir=1;enemySpeed=0.8;shootTimer=0;enemyShootTimer=0;
+    player={x:W/2,y:H-60,w:32,h:32,speed:4,vx:0};
+    bullets=[];enemyBullets=[];
+    stars=Array.from({length:60},()=>({x:Math.random()*W,y:Math.random()*H,s:Math.random()*2+0.5,v:Math.random()*1.5+0.5}));
+    spawnEnemies();
+  }
+
+  function spawnEnemies(){
+    enemies=[];
+    const cols=8,rows=3;
+    for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){
+      enemies.push({x:20+c*37,y:30+r*42,w:28,h:28,alive:true,row:r});
+    }
+  }
+
+  function renderEl(){
+    el.innerHTML=`<div class="game-area" style="padding:10px;gap:8px;align-items:center">
+      <div style="display:flex;gap:10px;align-items:center">
+        <div class="score-badge" style="border-color:#00f5ff;color:#00f5ff">⭐ <span id="ss-score">0</span></div>
+        <div class="score-badge" id="ss-lives">❤️❤️❤️</div>
+        <div class="score-badge">LVL <span id="ss-level">1</span></div>
+        <div class="score-badge" style="color:#c084fc">🏆 ${hiScore}</div>
+      </div>
+      <canvas id="ssCanvas" width="${W}" height="${H}" style="border:2px solid rgba(0,245,255,.3);border-radius:8px;display:block;box-shadow:0 0 20px rgba(0,245,255,.15);touch-action:none;max-width:100%;"></canvas>
+      <div style="font-size:.6rem;color:rgba(237,225,255,.3);font-family:Orbitron,monospace;text-align:center">← → GERAK • KETUK/KLIK TEMBAK</div>
+      <button class="btn btn-outline btn-sm" onclick="ssStop()">⏹ KELUAR</button>
+    </div>`;
+    canvas=document.getElementById('ssCanvas');
+    ctx=canvas.getContext('2d');
+    window.ssStop=function(){gameRunning=false;if(animId)cancelAnimationFrame(animId);renderMenu();};
+
+    // Touch controls
+    let touchStartX=null;
+    canvas.addEventListener('touchstart',function(e){
+      e.preventDefault();
+      touchStartX=e.touches[0].clientX;
+      fireBullet();
+    },{passive:false});
+    canvas.addEventListener('touchmove',function(e){
+      e.preventDefault();
+      if(touchStartX!==null){
+        const dx=e.touches[0].clientX-touchStartX;
+        player.vx=dx*0.12;
+        touchStartX=e.touches[0].clientX;
+      }
+    },{passive:false});
+    canvas.addEventListener('click',function(){fireBullet();});
+  }
+
+  const keys={};
+  function keyDown(e){keys[e.key]=true;}
+  function keyUp(e){keys[e.key]=false;}
+  document.addEventListener('keydown',keyDown);
+  document.addEventListener('keyup',keyUp);
+
+  function fireBullet(){
+    if(!gameRunning)return;
+    bullets.push({x:player.x+player.w/2-2,y:player.y,w:4,h:14,v:8});
+  }
+
+  function loop(){
+    if(!gameRunning)return;
+    update();draw();
+    animId=requestAnimationFrame(loop);
+  }
+
+  function update(){
+    // stars
+    stars.forEach(s=>{s.y+=s.v;if(s.y>H)s.y=0;});
+    // player movement
+    if(keys['ArrowLeft']||keys['a'])player.vx=-player.speed;
+    else if(keys['ArrowRight']||keys['d'])player.vx=player.speed;
+    else player.vx*=0.8;
+    player.x+=player.vx;
+    player.x=Math.max(0,Math.min(W-player.w,player.x));
+    // fire with space
+    shootTimer++;
+    if((keys[' ']||keys['ArrowUp'])&&shootTimer>10){shootTimer=0;fireBullet();}
+    // bullets
+    bullets=bullets.filter(b=>{b.y-=b.v;return b.y>-20;});
+    // enemies move
+    let hitEdge=false;
+    enemies.forEach(e=>{if(e.alive){e.x+=enemyDir*enemySpeed;if(e.x<10||e.x>W-e.w-10)hitEdge=true;}});
+    if(hitEdge){enemyDir*=-1;enemies.forEach(e=>{if(e.alive)e.y+=16;});}
+    // enemy shoot
+    enemyShootTimer++;
+    if(enemyShootTimer>Math.max(40,90-level*8)){
+      enemyShootTimer=0;
+      const alive=enemies.filter(e=>e.alive);
+      if(alive.length){
+        const e=alive[Math.floor(Math.random()*alive.length)];
+        enemyBullets.push({x:e.x+e.w/2-2,y:e.y+e.h,w:4,h:10,v:3+level*0.4});
+      }
+    }
+    enemyBullets=enemyBullets.filter(b=>{b.y+=b.v;return b.y<H+20;});
+    // collision: player bullets vs enemies
+    bullets.forEach(b=>{
+      enemies.forEach(e=>{
+        if(e.alive&&b.x<e.x+e.w&&b.x+b.w>e.x&&b.y<e.y+e.h&&b.y+b.h>e.y){
+          e.alive=false;b.y=-999;
+          score+=10*(e.row+1);
+          document.getElementById('ss-score').textContent=score;
+        }
+      });
+    });
+    // collision: enemy bullets vs player
+    enemyBullets.forEach(b=>{
+      if(b.x<player.x+player.w&&b.x+b.w>player.x&&b.y<player.y+player.h&&b.y+b.h>player.y){
+        b.y=H+99;lives--;
+        const lv=document.getElementById('ss-lives');
+        if(lv)lv.textContent='❤️'.repeat(Math.max(0,lives))+'🖤'.repeat(Math.max(0,3-lives));
+        if(lives<=0){endGame();return;}
+      }
+    });
+    // enemy reaches bottom
+    enemies.forEach(e=>{if(e.alive&&e.y+e.h>H-50){lives=0;endGame();}});
+    // all enemies dead → next level
+    if(enemies.every(e=>!e.alive)){
+      level++;enemySpeed+=0.3;
+      document.getElementById('ss-level').textContent=level;
+      spawnEnemies();
+    }
+  }
+
+  function draw(){
+    ctx.fillStyle='#020818';ctx.fillRect(0,0,W,H);
+    // stars
+    stars.forEach(s=>{ctx.fillStyle=`rgba(255,255,255,${s.s/3})`;ctx.beginPath();ctx.arc(s.x,s.y,s.s*0.5,0,Math.PI*2);ctx.fill();});
+    // enemies
+    enemies.forEach(e=>{
+      if(!e.alive)return;
+      ctx.font=`${e.w}px serif`;ctx.textAlign='center';ctx.textBaseline='middle';
+      ctx.fillText(e.row===0?'👾':e.row===1?'🛸':'👽',e.x+e.w/2,e.y+e.h/2);
+    });
+    // enemy bullets
+    enemyBullets.forEach(b=>{
+      ctx.fillStyle='#ff4444';
+      ctx.shadowBlur=8;ctx.shadowColor='#ff0000';
+      ctx.fillRect(b.x,b.y,b.w,b.h);ctx.shadowBlur=0;
+    });
+    // player bullets
+    bullets.forEach(b=>{
+      ctx.fillStyle='#00f5ff';
+      ctx.shadowBlur=10;ctx.shadowColor='#00f5ff';
+      ctx.fillRect(b.x,b.y,b.w,b.h);ctx.shadowBlur=0;
+    });
+    // player ship
+    ctx.shadowBlur=15;ctx.shadowColor='#a855f7';
+    ctx.font='32px serif';ctx.textAlign='center';ctx.textBaseline='middle';
+    ctx.fillText('🚀',player.x+player.w/2,player.y+player.h/2);
+    ctx.shadowBlur=0;
+  }
+
+  function endGame(){
+    gameRunning=false;
+    if(animId)cancelAnimationFrame(animId);
+    document.removeEventListener('keydown',keyDown);
+    document.removeEventListener('keyup',keyUp);
+    if(score>hiScore)hiScore=score;
+    el.innerHTML=`<div class="game-area" style="gap:14px;padding:20px">
+      <div style="font-family:Orbitron,monospace;font-size:1.2rem;font-weight:900;color:#00f5ff;text-align:center">🚀 GAME OVER!</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+        <div class="score-badge" style="border-color:#00f5ff;color:#00f5ff">SKOR: ${score}</div>
+        <div class="score-badge">LEVEL: ${level}</div>
+        <div class="score-badge" style="color:#c084fc">🏆 REKOR: ${hiScore}</div>
+      </div>
+      <div class="choice-row">
+        <button class="btn btn-cyan" onclick="ssRetry()">🔄 MAIN LAGI</button>
+        <button class="btn btn-outline btn-sm" onclick="ssMenu2()">🏠 MENU</button>
+      </div></div>`;
+    window.ssRetry=function(){startGame();};
+    window.ssMenu2=function(){renderMenu();};
+  }
+
+  function renderMenu(){
+    document.removeEventListener('keydown',keyDown);
+    document.removeEventListener('keyup',keyUp);
+    el.innerHTML=`<div class="game-area" style="gap:14px;padding:20px">
+      <div style="font-family:Orbitron,monospace;font-size:1.1rem;font-weight:900;color:#00f5ff;text-align:center">🚀 SPACE SHOOTER</div>
+      <div style="font-size:.72rem;color:rgba(237,225,255,.5);text-align:center;line-height:1.6">Tembak semua alien sebelum mereka<br>mencapai bumi! Hindari tembakan balik!</div>
+      <div style="font-size:.6rem;color:rgba(237,225,255,.3);font-family:Orbitron,monospace;text-align:center">← → GERAK &nbsp;|&nbsp; SPASI/↑ TEMBAK<br>Di HP: Geser + Ketuk layar</div>
+      ${hiScore>0?`<div style="font-family:Orbitron,monospace;font-size:.7rem;color:#c084fc;text-align:center">🏆 REKOR: ${hiScore}</div>`:''}
+      <button class="btn btn-cyan" onclick="ssBegin()" style="min-width:160px">🚀 MULAI GAME</button>
+    </div>`;
+    window.ssBegin=function(){startGame();};
+  }
+
+  function startGame(){
+    init();renderEl();gameRunning=true;
+    document.addEventListener('keydown',keyDown);
+    document.addEventListener('keyup',keyUp);
+    loop();
+  }
+
+  renderMenu();
+}
+
+// ═══════════════════════════════════════════════════
+// BELAJAR: KUIS TKR OTOMOTIF 🔧
+// ═══════════════════════════════════════════════════
+function initQuizTKR(el){
+  const ALL_QUESTIONS=[
+    // MESIN (1-25)
+    {q:"Apa fungsi utama sistem pendingin mesin?",a:["Mendinginkan mesin agar tidak overheat","Menambah tenaga mesin","Menghemat bahan bakar","Menstabilkan tegangan"],c:0,cat:"Mesin"},
+    {q:"Komponen yang mengubah gerak bolak-balik piston menjadi gerak putar adalah?",a:["Poros engkol (crankshaft)","Camshaft","Connecting rod","Flywheel"],c:0,cat:"Mesin"},
+    {q:"Fungsi katup (valve) pada mesin adalah?",a:["Mengatur masuk/keluarnya gas dari ruang bakar","Mengatur tekanan oli","Mengatur aliran air pendingin","Mengontrol tegangan baterai"],c:0,cat:"Mesin"},
+    {q:"Apa yang dimaksud dengan TMA (Titik Mati Atas)?",a:["Posisi piston paling atas dalam silinder","Posisi piston paling bawah","Posisi klep terbuka penuh","Saat terjadi pembakaran"],c:0,cat:"Mesin"},
+    {q:"Berapa langkah kerja pada mesin 4 tak?",a:["4 langkah","2 langkah","6 langkah","3 langkah"],c:0,cat:"Mesin"},
+    {q:"Urutan langkah kerja mesin 4 tak yang benar adalah?",a:["Hisap-Kompresi-Usaha-Buang","Hisap-Usaha-Kompresi-Buang","Kompresi-Hisap-Usaha-Buang","Buang-Hisap-Kompresi-Usaha"],c:0,cat:"Mesin"},
+    {q:"Komponen yang berfungsi menyekat ruang bakar agar tidak ada kebocoran kompresi adalah?",a:["Ring piston","Bearing","Gasket kepala silinder","Baut kepala silinder"],c:0,cat:"Mesin"},
+    {q:"Apa fungsi flywheel (roda gila)?",a:["Menyimpan energi putar dan menstabilkan putaran mesin","Memompa bahan bakar","Mengatur timing pengapian","Mendinginkan mesin"],c:0,cat:"Mesin"},
+    {q:"Komponen yang mengatur waktu buka-tutup katup sesuai siklus mesin adalah?",a:["Camshaft (poros bubungan)","Crankshaft","Piston","Karburator"],c:0,cat:"Mesin"},
+    {q:"Apa yang menyebabkan mesin mengalami overheating?",a:["Coolant kurang, termostat rusak, atau radiator tersumbat","Aki lemah","Tekanan ban kurang","Kopling aus"],c:0,cat:"Mesin"},
+    {q:"Rasio kompresi mesin bensin umumnya berkisar pada?",a:["8:1 hingga 11:1","2:1 hingga 4:1","15:1 hingga 20:1","20:1 hingga 25:1"],c:0,cat:"Mesin"},
+    {q:"Apa fungsi oli mesin?",a:["Melumasi, mendinginkan, dan membersihkan komponen mesin","Hanya melumasi saja","Hanya mendinginkan saja","Memompa bahan bakar"],c:0,cat:"Mesin"},
+    {q:"Komponen yang mengubah energi panas hasil pembakaran menjadi gerak mekanik adalah?",a:["Piston","Camshaft","Alternator","Kopling"],c:0,cat:"Mesin"},
+    {q:"Apa itu blowby pada mesin?",a:["Kebocoran gas dari ruang bakar melewati ring piston menuju crankcase","Kebocoran oli dari gasket","Bunyi ketukan pada mesin","Getaran berlebih pada mesin"],c:0,cat:"Mesin"},
+    {q:"Fungsi termostat pada sistem pendingin adalah?",a:["Mengatur suhu operasi mesin agar tetap optimal","Memompa coolant","Menyaring coolant","Membuang panas ke udara"],c:0,cat:"Mesin"},
+    {q:"Apa fungsi timing belt/chain?",a:["Menghubungkan crankshaft dengan camshaft agar sinkron","Menghubungkan mesin dengan transmisi","Menggerakkan pompa power steering","Menggerakkan alternator"],c:0,cat:"Mesin"},
+    {q:"Apa yang dimaksud dengan clearance valve (celah katup)?",a:["Jarak antara rocker arm dengan batang katup","Tekanan kompresi mesin","Ukuran diameter katup","Panjang langkah piston"],c:0,cat:"Mesin"},
+    {q:"Mesin diesel menggunakan sistem pengapian?",a:["Kompresi tinggi (tanpa busi)","Busi seperti mesin bensin","Koil pengapian","CDI"],c:0,cat:"Mesin"},
+    {q:"Apa fungsi pompa oli pada mesin?",a:["Mensirkulasikan oli ke seluruh bagian mesin yang memerlukan pelumasan","Memompa bahan bakar ke injektor","Memompa air pendingin","Mengisi aki"],c:0,cat:"Mesin"},
+    {q:"Pada mesin 4 tak, berapa kali piston naik-turun dalam satu siklus pembakaran?",a:["2 kali naik dan 2 kali turun (4 langkah)","1 kali naik dan 1 kali turun","3 kali naik dan 3 kali turun","4 kali naik dan 4 kali turun"],c:0,cat:"Mesin"},
+    {q:"Kepanjangan dari EFI adalah?",a:["Electronic Fuel Injection","Engine Fuel Ignition","Electronic Firing Injection","Engine Fuel Indicator"],c:0,cat:"Mesin"},
+    {q:"Apa fungsi injektor pada sistem EFI?",a:["Menyemprotkan bahan bakar ke dalam silinder atau intake manifold","Mengontrol pengapian","Mengatur tekanan kompresi","Mensirkulasikan coolant"],c:0,cat:"Mesin"},
+    {q:"Komponen sensor yang mengukur posisi pedal gas pada sistem EFI adalah?",a:["TPS (Throttle Position Sensor)","MAP sensor","O2 sensor","Crankshaft position sensor"],c:0,cat:"Mesin"},
+    {q:"Apa yang dimaksud dengan displacement (kapasitas mesin)?",a:["Volume total silinder yang ditempuh piston dari TMB ke TMA","Tekanan kompresi","Jumlah silinder","Daya output mesin"],c:0,cat:"Mesin"},
+    {q:"Fungsi gasket kepala silinder adalah?",a:["Menyekat antara blok mesin dan kepala silinder agar tidak bocor","Mengatur timing katup","Melumasi piston","Mendinginkan mesin"],c:0,cat:"Mesin"},
+
+    // TRANSMISI & KOPLING (26-45)
+    {q:"Fungsi kopling (clutch) pada kendaraan adalah?",a:["Menghubungkan dan memutus tenaga dari mesin ke transmisi","Menambah kecepatan kendaraan","Mengurangi konsumsi BBM","Mengatur tekanan rem"],c:0,cat:"Transmisi"},
+    {q:"Komponen kopling yang berfungsi sebagai bidang gesek utama adalah?",a:["Piringan kopling (clutch disc)","Pressure plate","Release bearing","Flywheel"],c:0,cat:"Transmisi"},
+    {q:"Apa yang dimaksud dengan gigi transmisi?",a:["Perbandingan reduksi putaran mesin terhadap putaran roda","Jumlah silinder mesin","Kapasitas mesin","Tekanan ban"],c:0,cat:"Transmisi"},
+    {q:"Pada transmisi manual, fungsi synchronizer adalah?",a:["Menyamakan putaran gigi yang akan masuk agar perpindahan gigi menjadi halus","Mengunci gigi agar tidak keluar","Melumasi roda gigi","Mengatur tekanan hidraulik"],c:0,cat:"Transmisi"},
+    {q:"Transmisi otomatis menggunakan komponen utama berupa?",a:["Torque converter dan planetary gear set","Kopling dan garpu pemindah","Rantai dan sproket","Sabuk dan pulley"],c:0,cat:"Transmisi"},
+    {q:"Apa fungsi differential (gardan)?",a:["Membagi torsi ke dua roda penggerak saat berbelok","Menambah tenaga mesin","Mengatur tinggi kendaraan","Menyimpan energi kinetik"],c:0,cat:"Transmisi"},
+    {q:"Transfer case pada kendaraan 4WD berfungsi untuk?",a:["Membagi tenaga antara poros depan dan belakang","Mengatur rem ABS","Mengontrol suspensi","Mengatur tenaga mesin"],c:0,cat:"Transmisi"},
+    {q:"Apa yang menyebabkan kopling selip?",a:["Piringan kopling aus atau pegas pressure plate lemah","Oli mesin terlalu penuh","Tekanan ban kurang","Aki lemah"],c:0,cat:"Transmisi"},
+    {q:"Torque converter pada transmisi otomatis berfungsi sebagai?",a:["Pengganti kopling, meneruskan tenaga melalui fluida","Differential","Filter oli","Pompa bahan bakar"],c:0,cat:"Transmisi"},
+    {q:"Apa fungsi poros propeller (drive shaft)?",a:["Meneruskan putaran dari transmisi ke differential","Menggerakkan pompa power steering","Menghubungkan roda dengan suspensi","Menggerakkan alternator"],c:0,cat:"Transmisi"},
+    {q:"CV joint (Constant Velocity joint) berfungsi untuk?",a:["Meneruskan putaran dengan sudut konstan tanpa perubahan kecepatan saat roda berbelok","Menghubungkan mesin ke transmisi","Menyerap getaran suspensi","Mengunci diferensial"],c:0,cat:"Transmisi"},
+    {q:"Apa itu overdrive pada transmisi?",a:["Perbandingan gigi lebih kecil dari 1:1 sehingga putaran roda lebih cepat dari mesin","Gigi 1 dengan torsi terbesar","Sistem penguncian diferensial","Gigi mundur"],c:0,cat:"Transmisi"},
+    {q:"Tanda kopling sudah aus biasanya ditandai dengan?",a:["Kopling selip, perpindahan gigi kasar, bau gosong","Konsumsi BBM berkurang","Mesin mudah hidup","Rem menjadi lebih pakem"],c:0,cat:"Transmisi"},
+    {q:"Apa fungsi release bearing pada sistem kopling?",a:["Meneruskan gaya pedal kopling ke pressure plate","Menahan poros input transmisi","Melumasi piringan kopling","Mengunci flywheel"],c:0,cat:"Transmisi"},
+    {q:"Pada CVT (Continuously Variable Transmission), perpindahan rasio menggunakan?",a:["Sabuk (belt) dan pulley yang bisa berubah diameter efektif","Planetary gear set","Synchronizer","Kopling basah"],c:0,cat:"Transmisi"},
+    {q:"Apa yang dimaksud dengan final drive ratio?",a:["Perbandingan antara ring gear dan pinion gear pada diferensial","Torsi maksimum mesin","Kapasitas oli gardan","Ukuran ban belakang"],c:0,cat:"Transmisi"},
+    {q:"Fungsi free wheeling hub pada kendaraan 4WD adalah?",a:["Memutus hubungan poros roda depan saat 2WD agar tidak berputar sia-sia","Mengunci diferensial tengah","Mengatur distribusi torsi","Mengunci poros belakang"],c:0,cat:"Transmisi"},
+    {q:"Gejala transmisi manual yang bermasalah antara lain?",a:["Gigi susah masuk, loncat sendiri, atau suara berisik saat netral","Konsumsi BBM meningkat","Mesin overheat","Rem tidak pakem"],c:0,cat:"Transmisi"},
+    {q:"Apa fungsi oli transmisi?",a:["Melumasi roda gigi dan bearing di dalam transmisi","Mendinginkan mesin","Memompa rem hidraulik","Melumasi piston"],c:0,cat:"Transmisi"},
+    {q:"Pada sistem 4WD, perbedaan 4H dan 4L adalah?",a:["4H untuk kecepatan normal di medan berat, 4L untuk torsi lebih besar di medan sangat berat","4H untuk gigi mundur, 4L untuk gigi maju","4H untuk jalan aspal, 4L untuk jalan tol","Tidak ada perbedaan"],c:0,cat:"Transmisi"},
+
+    // SISTEM REM (46-60)
+    {q:"Apa prinsip kerja sistem rem hidraulik?",a:["Tekanan fluida (Pascal) diteruskan secara merata ke semua silinder roda","Tekanan mekanik dari kawat baja","Tekanan udara dari kompresor","Tekanan elektromagnetik"],c:0,cat:"Rem"},
+    {q:"Komponen rem yang berfungsi sebagai bidang gesek pada rem cakram adalah?",a:["Kampas rem (brake pad)","Master silinder","Caliper","Brake line"],c:0,cat:"Rem"},
+    {q:"Apa fungsi master silinder pada sistem rem?",a:["Mengubah tekanan mekanik pedal menjadi tekanan hidraulik","Mendistribusikan tenaga pengereman ke 4 roda","Menyimpan minyak rem","Memperkuat daya pengereman"],c:0,cat:"Rem"},
+    {q:"ABS (Anti-lock Braking System) berfungsi untuk?",a:["Mencegah roda terkunci saat pengereman mendadak agar kemudi tetap terkontrol","Menambah jarak pengereman","Mengunci semua roda sekaligus","Memperkuat pedal rem"],c:0,cat:"Rem"},
+    {q:"Apa tanda minyak rem perlu diganti?",a:["Warna minyak rem gelap/hitam, titik didih turun, rem terasa ngempos","Mesin overheat","Kopling selip","Getaran pada setir"],c:0,cat:"Rem"},
+    {q:"Rem tromol (drum brake) menggunakan komponen gesekan berupa?",a:["Sepatu rem (brake shoe) yang menekan ke dalam tromol","Brake pad yang menjepit rotor","Kawat baja","Piston hidraulik langsung"],c:0,cat:"Rem"},
+    {q:"Apa fungsi booster rem (brake booster)?",a:["Memperkuat tenaga pengereman dengan bantuan vakum mesin","Menyimpan minyak rem","Mengunci roda","Mengaktifkan ABS"],c:0,cat:"Rem"},
+    {q:"Penyebab rem terasa ngempos (spongy) adalah?",a:["Ada angin (udara) di dalam sistem rem hidraulik","Kampas rem aus","Ban kempes","Oli mesin habis"],c:0,cat:"Rem"},
+    {q:"Apa itu bleeding rem?",a:["Proses membuang angin dari sistem rem hidraulik","Mengganti minyak rem","Menyetel jarak bebas pedal rem","Membersihkan kaliper"],c:0,cat:"Rem"},
+    {q:"Fungsi proportioning valve pada sistem rem adalah?",a:["Membagi tekanan rem antara roda depan dan belakang agar seimbang","Mengunci roda belakang","Meningkatkan tekanan rem depan","Mengaktifkan rem parkir"],c:0,cat:"Rem"},
+    {q:"Apa tanda kampas rem cakram sudah habis?",a:["Bunyi decit/besi bergesekan saat mengerem, indikator menyala","Mesin sulit dihidupkan","Konsumsi BBM meningkat","Transmisi selip"],c:0,cat:"Rem"},
+    {q:"EBD (Electronic Brake Distribution) berfungsi untuk?",a:["Mendistribusikan tekanan rem secara elektronik sesuai beban roda","Mengunci semua roda sekaligus","Memperkuat pedal rem","Menggantikan sistem ABS"],c:0,cat:"Rem"},
+    {q:"Apa yang menyebabkan rem berbunyi saat diinjak?",a:["Kampas rem aus, kotoran pada rotor, atau kampas rem keras","Tekanan ban kurang","Aki lemah","Kopling aus"],c:0,cat:"Rem"},
+    {q:"Fungsi rem parkir (handbrake) adalah?",a:["Menahan kendaraan agar tidak bergerak saat diparkir","Membantu pengereman darurat di jalan tol","Mengunci transmisi","Mengaktifkan 4WD"],c:0,cat:"Rem"},
+    {q:"Rotor (disc) rem yang bergelombang menyebabkan?",a:["Getaran pada pedal rem dan setir saat mengerem","Mesin mati mendadak","Transmisi tidak mau pindah gigi","Kopling selip"],c:0,cat:"Rem"},
+
+    // SUSPENSI & KEMUDI (61-75)
+    {q:"Fungsi utama sistem suspensi kendaraan adalah?",a:["Menyerap guncangan dari jalan dan menjaga kestabilan kendaraan","Menambah kecepatan kendaraan","Menghemat bahan bakar","Mengontrol sistem rem"],c:0,cat:"Suspensi"},
+    {q:"Apa perbedaan suspensi independen dengan suspensi rigid?",a:["Suspensi independen tiap roda bergerak bebas, rigid kedua roda dihubungkan poros kaku","Suspensi independen lebih keras","Suspensi rigid lebih nyaman","Tidak ada perbedaan"],c:0,cat:"Suspensi"},
+    {q:"Komponen suspensi yang menyerap energi guncangan dan mencegah pantulan berulang adalah?",a:["Shock absorber (peredam kejut)","Per/pegas","Arm suspensi","Ball joint"],c:0,cat:"Suspensi"},
+    {q:"Apa itu wheel alignment (spooring)?",a:["Penyetelan sudut-sudut roda (camber, caster, toe) agar kendaraan berjalan lurus","Penggantian ban","Penyetelan tekanan ban","Balancing roda"],c:0,cat:"Suspensi"},
+    {q:"Fungsi ball joint pada suspensi adalah?",a:["Sebagai titik engsel yang menghubungkan knuckle roda dengan lengan suspensi","Menyerap getaran dari jalan","Mengunci roda","Mengatur tinggi suspensi"],c:0,cat:"Suspensi"},
+    {q:"Apa yang dimaksud dengan camber negatif?",a:["Bagian atas roda miring ke dalam (menuju kendaraan)","Bagian atas roda miring ke luar","Roda miring ke depan","Roda miring ke belakang"],c:0,cat:"Suspensi"},
+    {q:"Apa itu toe-in pada roda kendaraan?",a:["Bagian depan roda lebih dekat satu sama lain dibanding bagian belakangnya","Bagian depan roda lebih jauh","Roda miring ke dalam","Roda miring ke luar"],c:0,cat:"Suspensi"},
+    {q:"Power steering elektrik (EPS) menggunakan?",a:["Motor listrik untuk membantu pemutaran setir","Pompa hidraulik dan power steering fluid","Vakum mesin","Kompresor udara"],c:0,cat:"Suspensi"},
+    {q:"Tanda tie rod end perlu diganti adalah?",a:["Setir oblak/goyang, ban aus tidak merata, kendaraan tidak lurus","Mesin sulit dihidupkan","Konsumsi BBM meningkat","Transmisi selip"],c:0,cat:"Suspensi"},
+    {q:"Fungsi stabilizer bar (anti-roll bar) adalah?",a:["Mengurangi body roll (kemiringan bodi) saat berbelok","Menyerap guncangan vertikal","Mengunci diferensial","Mengatur ketinggian bodi"],c:0,cat:"Suspensi"},
+    {q:"Apa itu wheel balancing?",a:["Proses menyeimbangkan distribusi massa pada roda agar tidak bergetar saat berputar","Penyetelan sudut roda","Penggantian ban","Menyetel tekanan ban"],c:0,cat:"Suspensi"},
+    {q:"Apa gejala shock absorber sudah rusak/lemah?",a:["Kendaraan memantul berlebihan, miring saat berbelok, ban aus tidak merata","Mesin sulit hidup","Rem tidak pakem","Kopling selip"],c:0,cat:"Suspensi"},
+    {q:"Rack and pinion steering berfungsi untuk?",a:["Mengubah putaran setir menjadi gerakan linear untuk mengarahkan roda","Menyerap getaran kemudi","Mengunci setir saat parkir","Mengaktifkan power steering"],c:0,cat:"Suspensi"},
+    {q:"Apa yang dimaksud dengan turning radius kendaraan?",a:["Radius lingkaran terkecil yang bisa dilakukan kendaraan saat berbelok penuh","Radius ban","Ukuran setir","Jarak sumbu roda"],c:0,cat:"Suspensi"},
+    {q:"Fungsi strut bar (tension rod) pada suspensi adalah?",a:["Menguatkan lower arm agar tidak bergerak maju-mundur saat ada beban","Menyerap guncangan vertikal","Mengatur camber roda","Menghubungkan per dengan bodi"],c:0,cat:"Suspensi"},
+
+    // KELISTRIKAN (76-90)
+    {q:"Fungsi alternator pada kendaraan adalah?",a:["Mengisi baterai dan mensuplai listrik ke komponen kendaraan saat mesin hidup","Menyalakan mesin","Mengontrol sistem rem","Menggerakkan kopling"],c:0,cat:"Kelistrikan"},
+    {q:"Apa fungsi baterai/aki pada kendaraan?",a:["Menyimpan energi listrik untuk menghidupkan starter dan mensuplai listrik saat mesin mati","Mengisi daya alternator","Mengontrol sistem bahan bakar","Melumasi komponen"],c:0,cat:"Kelistrikan"},
+    {q:"Satuan kapasitas aki kendaraan adalah?",a:["Ah (Ampere-hour)","Volt","Watt","Ohm"],c:0,cat:"Kelistrikan"},
+    {q:"Fungsi motor starter adalah?",a:["Memutar mesin saat pertama dihidupkan","Mengisi aki","Mengontrol sistem pengapian","Menggerakkan pompa bahan bakar"],c:0,cat:"Kelistrikan"},
+    {q:"Apa fungsi sekring (fuse) pada kendaraan?",a:["Melindungi komponen listrik dari arus berlebih (korsleting)","Menstabilkan tegangan","Memperkuat arus listrik","Mengisi aki"],c:0,cat:"Kelistrikan"},
+    {q:"Sistem pengapian konvensional menggunakan komponen?",a:["Koil, distributor, busi, platina/kontak poin","Koil, ECU, injektor","Alternator, regulator, baterai","CDI, koil, busi"],c:0,cat:"Kelistrikan"},
+    {q:"Fungsi koil pengapian (ignition coil) adalah?",a:["Menaikkan tegangan aki (12V) menjadi tegangan tinggi (10.000-30.000V) untuk memercik busi","Mengontrol waktu pengapian","Mengisi baterai","Mendistribusikan arus ke semua busi"],c:0,cat:"Kelistrikan"},
+    {q:"Apa fungsi busi (spark plug) pada mesin bensin?",a:["Memercikkan api untuk membakar campuran bahan bakar dan udara di ruang bakar","Mengatur timing pengapian","Melumasi ruang bakar","Menyaring bahan bakar"],c:0,cat:"Kelistrikan"},
+    {q:"Apa yang dimaksud dengan timing pengapian?",a:["Saat tepat percikan busi terjadi sebelum TMA (derajat sebelum TMA)","Interval penggantian busi","Tegangan percikan busi","Urutan pengapian antar silinder"],c:0,cat:"Kelistrikan"},
+    {q:"Sensor yang mendeteksi ketukan (knocking) mesin adalah?",a:["Knock sensor","O2 sensor","MAP sensor","IAT sensor"],c:0,cat:"Kelistrikan"},
+    {q:"ECU (Engine Control Unit) berfungsi sebagai?",a:["Otak elektronik kendaraan yang mengontrol sistem mesin berdasarkan input sensor","Alternator cadangan","Filter bahan bakar elektronik","Pengatur tekanan rem"],c:0,cat:"Kelistrikan"},
+    {q:"Apa yang menyebabkan aki cepat tekor?",a:["Alternator rusak, ada kebocoran arus, atau sel aki sudah lemah","Kopling aus","Ban kempes","Filter udara kotor"],c:0,cat:"Kelistrikan"},
+    {q:"Apa fungsi relay pada sistem kelistrikan kendaraan?",a:["Saklar elektromagnetik yang memungkinkan arus kecil mengontrol arus besar","Menstabilkan tegangan aki","Memperkuat sinyal sensor","Mengisi aki"],c:0,cat:"Kelistrikan"},
+    {q:"Tegangan operasi normal sistem kelistrikan kendaraan penumpang adalah?",a:["12 Volt DC","24 Volt DC","6 Volt DC","220 Volt AC"],c:0,cat:"Kelistrikan"},
+    {q:"Apa itu OBD (On-Board Diagnostics)?",a:["Sistem diagnosis elektronik bawaan kendaraan yang menyimpan kode kerusakan (DTC)","Sistem audio kendaraan","Sistem navigasi GPS","Sistem pendingin elektronik"],c:0,cat:"Kelistrikan"},
+
+    // BAHAN BAKAR & EMISI (91-100)
+    {q:"Apa fungsi filter bahan bakar?",a:["Menyaring kotoran dan air dari bahan bakar sebelum masuk ke mesin","Memompa bahan bakar","Mengatur tekanan bahan bakar","Menyimpan bahan bakar cadangan"],c:0,cat:"BBM & Emisi"},
+    {q:"Angka oktan bahan bakar bensin menunjukkan?",a:["Kemampuan bahan bakar menahan kompresi sebelum terbakar sendiri (anti-knocking)","Kandungan energi bahan bakar","Viskositas bahan bakar","Titik nyala bahan bakar"],c:0,cat:"BBM & Emisi"},
+    {q:"Apa itu catalytic converter?",a:["Komponen knalpot yang mengubah gas beracun (HC, CO, NOx) menjadi gas yang lebih aman","Filter udara mesin","Pompa bahan bakar","Sensor emisi"],c:0,cat:"BBM & Emisi"},
+    {q:"Gas emisi berbahaya yang dihasilkan pembakaran tidak sempurna adalah?",a:["CO (karbon monoksida)","CO2 (karbon dioksida)","H2O (air)","N2 (nitrogen)"],c:0,cat:"BBM & Emisi"},
+    {q:"Fuel pump (pompa bahan bakar) pada kendaraan EFI umumnya dipasang di?",a:["Di dalam tangki bahan bakar","Di luar tangki, di ruang mesin","Di filter bahan bakar","Di intake manifold"],c:0,cat:"BBM & Emisi"},
+    {q:"Apa fungsi MAP sensor pada sistem EFI?",a:["Mengukur tekanan absolut di intake manifold untuk menentukan beban mesin","Mengukur posisi throttle","Mengukur suhu udara masuk","Mengukur kecepatan kendaraan"],c:0,cat:"BBM & Emisi"},
+    {q:"O2 sensor (lambda sensor) berfungsi untuk?",a:["Mendeteksi kadar oksigen di gas buang agar ECU bisa mengatur campuran bahan bakar-udara","Mengukur tekanan mesin","Mengontrol timing pengapian","Mengukur suhu coolant"],c:0,cat:"BBM & Emisi"},
+    {q:"Campuran bahan bakar-udara yang ideal (stoikiometri) untuk bensin adalah?",a:["14.7 : 1 (udara : bensin)","10 : 1","20 : 1","7 : 1"],c:0,cat:"BBM & Emisi"},
+    {q:"Apa yang menyebabkan asap knalpot berwarna putih tebal?",a:["Coolant masuk ke ruang bakar (gasket kepala silinder bocor)","Terlalu banyak bahan bakar","Filter udara kotor","Aki lemah"],c:0,cat:"BBM & Emisi"},
+    {q:"Apa yang menyebabkan asap knalpot berwarna biru/hitam?",a:["Biru: oli terbakar; Hitam: campuran terlalu kaya (terlalu banyak BBM)","Biru: BBM berlebih; Hitam: oli terbakar","Keduanya berarti coolant bocor","Keduanya berarti pengapian terlambat"],c:0,cat:"BBM & Emisi"},
+  ];
+
+  let questions=[],qIdx=0,score=0,wrong=0,timer=null,timeLeft=30,answered=false;
+  const PER_SESSION=15;
+
+  function shuffle(arr){return arr.slice().sort(()=>Math.random()-.5);}
+
+  function startQuiz(){
+    questions=shuffle(ALL_QUESTIONS).slice(0,PER_SESSION);
+    qIdx=0;score=0;wrong=0;
+    nextQuestion();
+  }
+
+  function nextQuestion(){
+    if(qIdx>=questions.length){endQuiz();return;}
+    answered=false;timeLeft=30;
+    const q=questions[qIdx];
+    const choices=shuffle(q.a.map((a,i)=>({a,correct:i===q.c})));
+    el.innerHTML=`<div class="game-area" style="gap:10px;padding:14px">
+      <div style="display:flex;gap:8px;align-items:center;justify-content:space-between;width:100%">
+        <div class="score-badge" style="border-color:#ff9500;color:#ff9500">🔧 ${q.cat}</div>
+        <div class="score-badge">${qIdx+1}/${PER_SESSION}</div>
+        <div class="score-badge" style="color:#39ff14">✓${score}</div>
+        <div class="score-badge" id="tkr-timer" style="color:#ff4444">⏱${timeLeft}s</div>
+      </div>
+      <div style="width:100%;background:rgba(255,149,0,.15);border-radius:4px;height:5px">
+        <div id="tkr-prog" style="height:100%;background:#ff9500;border-radius:4px;width:${(qIdx/PER_SESSION)*100}%;transition:width .3s"></div>
+      </div>
+      <div style="font-family:'Rajdhani',sans-serif;font-size:.88rem;font-weight:700;color:var(--tm);text-align:center;line-height:1.5;background:rgba(255,149,0,.07);border:1px solid rgba(255,149,0,.2);border-radius:8px;padding:12px">${q.q}</div>
+      <div id="tkr-choices" style="display:flex;flex-direction:column;gap:7px;width:100%"></div>
+    </div>`;
+    const cc=document.getElementById('tkr-choices');
+    choices.forEach((c,i)=>{
+      const btn=document.createElement('button');
+      btn.style.cssText=`background:rgba(255,149,0,.06);border:1.5px solid rgba(255,149,0,.25);color:var(--tm);font-family:'Rajdhani',sans-serif;font-size:.8rem;padding:10px 12px;border-radius:8px;cursor:pointer;text-align:left;transition:all .15s;line-height:1.4`;
+      btn.textContent=`${['A','B','C','D'][i]}. ${c.a}`;
+      btn.onmouseover=()=>{if(!answered)btn.style.borderColor='#ff9500';};
+      btn.onmouseout=()=>{if(!answered)btn.style.borderColor='rgba(255,149,0,.25)';};
+      btn.onclick=()=>{
+        if(answered)return;
+        answered=true;clearInterval(timer);
+        if(c.correct){
+          score++;
+          btn.style.background='rgba(57,255,20,.2)';btn.style.borderColor='#39ff14';btn.style.color='#39ff14';
+        }else{
+          wrong++;
+          btn.style.background='rgba(255,0,0,.18)';btn.style.borderColor='#ff4444';btn.style.color='#ff4444';
+          // show correct
+          Array.from(cc.children).forEach((b,j)=>{if(choices[j].correct){b.style.background='rgba(57,255,20,.15)';b.style.borderColor='#39ff14';}});
+        }
+        setTimeout(()=>{qIdx++;nextQuestion();},1200);
+      };
+      cc.appendChild(btn);
+    });
+    // countdown timer
+    timer=setInterval(()=>{
+      timeLeft--;
+      const t=document.getElementById('tkr-timer');
+      if(t)t.textContent='⏱'+timeLeft+'s';
+      if(timeLeft<=0){
+        clearInterval(timer);
+        if(!answered){answered=true;wrong++;qIdx++;setTimeout(nextQuestion,500);}
+      }
+    },1000);
+  }
+
+  function endQuiz(){
+    clearInterval(timer);
+    const pct=Math.round((score/PER_SESSION)*100);
+    const grade=pct>=90?'A':pct>=75?'B':pct>=60?'C':pct>=50?'D':'E';
+    const msg=pct>=90?'Luar biasa! Kamu calon mekanik handal! 🏆':pct>=75?'Bagus sekali! Terus tingkatkan! 💪':pct>=60?'Cukup baik, perbanyak latihan 📚':pct>=50?'Perlu banyak belajar lagi 📖':'Yuk baca materi TKR lebih giat! 🔧';
+    el.innerHTML=`<div class="game-area" style="gap:12px;padding:18px">
+      <div style="font-family:Orbitron,monospace;font-size:1rem;font-weight:900;color:#ff9500;text-align:center">🔧 HASIL KUIS TKR</div>
+      <div style="font-family:Orbitron,monospace;font-size:2.5rem;font-weight:900;color:#ff9500;text-align:center;text-shadow:0 0 20px rgba(255,149,0,.6)">${grade}</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+        <div class="score-badge" style="border-color:#ff9500;color:#ff9500">BENAR: ${score}/${PER_SESSION}</div>
+        <div class="score-badge" style="color:#ff4444">SALAH: ${wrong}</div>
+        <div class="score-badge" style="color:#c084fc">NILAI: ${pct}%</div>
+      </div>
+      <div style="font-family:'Rajdhani',sans-serif;font-size:.82rem;color:rgba(237,225,255,.6);text-align:center;background:rgba(255,149,0,.07);border:1px solid rgba(255,149,0,.2);border-radius:8px;padding:10px">${msg}</div>
+      <div class="choice-row">
+        <button class="btn" style="background:linear-gradient(135deg,#ff9500,#ffb347);border:none;color:#000;font-family:Orbitron,monospace;font-size:.65rem;padding:11px 18px;border-radius:8px;cursor:pointer;font-weight:700" onclick="tkrRetry()">🔄 COBA LAGI</button>
+        <button class="btn btn-outline btn-sm" onclick="tkrMenu()">🏠 MENU</button>
+      </div>
+    </div>`;
+    window.tkrRetry=startQuiz;
+    window.tkrMenu=renderMenu;
+  }
+
+  function renderMenu(){
+    clearInterval(timer);
+    el.innerHTML=`<div class="game-area" style="gap:14px;padding:20px">
+      <div style="font-family:Orbitron,monospace;font-size:1rem;font-weight:900;color:#ff9500;text-align:center">🔧 KUIS TKR OTOMOTIF</div>
+      <div style="font-size:.72rem;color:rgba(237,225,255,.5);text-align:center;line-height:1.7">100 soal Teknik Kendaraan Ringan<br>Random <strong style="color:#ff9500">${PER_SESSION} soal</strong> per sesi • Timer 30 detik/soal</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center">
+        ${['⚙️ Mesin','🔄 Transmisi','🛑 Rem','🔩 Suspensi','⚡ Kelistrikan','⛽ BBM & Emisi'].map(t=>`<span style="font-size:.6rem;background:rgba(255,149,0,.1);border:1px solid rgba(255,149,0,.3);border-radius:12px;padding:4px 10px;color:#ff9500">${t}</span>`).join('')}
+      </div>
+      <button class="btn" style="background:linear-gradient(135deg,#ff9500,#ffb347);border:none;color:#000;font-family:Orbitron,monospace;font-size:.7rem;padding:13px 28px;border-radius:10px;cursor:pointer;font-weight:700;min-width:180px" onclick="tkrStart()">🔧 MULAI KUIS</button>
+    </div>`;
+    window.tkrStart=startQuiz;
+  }
+
+  renderMenu();
+}
 function initSudoku(el){
   const base=[[5,3,0,0,7,0,0,0,0],[6,0,0,1,9,5,0,0,0],[0,9,8,0,0,0,0,6,0],
     [8,0,0,0,6,0,0,0,3],[4,0,0,8,0,3,0,0,1],[7,0,0,0,2,0,0,0,6],
@@ -2159,16 +2827,16 @@ function initHangman(el){
   let pick,word,guessed,wrong,wins=0,losses=0;const maxWrong=6;
   function init(){pick=wordBank[Math.floor(Math.random()*wordBank.length)];word=pick.w;guessed=new Set();wrong=0;}
   function renderHang(){return`<svg viewBox="0 0 180 140" width="180" height="140" xmlns="http://www.w3.org/2000/svg">
-    <line x1="20" y1="130" x2="160" y2="130" stroke="#ff006e" stroke-width="2" opacity=".5"/>
-    <line x1="50" y1="130" x2="50" y2="15" stroke="#ff006e" stroke-width="2" opacity=".5"/>
-    <line x1="50" y1="15" x2="110" y2="15" stroke="#ff006e" stroke-width="2" opacity=".5"/>
-    <line x1="110" y1="15" x2="110" y2="32" stroke="#ff006e" stroke-width="2" opacity=".5"/>
-    ${wrong>0?`<circle cx="110" cy="44" r="12" fill="none" stroke="#ff006e" stroke-width="2" opacity=".8"/>`:''}
-    ${wrong>1?`<line x1="110" y1="56" x2="110" y2="88" stroke="#ff006e" stroke-width="2" opacity=".7"/>`:''}
-    ${wrong>2?`<line x1="110" y1="65" x2="92" y2="80" stroke="#ff006e" stroke-width="2" opacity=".65"/>`:''}
-    ${wrong>3?`<line x1="110" y1="65" x2="128" y2="80" stroke="#ff006e" stroke-width="2" opacity=".65"/>`:''}
-    ${wrong>4?`<line x1="110" y1="88" x2="95" y2="108" stroke="#ff006e" stroke-width="2" opacity=".6"/>`:''}
-    ${wrong>5?`<line x1="110" y1="88" x2="125" y2="108" stroke="#ff006e" stroke-width="2" opacity=".6"/>`:''}
+    <line x1="20" y1="130" x2="160" y2="130" stroke="#a855f7" stroke-width="2" opacity=".5"/>
+    <line x1="50" y1="130" x2="50" y2="15" stroke="#a855f7" stroke-width="2" opacity=".5"/>
+    <line x1="50" y1="15" x2="110" y2="15" stroke="#a855f7" stroke-width="2" opacity=".5"/>
+    <line x1="110" y1="15" x2="110" y2="32" stroke="#a855f7" stroke-width="2" opacity=".5"/>
+    ${wrong>0?`<circle cx="110" cy="44" r="12" fill="none" stroke="#a855f7" stroke-width="2" opacity=".8"/>`:''}
+    ${wrong>1?`<line x1="110" y1="56" x2="110" y2="88" stroke="#a855f7" stroke-width="2" opacity=".7"/>`:''}
+    ${wrong>2?`<line x1="110" y1="65" x2="92" y2="80" stroke="#a855f7" stroke-width="2" opacity=".65"/>`:''}
+    ${wrong>3?`<line x1="110" y1="65" x2="128" y2="80" stroke="#a855f7" stroke-width="2" opacity=".65"/>`:''}
+    ${wrong>4?`<line x1="110" y1="88" x2="95" y2="108" stroke="#a855f7" stroke-width="2" opacity=".6"/>`:''}
+    ${wrong>5?`<line x1="110" y1="88" x2="125" y2="108" stroke="#a855f7" stroke-width="2" opacity=".6"/>`:''}
     </svg>`;}
   function render(){
     const won=word.split('').every(c=>guessed.has(c));const lost=wrong>=maxWrong;
@@ -2419,7 +3087,7 @@ function initMario(el){
       if(en.x<=0||en.x>=cfg.w-en.w)en.vx*=-1;
       let onG=false;for(const pl of platforms){if(rectOverlap({x:en.x,y:en.y+1,w:en.w,h:en.h},pl)){onG=true;break;}}
       if(!onG)en.vx*=-1;
-      if(player.invincible<=0&&rectOverlap(player,en)){if(player.vy>0&&player.y+player.h<en.y+en.h/2){en.alive=false;score+=100;player.vy=-7;addParticle(en.x+13,en.y,'#ff006e');}else{lives--;player.invincible=120;if(lives<=0)gameState='dead';else{player.x=60;player.y=H-80;player.vx=0;player.vy=0;}}}});
+      if(player.invincible<=0&&rectOverlap(player,en)){if(player.vy>0&&player.y+player.h<en.y+en.h/2){en.alive=false;score+=100;player.vy=-7;addParticle(en.x+13,en.y,'#a855f7');}else{lives--;player.invincible=120;if(lives<=0)gameState='dead';else{player.x=60;player.y=H-80;player.vx=0;player.vy=0;}}}});
     coins.forEach(c=>{if(!c.taken&&rectOverlap(player,c)){c.taken=true;score+=10;addParticle(c.x+9,c.y,'#ffe600');}});
     if(player.x+player.w>flagX){score+=500;gameState='win';addParticle(flagX,H-80,'#39ff14');}
     particles=particles.filter(p=>p.life>0);particles.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=0.15;p.life-=0.04;});
@@ -2464,7 +3132,7 @@ function initMario(el){
     if(gameState==='dead'||gameState==='win'){
       ctx.fillStyle='rgba(4,8,18,.8)';ctx.fillRect(0,H/2-36,W,72);
       ctx.font='bold 18px Orbitron,monospace';ctx.textAlign='center';ctx.textBaseline='middle';
-      ctx.fillStyle=gameState==='win'?'#39ff14':'#ff006e';ctx.shadowColor=ctx.fillStyle;ctx.shadowBlur=16;
+      ctx.fillStyle=gameState==='win'?'#39ff14':'#a855f7';ctx.shadowColor=ctx.fillStyle;ctx.shadowBlur=16;
       ctx.fillText(gameState==='win'?'🎉 MENANG!':'💀 GAME OVER',W/2,H/2-10);ctx.shadowBlur=0;
       ctx.font='10px Orbitron,monospace';ctx.fillStyle='#e0e8ff';ctx.fillText('Tekan BARU untuk main lagi',W/2,H/2+18);}
   }
@@ -2547,7 +3215,7 @@ function initPong(el){
     ctx.shadowBlur=14;
     ctx.shadowColor='#00f5ff';ctx.fillStyle='#00f5ff';
     ctx.fillRect(8,playerY,PAD_W,PAD_H);
-    ctx.shadowColor='#ff006e';ctx.fillStyle='#ff006e';
+    ctx.shadowColor='#a855f7';ctx.fillStyle='#a855f7';
     ctx.fillRect(W-8-PAD_W,cpuY,PAD_W,PAD_H);
     // ball
     ctx.shadowColor='#ffe600';ctx.fillStyle='#ffe600';
@@ -2556,7 +3224,7 @@ function initPong(el){
     // scores
     ctx.font='bold 28px Orbitron,monospace';ctx.textAlign='center';ctx.textBaseline='top';
     ctx.fillStyle='rgba(0,245,255,.2)';ctx.fillText(ps,W/2-50,10);
-    ctx.fillStyle='rgba(255,0,110,.2)';ctx.fillText(cs,W/2+50,10);
+    ctx.fillStyle='rgba(168,85,247,.2)';ctx.fillText(cs,W/2+50,10);
   }
 
   function update(ts){
@@ -2743,7 +3411,7 @@ function initFlappy(el){
     if(gameState==='dead'){
       ctx.fillStyle='rgba(4,8,18,.82)';ctx.fillRect(0,H/2-60,W,120);
       ctx.font='bold 20px Orbitron,monospace';ctx.textAlign='center';ctx.textBaseline='middle';
-      ctx.fillStyle='#ff006e';ctx.shadowColor='#ff006e';ctx.shadowBlur=14;
+      ctx.fillStyle='#a855f7';ctx.shadowColor='#a855f7';ctx.shadowBlur=14;
       ctx.fillText('💀 GAME OVER',W/2,H/2-18);ctx.shadowBlur=0;
       ctx.font='13px Orbitron,monospace';ctx.fillStyle='#ffe600';
       ctx.fillText(`SKOR: ${score}  BEST: ${bestScore}`,W/2,H/2+10);
@@ -2766,7 +3434,7 @@ function initFlappy(el){
 function initBreakout(el){
   const W=340,H=300,PAD_W=70,PAD_H=10,BALL_R=6,ROWS=5,COLS=8;
   const BRICK_W=Math.floor((W-20)/COLS),BRICK_H=14,BRICK_MARGIN=3;
-  const COLORS=['#ff006e','#ff9500','#ffe600','#39ff14','#00f5ff'];
+  const COLORS=['#a855f7','#ff9500','#ffe600','#39ff14','#00f5ff'];
   let pad,ball,bricks,score,lives,gameState,best=0,frameCount=0;
 
   el.innerHTML=`<div class="game-area" style="gap:8px;padding:8px">
@@ -2878,7 +3546,7 @@ function initBreakout(el){
     if(gameState==='dead'){
       ctx.fillStyle='rgba(4,8,18,.85)';ctx.fillRect(0,H/2-50,W,100);
       ctx.font='bold 18px Orbitron,monospace';ctx.textAlign='center';ctx.textBaseline='middle';
-      ctx.fillStyle='#ff006e';ctx.shadowColor='#ff006e';ctx.shadowBlur=14;
+      ctx.fillStyle='#a855f7';ctx.shadowColor='#a855f7';ctx.shadowBlur=14;
       ctx.fillText('💀 GAME OVER',W/2,H/2-14);ctx.shadowBlur=0;
       ctx.font='11px Orbitron,monospace';ctx.fillStyle='#ffe600';
       ctx.fillText(`SKOR: ${score}  BEST: ${best}`,W/2,H/2+14);
@@ -2980,7 +3648,7 @@ function initKraeplin(el){
         const pct=krpRemain/krpDuration;
         const circ=2*Math.PI*34;
         ringEl.style.strokeDashoffset=(circ*(1-pct)).toFixed(2);
-        ringEl.style.stroke=pct>.5?'#ff69b4':pct>.25?'#ffb6c1':'#ff1493';
+        ringEl.style.stroke=pct>.5?'#c084fc':pct>.25?'#e9d5ff':'#a855f7';
       }
       const cEl=document.getElementById('krpCorrect');
       const wEl=document.getElementById('krpWrong');
@@ -3181,11 +3849,11 @@ function initLogMath(el){
   function renderHome(){
     el.innerHTML=`<div class="game-area" style="gap:12px;padding:18px">
       <div class="game-msg" style="font-size:1rem">📐 SOAL LOGARITMA</div>
-      <div style="font-size:.75rem;color:rgba(255,224,240,.45);text-align:center;line-height:1.6;max-width:300px">
+      <div style="font-size:.75rem;color:rgba(237,225,255,.45);text-align:center;line-height:1.6;max-width:300px">
         Jawab soal <span style="color:var(--nc);font-weight:700">logaritma & eksponen</span> secepat mungkin!
       </div>
       <div style="display:flex;flex-direction:column;gap:6px;align-items:center;width:100%">
-        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(255,224,240,.4);letter-spacing:.2em;margin-bottom:2px">PILIH DURASI</div>
+        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(237,225,255,.4);letter-spacing:.2em;margin-bottom:2px">PILIH DURASI</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
           <button class="krp-mode-btn ${duration===120?'active':''}" onclick="lmSetDur(120)">⏱ 2 MENIT</button>
           <button class="krp-mode-btn ${duration===180?'active':''}" onclick="lmSetDur(180)">⏱ 3 MENIT</button>
@@ -3203,7 +3871,7 @@ function initLogMath(el){
   }
 
   function renderLB(){
-    const lb=getLB();if(!lb.length)return '<div style="text-align:center;color:rgba(255,224,240,.3);font-size:.75rem;padding:12px;font-family:Orbitron,monospace">Belum ada data</div>';
+    const lb=getLB();if(!lb.length)return '<div style="text-align:center;color:rgba(237,225,255,.3);font-size:.75rem;padding:12px;font-family:Orbitron,monospace">Belum ada data</div>';
     const medal=['🥇','🥈','🥉'];
     return lb.map((e,i)=>`<div class="krp-lb-row"><div class="krp-lb-rank">${medal[i]||i+1}</div><div><div class="krp-lb-name">${e.name||'Anonim'}</div><div class="krp-lb-detail">${e.durLabel}</div></div><div style="text-align:right"><div class="krp-lb-score">✅ ${e.correct}</div><div class="krp-lb-detail">❌ ${e.wrong}</div></div></div>`).join('');
   }
@@ -3219,7 +3887,7 @@ function initLogMath(el){
       const tv=document.getElementById('lmTimer');if(tv)tv.textContent=fmtTime(remain);
       const circ=2*Math.PI*34;
       const ring=document.getElementById('lmRing');
-      if(ring){ring.style.strokeDashoffset=(circ*(1-remain/duration)).toFixed(2);ring.style.stroke=remain/duration>.5?'#ff69b4':remain/duration>.25?'#ffb6c1':'#ff1493';}
+      if(ring){ring.style.strokeDashoffset=(circ*(1-remain/duration)).toFixed(2);ring.style.stroke=remain/duration>.5?'#c084fc':remain/duration>.25?'#e9d5ff':'#a855f7';}
       if(remain<=0){clearInterval(timer);timer=null;running=false;showResult();}
     },1000);
   }
@@ -3233,17 +3901,17 @@ function initLogMath(el){
           <div class="krp-stat"><div class="krp-stat-val" id="lmW" style="color:var(--np)">${wrong}</div><div class="krp-stat-lbl">SALAH</div></div>
         </div>
         <div class="krp-timer-ring">
-          <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="34" fill="none" stroke="rgba(255,105,180,.12)" stroke-width="6"/>
-          <circle id="lmRing" cx="40" cy="40" r="34" fill="none" stroke="#ff69b4" stroke-width="6" stroke-dasharray="${circ.toFixed(2)}" stroke-dashoffset="0" style="transition:stroke-dashoffset .9s linear,stroke .5s ease"/></svg>
+          <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="34" fill="none" stroke="rgba(168,85,247,.12)" stroke-width="6"/>
+          <circle id="lmRing" cx="40" cy="40" r="34" fill="none" stroke="#c084fc" stroke-width="6" stroke-dasharray="${circ.toFixed(2)}" stroke-dashoffset="0" style="transition:stroke-dashoffset .9s linear,stroke .5s ease"/></svg>
           <div class="krp-timer-val" id="lmTimer">${fmtTime(remain)}</div>
         </div>
         <div style="flex:1;display:flex;justify-content:flex-end">
           <div class="krp-stat"><div class="krp-stat-val" id="lmT" style="color:var(--ny)">${total}</div><div class="krp-stat-lbl">TOTAL</div></div>
         </div>
       </div>
-      <div style="background:rgba(255,105,180,.04);border:1px solid rgba(255,105,180,.12);border-radius:10px;padding:14px 20px;text-align:center;width:100%">
-        <div style="font-size:.6rem;font-family:Orbitron,monospace;color:rgba(255,224,240,.3);letter-spacing:.2em;margin-bottom:10px">HITUNG & PILIH JAWABAN</div>
-        <div style="font-family:Orbitron,monospace;font-size:1.6rem;font-weight:900;color:#fff;text-shadow:0 0 20px rgba(255,105,180,.5)" id="lmQ">${qd.q}</div>
+      <div style="background:rgba(168,85,247,.04);border:1px solid rgba(168,85,247,.12);border-radius:10px;padding:14px 20px;text-align:center;width:100%">
+        <div style="font-size:.6rem;font-family:Orbitron,monospace;color:rgba(237,225,255,.3);letter-spacing:.2em;margin-bottom:10px">HITUNG & PILIH JAWABAN</div>
+        <div style="font-family:Orbitron,monospace;font-size:1.6rem;font-weight:900;color:#fff;text-shadow:0 0 20px rgba(168,85,247,.5)" id="lmQ">${qd.q}</div>
       </div>
       <div id="lmFb" style="font-family:Orbitron,monospace;font-size:1rem;font-weight:900;min-height:28px;text-align:center"></div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;max-width:280px" id="lmChoices">
@@ -3277,7 +3945,7 @@ function initLogMath(el){
         <div class="krp-stat"><div class="krp-stat-val" style="color:var(--nc);font-size:1.6rem">${acc}%</div><div class="krp-stat-lbl">AKURASI</div></div>
       </div>
       <div style="width:100%;max-width:320px">
-        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(255,224,240,.4);margin-bottom:5px;text-align:center">MASUKKAN NAMAMU UNTUK LEADERBOARD</div>
+        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(237,225,255,.4);margin-bottom:5px;text-align:center">MASUKKAN NAMAMU UNTUK LEADERBOARD</div>
         <div style="display:flex;gap:6px">
           <input id="lmName" type="text" placeholder="Nama kamu..." maxlength="16" class="num-input" style="width:100%;font-size:.85rem;text-align:left;padding:8px 12px">
           <button class="btn btn-cyan btn-sm" onclick="lmSave()">💾 SIMPAN</button>
@@ -3327,7 +3995,7 @@ function initAritmatika(el){
   }
 
   function renderLB(){
-    const lb=getLB();if(!lb.length)return '<div style="text-align:center;color:rgba(255,224,240,.3);font-size:.75rem;padding:12px;font-family:Orbitron,monospace">Belum ada data</div>';
+    const lb=getLB();if(!lb.length)return '<div style="text-align:center;color:rgba(237,225,255,.3);font-size:.75rem;padding:12px;font-family:Orbitron,monospace">Belum ada data</div>';
     const medal=['🥇','🥈','🥉'];
     return lb.map((e,i)=>`<div class="krp-lb-row"><div class="krp-lb-rank">${medal[i]||i+1}</div><div><div class="krp-lb-name">${e.name||'Anonim'}</div><div class="krp-lb-detail">${e.durLabel}</div></div><div style="text-align:right"><div class="krp-lb-score">✅ ${e.correct}</div><div class="krp-lb-detail">❌ ${e.wrong}</div></div></div>`).join('');
   }
@@ -3337,11 +4005,11 @@ function initAritmatika(el){
   function renderHome(){
     el.innerHTML=`<div class="game-area" style="gap:12px;padding:18px">
       <div class="game-msg" style="font-size:1rem">📊 BARIS ARITMATIKA</div>
-      <div style="font-size:.75rem;color:rgba(255,224,240,.45);text-align:center;line-height:1.6;max-width:300px">
+      <div style="font-size:.75rem;color:rgba(237,225,255,.45);text-align:center;line-height:1.6;max-width:300px">
         Temukan <span style="color:var(--nc);font-weight:700">suku berikutnya</span> dari deret aritmatika secepat mungkin!
       </div>
       <div style="display:flex;flex-direction:column;gap:6px;align-items:center;width:100%">
-        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(255,224,240,.4);letter-spacing:.2em;margin-bottom:2px">PILIH DURASI</div>
+        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(237,225,255,.4);letter-spacing:.2em;margin-bottom:2px">PILIH DURASI</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
           <button class="krp-mode-btn ${duration===120?'active':''}" onclick="arSetDur(120)">⏱ 2 MENIT</button>
           <button class="krp-mode-btn ${duration===180?'active':''}" onclick="arSetDur(180)">⏱ 3 MENIT</button>
@@ -3365,7 +4033,7 @@ function initAritmatika(el){
       remain--;
       const tv=document.getElementById('arTimer');if(tv)tv.textContent=fmtTime(remain);
       const circ=2*Math.PI*34;const ring=document.getElementById('arRing');
-      if(ring){ring.style.strokeDashoffset=(circ*(1-remain/duration)).toFixed(2);ring.style.stroke=remain/duration>.5?'#ff69b4':remain/duration>.25?'#ffb6c1':'#ff1493';}
+      if(ring){ring.style.strokeDashoffset=(circ*(1-remain/duration)).toFixed(2);ring.style.stroke=remain/duration>.5?'#c084fc':remain/duration>.25?'#e9d5ff':'#a855f7';}
       if(remain<=0){clearInterval(timer);timer=null;running=false;showResult();}
     },1000);
   }
@@ -3379,18 +4047,18 @@ function initAritmatika(el){
           <div class="krp-stat"><div class="krp-stat-val" id="arW" style="color:var(--np)">${wrong}</div><div class="krp-stat-lbl">SALAH</div></div>
         </div>
         <div class="krp-timer-ring">
-          <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="34" fill="none" stroke="rgba(255,105,180,.12)" stroke-width="6"/>
-          <circle id="arRing" cx="40" cy="40" r="34" fill="none" stroke="#ff69b4" stroke-width="6" stroke-dasharray="${circ.toFixed(2)}" stroke-dashoffset="0" style="transition:stroke-dashoffset .9s linear,stroke .5s ease"/></svg>
+          <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="34" fill="none" stroke="rgba(168,85,247,.12)" stroke-width="6"/>
+          <circle id="arRing" cx="40" cy="40" r="34" fill="none" stroke="#c084fc" stroke-width="6" stroke-dasharray="${circ.toFixed(2)}" stroke-dashoffset="0" style="transition:stroke-dashoffset .9s linear,stroke .5s ease"/></svg>
           <div class="krp-timer-val" id="arTimer">${fmtTime(remain)}</div>
         </div>
         <div style="flex:1;display:flex;justify-content:flex-end">
           <div class="krp-stat"><div class="krp-stat-val" id="arT" style="color:var(--ny)">${total}</div><div class="krp-stat-lbl">TOTAL</div></div>
         </div>
       </div>
-      <div style="background:rgba(255,105,180,.04);border:1px solid rgba(255,105,180,.12);border-radius:10px;padding:14px 20px;text-align:center;width:100%">
-        <div style="font-size:.6rem;font-family:Orbitron,monospace;color:rgba(255,224,240,.3);letter-spacing:.2em;margin-bottom:10px">SUKU BERIKUTNYA ADALAH?</div>
-        <div style="font-family:Orbitron,monospace;font-size:1.5rem;font-weight:900;color:#fff;text-shadow:0 0 20px rgba(255,105,180,.5)">${qd.seq.join(', ')}, <span style="color:var(--np)">?</span></div>
-        <div style="font-size:.6rem;color:rgba(255,224,240,.3);font-family:Orbitron,monospace;margin-top:6px">beda = ${qd.d}</div>
+      <div style="background:rgba(168,85,247,.04);border:1px solid rgba(168,85,247,.12);border-radius:10px;padding:14px 20px;text-align:center;width:100%">
+        <div style="font-size:.6rem;font-family:Orbitron,monospace;color:rgba(237,225,255,.3);letter-spacing:.2em;margin-bottom:10px">SUKU BERIKUTNYA ADALAH?</div>
+        <div style="font-family:Orbitron,monospace;font-size:1.5rem;font-weight:900;color:#fff;text-shadow:0 0 20px rgba(168,85,247,.5)">${qd.seq.join(', ')}, <span style="color:var(--np)">?</span></div>
+        <div style="font-size:.6rem;color:rgba(237,225,255,.3);font-family:Orbitron,monospace;margin-top:6px">beda = ${qd.d}</div>
       </div>
       <div id="arFb" style="font-family:Orbitron,monospace;font-size:1rem;font-weight:900;min-height:28px;text-align:center"></div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;max-width:280px" id="arChoices">
@@ -3423,7 +4091,7 @@ function initAritmatika(el){
         <div class="krp-stat"><div class="krp-stat-val" style="color:var(--nc);font-size:1.6rem">${acc}%</div><div class="krp-stat-lbl">AKURASI</div></div>
       </div>
       <div style="width:100%;max-width:320px">
-        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(255,224,240,.4);margin-bottom:5px;text-align:center">MASUKKAN NAMAMU UNTUK LEADERBOARD</div>
+        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(237,225,255,.4);margin-bottom:5px;text-align:center">MASUKKAN NAMAMU UNTUK LEADERBOARD</div>
         <div style="display:flex;gap:6px">
           <input id="arName" type="text" placeholder="Nama kamu..." maxlength="16" class="num-input" style="width:100%;font-size:.85rem;text-align:left;padding:8px 12px">
           <button class="btn btn-cyan btn-sm" onclick="arSave()">💾 SIMPAN</button>
@@ -3474,7 +4142,7 @@ function initDasarMath(el){
   }
 
   function renderLB(){
-    const lb=getLB();if(!lb.length)return '<div style="text-align:center;color:rgba(255,224,240,.3);font-size:.75rem;padding:12px;font-family:Orbitron,monospace">Belum ada data</div>';
+    const lb=getLB();if(!lb.length)return '<div style="text-align:center;color:rgba(237,225,255,.3);font-size:.75rem;padding:12px;font-family:Orbitron,monospace">Belum ada data</div>';
     const medal=['🥇','🥈','🥉'];
     return lb.map((e,i)=>`<div class="krp-lb-row"><div class="krp-lb-rank">${medal[i]||i+1}</div><div><div class="krp-lb-name">${e.name||'Anonim'}</div><div class="krp-lb-detail">${e.durLabel}</div></div><div style="text-align:right"><div class="krp-lb-score">✅ ${e.correct}</div><div class="krp-lb-detail">❌ ${e.wrong}</div></div></div>`).join('');
   }
@@ -3484,11 +4152,11 @@ function initDasarMath(el){
   function renderHome(){
     el.innerHTML=`<div class="game-area" style="gap:12px;padding:18px">
       <div class="game-msg" style="font-size:1rem">🧮 MATEMATIKA DASAR</div>
-      <div style="font-size:.75rem;color:rgba(255,224,240,.45);text-align:center;line-height:1.6;max-width:300px">
+      <div style="font-size:.75rem;color:rgba(237,225,255,.45);text-align:center;line-height:1.6;max-width:300px">
         Jawab soal <span style="color:var(--nc);font-weight:700">+, −, ×, ÷</span> secepat dan setepat mungkin!
       </div>
       <div style="display:flex;flex-direction:column;gap:6px;align-items:center;width:100%">
-        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(255,224,240,.4);letter-spacing:.2em;margin-bottom:2px">PILIH DURASI</div>
+        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(237,225,255,.4);letter-spacing:.2em;margin-bottom:2px">PILIH DURASI</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
           <button class="krp-mode-btn ${duration===120?'active':''}" onclick="dmSetDur(120)">⏱ 2 MENIT</button>
           <button class="krp-mode-btn ${duration===180?'active':''}" onclick="dmSetDur(180)">⏱ 3 MENIT</button>
@@ -3512,7 +4180,7 @@ function initDasarMath(el){
       remain--;
       const tv=document.getElementById('dmTimer');if(tv)tv.textContent=fmtTime(remain);
       const circ=2*Math.PI*34;const ring=document.getElementById('dmRing');
-      if(ring){ring.style.strokeDashoffset=(circ*(1-remain/duration)).toFixed(2);ring.style.stroke=remain/duration>.5?'#ff69b4':remain/duration>.25?'#ffb6c1':'#ff1493';}
+      if(ring){ring.style.strokeDashoffset=(circ*(1-remain/duration)).toFixed(2);ring.style.stroke=remain/duration>.5?'#c084fc':remain/duration>.25?'#e9d5ff':'#a855f7';}
       if(remain<=0){clearInterval(timer);timer=null;running=false;showResult();}
     },1000);
   }
@@ -3526,17 +4194,17 @@ function initDasarMath(el){
           <div class="krp-stat"><div class="krp-stat-val" id="dmW" style="color:var(--np)">${wrong}</div><div class="krp-stat-lbl">SALAH</div></div>
         </div>
         <div class="krp-timer-ring">
-          <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="34" fill="none" stroke="rgba(255,105,180,.12)" stroke-width="6"/>
-          <circle id="dmRing" cx="40" cy="40" r="34" fill="none" stroke="#ff69b4" stroke-width="6" stroke-dasharray="${circ.toFixed(2)}" stroke-dashoffset="0" style="transition:stroke-dashoffset .9s linear,stroke .5s ease"/></svg>
+          <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="34" fill="none" stroke="rgba(168,85,247,.12)" stroke-width="6"/>
+          <circle id="dmRing" cx="40" cy="40" r="34" fill="none" stroke="#c084fc" stroke-width="6" stroke-dasharray="${circ.toFixed(2)}" stroke-dashoffset="0" style="transition:stroke-dashoffset .9s linear,stroke .5s ease"/></svg>
           <div class="krp-timer-val" id="dmTimer">${fmtTime(remain)}</div>
         </div>
         <div style="flex:1;display:flex;justify-content:flex-end">
           <div class="krp-stat"><div class="krp-stat-val" id="dmT" style="color:var(--ny)">${total}</div><div class="krp-stat-lbl">TOTAL</div></div>
         </div>
       </div>
-      <div style="background:rgba(255,105,180,.04);border:1px solid rgba(255,105,180,.12);border-radius:10px;padding:14px 20px;text-align:center;width:100%">
-        <div style="font-size:.6rem;font-family:Orbitron,monospace;color:rgba(255,224,240,.3);letter-spacing:.2em;margin-bottom:10px">PILIH JAWABAN YANG BENAR</div>
-        <div style="font-family:Orbitron,monospace;font-size:2rem;font-weight:900;color:#fff;text-shadow:0 0 20px rgba(255,105,180,.5)">${qd.qStr}</div>
+      <div style="background:rgba(168,85,247,.04);border:1px solid rgba(168,85,247,.12);border-radius:10px;padding:14px 20px;text-align:center;width:100%">
+        <div style="font-size:.6rem;font-family:Orbitron,monospace;color:rgba(237,225,255,.3);letter-spacing:.2em;margin-bottom:10px">PILIH JAWABAN YANG BENAR</div>
+        <div style="font-family:Orbitron,monospace;font-size:2rem;font-weight:900;color:#fff;text-shadow:0 0 20px rgba(168,85,247,.5)">${qd.qStr}</div>
       </div>
       <div id="dmFb" style="font-family:Orbitron,monospace;font-size:1rem;font-weight:900;min-height:28px;text-align:center"></div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;max-width:280px" id="dmChoices">
@@ -3569,7 +4237,7 @@ function initDasarMath(el){
         <div class="krp-stat"><div class="krp-stat-val" style="color:var(--nc);font-size:1.6rem">${acc}%</div><div class="krp-stat-lbl">AKURASI</div></div>
       </div>
       <div style="width:100%;max-width:320px">
-        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(255,224,240,.4);margin-bottom:5px;text-align:center">MASUKKAN NAMAMU UNTUK LEADERBOARD</div>
+        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(237,225,255,.4);margin-bottom:5px;text-align:center">MASUKKAN NAMAMU UNTUK LEADERBOARD</div>
         <div style="display:flex;gap:6px">
           <input id="dmName" type="text" placeholder="Nama kamu..." maxlength="16" class="num-input" style="width:100%;font-size:.85rem;text-align:left;padding:8px 12px">
           <button class="btn btn-cyan btn-sm" onclick="dmSave()">💾 SIMPAN</button>
@@ -3692,7 +4360,7 @@ function initSoalCerita(el){
 
   function renderLB(){
     const lb=getLB();
-    if(!lb.length) return '<div style="text-align:center;color:rgba(255,224,240,.3);font-size:.75rem;padding:12px;font-family:Orbitron,monospace">Belum ada data</div>';
+    if(!lb.length) return '<div style="text-align:center;color:rgba(237,225,255,.3);font-size:.75rem;padding:12px;font-family:Orbitron,monospace">Belum ada data</div>';
     const medal=['🥇','🥈','🥉'];
     return lb.map((e,i)=>`<div class="krp-lb-row"><div class="krp-lb-rank">${medal[i]||i+1}</div><div><div class="krp-lb-name">${e.name||'Anonim'}</div><div class="krp-lb-detail">${e.durLabel}</div></div><div style="text-align:right"><div class="krp-lb-score">✅ ${e.correct}</div><div class="krp-lb-detail">❌ ${e.wrong}</div></div></div>`).join('');
   }
@@ -3700,12 +4368,12 @@ function initSoalCerita(el){
   function renderHome(){
     el.innerHTML=`<div class="game-area" style="gap:12px;padding:18px">
       <div class="game-msg" style="font-size:1rem">📖 SOAL CERITA MATEMATIKA</div>
-      <div style="font-size:.75rem;color:rgba(255,224,240,.45);text-align:center;line-height:1.6;max-width:300px">
+      <div style="font-size:.75rem;color:rgba(237,225,255,.45);text-align:center;line-height:1.6;max-width:300px">
         Baca soal cerita lalu <span style="color:var(--nc);font-weight:700">ketik jawaban</span> kamu!<br>
-        <span style="font-size:.65rem;color:rgba(255,224,240,.3)">Jawab dalam bentuk angka saja</span>
+        <span style="font-size:.65rem;color:rgba(237,225,255,.3)">Jawab dalam bentuk angka saja</span>
       </div>
       <div style="display:flex;flex-direction:column;gap:6px;align-items:center;width:100%">
-        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(255,224,240,.4);letter-spacing:.2em;margin-bottom:2px">PILIH DURASI</div>
+        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(237,225,255,.4);letter-spacing:.2em;margin-bottom:2px">PILIH DURASI</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
           <button class="krp-mode-btn ${duration===120?'active':''}" onclick="scSetDur(120)">⏱ 2 MENIT</button>
           <button class="krp-mode-btn ${duration===180?'active':''}" onclick="scSetDur(180)">⏱ 3 MENIT</button>
@@ -3731,7 +4399,7 @@ function initSoalCerita(el){
       const tv=document.getElementById('scTimer');if(tv)tv.textContent=fmtTime(remain);
       const circ=2*Math.PI*34;
       const ring=document.getElementById('scRing');
-      if(ring){ring.style.strokeDashoffset=(circ*(1-remain/duration)).toFixed(2);ring.style.stroke=remain/duration>.5?'#ff69b4':remain/duration>.25?'#ffb6c1':'#ff1493';}
+      if(ring){ring.style.strokeDashoffset=(circ*(1-remain/duration)).toFixed(2);ring.style.stroke=remain/duration>.5?'#c084fc':remain/duration>.25?'#e9d5ff':'#a855f7';}
       if(remain<=0){clearInterval(timer);timer=null;running=false;showResult();}
     },1000);
   }
@@ -3746,8 +4414,8 @@ function initSoalCerita(el){
         </div>
         <div class="krp-timer-ring">
           <svg width="80" height="80" viewBox="0 0 80 80">
-            <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(255,105,180,.12)" stroke-width="6"/>
-            <circle id="scRing" cx="40" cy="40" r="34" fill="none" stroke="#ff69b4" stroke-width="6"
+            <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(168,85,247,.12)" stroke-width="6"/>
+            <circle id="scRing" cx="40" cy="40" r="34" fill="none" stroke="#c084fc" stroke-width="6"
               stroke-dasharray="${circ.toFixed(2)}" stroke-dashoffset="0"
               style="transition:stroke-dashoffset .9s linear,stroke .5s ease"/>
           </svg>
@@ -3757,10 +4425,10 @@ function initSoalCerita(el){
           <div class="krp-stat"><div class="krp-stat-val" id="scT" style="color:var(--ny)">${total}</div><div class="krp-stat-lbl">TOTAL</div></div>
         </div>
       </div>
-      <div style="background:rgba(255,105,180,.04);border:1px solid rgba(255,105,180,.15);border-radius:10px;padding:14px 16px;width:100%">
-        <div style="font-size:.55rem;font-family:Orbitron,monospace;color:rgba(255,224,240,.3);letter-spacing:.2em;margin-bottom:8px">📖 BACA & HITUNG</div>
+      <div style="background:rgba(168,85,247,.04);border:1px solid rgba(168,85,247,.15);border-radius:10px;padding:14px 16px;width:100%">
+        <div style="font-size:.55rem;font-family:Orbitron,monospace;color:rgba(237,225,255,.3);letter-spacing:.2em;margin-bottom:8px">📖 BACA & HITUNG</div>
         <div style="font-family:'Rajdhani',sans-serif;font-size:1rem;color:var(--tm);line-height:1.7">${qd.q}</div>
-        <div style="font-size:.6rem;color:rgba(255,224,240,.3);font-family:Orbitron,monospace;margin-top:6px">Satuan: <span style="color:var(--nc)">${qd.unit}</span></div>
+        <div style="font-size:.6rem;color:rgba(237,225,255,.3);font-family:Orbitron,monospace;margin-top:6px">Satuan: <span style="color:var(--nc)">${qd.unit}</span></div>
       </div>
       <div id="scFb" style="font-family:Orbitron,monospace;font-size:.85rem;font-weight:900;min-height:26px;text-align:center"></div>
       <div style="display:flex;align-items:center;gap:8px;justify-content:center;width:100%">
@@ -3770,7 +4438,7 @@ function initSoalCerita(el){
         <button class="btn btn-cyan" onclick="scSubmit()" style="padding:12px 14px;font-size:.8rem">✔ OK</button>
         <button class="btn btn-outline btn-sm" onclick="scSkip()">⏭ SKIP</button>
       </div>
-      <div style="font-size:.6rem;color:rgba(255,224,240,.2);font-family:Orbitron,monospace;text-align:center">Ketik angka lalu tekan OK atau Enter</div>
+      <div style="font-size:.6rem;color:rgba(237,225,255,.2);font-family:Orbitron,monospace;text-align:center">Ketik angka lalu tekan OK atau Enter</div>
     </div>`;
     const inp=document.getElementById('scInput');
     if(inp){inp.focus();inp.addEventListener('keydown',function(e){if(e.key==='Enter')scSubmit();});}
@@ -3822,9 +4490,9 @@ function initSoalCerita(el){
         <div class="krp-stat"><div class="krp-stat-val" style="color:var(--ny);font-size:1.6rem">${total}</div><div class="krp-stat-lbl">TOTAL</div></div>
         <div class="krp-stat"><div class="krp-stat-val" style="color:var(--nc);font-size:1.6rem">${acc}%</div><div class="krp-stat-lbl">AKURASI</div></div>
       </div>
-      <div style="font-family:Orbitron,monospace;font-size:.65rem;color:rgba(255,224,240,.45);text-align:center">${durLabel}</div>
+      <div style="font-family:Orbitron,monospace;font-size:.65rem;color:rgba(237,225,255,.45);text-align:center">${durLabel}</div>
       <div style="width:100%;max-width:320px">
-        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(255,224,240,.4);margin-bottom:5px;text-align:center">MASUKKAN NAMAMU UNTUK LEADERBOARD</div>
+        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(237,225,255,.4);margin-bottom:5px;text-align:center">MASUKKAN NAMAMU UNTUK LEADERBOARD</div>
         <div style="display:flex;gap:6px">
           <input id="scName" type="text" placeholder="Nama kamu..." maxlength="16"
             class="num-input" style="width:100%;font-size:.85rem;text-align:left;padding:8px 12px">
@@ -3867,7 +4535,7 @@ function initSimon(el){
   function renderHome(){
     el.innerHTML=`<div class="game-area" style="gap:14px">
       <div class="game-msg">🧠 SIMON SAYS</div>
-      <div style="font-size:.78rem;color:rgba(255,224,240,.5);text-align:center;line-height:1.6">Ingat & ulangi urutan warna yang menyala!<br>Makin panjang, makin susah!</div>
+      <div style="font-size:.78rem;color:rgba(237,225,255,.5);text-align:center;line-height:1.6">Ingat & ulangi urutan warna yang menyala!<br>Makin panjang, makin susah!</div>
       <div style="display:flex;gap:8px">
         <div class="score-badge">🏆 REKOR: <span style="color:var(--ng)">${best}</span></div>
       </div>
@@ -3924,7 +4592,7 @@ function initSimon(el){
           <span class="simon-icon">${ICONS[i]}</span>
         </button>`).join('')}
       </div>
-      <div style="font-size:.7rem;color:rgba(255,224,240,.35);text-align:center;font-family:Orbitron,monospace">
+      <div style="font-size:.7rem;color:rgba(237,225,255,.35);text-align:center;font-family:Orbitron,monospace">
         ${seq.map((s,i)=>i<playerSeq.length?'●':'○').join(' ')}
       </div>
     </div>`;
@@ -3943,7 +4611,7 @@ function initSimon(el){
       setTimeout(()=>{
         el.innerHTML=`<div class="game-area" style="gap:14px">
           <div class="result-banner result-lose">💀 SALAH!</div>
-          <div style="font-family:Orbitron,monospace;font-size:.8rem;color:rgba(255,224,240,.5);text-align:center">
+          <div style="font-family:Orbitron,monospace;font-size:.8rem;color:rgba(237,225,255,.5);text-align:center">
             Kamu sampai Level <span style="color:var(--nc)">${level}</span><br>
             Jawaban benar: <span style="color:var(--ng)">${NAMES[seq[pos]]}</span>
           </div>
@@ -4011,12 +4679,12 @@ function initPattern(el){
         <div class="score-badge">🔥 STREAK: ${streak}</div>
         <div class="score-badge">🏆 REKOR: ${best}</div>
       </div>
-      <div style="font-family:Orbitron,monospace;font-size:.62rem;color:rgba(255,224,240,.4);letter-spacing:.15em;text-align:center">LANJUTKAN POLA INI:</div>
+      <div style="font-family:Orbitron,monospace;font-size:.62rem;color:rgba(237,225,255,.4);letter-spacing:.15em;text-align:center">LANJUTKAN POLA INI:</div>
       <div class="pattern-row">
         ${current.seq.map(e=>`<div class="pattern-item">${e}</div>`).join('')}
         <div class="pattern-item question">?</div>
       </div>
-      <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(255,224,240,.35);letter-spacing:.1em;text-align:center">PILIH JAWABAN:</div>
+      <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(237,225,255,.35);letter-spacing:.1em;text-align:center">PILIH JAWABAN:</div>
       <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center" id="patOpts">
         ${allOpts.map(o=>`<button class="pattern-choice" onclick="patAns('${o}')" data-val="${o}">${o}</button>`).join('')}
       </div>
@@ -4246,7 +4914,7 @@ function initLogicGrid(el){
     setSession(p);
     showLoader(p,function(){
       showBadge(p);
-      document.getElementById('regOverlay').classList.add('hidden');
+      document.getElementById('regOverlay').style.display='none';
       // Show group selection
       showGroupSelection(p);
     });
@@ -4256,42 +4924,41 @@ function initLogicGrid(el){
     const loader=document.getElementById('gameLoader');
     if(!loader){onDone();return;}
 
-    const TIPS=['Siapkan strategi terbaikmu!','Fokus dan percaya diri!','Nikmati setiap permainan!','Pemain hebat pantang menyerah!'];
-    const STATUSES=['MEMUAT DATA...','MENYIAPKAN ARENA...','MENGAKTIFKAN ENGINE...','SINKRONISASI PROFIL...','HAMPIR SIAP...'];
+    const TIPS=['Siapkan strategi terbaikmu!','Fokus dan percaya diri!','Nikmati setiap permainan!','Pemain hebat pantang menyerah!','Semangat belajar dan bermain!'];
+    const STATUSES=['MEMUAT DATA...','MENYIAPKAN ARENA...','MENGAKTIFKAN ENGINE...','SINKRONISASI PROFIL...','MENGATUR TAMPILAN...','MEMUAT GAME...','MENYIAPKAN MUSIK...','HAMPIR SIAP...','SEBENTAR LAGI...','✅ SIAP MAIN!'];
 
     var el=function(id){return document.getElementById(id);};
     if(el('glAvatar'))el('glAvatar').textContent=p.av||'👾';
     if(el('glName'))el('glName').textContent=p.name.toUpperCase();
     if(el('glTip'))el('glTip').textContent=TIPS[Math.floor(Math.random()*TIPS.length)];
     if(el('glStatus'))el('glStatus').textContent=STATUSES[0];
-    if(el('glCounter'))el('glCounter').textContent='0%';
+    if(el('glCounter'))el('glCounter').textContent='10s';
 
     var bar=el('glBar');
-    if(bar){bar.style.cssText='height:100%;width:0%;border-radius:20px;background:linear-gradient(90deg,#ff1493,#ff69b4,#ffb6c1);box-shadow:0 0 10px rgba(255,105,180,.6);transition:width 5s linear;';}
+    if(bar){bar.style.cssText='height:100%;width:0%;border-radius:20px;background:linear-gradient(90deg,#a855f7,#c084fc,#e9d5ff);box-shadow:0 0 10px rgba(168,85,247,.6);transition:width 10s linear;';}
 
     loader.classList.remove('hidden','fade-out');
 
-    // Mulai progress bar setelah 1 frame
     setTimeout(function(){if(bar)bar.style.width='100%';},50);
 
     var elapsed=0;
     var iv=setInterval(function(){
       elapsed++;
-      if(el('glCounter'))el('glCounter').textContent=Math.min(100,Math.round(elapsed/5*100))+'%';
-      if(el('glStatus')&&elapsed<STATUSES.length)el('glStatus').textContent=STATUSES[elapsed];
-      if(elapsed>=5){
+      if(el('glCounter'))el('glCounter').textContent=Math.max(0,10-elapsed)+'s';
+      if(el('glStatus'))el('glStatus').textContent=STATUSES[Math.min(elapsed,STATUSES.length-1)];
+      if(elapsed>=10){
         clearInterval(iv);
         if(el('glStatus'))el('glStatus').textContent='✅ SIAP MAIN!';
-        if(el('glCounter'))el('glCounter').textContent='100%';
+        if(el('glCounter'))el('glCounter').textContent='0s';
         setTimeout(function(){
-          loader.style.transition='opacity .5s';
+          loader.style.transition='opacity .8s';
           loader.style.opacity='0';
           setTimeout(function(){
             loader.classList.add('hidden');
             loader.style.opacity='';
             loader.style.transition='';
             onDone();
-          },500);
+          },800);
         },300);
       }
     },1000);
@@ -4350,7 +5017,7 @@ function initLogicGrid(el){
     document.getElementById('inpLogin').value='';
     document.getElementById('msgLogin').textContent='';
     buildSavedChips();
-    document.getElementById('regOverlay').classList.remove('hidden');
+    document.getElementById('regOverlay').style.display='flex';
   };
 
   // keyboard enter support
@@ -4362,16 +5029,59 @@ function initLogicGrid(el){
     else doRegister();
   });
 
+  // ── SITE INTRO LOADER — muncul 10 detik saat pertama buka website ──
+  function showIntroLoader(onDone){
+    const loader=document.getElementById('gameLoader');
+    if(!loader){onDone();return;}
+    const TIPS=['Siapkan strategi terbaikmu!','Fokus dan percaya diri!','Nikmati setiap permainan!','Semangat belajar dan bermain!','Selamat datang di Arcade Zone!'];
+    const STATUSES=['MEMUAT DATA...','MENYIAPKAN ARENA...','MENGAKTIFKAN ENGINE...','MEMUAT GAME...','MENYIAPKAN MUSIK...','MENGATUR TAMPILAN...','MEMUAT ASSET...','SINKRONISASI...','HAMPIR SELESAI...','✅ SIAP!'];
+    var getEl=function(id){return document.getElementById(id);};
+    // Set tampilan intro (tanpa nama pemain, generic)
+    if(getEl('glAvatar'))getEl('glAvatar').textContent='🎮';
+    if(getEl('glName'))getEl('glName').textContent='ARCADE ZONE';
+    if(getEl('glTip'))getEl('glTip').textContent=TIPS[Math.floor(Math.random()*TIPS.length)];
+    if(getEl('glStatus'))getEl('glStatus').textContent=STATUSES[0];
+    if(getEl('glCounter'))getEl('glCounter').textContent='10s';
+    var bar=getEl('glBar');
+    if(bar){bar.style.cssText='height:100%;width:0%;border-radius:20px;background:linear-gradient(90deg,#a855f7,#c084fc,#e9d5ff);box-shadow:0 0 10px rgba(168,85,247,.6);transition:width 10s linear;';}
+    loader.classList.remove('hidden','fade-out');
+    setTimeout(function(){if(bar)bar.style.width='100%';},50);
+    var elapsed=0;
+    var iv=setInterval(function(){
+      elapsed++;
+      if(getEl('glCounter'))getEl('glCounter').textContent=Math.max(0,10-elapsed)+'s';
+      if(getEl('glStatus'))getEl('glStatus').textContent=STATUSES[Math.min(elapsed,STATUSES.length-1)];
+      if(elapsed>=10){
+        clearInterval(iv);
+        if(getEl('glStatus'))getEl('glStatus').textContent='✅ SELAMAT DATANG!';
+        if(getEl('glCounter'))getEl('glCounter').textContent='0s';
+        setTimeout(function(){
+          loader.style.transition='opacity .8s';
+          loader.style.opacity='0';
+          setTimeout(function(){
+            loader.classList.add('hidden');
+            loader.style.opacity='';loader.style.transition='';
+            onDone();
+          },800);
+        },400);
+      }
+    },1000);
+  }
+
   // init
   const cur=getSession();
-  if(cur&&cur.name){
-    showLoader(cur,function(){
+  // Selalu tampilkan intro loader 10 detik saat buka website
+  showIntroLoader(function(){
+    if(cur&&cur.name){
       showBadge(cur);
-      document.getElementById('regOverlay').classList.add('hidden');
+      document.getElementById('regOverlay').style.display='none';
       showGroupSelection(cur);
-    });
-  }
-  else{buildSavedChips();}
+    } else {
+      buildSavedChips();
+      // Tampilkan reg overlay setelah loader selesai
+      document.getElementById('regOverlay').style.display='flex';
+    }
+  });
 })();
 
 </script>
