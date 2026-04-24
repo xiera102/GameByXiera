@@ -390,8 +390,8 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(255,
   <button class="mb-btn" id="mbPlayBtn" onclick="mbToggle()" title="Play/Pause">▶</button>
   <button class="mb-btn" id="mbMuteBtn" onclick="mbMute()" title="Mute">🔊</button>
   <input type="range" class="mb-vol" id="mbVol" min="0" max="1" step="0.05" value="0.6" oninput="mbVolumeChange(this.value)">
-  <audio id="bgMusic" loop preload="none">
-    <source src="arcade_music.webm" type="audio/webm">
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
   </audio>
 </div>
 
@@ -423,83 +423,42 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(255,
   </div>
 </div>
 
-<footer>© ARCADE ZONE · 25 GAMES · ALL FOR FUN · @gamebyXieraa__07</footer>
+<footer>© ARCADE ZONE · 26 GAMES · ALL FOR FUN · @gamebyXieraa__07</footer>
 
 <script>
 // ═══════════════════════════════════════════════════
 // MUSIC PLAYER
 // ═══════════════════════════════════════════════════
-const bgMusic = document.getElementById('bgMusic');
-const mbViz = document.getElementById('mbViz');
-const mbPlayBtn = document.getElementById('mbPlayBtn');
-let musicPlaying = false;
 let musicMuted = false;
+const bgMusic = document.getElementById("bgMusic");
 
 function mbToggle(){
-  if(!musicPlaying){
-    bgMusic.volume = parseFloat(document.getElementById('mbVol').value);
-    bgMusic.play().then(()=>{
-      musicPlaying=true;
-      mbPlayBtn.textContent='⏸';
-      mbViz.classList.remove('paused');
-      document.getElementById('mbTitle').textContent='🎵 ARCADE BGM — Playing...';
-    }).catch(e=>{
-      document.getElementById('mbTitle').textContent='⚠️ Klik lagi untuk putar musik';
-    });
+  if(musicMuted){
+    bgMusic.play();
+    musicMuted = false;
+    document.getElementById('mbPlayBtn').textContent='⏸';
   } else {
     bgMusic.pause();
-    musicPlaying=false;
-    mbPlayBtn.textContent='▶';
-    mbViz.classList.add('paused');
-    document.getElementById('mbTitle').textContent='🎵 ARCADE BGM — Paused';
+    musicMuted = true;
+    document.getElementById('mbPlayBtn').textContent='▶';
   }
 }
 
 function mbMute(){
-  musicMuted=!musicMuted;
-  bgMusic.muted=musicMuted;
-  document.getElementById('mbMuteBtn').textContent=musicMuted?'🔇':'🔊';
+  bgMusic.muted = !bgMusic.muted;
+  document.getElementById('mbMuteBtn').textContent = bgMusic.muted ? '🔇' : '🔊';
 }
 
 function mbVolumeChange(v){
-  bgMusic.volume=parseFloat(v);
-  if(musicMuted&&v>0){musicMuted=false;bgMusic.muted=false;document.getElementById('mbMuteBtn').textContent='🔊';}
+  bgMusic.volume = parseFloat(v);
 }
 
 // ═══════════════════════════════════════════════════
 // GAME DEFINITIONS
 // ═══════════════════════════════════════════════════
-const games=[
-  {id:'tebak',tag:'PUZZLE',name:'Tebak Angka',desc:'Tebak angka 1–100 dengan petunjuk arah.',color:'#00f5ff',thumb:svgTebak},
-  {id:'rps',tag:'KLASIK',name:'Suit RPS',desc:'Gunting Batu Kertas vs CPU.',color:'#ff006e',thumb:svgRPS},
-  {id:'blackjack',tag:'KARTU',name:'Blackjack',desc:'Raih 21, tantang dealer!',color:'#ffe600',thumb:svgBJ},
-  {id:'snake',tag:'ARCADE',name:'Snake',desc:'Makan apel, jangan nabrak!',color:'#39ff14',thumb:svgSnake},
-  {id:'memory',tag:'OTAK',name:'Memory Match',desc:'Cocokkan pasangan kartu emoji.',color:'#bf5af2',thumb:svgMemory},
-  {id:'puzzle',tag:'PUZZLE',name:'Slide Puzzle',desc:'Susun angka 1–15 ke posisi benar.',color:'#ff9500',thumb:svgPuzzle},
-  {id:'quiz',tag:'EDUKASI',name:'Kuis Sains',desc:'10 soal pengetahuan umum.',color:'#00f5ff',thumb:svgQuiz},
-  {id:'dice',tag:'DADU',name:'Duel Dadu',desc:'Lempar dadu, total tertinggi menang.',color:'#ff006e',thumb:svgDice},
-  {id:'chess',tag:'STRATEGI',name:'Catur',desc:'Catur klasik vs CPU sederhana.',color:'#ffe600',thumb:svgChess},
-  {id:'sudoku',tag:'LOGIKA',name:'Sudoku',desc:'Isi 9×9 grid tanpa angka ganda.',color:'#39ff14',thumb:svgSudoku},
-  {id:'ttt',tag:'KLASIK',name:'Tic Tac Toe',desc:'3 baris duluan, menang!',color:'#bf5af2',thumb:svgTTT},
-  {id:'minesweeper',tag:'PUZZLE',name:'Minesweeper',desc:'Buka kotak, hindari ranjau!',color:'#ff9500',thumb:svgMine},
-  {id:'wordle',tag:'KATA',name:'Wordle Indonesia',desc:'Tebak kata 5 huruf dalam 6 percobaan.',color:'#00f5ff',thumb:svgWordle},
-  {id:'g2048',tag:'ANGKA',name:'2048',desc:'Gabungkan angka, raih 2048!',color:'#ffe600',thumb:svg2048},
-  {id:'typing',tag:'KECEPATAN',name:'Typing Race',desc:'Uji kecepatan mengetik kamu!',color:'#39ff14',thumb:svgTyping},
-  {id:'hangman',tag:'KATA',name:'Hangman',desc:'Tebak kata sebelum tiang gantungan penuh.',color:'#ff006e',thumb:svgHangman},
-  {id:'rpg',tag:'RPG',name:'Dungeon Quest',desc:'Jelajahi dungeon, lawan monster, naik level!',color:'#bf5af2',thumb:svgRPG},
-  {id:'mario',tag:'PLATFORMER',name:'Super Pixel Run',desc:'Lompat, hindari musuh, capai bendera!',color:'#ff9500',thumb:svgMario},
-  // NEW GAMES
-  {id:'pong',tag:'ARCADE',name:'Pong Neon',desc:'Pantulkan bola, kalahkan CPU!',color:'#00f5ff',thumb:svgPong},
-  {id:'flappy',tag:'ARCADE',name:'Flappy Pixel',desc:'Terbang melewati pipa tanpa menyentuh!',color:'#39ff14',thumb:svgFlappy},
-  {id:'breakout',tag:'ARCADE',name:'Breakout',desc:'Hancurkan semua blok dengan bola!',color:'#ffe600',thumb:svgBreakout},
-  {id:'kraeplin',tag:'MATEMATIKA',name:'Kraeplin Math',desc:'Penjumlahan cepat! Tulis digit terakhir jawaban.',color:'#ff69b4',thumb:svgKraeplin},
-  {id:'logmath',tag:'MATEMATIKA',name:'Soal Logaritma',desc:'Uji kemampuan log & eksponen dalam waktu terbatas!',color:'#ff69b4',thumb:svgLogMath},
-  {id:'aritmatika',tag:'MATEMATIKA',name:'Baris Aritmatika',desc:'Temukan suku berikutnya dalam deret aritmatika!',color:'#ffb6c1',thumb:svgAritmatika},
-  {id:'dasarmath',tag:'MATEMATIKA',name:'Matematika Dasar',desc:'Operasi dasar: +, -, ×, ÷. Cepat & tepat!',color:'#ff1493',thumb:svgDasarMath},
-];
 
 // ═══════════════════════════════════════════════════
-// SVG THUMBNAILS (original 18)
+// SVG THUMBNAILS
 // ═══════════════════════════════════════════════════
 function svgTebak(s){s.innerHTML=`<rect width="100%" height="100%" fill="#001a2e"/>
 <text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="36" fill="#00f5ff" opacity=".25">?</text>
@@ -678,8 +637,48 @@ function svgDasarMath(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a
 <text x="50%" y="68%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#ff1493" opacity=".8">÷</text>
 <text x="50%" y="88%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff69b4" opacity=".6">MATEMATIKA DASAR</text>`;}
 
+function svgSoalCerita(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a0011"/>
+<text x="50%" y="22%" dominant-baseline="middle" text-anchor="middle" font-size="18">📖</text>
+<rect x="14" y="34" width="160" height="42" rx="5" fill="rgba(255,105,180,.06)" stroke="rgba(255,105,180,.2)" stroke-width="1"/>
+<text x="94" y="48" dominant-baseline="middle" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="7" fill="rgba(255,224,240,.5)">Adi membeli 5 buku</text>
+<text x="94" y="60" dominant-baseline="middle" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="7" fill="rgba(255,224,240,.5)">@ Rp2.000. Berapa total?</text>
+<rect x="54" y="82" width="80" height="14" rx="4" fill="rgba(255,105,180,.08)" stroke="rgba(255,105,180,.3)" stroke-width="1"/>
+<text x="94" y="90" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff69b4" opacity=".8">Rp 10.000</text>
+<text x="50%" y="96%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff1493" opacity=".6">SOAL CERITA</text>`;}
+
+
 // ═══════════════════════════════════════════════════
-// BUILD GRID
+// GAME DEFINITIONS
+// ═══════════════════════════════════════════════════
+const games=[
+  {id:'tebak',tag:'PUZZLE',name:'Tebak Angka',desc:'Tebak angka 1–100 dengan petunjuk arah.',color:'#00f5ff',thumb:svgTebak},
+  {id:'rps',tag:'KLASIK',name:'Suit RPS',desc:'Gunting Batu Kertas vs CPU.',color:'#ff006e',thumb:svgRPS},
+  {id:'blackjack',tag:'KARTU',name:'Blackjack',desc:'Raih 21, tantang dealer!',color:'#ffe600',thumb:svgBJ},
+  {id:'snake',tag:'ARCADE',name:'Snake',desc:'Makan apel, jangan nabrak!',color:'#39ff14',thumb:svgSnake},
+  {id:'memory',tag:'OTAK',name:'Memory Match',desc:'Cocokkan pasangan kartu emoji.',color:'#bf5af2',thumb:svgMemory},
+  {id:'puzzle',tag:'PUZZLE',name:'Slide Puzzle',desc:'Susun angka 1–15 ke posisi benar.',color:'#ff9500',thumb:svgPuzzle},
+  {id:'quiz',tag:'EDUKASI',name:'Kuis Sains',desc:'10 soal pengetahuan umum.',color:'#00f5ff',thumb:svgQuiz},
+  {id:'dice',tag:'DADU',name:'Duel Dadu',desc:'Lempar dadu, total tertinggi menang.',color:'#ff006e',thumb:svgDice},
+  {id:'chess',tag:'STRATEGI',name:'Catur',desc:'Catur klasik vs CPU sederhana.',color:'#ffe600',thumb:svgChess},
+  {id:'sudoku',tag:'LOGIKA',name:'Sudoku',desc:'Isi 9×9 grid tanpa angka ganda.',color:'#39ff14',thumb:svgSudoku},
+  {id:'ttt',tag:'KLASIK',name:'Tic Tac Toe',desc:'3 baris duluan, menang!',color:'#bf5af2',thumb:svgTTT},
+  {id:'minesweeper',tag:'PUZZLE',name:'Minesweeper',desc:'Buka kotak, hindari ranjau!',color:'#ff9500',thumb:svgMine},
+  {id:'wordle',tag:'KATA',name:'Wordle Indonesia',desc:'Tebak kata 5 huruf dalam 6 percobaan.',color:'#00f5ff',thumb:svgWordle},
+  {id:'g2048',tag:'ANGKA',name:'2048',desc:'Gabungkan angka, raih 2048!',color:'#ffe600',thumb:svg2048},
+  {id:'typing',tag:'KECEPATAN',name:'Typing Race',desc:'Uji kecepatan mengetik kamu!',color:'#39ff14',thumb:svgTyping},
+  {id:'hangman',tag:'KATA',name:'Hangman',desc:'Tebak kata sebelum tiang gantungan penuh.',color:'#ff006e',thumb:svgHangman},
+  {id:'rpg',tag:'RPG',name:'Dungeon Quest',desc:'Jelajahi dungeon, lawan monster, naik level!',color:'#bf5af2',thumb:svgRPG},
+  {id:'mario',tag:'PLATFORMER',name:'Super Pixel Run',desc:'Lompat, hindari musuh, capai bendera!',color:'#ff9500',thumb:svgMario},
+  // NEW GAMES
+  {id:'pong',tag:'ARCADE',name:'Pong Neon',desc:'Pantulkan bola, kalahkan CPU!',color:'#00f5ff',thumb:svgPong},
+  {id:'flappy',tag:'ARCADE',name:'Flappy Pixel',desc:'Terbang melewati pipa tanpa menyentuh!',color:'#39ff14',thumb:svgFlappy},
+  {id:'breakout',tag:'ARCADE',name:'Breakout',desc:'Hancurkan semua blok dengan bola!',color:'#ffe600',thumb:svgBreakout},
+  {id:'kraeplin',tag:'MATEMATIKA',name:'Kraeplin Math',desc:'Penjumlahan cepat! Tulis digit terakhir jawaban.',color:'#ff69b4',thumb:svgKraeplin},
+  {id:'logmath',tag:'MATEMATIKA',name:'Soal Logaritma',desc:'Uji kemampuan log & eksponen dalam waktu terbatas!',color:'#ff69b4',thumb:svgLogMath},
+  {id:'aritmatika',tag:'MATEMATIKA',name:'Baris Aritmatika',desc:'Temukan suku berikutnya dalam deret aritmatika!',color:'#ffb6c1',thumb:svgAritmatika},
+  {id:'dasarmath',tag:'MATEMATIKA',name:'Matematika Dasar',desc:'Operasi dasar: +, -, ×, ÷. Cepat & tepat!',color:'#ff1493',thumb:svgDasarMath},
+  {id:'soalcerita',tag:'MATEMATIKA',name:'Soal Cerita',desc:'Selesaikan soal cerita matematika! Ketik jawaban kamu.',color:'#ff69b4',thumb:svgSoalCerita},
+];
 // ═══════════════════════════════════════════════════
 document.getElementById('gameCount').textContent=`— ${games.length} GAMES AVAILABLE —`;
 const grid=document.getElementById('gameGrid');
@@ -721,7 +720,7 @@ function openGame(id){
     chess:initChess,sudoku:initSudoku,ttt:initTTT,minesweeper:initMinesweeper,
     wordle:initWordle,g2048:init2048,typing:initTyping,hangman:initHangman,
     rpg:initRPG,mario:initMario,pong:initPong,flappy:initFlappy,breakout:initBreakout,
-    kraeplin:initKraeplin,logmath:initLogMath,aritmatika:initAritmatika,dasarmath:initDasarMath};
+    kraeplin:initKraeplin,logmath:initLogMath,aritmatika:initAritmatika,dasarmath:initDasarMath,soalcerita:initSoalCerita};
   if(map[id]) map[id](body);
 }
 function closeModal(){
@@ -2805,6 +2804,266 @@ function initDasarMath(el){
   renderHome();
 }
 
+
+// ═══════════════════════════════════════════════════
+// GAME 26: SOAL CERITA MATEMATIKA
+// ═══════════════════════════════════════════════════
+function initSoalCerita(el){
+  const LB_KEY='soalcerita_lb';
+  function getLB(){try{return JSON.parse(localStorage.getItem(LB_KEY))||[];}catch{return[];}}
+  function saveLB(arr){try{localStorage.setItem(LB_KEY,JSON.stringify(arr));}catch{}}
+  function addToLB(entry){let lb=getLB();lb.push(entry);lb.sort((a,b)=>b.correct-a.correct);lb=lb.slice(0,10);saveLB(lb);return lb;}
+
+  function r(mn,mx){return Math.floor(Math.random()*(mx-mn+1))+mn;}
+  function fmt(n){return Number(n).toLocaleString('id-ID');}
+  function fmtTime(s){return Math.floor(s/60)+':'+(s%60<10?'0':'')+(s%60);}
+
+  let correct=0,wrong=0,total=0,duration=120,remain=0,timer=null,running=false,currentAns=0,currentUnit='';
+
+  function genQ(){
+    const idx=r(0,54);
+    const a=r(2,15),b=r(2,10),p=r(1,20)*1000,q2=r(3,20),p2=r(2,50)*500;
+    const v=r(30,8)*10+300,t=r(1,4),d=r(60,300),v2=r(20,60);
+    const pw=r(5,20),lw=r(3,15),sw=r(4,20);
+    const tab=r(5,20)*10000,amb=r(1,4)*5000;
+    const org=r(2,5),tot=r(5,20)*10000;
+    const age1=r(25,45),age2=r(5,15);
+    const hr=r(2,7),mn=r(10,50)*6;
+    const phn=r(10,30),bh=r(5,20);
+    const hari=r(3,7),ekor=r(5,20),mati=r(1,3);
+    const jam=r(4,8),upah=r(10,30)*1000;
+    const lh=r(2,10),hsl=r(50,200);
+    const aa=r(70,90),bb2=r(65,85),cc=r(75,95);
+    const s2=r(30,40),h2=r(20,s2-5);
+
+    const soal=[
+      {q:`Adi membeli ${a} buah pensil dengan harga Rp${fmt(p)} per buah. Berapa total yang harus dibayar Adi?`,a:a*p,unit:'Rp'},
+      {q:`Budi membeli ${q2} kg beras dengan harga Rp${fmt(p2)} per kg. Berapa uang yang dikeluarkan Budi?`,a:q2*p2,unit:'Rp'},
+      {q:`Siti membeli ${a} baju dengan harga Rp${fmt(p)} per baju. Berapa total belanjaan Siti?`,a:a*p,unit:'Rp'},
+      {q:`Ibu membeli ${b} buah apel seharga Rp${fmt(r(1,10)*2000)} per buah. Berapa uang yang dibayarkan ibu?`,a:b*r(1,10)*2000,unit:'Rp'},
+      {q:`Rina membayar Rp${fmt(r(3,10)*10000)} untuk membeli permen seharga Rp${fmt(r(2,5)*1000)} per buah. Berapa permen yang Rina beli?`,a:Math.floor(r(3,10)*10000/(r(2,5)*1000)),unit:'permen'},
+      {q:`Ayah membeli ${a} liter bensin dengan harga Rp${fmt(r(3,15)*1000)} per liter. Berapa total yang dibayar ayah?`,a:a*r(3,15)*1000,unit:'Rp'},
+      {q:`Biaya makan siang Rp${fmt(tot)} dibagi rata untuk ${org} orang. Berapa bagian masing-masing?`,a:tot/org,unit:'Rp'},
+      {q:`Dani membayar Rp${fmt(r(5,20)*10000)} dan harga barang Rp${fmt(r(2,8)*1000)}. Berapa kembalian yang diterima Dani?`,a:r(5,20)*10000-r(2,8)*1000,unit:'Rp'},
+      {q:`Sebuah mobil melaju ${r(40,100)} km/jam selama ${t} jam. Berapa jarak yang ditempuh?`,a:r(40,100)*t,unit:'km'},
+      {q:`Jarak kota A ke B adalah ${d} km. Kecepatan rata-rata ${v2} km/jam. Berapa jam perjalanan tersebut?`,a:Math.round(d/v2),unit:'jam'},
+      {q:`Rudi bersepeda menempuh ${r(20,100)} km dalam ${t} jam. Berapa kecepatan rata-rata Rudi?`,a:Math.round(r(20,100)/t),unit:'km/jam'},
+      {q:`Sebuah persegi panjang panjang ${pw} cm dan lebar ${lw} cm. Berapa luasnya?`,a:pw*lw,unit:'cm²'},
+      {q:`Sebuah persegi memiliki sisi ${sw} cm. Berapa luas persegi tersebut?`,a:sw*sw,unit:'cm²'},
+      {q:`Sebuah persegi panjang panjang ${pw} cm dan lebar ${lw} cm. Berapa kelilingnya?`,a:2*(pw+lw),unit:'cm'},
+      {q:`Sebuah persegi memiliki sisi ${sw} cm. Berapa keliling persegi tersebut?`,a:4*sw,unit:'cm'},
+      {q:`Segitiga dengan alas ${r(4,15)} cm dan tinggi ${r(3,12)} cm. Berapa luasnya?`,a:Math.floor(r(4,15)*r(3,12)/2),unit:'cm²'},
+      {q:`Balok panjang ${pw} cm, lebar ${lw} cm, tinggi ${r(4,18)} cm. Berapa volumenya?`,a:pw*lw*r(4,18),unit:'cm³'},
+      {q:`Kubus dengan sisi ${r(3,12)} cm. Berapa volume kubus tersebut?`,a:Math.pow(r(3,12),3),unit:'cm³'},
+      {q:`Umur ayah ${age1} tahun, umur anak ${age2} tahun. Berapa selisih umur mereka?`,a:age1-age2,unit:'tahun'},
+      {q:`Umur ibu sekarang ${age1} tahun. ${age2} tahun yang lalu berapa umur ibu?`,a:age1-age2,unit:'tahun'},
+      {q:`Perjalanan membutuhkan ${hr} jam ${mn} menit. Berapa total menit perjalanan?`,a:hr*60+mn,unit:'menit'},
+      {q:`Acara berlangsung ${r(90,300)} menit. Berapa jam (dibulatkan ke bawah)?`,a:Math.floor(r(90,300)/60),unit:'jam'},
+      {q:`Ada ${r(20,60)} buah mangga. Sebanyak ${r(5,15)} buah dimakan. Berapa sisa mangga?`,a:r(20,60)-r(5,15),unit:'buah'},
+      {q:`Ibu punya ${r(10,30)} butir telur dibagi ke ${org} anak sama rata. Berapa telur tiap anak?`,a:Math.floor(r(10,30)/org),unit:'butir'},
+      {q:`Keranjang A berisi ${r(15,40)} jeruk, keranjang B berisi ${r(10,30)} jeruk. Berapa total jeruk?`,a:r(15,40)+r(10,30),unit:'buah'},
+      {q:`Setiap kotak berisi ${r(5,15)} kue. Ada ${r(3,8)} kotak. Berapa total kue?`,a:r(5,15)*r(3,8),unit:'kue'},
+      {q:`Nilai ulangan Dina: Matematika ${aa}, IPA ${bb2}, B.Indonesia ${cc}. Berapa rata-rata nilainya?`,a:Math.round((aa+bb2+cc)/3),unit:'poin'},
+      {q:`Kelas ada ${s2} siswa. Hadir ${h2} siswa. Berapa siswa yang tidak hadir?`,a:s2-h2,unit:'siswa'},
+      {q:`Tabungan Reza Rp${fmt(tab)}. Ia mengambil Rp${fmt(amb)}. Berapa sisa tabungan?`,a:tab-amb,unit:'Rp'},
+      {q:`Tono menabung Rp${fmt(r(5,20)*1000)} setiap minggu selama ${r(4,12)} minggu. Berapa total tabungannya?`,a:r(5,20)*1000*r(4,12),unit:'Rp'},
+      {q:`Gaji Pak Anton Rp${fmt(r(2,5)*1000000)} per bulan. Belanja kebutuhan Rp${fmt(r(3,8)*100000)}. Berapa sisa gaji?`,a:r(2,5)*1000000-r(3,8)*100000,unit:'Rp'},
+      {q:`Modal usaha Rp${fmt(r(5,20)*100000)}, keuntungan Rp${fmt(r(10,40)*10000)}. Berapa total uang sekarang?`,a:r(5,20)*100000+r(10,40)*10000,unit:'Rp'},
+      {q:`Tali ${r(5,20)} meter dipotong menjadi ${r(2,4)} bagian sama panjang. Berapa panjang tiap bagian?`,a:Math.round(r(5,20)/r(2,4)*10)/10,unit:'meter'},
+      {q:`Kawat A panjang ${r(3,8)} meter, kawat B ${r(2,6)} meter. Berapa total panjang keduanya?`,a:r(3,8)+r(2,6),unit:'meter'},
+      {q:`${r(3,10)} kg gula seharga Rp${fmt(r(5,20)*1000)} per kg. Berapa total harganya?`,a:r(3,10)*r(5,20)*1000,unit:'Rp'},
+      {q:`Upah kerja Rp${fmt(upah)} per jam. Bekerja ${jam} jam. Berapa upah yang diterima?`,a:jam*upah,unit:'Rp'},
+      {q:`Sawah ${lh} hektar menghasilkan ${hsl} kg padi per hektar. Berapa total padi?`,a:lh*hsl,unit:'kg'},
+      {q:`Kebun mangga ${phn} pohon. Tiap pohon ${bh} buah. Berapa total buah mangga?`,a:phn*bh,unit:'buah'},
+      {q:`Kolam ada ${ekor} ekor ikan. Tiap hari ${mati} ekor mati. Berapa ikan setelah ${hari} hari?`,a:ekor-mati*hari,unit:'ekor'},
+      {q:`Rani punya ${r(10,50)} permen, dapat ${r(5,25)} lagi dari kakak. Berapa total permen Rani?`,a:r(10,50)+r(5,25),unit:'permen'},
+      {q:`${r(50,200)} buku dibagi ke ${r(3,8)} siswa sama rata. Berapa buku tiap siswa?`,a:Math.floor(r(50,200)/r(3,8)),unit:'buku'},
+      {q:`Harga 1 kotak pensil Rp${fmt(r(10,50)*1000)}. Ayah beli ${r(3,10)} kotak. Berapa total?`,a:r(10,50)*1000*r(3,10),unit:'Rp'},
+      {q:`Dalam tas ada ${r(20,80)} buku, ${r(10,40)} pensil, dan ${r(5,20)} pulpen. Berapa total alat tulis?`,a:r(20,80)+r(10,40)+r(5,20),unit:'buah'},
+      {q:`Taman persegi panjang ${r(5,15)} m x ${r(4,10)} m. Berapa keliling taman?`,a:2*(r(5,15)+r(4,10)),unit:'meter'},
+      {q:`${r(3,8)} pekerja menghasilkan ${r(10,30)} produk/hari. Berapa produk dalam 5 hari?`,a:r(3,8)*r(10,30)*5,unit:'produk'},
+      {q:`Pabrik harus produksi ${r(100,500)} unit dalam ${r(3,7)} hari. Berapa unit/hari?`,a:Math.round(r(100,500)/r(3,7)),unit:'unit'},
+      {q:`${r(2,5)} orang kerjakan proyek. Upah total Rp${fmt(r(100,500)*1000)}. Berapa upah tiap orang?`,a:Math.round(r(100,500)*1000/r(2,5)),unit:'Rp'},
+      {q:`Harga barang Rp${fmt(r(10,50)*10000)} setelah diskon ${r(1,4)*10}%. Berapa harga aslinya? (jawab harga diskon)`,a:Math.round(r(10,50)*10000*(1-r(1,4)*10/100)),unit:'Rp'},
+      {q:`${r(10,40)} meter kain dibagi menjadi ${r(2,5)} potong sama panjang. Berapa panjang tiap potong?`,a:Math.round(r(10,40)/r(2,5)*10)/10,unit:'meter'},
+      {q:`Budi berlari ${r(2,5)} km/hari selama ${r(5,14)} hari. Berapa total jarak yang ditempuh?`,a:r(2,5)*r(5,14),unit:'km'},
+      {q:`Harga 1 kg daging Rp${fmt(r(8,15)*10000)}. Ibu beli ${r(2,5)} kg. Berapa total belanja ibu?`,a:r(8,15)*10000*r(2,5),unit:'Rp'},
+      {q:`Kelas A ada ${r(20,35)} siswa, kelas B ada ${r(20,35)} siswa. Berapa total siswa kedua kelas?`,a:r(20,35)+r(20,35),unit:'siswa'},
+      {q:`Maya menempuh ${r(3,8)} km pergi dan ${r(3,8)} km pulang setiap hari. Berapa km dalam ${r(3,6)} hari?`,a:(r(3,8)+r(3,8))*r(3,6),unit:'km'},
+      {q:`Harga sepeda Rp${fmt(r(3,10)*100000)}. Dicicil ${r(3,12)} bulan. Berapa cicilan per bulan?`,a:Math.round(r(3,10)*100000/r(3,12)),unit:'Rp'},
+      {q:`Pak Budi punya ${r(5,15)} ekor ayam. Bertelur ${r(2,5)} butir/hari. Berapa telur dalam ${r(3,7)} hari?`,a:r(2,5)*r(3,7),unit:'butir'},
+    ];
+
+    // pick a random soal safely
+    const chosen = soal[Math.floor(Math.random()*soal.length)];
+    return { q: chosen.q, a: typeof chosen.a === 'number' ? chosen.a : 0, unit: chosen.unit || '' };
+  }
+
+  function renderLB(){
+    const lb=getLB();
+    if(!lb.length) return '<div style="text-align:center;color:rgba(255,224,240,.3);font-size:.75rem;padding:12px;font-family:Orbitron,monospace">Belum ada data</div>';
+    const medal=['🥇','🥈','🥉'];
+    return lb.map((e,i)=>`<div class="krp-lb-row"><div class="krp-lb-rank">${medal[i]||i+1}</div><div><div class="krp-lb-name">${e.name||'Anonim'}</div><div class="krp-lb-detail">${e.durLabel}</div></div><div style="text-align:right"><div class="krp-lb-score">✅ ${e.correct}</div><div class="krp-lb-detail">❌ ${e.wrong}</div></div></div>`).join('');
+  }
+
+  function renderHome(){
+    el.innerHTML=`<div class="game-area" style="gap:12px;padding:18px">
+      <div class="game-msg" style="font-size:1rem">📖 SOAL CERITA MATEMATIKA</div>
+      <div style="font-size:.75rem;color:rgba(255,224,240,.45);text-align:center;line-height:1.6;max-width:300px">
+        Baca soal cerita lalu <span style="color:var(--nc);font-weight:700">ketik jawaban</span> kamu!<br>
+        <span style="font-size:.65rem;color:rgba(255,224,240,.3)">Jawab dalam bentuk angka saja</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;align-items:center;width:100%">
+        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(255,224,240,.4);letter-spacing:.2em;margin-bottom:2px">PILIH DURASI</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+          <button class="krp-mode-btn ${duration===120?'active':''}" onclick="scSetDur(120)">⏱ 2 MENIT</button>
+          <button class="krp-mode-btn ${duration===180?'active':''}" onclick="scSetDur(180)">⏱ 3 MENIT</button>
+          <button class="krp-mode-btn ${duration===300?'active':''}" onclick="scSetDur(300)">⏱ 5 MENIT</button>
+        </div>
+      </div>
+      <button class="btn btn-cyan" onclick="scStart()" style="margin-top:4px">▶ MULAI GAME</button>
+      <div style="width:100%">
+        <div style="font-family:Orbitron,monospace;font-size:.62rem;color:var(--nc);letter-spacing:.2em;text-align:center;margin-bottom:8px;opacity:.7">🏆 LEADERBOARD</div>
+        <div id="scLb">${renderLB()}</div>
+      </div>
+    </div>`;
+    window.scSetDur=function(d){duration=d;renderHome();};
+    window.scStart=startGame;
+  }
+
+  function startGame(){
+    running=true;correct=0;wrong=0;total=0;remain=duration;
+    const qd=genQ();currentAns=qd.a;currentUnit=qd.unit;
+    renderGame(qd);
+    timer=setInterval(()=>{
+      remain--;
+      const tv=document.getElementById('scTimer');if(tv)tv.textContent=fmtTime(remain);
+      const circ=2*Math.PI*34;
+      const ring=document.getElementById('scRing');
+      if(ring){ring.style.strokeDashoffset=(circ*(1-remain/duration)).toFixed(2);ring.style.stroke=remain/duration>.5?'#ff69b4':remain/duration>.25?'#ffb6c1':'#ff1493';}
+      if(remain<=0){clearInterval(timer);timer=null;running=false;showResult();}
+    },1000);
+  }
+
+  function renderGame(qd){
+    const circ=2*Math.PI*34;
+    el.innerHTML=`<div class="game-area" style="gap:10px;padding:14px">
+      <div style="display:flex;align-items:center;justify-content:space-between;width:100%;gap:8px">
+        <div style="display:flex;gap:8px;flex:1">
+          <div class="krp-stat"><div class="krp-stat-val" id="scC" style="color:var(--ng)">${correct}</div><div class="krp-stat-lbl">BENAR</div></div>
+          <div class="krp-stat"><div class="krp-stat-val" id="scW" style="color:var(--np)">${wrong}</div><div class="krp-stat-lbl">SALAH</div></div>
+        </div>
+        <div class="krp-timer-ring">
+          <svg width="80" height="80" viewBox="0 0 80 80">
+            <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(255,105,180,.12)" stroke-width="6"/>
+            <circle id="scRing" cx="40" cy="40" r="34" fill="none" stroke="#ff69b4" stroke-width="6"
+              stroke-dasharray="${circ.toFixed(2)}" stroke-dashoffset="0"
+              style="transition:stroke-dashoffset .9s linear,stroke .5s ease"/>
+          </svg>
+          <div class="krp-timer-val" id="scTimer">${fmtTime(remain)}</div>
+        </div>
+        <div style="flex:1;display:flex;justify-content:flex-end">
+          <div class="krp-stat"><div class="krp-stat-val" id="scT" style="color:var(--ny)">${total}</div><div class="krp-stat-lbl">TOTAL</div></div>
+        </div>
+      </div>
+      <div style="background:rgba(255,105,180,.04);border:1px solid rgba(255,105,180,.15);border-radius:10px;padding:14px 16px;width:100%">
+        <div style="font-size:.55rem;font-family:Orbitron,monospace;color:rgba(255,224,240,.3);letter-spacing:.2em;margin-bottom:8px">📖 BACA & HITUNG</div>
+        <div style="font-family:'Rajdhani',sans-serif;font-size:1rem;color:var(--tm);line-height:1.7">${qd.q}</div>
+        <div style="font-size:.6rem;color:rgba(255,224,240,.3);font-family:Orbitron,monospace;margin-top:6px">Satuan: <span style="color:var(--nc)">${qd.unit}</span></div>
+      </div>
+      <div id="scFb" style="font-family:Orbitron,monospace;font-size:.85rem;font-weight:900;min-height:26px;text-align:center"></div>
+      <div style="display:flex;align-items:center;gap:8px;justify-content:center;width:100%">
+        <input id="scInput" type="number" class="num-input"
+          style="width:130px;font-size:1.4rem;text-align:center;padding:10px 6px"
+          placeholder="?" autocomplete="off" inputmode="decimal">
+        <button class="btn btn-cyan" onclick="scSubmit()" style="padding:12px 14px;font-size:.8rem">✔ OK</button>
+        <button class="btn btn-outline btn-sm" onclick="scSkip()">⏭ SKIP</button>
+      </div>
+      <div style="font-size:.6rem;color:rgba(255,224,240,.2);font-family:Orbitron,monospace;text-align:center">Ketik angka lalu tekan OK atau Enter</div>
+    </div>`;
+    const inp=document.getElementById('scInput');
+    if(inp){inp.focus();inp.addEventListener('keydown',function(e){if(e.key==='Enter')scSubmit();});}
+  }
+
+  window.scSubmit=function(){
+    if(!running)return;
+    const inp=document.getElementById('scInput');
+    if(!inp||inp.value.trim()==='')return;
+    const userAns=parseFloat(inp.value.trim());
+    total++;
+    const fb=document.getElementById('scFb');
+    const isCorrect=Math.abs(userAns-currentAns)<0.5;
+    if(isCorrect){
+      correct++;
+      if(fb){fb.innerHTML='✅ BENAR! Jawaban: <span style="color:var(--ng)">'+fmt(currentAns)+' '+currentUnit+'</span>';}
+    } else {
+      wrong++;
+      if(fb){fb.innerHTML='❌ SALAH! Jawaban: <span style="color:var(--np)">'+fmt(currentAns)+' '+currentUnit+'</span>';}
+    }
+    const cE=document.getElementById('scC'),wE=document.getElementById('scW'),tE=document.getElementById('scT');
+    if(cE)cE.textContent=correct;if(wE)wE.textContent=wrong;if(tE)tE.textContent=total;
+    inp.disabled=true;
+    const okBtn=document.querySelector('[onclick="scSubmit()"]');
+    const skipBtn=document.querySelector('[onclick="scSkip()"]');
+    if(okBtn)okBtn.disabled=true;
+    if(skipBtn)skipBtn.disabled=true;
+    setTimeout(()=>{if(!running)return;const qd=genQ();currentAns=qd.a;currentUnit=qd.unit;renderGame(qd);},700);
+  };
+
+  window.scSkip=function(){
+    if(!running)return;
+    wrong++;total++;
+    const fb=document.getElementById('scFb');
+    if(fb){fb.innerHTML='⏭ SKIP. Jawaban: <span style="color:var(--ny)">'+fmt(currentAns)+' '+currentUnit+'</span>';}
+    const cE=document.getElementById('scC'),wE=document.getElementById('scW'),tE=document.getElementById('scT');
+    if(cE)cE.textContent=correct;if(wE)wE.textContent=wrong;if(tE)tE.textContent=total;
+    setTimeout(()=>{if(!running)return;const qd=genQ();currentAns=qd.a;currentUnit=qd.unit;renderGame(qd);},600);
+  };
+
+  function showResult(){
+    const acc=total>0?Math.round(correct/total*100):0;
+    const durLabel={120:'2 Menit',180:'3 Menit',300:'5 Menit'}[duration]||'';
+    el.innerHTML=`<div class="game-area" style="gap:12px;padding:16px">
+      <div class="result-banner result-win" style="font-size:1rem">🎉 WAKTU HABIS!</div>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <div class="krp-stat"><div class="krp-stat-val" style="color:var(--ng);font-size:1.6rem">${correct}</div><div class="krp-stat-lbl">BENAR</div></div>
+        <div class="krp-stat"><div class="krp-stat-val" style="color:var(--np);font-size:1.6rem">${wrong}</div><div class="krp-stat-lbl">SALAH</div></div>
+        <div class="krp-stat"><div class="krp-stat-val" style="color:var(--ny);font-size:1.6rem">${total}</div><div class="krp-stat-lbl">TOTAL</div></div>
+        <div class="krp-stat"><div class="krp-stat-val" style="color:var(--nc);font-size:1.6rem">${acc}%</div><div class="krp-stat-lbl">AKURASI</div></div>
+      </div>
+      <div style="font-family:Orbitron,monospace;font-size:.65rem;color:rgba(255,224,240,.45);text-align:center">${durLabel}</div>
+      <div style="width:100%;max-width:320px">
+        <div style="font-family:Orbitron,monospace;font-size:.6rem;color:rgba(255,224,240,.4);margin-bottom:5px;text-align:center">MASUKKAN NAMAMU UNTUK LEADERBOARD</div>
+        <div style="display:flex;gap:6px">
+          <input id="scName" type="text" placeholder="Nama kamu..." maxlength="16"
+            class="num-input" style="width:100%;font-size:.85rem;text-align:left;padding:8px 12px">
+          <button class="btn btn-cyan btn-sm" onclick="scSave()">💾 SIMPAN</button>
+        </div>
+      </div>
+      <div style="width:100%">
+        <div style="font-family:Orbitron,monospace;font-size:.62rem;color:var(--nc);letter-spacing:.2em;text-align:center;margin-bottom:8px;opacity:.7">🏆 LEADERBOARD</div>
+        <div id="scLb2">${renderLB()}</div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+        <button class="btn btn-cyan btn-sm" onclick="scStart()">🔁 MAIN LAGI</button>
+        <button class="btn btn-outline btn-sm" onclick="scHome()">🏠 HOME</button>
+      </div>
+    </div>`;
+    window.scSave=function(){
+      const name=(document.getElementById('scName').value.trim()||'Anonim').substring(0,16);
+      addToLB({name,correct,wrong,total,accuracy:acc,duration,durLabel,date:Date.now()});
+      document.getElementById('scLb2').innerHTML=renderLB();
+      document.getElementById('scName').disabled=true;
+      const saveBtn=document.querySelector('[onclick="scSave()"]');
+      if(saveBtn){saveBtn.disabled=true;saveBtn.textContent='✅ Tersimpan!';}
+    };
+    window.scHome=renderHome;
+  }
+
+  window.scStart=startGame;
+  window.scHome=renderHome;
+  renderHome();
+}
 
 </script>
 </body>
