@@ -1175,6 +1175,38 @@ return `<ellipse cx="${x+22}" cy="${y+20}" rx="22" ry="12" fill="${active?'rgba(
 ${active?`<text x="${x+22}" y="${y+10}" dominant-baseline="middle" text-anchor="middle" font-size="14">🐭</text>`:''}`;}).join('')}
 <text x="50%" y="95%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#c084fc" opacity=".6">PUKUL TIKUSNYA!</text>`;}
 
+function svgSpaceShooter(s){s.innerHTML=`<rect width="100%" height="100%" fill="#000814"/>
+<circle cx="20" cy="15" r="2" fill="white" opacity=".6"/>
+<circle cx="55" cy="8" r="1.5" fill="white" opacity=".5"/>
+<circle cx="90" cy="20" r="1" fill="white" opacity=".4"/>
+<circle cx="140" cy="5" r="2" fill="white" opacity=".7"/>
+<circle cx="170" cy="25" r="1.5" fill="white" opacity=".5"/>
+<circle cx="35" cy="35" r="1" fill="white" opacity=".3"/>
+<circle cx="160" cy="40" r="1" fill="white" opacity=".4"/>
+<circle cx="75" cy="30" r="1.5" fill="white" opacity=".6"/>
+<ellipse cx="40" cy="22" rx="16" ry="10" fill="rgba(255,50,50,.2)" stroke="#ff3232" stroke-width="1" opacity=".8"/>
+<text x="40" y="24" dominant-baseline="middle" text-anchor="middle" font-size="11">👾</text>
+<ellipse cx="94" cy="18" rx="16" ry="10" fill="rgba(255,100,0,.2)" stroke="#ff6400" stroke-width="1" opacity=".8"/>
+<text x="94" y="20" dominant-baseline="middle" text-anchor="middle" font-size="11">👾</text>
+<ellipse cx="148" cy="22" rx="16" ry="10" fill="rgba(200,0,255,.2)" stroke="#c800ff" stroke-width="1" opacity=".8"/>
+<text x="148" y="24" dominant-baseline="middle" text-anchor="middle" font-size="11">👾</text>
+<line x1="94" y1="50" x2="94" y2="32" stroke="#00f5ff" stroke-width="2" opacity=".9"/>
+<polygon points="94,66 84,88 94,83 104,88" fill="#00f5ff" opacity=".9"/>
+<polygon points="84,88 72,88 78,78" fill="rgba(0,245,255,.4)"/>
+<polygon points="104,88 116,88 110,78" fill="rgba(0,245,255,.4)"/>
+<text x="50%" y="96%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#00f5ff" opacity=".6">TEMBAK ALIEN!</text>`;}
+
+function svgBiologi(s){s.innerHTML=`<rect width="100%" height="100%" fill="#001a0a"/>
+<ellipse cx="94" cy="45" rx="38" ry="25" fill="none" stroke="rgba(57,255,20,.4)" stroke-width="1.5"/>
+<ellipse cx="94" cy="45" rx="22" ry="14" fill="rgba(57,255,20,.08)" stroke="rgba(57,255,20,.6)" stroke-width="1"/>
+<ellipse cx="94" cy="45" rx="9" ry="6" fill="rgba(57,255,20,.15)" stroke="#39ff14" stroke-width="1.5"/>
+<line x1="56" y1="45" x2="36" y2="38" stroke="rgba(57,255,20,.5)" stroke-width="1"/>
+<line x1="56" y1="45" x2="36" y2="52" stroke="rgba(57,255,20,.5)" stroke-width="1"/>
+<line x1="132" y1="45" x2="152" y2="38" stroke="rgba(57,255,20,.5)" stroke-width="1"/>
+<line x1="132" y1="45" x2="152" y2="52" stroke="rgba(57,255,20,.5)" stroke-width="1"/>
+<text x="50%" y="82%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="8" fill="#39ff14" opacity=".9">🧬 BIOLOGI</text>
+<text x="50%" y="95%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="6" fill="rgba(57,255,20,.5)">SEL · EKOLOGI · GENETIKA</text>`;}
+
 const games=[
   // ── KELOMPOK: GAME ──
   {id:'tebak',tag:'PUZZLE',name:'Tebak Angka',desc:'Tebak angka 1–100 dengan petunjuk arah.',color:'#00f5ff',thumb:svgTebak,group:'game'},
@@ -1197,6 +1229,7 @@ const games=[
   {id:'breakout',tag:'ARCADE',name:'Breakout',desc:'Hancurkan semua blok dengan bola!',color:'#ffe600',thumb:svgBreakout,group:'game'},
   {id:'whackamole',tag:'ARCADE',name:'Whack-a-Mole',desc:'Pukul tikus yang muncul secepat mungkin!',color:'#c084fc',thumb:svgWhack,group:'game'},
   {id:'colormatch',tag:'REFLEKS',name:'Color Match',desc:'Cocokkan warna dengan cepat sebelum waktu habis!',color:'#ff006e',thumb:svgColorMatch,group:'game'},
+  {id:'spaceshooter',tag:'TEMBAK',name:'Space Shooter',desc:'Tembak alien, hindari bom, selamatkan galaksi!',color:'#00f5ff',thumb:svgSpaceShooter,group:'game'},
   // ── KELOMPOK: BELAJAR ──
   {id:'quiz',tag:'EDUKASI',name:'Kuis Sains',desc:'100 soal sains, random 10 per sesi.',color:'#00f5ff',thumb:svgQuiz,group:'belajar'},
   {id:'sudoku',tag:'LOGIKA',name:'Sudoku',desc:'Isi 9×9 grid tanpa angka ganda.',color:'#39ff14',thumb:svgSudoku,group:'belajar'},
@@ -1211,6 +1244,7 @@ const games=[
   {id:'pattern',tag:'LOGIKA',name:'Pola Urutan',desc:'Temukan pola dan pilih jawaban yang tepat!',color:'#bf5af2',thumb:svgPattern,group:'belajar'},
   {id:'logicgrid',tag:'DEDUKSI',name:'Grid Logika',desc:'Gunakan petunjuk untuk memecahkan teka-teki deduksi!',color:'#00f5ff',thumb:svgLogicGrid,group:'belajar'},
   {id:'otomotif',tag:'OTOMOTIF',name:'Teknik Otomotif',desc:'50 soal tentang mesin, sistem kendaraan & otomotif!',color:'#00f5ff',thumb:svgOtomotif,group:'belajar'},
+  {id:'biologi',tag:'IPA',name:'Kuis Biologi',desc:'Uji pengetahuan biologi: sel, ekologi, genetika & lebih!',color:'#39ff14',thumb:svgBiologi,group:'belajar'},
 ];
 // ═══════════════════════════════════════════════════
 const gameGames = games.filter(g=>g.group==='game');
@@ -1265,6 +1299,7 @@ let marioLoop=null;
 let pongLoop=null;
 let flappyLoop=null;
 let breakoutLoop=null;
+let ssLoop=null;
 
 function openGame(id){
   const g=games.find(x=>x.id===id);
@@ -1278,7 +1313,7 @@ function openGame(id){
     wordle:initWordle,g2048:init2048,typing:initTyping,hangman:initHangman,
     rpg:initRPG,mario:initMario,pong:initPong,flappy:initFlappy,breakout:initBreakout,
     kraeplin:initKraeplin,logmath:initLogMath,aritmatika:initAritmatika,dasarmath:initDasarMath,soalcerita:initSoalCerita,
-    simon:initSimon,pattern:initPattern,logicgrid:initLogicGrid,whackamole:initWhackAMole,colormatch:initColorMatch,otomotif:initOtomotif};
+    simon:initSimon,pattern:initPattern,logicgrid:initLogicGrid,whackamole:initWhackAMole,colormatch:initColorMatch,otomotif:initOtomotif,spaceshooter:initSpaceShooter,biologi:initBiologi};
   if(map[id]) map[id](body);
 }
 function closeModal(){
@@ -1289,6 +1324,7 @@ function closeModal(){
   if(pongLoop){cancelAnimationFrame(pongLoop);pongLoop=null;}
   if(flappyLoop){cancelAnimationFrame(flappyLoop);flappyLoop=null;}
   if(breakoutLoop){cancelAnimationFrame(breakoutLoop);breakoutLoop=null;}
+  if(ssLoop){cancelAnimationFrame(ssLoop);ssLoop=null;}
   document.removeEventListener('keydown',rpgKeyHandler);
   document.removeEventListener('keydown',marioKeyHandler);
   document.removeEventListener('keyup',marioKeyUpHandler);
@@ -4749,6 +4785,522 @@ function initOtomotif(el){
       else renderQ();
     },1400);
   };
+
+  renderMenu();
+}
+
+// ═══════════════════════════════════════════════════
+// GAME: SPACE SHOOTER 🚀
+// ═══════════════════════════════════════════════════
+function initSpaceShooter(el){
+  var W=320,H=420;
+  var canvas,ctx,animId=null;
+  var ship,bullets,enemies,bombs,particles,stars;
+  var score,lives,level,hiScore,gameState,frameCount,spawnTimer,bossHP,bossMaxHP,bossActive;
+
+  function init(){
+    el.innerHTML=`<div class="game-area" style="gap:10px;padding:12px;align-items:center">
+      <canvas id="ssCanvas" width="${W}" height="${H}" style="border:1px solid rgba(0,245,255,.3);border-radius:8px;background:#000814;display:block;touch-action:none;max-width:100%;"></canvas>
+      <div id="ss-ui" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center"></div>
+      <div id="ss-msg"></div>
+    </div>`;
+    canvas=document.getElementById('ssCanvas');
+    ctx=canvas.getContext('2d');
+    setupControls();
+    showMenu();
+  }
+
+  function showMenu(){
+    gameState='menu';
+    if(animId){cancelAnimationFrame(animId);animId=null;}
+    drawMenu();
+    el.querySelector('#ss-msg').innerHTML=`
+      <button class="btn btn-cyan" onclick="ssStartGame()">🚀 MULAI</button>`;
+    window.ssStartGame=function(){startGame();};
+  }
+
+  function drawMenu(){
+    ctx.fillStyle='#000814';ctx.fillRect(0,0,W,H);
+    // stars
+    for(var i=0;i<80;i++){
+      ctx.fillStyle='rgba(255,255,255,'+(0.2+Math.random()*0.6)+')';
+      ctx.fillRect(Math.random()*W,Math.random()*H,1,1);
+    }
+    ctx.font='bold 22px Orbitron,monospace';
+    ctx.textAlign='center';
+    ctx.fillStyle='#00f5ff';
+    ctx.shadowColor='#00f5ff';ctx.shadowBlur=12;
+    ctx.fillText('SPACE SHOOTER',W/2,120);
+    ctx.shadowBlur=0;
+    ctx.font='11px Orbitron,monospace';
+    ctx.fillStyle='rgba(0,245,255,.6)';
+    ctx.fillText('Tembak semua alien!',W/2,155);
+    ctx.font='10px Rajdhani,sans-serif';
+    ctx.fillStyle='rgba(237,225,255,.4)';
+    ctx.fillText('← → atau sentuh: gerak',W/2,200);
+    ctx.fillText('SPASI atau sentuh kanan: tembak',W/2,218);
+    ctx.fillText('Hindari bom merah!',W/2,236);
+    if(hiScore>0){
+      ctx.font='11px Orbitron,monospace';
+      ctx.fillStyle='#ffe600';
+      ctx.fillText('🏆 REKOR: '+hiScore,W/2,270);
+    }
+    ctx.font='36px serif';
+    ctx.fillText('🚀',W/2,330);
+  }
+
+  function startGame(){
+    score=0;lives=3;level=1;frameCount=0;spawnTimer=0;bossActive=false;bossHP=0;bossMaxHP=0;
+    if(!hiScore)hiScore=0;
+    ship={x:W/2,y:H-60,w:28,h:28,speed:4,dx:0,invincible:0};
+    bullets=[];enemies=[];bombs=[];particles=[];
+    stars=[];
+    for(var i=0;i<60;i++)stars.push({x:Math.random()*W,y:Math.random()*H,s:Math.random()*1.5+0.5,sp:Math.random()*1.5+0.5});
+    gameState='playing';
+    el.querySelector('#ss-msg').innerHTML=`<button class="btn btn-outline btn-sm" onclick="ssQuit()">⏹ BERHENTI</button>`;
+    window.ssQuit=function(){gameState='dead';lives=0;endGame();};
+    updateUI();
+    loop();
+  }
+
+  function setupControls(){
+    var keys={};
+    document.addEventListener('keydown',function(e){
+      if(gameState!=='playing')return;
+      keys[e.key]=true;
+      if(e.key===' '){e.preventDefault();shoot();}
+    });
+    document.addEventListener('keyup',function(e){keys[e.key]=false;});
+    // Store keys on ship after creation
+    window._ssKeys=keys;
+
+    // Touch controls — left half = move, right half = shoot
+    var touchX=null;
+    canvas.addEventListener('touchstart',function(e){
+      e.preventDefault();
+      var t=e.touches[0];
+      var rect=canvas.getBoundingClientRect();
+      var scaleX=W/rect.width;
+      var tx=(t.clientX-rect.left)*scaleX;
+      touchX=tx;
+      if(gameState==='playing'&&tx>W/2)shoot();
+    },{passive:false});
+    canvas.addEventListener('touchmove',function(e){
+      e.preventDefault();
+      var t=e.touches[0];
+      var rect=canvas.getBoundingClientRect();
+      var scaleX=W/rect.width;
+      touchX=(t.clientX-rect.left)*scaleX;
+    },{passive:false});
+    canvas.addEventListener('touchend',function(){touchX=null;});
+    window._ssTouchX=function(){return touchX;};
+  }
+
+  var lastShot=0;
+  function shoot(){
+    var now=Date.now();
+    if(now-lastShot<220)return;
+    lastShot=now;
+    if(!ship)return;
+    bullets.push({x:ship.x,y:ship.y-10,w:4,h:12,speed:9});
+    // double shot at level 3+
+    if(level>=3){
+      bullets.push({x:ship.x-10,y:ship.y,w:3,h:10,speed:9});
+      bullets.push({x:ship.x+10,y:ship.y,w:3,h:10,speed:9});
+    }
+  }
+
+  function spawnEnemy(){
+    var types=['basic','fast','tank','zigzag'];
+    var t;
+    if(level>=4&&Math.random()<0.15)t='tank';
+    else if(level>=2&&Math.random()<0.3)t='fast';
+    else if(level>=3&&Math.random()<0.2)t='zigzag';
+    else t='basic';
+    var e={
+      x:Math.random()*(W-40)+20,y:-24,w:28,h:20,
+      type:t,
+      hp:t==='tank'?3:1,
+      maxHP:t==='tank'?3:1,
+      speed:t==='fast'?2.5:t==='tank'?1:1.5+level*0.15,
+      dx:(t==='zigzag'?((Math.random()>0.5?1:-1)*1.5):0),
+      tick:0,
+      pts:t==='tank'?30:t==='fast'?20:10
+    };
+    enemies.push(e);
+    // enemies drop bombs at level2+
+    if(level>=2&&Math.random()<0.3){
+      setTimeout(function(){
+        if(gameState==='playing'&&e.y>0&&e.y<H)
+          bombs.push({x:e.x,y:e.y,w:10,h:10,speed:3+level*0.3,tick:0});
+      },300+Math.random()*600);
+    }
+  }
+
+  function spawnBoss(){
+    bossActive=true;
+    bossMaxHP=20+level*8;bossHP=bossMaxHP;
+    enemies.push({
+      x:W/2,y:40,w:60,h:44,type:'boss',
+      hp:bossHP,maxHP:bossMaxHP,
+      speed:1.2,dx:1.2,
+      tick:0,pts:500
+    });
+  }
+
+  function addParticles(x,y,col,n){
+    for(var i=0;i<n;i++){
+      var a=Math.random()*Math.PI*2;
+      var spd=1+Math.random()*3;
+      particles.push({x:x,y:y,vx:Math.cos(a)*spd,vy:Math.sin(a)*spd,life:1,col:col||'#ffe600'});
+    }
+  }
+
+  function loop(){
+    if(gameState!=='playing'){return;}
+    animId=requestAnimationFrame(loop);
+    frameCount++;
+    update();
+    draw();
+  }
+
+  function update(){
+    var keys=window._ssKeys||{};
+    var touchX=window._ssTouchX?window._ssTouchX():null;
+
+    // ship movement
+    if(keys['ArrowLeft']||keys['a']||keys['A'])ship.dx=-ship.speed;
+    else if(keys['ArrowRight']||keys['d']||keys['D'])ship.dx=ship.speed;
+    else if(touchX!==null&&touchX<W/2-10)ship.dx=-ship.speed*(1+(W/2-touchX)/120);
+    else if(touchX!==null&&touchX>W/2+10)ship.dx=ship.speed*(1+(touchX-W/2)/120);
+    else ship.dx*=0.7;
+
+    ship.x+=ship.dx;
+    ship.x=Math.max(ship.w/2,Math.min(W-ship.w/2,ship.x));
+    if(ship.invincible>0)ship.invincible--;
+
+    // stars
+    for(var i=0;i<stars.length;i++){stars[i].y+=stars[i].sp;if(stars[i].y>H)stars[i].y=0;}
+
+    // bullets
+    for(var i=bullets.length-1;i>=0;i--){
+      bullets[i].y-=bullets[i].speed;
+      if(bullets[i].y<-20)bullets.splice(i,1);
+    }
+
+    // enemies
+    var spawnRate=Math.max(40,90-level*8);
+    spawnTimer++;
+    if(spawnTimer>=spawnRate&&!bossActive){spawnTimer=0;spawnEnemy();}
+    // boss spawns every 500 frames after level 2
+    if(level>=2&&frameCount%500===0&&!bossActive)spawnBoss();
+
+    for(var i=enemies.length-1;i>=0;i--){
+      var e=enemies[i];
+      e.tick++;
+      if(e.type==='zigzag'){
+        if(e.tick%60===0)e.dx=-e.dx;
+        e.x+=e.dx;
+      } else if(e.type==='boss'){
+        e.x+=e.dx;
+        if(e.x>W-e.w/2||e.x<e.w/2)e.dx=-e.dx;
+        // boss shoots bombs
+        if(e.tick%60===0)bombs.push({x:e.x,y:e.y+e.h/2,w:12,h:12,speed:3,tick:0});
+      }
+      e.y+=e.speed;
+
+      // bullet hit
+      for(var j=bullets.length-1;j>=0;j--){
+        if(collide(bullets[j],e)){
+          bullets.splice(j,1);
+          e.hp--;
+          addParticles(e.x,e.y,'#ff9500',4);
+          if(e.hp<=0){
+            score+=e.pts;
+            if(e.type==='boss')bossActive=false;
+            addParticles(e.x,e.y,'#ffe600',12);
+            enemies.splice(i,1);
+            updateUI();
+            // level up every 300 pts
+            var newLevel=1+Math.floor(score/300);
+            if(newLevel>level){level=newLevel;updateUI();}
+            break;
+          }
+        }
+      }
+      // out of bounds
+      if(i<enemies.length&&enemies[i]&&enemies[i].y>H+30){
+        if(enemies[i].type!=='boss')enemies.splice(i,1);
+      }
+    }
+
+    // bombs
+    for(var i=bombs.length-1;i>=0;i--){
+      bombs[i].y+=bombs[i].speed;
+      bombs[i].tick++;
+      if(bombs[i].y>H+20){bombs.splice(i,1);continue;}
+      if(ship.invincible<=0&&collide(bombs[i],ship)){
+        addParticles(ship.x,ship.y,'#ff4444',10);
+        bombs.splice(i,1);
+        lives--;
+        ship.invincible=120;
+        updateUI();
+        if(lives<=0){endGame();return;}
+      }
+    }
+
+    // particles
+    for(var i=particles.length-1;i>=0;i--){
+      var p=particles[i];
+      p.x+=p.vx;p.y+=p.vy;p.life-=0.04;
+      if(p.life<=0)particles.splice(i,1);
+    }
+
+    // enemy-ship collision
+    if(ship.invincible<=0){
+      for(var i=enemies.length-1;i>=0;i--){
+        if(collide(enemies[i],ship)){
+          addParticles(ship.x,ship.y,'#ff4444',10);
+          enemies.splice(i,1);
+          lives--;ship.invincible=120;
+          updateUI();
+          if(lives<=0){endGame();return;}
+          break;
+        }
+      }
+    }
+  }
+
+  function collide(a,b){
+    return Math.abs(a.x-b.x)<(a.w/2+b.w/2-4)&&Math.abs(a.y-b.y)<(a.h/2+b.h/2-4);
+  }
+
+  function draw(){
+    ctx.fillStyle='#000814';ctx.fillRect(0,0,W,H);
+    // stars
+    for(var i=0;i<stars.length;i++){
+      ctx.fillStyle='rgba(255,255,255,'+Math.min(1,stars[i].s/2)+')';
+      ctx.fillRect(stars[i].x,stars[i].y,stars[i].s,stars[i].s);
+    }
+    // particles
+    for(var i=0;i<particles.length;i++){
+      var p=particles[i];
+      ctx.globalAlpha=p.life;
+      ctx.fillStyle=p.col;
+      ctx.fillRect(p.x-2,p.y-2,4,4);
+    }
+    ctx.globalAlpha=1;
+    // bullets
+    for(var i=0;i<bullets.length;i++){
+      var b=bullets[i];
+      ctx.shadowColor='#00f5ff';ctx.shadowBlur=8;
+      ctx.fillStyle='#00f5ff';
+      ctx.fillRect(b.x-b.w/2,b.y,b.w,b.h);
+    }
+    ctx.shadowBlur=0;
+    // enemies
+    for(var i=0;i<enemies.length;i++){
+      var e=enemies[i];
+      ctx.font=(e.type==='boss'?'40px':'22px')+' serif';
+      ctx.textAlign='center';
+      ctx.fillText(e.type==='boss'?'🛸':e.type==='tank'?'🤖':e.type==='fast'?'💀':'👾',e.x,e.y+8);
+      // HP bar for boss/tank
+      if(e.type==='boss'||e.type==='tank'){
+        var bw=e.type==='boss'?70:34,bh=5;
+        ctx.fillStyle='rgba(255,0,0,.4)';ctx.fillRect(e.x-bw/2,e.y-e.h/2-8,bw,bh);
+        ctx.fillStyle='#39ff14';ctx.fillRect(e.x-bw/2,e.y-e.h/2-8,bw*(e.hp/e.maxHP),bh);
+      }
+    }
+    // bombs
+    for(var i=0;i<bombs.length;i++){
+      var b=bombs[i];
+      ctx.font='14px serif';
+      ctx.textAlign='center';
+      ctx.shadowColor='#ff4444';ctx.shadowBlur=6;
+      ctx.fillText('💣',b.x,b.y+5);
+    }
+    ctx.shadowBlur=0;
+    // ship
+    if(ship){
+      if(ship.invincible>0&&Math.floor(ship.invincible/8)%2===0){/* blink */}
+      else{
+        ctx.font='28px serif';ctx.textAlign='center';
+        ctx.shadowColor='#00f5ff';ctx.shadowBlur=10;
+        ctx.fillText('🚀',ship.x,ship.y+10);
+        ctx.shadowBlur=0;
+      }
+    }
+  }
+
+  function updateUI(){
+    var ui=el.querySelector('#ss-ui');
+    if(!ui)return;
+    ui.innerHTML=`
+      <div class="score-badge" style="border-color:#00f5ff;color:#00f5ff">⭐ ${score}</div>
+      <div class="score-badge">❤️ ${'♥'.repeat(Math.max(0,lives))}</div>
+      <div class="score-badge" style="color:#ffe600">LVL ${level}</div>`;
+  }
+
+  function endGame(){
+    if(animId){cancelAnimationFrame(animId);animId=null;}
+    gameState='over';
+    if(score>hiScore)hiScore=score;
+    el.innerHTML=`<div class="game-area" style="gap:12px">
+      <div style="font-family:Orbitron,monospace;font-size:1.2rem;color:#00f5ff;text-align:center">🚀 GAME OVER</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+        <div class="score-badge" style="border-color:#00f5ff;color:#00f5ff">SKOR: ${score}</div>
+        <div class="score-badge" style="color:#ffe600">LEVEL: ${level}</div>
+      </div>
+      <div style="font-family:Orbitron,monospace;font-size:.75rem;color:#ffe600;text-align:center">🏆 REKOR: ${hiScore}</div>
+      <div class="choice-row">
+        <button class="btn btn-cyan" onclick="ssRestartGame()">🔄 MAIN LAGI</button>
+      </div></div>`;
+    window.ssRestartGame=function(){init();startGame();};
+  }
+
+  init();
+}
+
+// ═══════════════════════════════════════════════════
+// PELAJARAN: KUIS BIOLOGI 🧬
+// ═══════════════════════════════════════════════════
+function initBiologi(el){
+  var SOAL=[
+    {q:'Organel sel yang disebut "pembangkit tenaga" karena menghasilkan ATP adalah...',o:['Ribosom','Mitokondria','Nukleus','Vakuola'],a:1},
+    {q:'Proses fotosintesis terjadi di dalam organel...',o:['Mitokondria','Ribosom','Kloroplas','Badan Golgi'],a:2},
+    {q:'Membran sel tersusun dari lapisan ganda...',o:['Protein','Fosfolipid','Karbohidrat','Selulosa'],a:1},
+    {q:'Organel yang berfungsi sebagai tempat sintesis protein adalah...',o:['Vakuola','Lisosom','Ribosom','Plastida'],a:2},
+    {q:'Sel tumbuhan berbeda dari sel hewan karena memiliki...',o:['Mitokondria','Dinding sel & kloroplas','Ribosom','Membran inti'],a:1},
+    {q:'Proses respirasi aerob menghasilkan...',o:['Glukosa + O₂','CO₂ + H₂O + ATP','O₂ + H₂O','Glukosa + CO₂'],a:1},
+    {q:'DNA terdapat pada bagian sel yang disebut...',o:['Sitoplasma','Ribosom','Nukleus','Membran sel'],a:2},
+    {q:'Hewan yang termasuk kelompok mamalia adalah...',o:['Katak','Buaya','Paus','Penyu'],a:2},
+    {q:'Proses pembelahan sel yang menghasilkan 2 sel anak identik disebut...',o:['Meiosis','Mitosis','Fertilisasi','Diferensiasi'],a:1},
+    {q:'Ekosistem laut dalam didominasi oleh organisme...',o:['Fotosintetik','Kemosintetik','Herbivor','Karnivora darat'],a:1},
+    {q:'Rantai makanan yang benar adalah...',o:['Konsumen → Produsen → Pengurai','Produsen → Konsumen → Pengurai','Pengurai → Konsumen → Produsen','Konsumen → Pengurai → Produsen'],a:1},
+    {q:'Enzim adalah...',o:['Hormon yang mengatur pertumbuhan','Biokatalisator yang mempercepat reaksi kimia','Vitamin yang membantu metabolisme','Lemak struktural membran sel'],a:1},
+    {q:'Jaringan yang berfungsi mengangkut air dari akar ke daun pada tumbuhan disebut...',o:['Floem','Epidermis','Xilem','Meristem'],a:2},
+    {q:'Faktor yang TIDAK mempengaruhi laju fotosintesis adalah...',o:['Intensitas cahaya','Konsentrasi CO₂','Warna rambut','Suhu'],a:2},
+    {q:'Sistem peredaran darah besar bermula dari...',o:['Bilik kanan','Serambi kiri','Bilik kiri','Serambi kanan'],a:2},
+    {q:'Virus berbeda dari organisme hidup lain karena...',o:['Memiliki membran sel','Tidak memiliki sel, hanya protein + asam nukleat','Tidak bisa bereproduksi','Bisa membuat makanan sendiri'],a:1},
+    {q:'Mutualisme adalah hubungan antara dua organisme di mana...',o:['Keduanya dirugikan','Satu untung, satu tidak terpengaruh','Keduanya mendapat manfaat','Satu untung, satu dirugikan'],a:2},
+    {q:'Hormon yang berfungsi menurunkan kadar gula darah adalah...',o:['Glukagon','Adrenalin','Insulin','Tiroksin'],a:2},
+    {q:'Reproduksi vegetatif buatan pada tumbuhan contohnya adalah...',o:['Penyerbukan','Cangkok','Pembuahan','Perkecambahan'],a:1},
+    {q:'Tulang yang berfungsi sebagai tempat produksi sel darah merah adalah...',o:['Tulang kompak','Tulang rawan','Sumsum tulang merah','Periosteum'],a:2},
+    {q:'Organisme yang mendapatkan energi dengan mengurai sisa organisme mati disebut...',o:['Produsen','Konsumen primer','Dekomposer','Predator'],a:2},
+    {q:'Proses meiosis terjadi pada...',o:['Sel tubuh (somatik)','Sel kelamin (gamet)','Sel otak','Sel kulit'],a:1},
+    {q:'Klorofil berwarna hijau karena...',o:['Menyerap semua spektrum cahaya','Memantulkan cahaya merah','Menyerap merah & biru, memantulkan hijau','Menyerap cahaya hijau'],a:2},
+    {q:'Bioma yang dicirikan curah hujan sangat rendah (<250 mm/tahun) adalah...',o:['Hutan hujan tropis','Tundra','Sabana','Gurun'],a:3},
+    {q:'Sistem saraf pusat pada manusia terdiri dari...',o:['Otak & sumsum tulang belakang','Saraf tepi & ganglia','Otak & jantung','Sumsum tulang merah & limpa'],a:0},
+    {q:'Proses di mana organisme mengubah CO₂ menjadi glukosa menggunakan energi matahari disebut...',o:['Respirasi','Fotosintesis','Fermentasi','Transpirasi'],a:1},
+    {q:'Hukum pewarisan sifat pertama Mendel (Hukum Segregasi) menyatakan bahwa...',o:['Dua gen berbeda diwariskan bebas','Setiap gamet hanya membawa satu alel dari setiap pasangan','Semua sifat dominan selalu muncul','Gen terpaut kromosom X diwariskan secara khusus'],a:1},
+    {q:'Organ yang menghasilkan empedu untuk membantu pencernaan lemak adalah...',o:['Pankreas','Lambung','Hati','Usus halus'],a:2},
+    {q:'Sel darah merah (eritrosit) tidak memiliki inti sel. Hal ini bertujuan untuk...',o:['Lebih mudah menghancurkan bakteri','Memaksimalkan ruang angkut hemoglobin & O₂','Mempercepat pembelahan sel','Meningkatkan ketahanan terhadap infeksi'],a:1},
+    {q:'Hubungan antara kutu yang hidup di kepala manusia dan merugikan manusia disebut...',o:['Mutualisme','Komensalisme','Parasitisme','Predasi'],a:2},
+  ];
+
+  var sessionQ=[],qi=0,score=0,wrong=0,answered=0,hi=0;
+  var timerInterval=null,timeLeft=0;
+
+  function shuffle(arr){var a=arr.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+
+  function renderMenu(){
+    if(timerInterval){clearInterval(timerInterval);timerInterval=null;}
+    el.innerHTML=`<div class="game-area" style="gap:14px;padding:20px">
+      <div style="font-family:Orbitron,monospace;font-size:1rem;font-weight:900;color:#39ff14;text-align:center">🧬 KUIS BIOLOGI</div>
+      <div style="font-size:.75rem;color:rgba(237,225,255,.55);text-align:center;line-height:1.6">Uji pengetahuan biologi kamu!<br>Sel · Ekologi · Genetika · Fisiologi</div>
+      <div style="font-size:.65rem;color:rgba(57,255,20,.6);font-family:Orbitron,monospace;text-align:center">30 SOAL TERSEDIA · 10 SOAL PER SESI · 20 DETIK/SOAL</div>
+      ${hi>0?`<div style="font-family:Orbitron,monospace;font-size:.72rem;color:#ffe600;text-align:center">🏆 REKOR: ${hi}/10</div>`:''}
+      <button class="btn btn-cyan" onclick="bioStart()">🧬 MULAI KUIS</button>
+    </div>`;
+    window.bioStart=function(){startQuiz();};
+  }
+
+  function startQuiz(){
+    if(timerInterval){clearInterval(timerInterval);timerInterval=null;}
+    sessionQ=shuffle(SOAL).slice(0,10);
+    qi=0;score=0;wrong=0;answered=0;
+    showQuestion();
+  }
+
+  function showQuestion(){
+    if(timerInterval){clearInterval(timerInterval);timerInterval=null;}
+    if(qi>=sessionQ.length){endQuiz();return;}
+    var q=sessionQ[qi];
+    timeLeft=20;
+    renderQuestion(q);
+    timerInterval=setInterval(function(){
+      timeLeft--;
+      var tEl=document.getElementById('bio-timer');
+      if(tEl){tEl.textContent='⏱ '+timeLeft+'s';tEl.style.color=timeLeft<=5?'#ff4444':'#39ff14';}
+      if(timeLeft<=0){
+        clearInterval(timerInterval);timerInterval=null;
+        // time up — count as wrong
+        wrong++;answered++;
+        highlightAnswer(-1,q.a);
+        setTimeout(function(){qi++;showQuestion();},1200);
+      }
+    },1000);
+  }
+
+  function renderQuestion(q){
+    var progress=qi+1;
+    el.innerHTML=`<div class="game-area" style="gap:10px;padding:14px">
+      <div style="display:flex;justify-content:space-between;align-items:center;width:100%;gap:8px">
+        <div class="score-badge" style="border-color:#39ff14;color:#39ff14">✅ ${score}</div>
+        <div class="score-badge" id="bio-timer" style="color:#39ff14">⏱ ${timeLeft}s</div>
+        <div class="score-badge">❌ ${wrong}</div>
+        <div class="score-badge" style="color:rgba(237,225,255,.5)">${progress}/10</div>
+      </div>
+      <div style="width:100%;height:4px;background:rgba(57,255,20,.15);border-radius:2px">
+        <div style="height:4px;background:#39ff14;border-radius:2px;width:${progress/10*100}%;transition:width .3s"></div>
+      </div>
+      <div class="quiz-question" style="border-color:rgba(57,255,20,.2);text-align:left">${q.q}</div>
+      <div class="quiz-options" style="width:100%">
+        ${q.o.map((opt,i)=>`<button class="quiz-opt" id="bio-opt-${i}" onclick="bioAnswer(${i})">${String.fromCharCode(65+i)}. ${opt}</button>`).join('')}
+      </div>
+    </div>`;
+    window.bioAnswer=function(idx){
+      clearInterval(timerInterval);timerInterval=null;
+      var correct=idx===q.a;
+      if(correct)score++;else wrong++;
+      answered++;
+      highlightAnswer(idx,q.a);
+      setTimeout(function(){qi++;showQuestion();},1100);
+    };
+  }
+
+  function highlightAnswer(chosen,correct){
+    for(var i=0;i<4;i++){
+      var btn=document.getElementById('bio-opt-'+i);
+      if(!btn)continue;
+      btn.onclick=null;
+      if(i===correct)btn.className='quiz-opt correct';
+      else if(i===chosen&&chosen!==correct)btn.className='quiz-opt wrong';
+    }
+  }
+
+  function endQuiz(){
+    if(timerInterval){clearInterval(timerInterval);timerInterval=null;}
+    if(score>hi)hi=score;
+    var pct=Math.round(score/10*100);
+    var grade=pct>=90?'🌟 SEMPURNA!':pct>=70?'🎉 BAGUS!':pct>=50?'👍 CUKUP':pct>=30?'📚 Perlu belajar lagi':'💪 Ayo semangat!';
+    el.innerHTML=`<div class="game-area" style="gap:12px">
+      <div style="font-family:Orbitron,monospace;font-size:1rem;color:#39ff14;text-align:center">🧬 SELESAI!</div>
+      <div style="font-family:Orbitron,monospace;font-size:1.4rem;color:#ffe600;text-align:center">${score}/10</div>
+      <div style="font-size:.85rem;color:rgba(237,225,255,.7);text-align:center">${grade}</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+        <div class="score-badge" style="border-color:#39ff14;color:#39ff14">BENAR: ${score}</div>
+        <div class="score-badge" style="color:#ff4444">SALAH: ${wrong}</div>
+        <div class="score-badge" style="color:#ffe600">SKOR: ${pct}%</div>
+      </div>
+      <div style="font-family:Orbitron,monospace;font-size:.7rem;color:#ffe600;text-align:center">🏆 REKOR: ${hi}/10</div>
+      <div class="choice-row">
+        <button class="btn btn-cyan" onclick="bioStart()">🔄 MAIN LAGI</button>
+        <button class="btn btn-outline btn-sm" onclick="bioMenu()">🏠 MENU</button>
+      </div></div>`;
+    window.bioStart=function(){startQuiz();};
+    window.bioMenu=function(){renderMenu();};
+  }
 
   renderMenu();
 }
