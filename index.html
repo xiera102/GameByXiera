@@ -1148,6 +1148,26 @@ function svgLogicGrid(s){s.innerHTML=`<rect width="100%" height="100%" fill="#00
 // ═══════════════════════════════════════════════════
 // GAME DEFINITIONS
 // ═══════════════════════════════════════════════════
+function svgColorMatch(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0a1020"/>
+<rect x="14" y="14" width="36" height="36" rx="6" fill="#ff006e" opacity=".85"/>
+<rect x="58" y="14" width="36" height="36" rx="6" fill="#00f5ff" opacity=".85"/>
+<rect x="102" y="14" width="36" height="36" rx="6" fill="#39ff14" opacity=".85"/>
+<rect x="146" y="14" width="36" height="36" rx="6" fill="#ffe600" opacity=".85"/>
+<rect x="14" y="60" width="36" height="36" rx="6" fill="#bf5af2" opacity=".85"/>
+<rect x="58" y="60" width="36" height="36" rx="6" fill="#ff9500" opacity=".85"/>
+<rect x="102" y="60" width="36" height="36" rx="6" fill="#ff006e" opacity=".4" stroke="#ff006e" stroke-width="2"/>
+<rect x="146" y="60" width="36" height="36" rx="6" fill="#00f5ff" opacity=".4" stroke="#00f5ff" stroke-width="2"/>
+<text x="50%" y="94%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#c084fc" opacity=".6">COCOKKAN WARNA!</text>`;}
+
+function svgOtomotif(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0d1520"/>
+<text x="50%" y="22%" dominant-baseline="middle" text-anchor="middle" font-size="20">🚗</text>
+<rect x="14" y="36" width="160" height="46" rx="5" fill="rgba(0,245,255,.05)" stroke="rgba(0,245,255,.18)" stroke-width="1"/>
+<text x="94" y="52" dominant-baseline="middle" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="8" fill="rgba(0,245,255,.7)">Fungsi karburator?</text>
+<text x="94" y="66" dominant-baseline="middle" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="7" fill="rgba(224,232,255,.4)">A. Mencampur bahan bakar & udara</text>
+<rect x="14" y="88" width="160" height="14" rx="4" fill="rgba(0,245,255,.08)" stroke="rgba(0,245,255,.3)" stroke-width="1"/>
+<text x="94" y="96" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#00f5ff" opacity=".9">⚙️ TEKNIK OTOMOTIF</text>
+<text x="50%" y="97%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="6" fill="#39ff14" opacity=".5">50 SOAL TERSEDIA</text>`;}
+
 function svgWhack(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0a0520"/>
 ${[0,1,2,3,4,5,6,7,8].map((i)=>{const c=i%3,r=Math.floor(i/3),x=20+c*56,y=12+r*34;
 const active=i===4;
@@ -1176,6 +1196,7 @@ const games=[
   {id:'flappy',tag:'ARCADE',name:'Flappy Pixel',desc:'Terbang melewati pipa tanpa menyentuh!',color:'#39ff14',thumb:svgFlappy,group:'game'},
   {id:'breakout',tag:'ARCADE',name:'Breakout',desc:'Hancurkan semua blok dengan bola!',color:'#ffe600',thumb:svgBreakout,group:'game'},
   {id:'whackamole',tag:'ARCADE',name:'Whack-a-Mole',desc:'Pukul tikus yang muncul secepat mungkin!',color:'#c084fc',thumb:svgWhack,group:'game'},
+  {id:'colormatch',tag:'REFLEKS',name:'Color Match',desc:'Cocokkan warna dengan cepat sebelum waktu habis!',color:'#ff006e',thumb:svgColorMatch,group:'game'},
   // ── KELOMPOK: BELAJAR ──
   {id:'quiz',tag:'EDUKASI',name:'Kuis Sains',desc:'100 soal sains, random 10 per sesi.',color:'#00f5ff',thumb:svgQuiz,group:'belajar'},
   {id:'sudoku',tag:'LOGIKA',name:'Sudoku',desc:'Isi 9×9 grid tanpa angka ganda.',color:'#39ff14',thumb:svgSudoku,group:'belajar'},
@@ -1189,6 +1210,7 @@ const games=[
   {id:'simon',tag:'MEMORI',name:'Simon Says',desc:'Ikuti urutan warna & suara yang makin panjang!',color:'#ff1493',thumb:svgSimon,group:'belajar'},
   {id:'pattern',tag:'LOGIKA',name:'Pola Urutan',desc:'Temukan pola dan pilih jawaban yang tepat!',color:'#bf5af2',thumb:svgPattern,group:'belajar'},
   {id:'logicgrid',tag:'DEDUKSI',name:'Grid Logika',desc:'Gunakan petunjuk untuk memecahkan teka-teki deduksi!',color:'#00f5ff',thumb:svgLogicGrid,group:'belajar'},
+  {id:'otomotif',tag:'OTOMOTIF',name:'Teknik Otomotif',desc:'50 soal tentang mesin, sistem kendaraan & otomotif!',color:'#00f5ff',thumb:svgOtomotif,group:'belajar'},
 ];
 // ═══════════════════════════════════════════════════
 const gameGames = games.filter(g=>g.group==='game');
@@ -1256,7 +1278,7 @@ function openGame(id){
     wordle:initWordle,g2048:init2048,typing:initTyping,hangman:initHangman,
     rpg:initRPG,mario:initMario,pong:initPong,flappy:initFlappy,breakout:initBreakout,
     kraeplin:initKraeplin,logmath:initLogMath,aritmatika:initAritmatika,dasarmath:initDasarMath,soalcerita:initSoalCerita,
-    simon:initSimon,pattern:initPattern,logicgrid:initLogicGrid,whackamole:initWhackAMole};
+    simon:initSimon,pattern:initPattern,logicgrid:initLogicGrid,whackamole:initWhackAMole,colormatch:initColorMatch,otomotif:initOtomotif};
   if(map[id]) map[id](body);
 }
 function closeModal(){
@@ -4389,6 +4411,282 @@ function initLogicGrid(el){
 
   pickPuzzle();
   renderPuzzle();
+}
+
+// ═══════════════════════════════════════════════════
+// GAME: COLOR MATCH
+// ═══════════════════════════════════════════════════
+function initColorMatch(el){
+  const COLORS=[
+    {name:'MERAH',bg:'#ff006e',text:'#fff'},
+    {name:'BIRU',bg:'#00f5ff',text:'#000'},
+    {name:'HIJAU',bg:'#39ff14',text:'#000'},
+    {name:'KUNING',bg:'#ffe600',text:'#000'},
+    {name:'UNGU',bg:'#bf5af2',text:'#fff'},
+    {name:'ORANYE',bg:'#ff9500',text:'#000'},
+    {name:'PUTIH',bg:'#ffffff',text:'#000'},
+    {name:'PINK',bg:'#ff69b4',text:'#fff'},
+  ];
+  let score=0,lives=3,timeLeft=60,timer=null,currentWord='',currentBg='',correctColor='';
+  let roundActive=false;
+
+  function randomColor(){return COLORS[Math.floor(Math.random()*COLORS.length)];}
+
+  function newRound(){
+    const wordColor=randomColor();
+    const bgColor=randomColor();
+    // The background color is the "question" — does the word TEXT match the background?
+    // Player must answer YES or NO
+    const match=Math.random()<0.5;
+    if(match){
+      currentWord=bgColor.name;
+      currentBg=bgColor.bg;
+      correctColor='YA';
+    } else {
+      let diff;
+      do{diff=randomColor();}while(diff.name===bgColor.name);
+      currentWord=diff.name;
+      currentBg=bgColor.bg;
+      correctColor='TIDAK';
+    }
+    roundActive=true;
+    renderGame();
+  }
+
+  function renderGame(msg=''){
+    el.innerHTML=`<div class="game-area" style="gap:12px">
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <div class="score-badge" style="border-color:var(--ng);color:var(--ng)">⭐ SKOR: ${score}</div>
+        <div class="score-badge" style="border-color:var(--np);color:var(--np)">❤️ NYAWA: ${lives}</div>
+        <div class="score-badge" style="border-color:${timeLeft<=10?'#ff006e':'var(--nc)'}">⏱ ${timeLeft}s</div>
+      </div>
+      ${msg?`<div style="font-family:Orbitron,monospace;font-size:.9rem;text-align:center;color:${msg.ok?'var(--ng)':'var(--np)'};min-height:22px">${msg.txt}</div>`:'<div style="min-height:22px"></div>'}
+      <div style="font-size:.72rem;color:rgba(237,225,255,.45);font-family:Orbitron,monospace;text-align:center;letter-spacing:.15em">APAKAH NAMA WARNA = WARNA LATAR?</div>
+      <div style="background:${currentBg};border-radius:12px;padding:24px 40px;min-width:180px;text-align:center;box-shadow:0 0 24px ${currentBg}88">
+        <span style="font-family:Orbitron,monospace;font-size:1.6rem;font-weight:900;color:#111;text-shadow:1px 1px 0 rgba(255,255,255,.5),-1px -1px 0 rgba(0,0,0,.3)">${currentWord}</span>
+      </div>
+      <div style="display:flex;gap:14px;justify-content:center">
+        <button onclick="cmAnswer('YA')" class="btn btn-cyan" style="font-size:1rem;padding:12px 28px;min-width:90px">✅ YA</button>
+        <button onclick="cmAnswer('TIDAK')" class="btn btn-pink" style="font-size:1rem;padding:12px 28px;min-width:90px">❌ TIDAK</button>
+      </div>
+      <div style="font-size:.65rem;color:rgba(237,225,255,.3);text-align:center;font-family:Orbitron,monospace">LEVEL: ${Math.floor(score/5)+1} | COMBO BONUS TIAP 5 BENAR!</div>
+    </div>`;
+  }
+
+  function renderStart(){
+    el.innerHTML=`<div class="game-area" style="gap:14px">
+      <div style="font-size:2.5rem;text-align:center">🎨</div>
+      <div class="game-msg">COLOR MATCH</div>
+      <div style="font-size:.82rem;color:rgba(237,225,255,.5);text-align:center;max-width:280px;line-height:1.6">
+        Lihat warna latar kotak.<br>Apakah <b style="color:var(--nc)">nama warna yang tertulis</b><br>sama dengan warna latarnya?<br>Jawab <b style="color:var(--ng)">YA</b> atau <b style="color:var(--np)">TIDAK</b> secepat mungkin!
+      </div>
+      <button class="btn btn-cyan" onclick="cmStart()">▶ MULAI MAIN</button>
+    </div>`;
+  }
+
+  function renderEnd(){
+    clearInterval(timer);
+    el.innerHTML=`<div class="game-area" style="gap:12px">
+      <div style="font-size:2rem;text-align:center">🏁</div>
+      <div class="result-banner ${score>=20?'result-win':score>=10?'result-tie':'result-lose'}">SKOR: ${score}</div>
+      <div style="font-size:.8rem;color:rgba(237,225,255,.5);text-align:center">
+        ${score>=20?'🔥 LUAR BIASA! Refleks kamu mantap!':score>=10?'👏 Bagus! Terus latih refleksmu!':'💪 Terus berlatih ya!'}
+      </div>
+      <button class="btn btn-cyan" onclick="cmStart()">🔄 MAIN LAGI</button>
+    </div>`;
+  }
+
+  window.cmStart=function(){
+    score=0;lives=3;timeLeft=60;roundActive=false;
+    clearInterval(timer);
+    timer=setInterval(function(){
+      timeLeft--;
+      if(timeLeft<=0){clearInterval(timer);renderEnd();}
+      else{
+        const tEl=el.querySelector && [...el.querySelectorAll('.score-badge')].find(b=>b.textContent.includes('⏱'));
+        if(tEl){tEl.textContent='⏱ '+timeLeft+'s';tEl.style.borderColor=timeLeft<=10?'#ff006e':'var(--nc)';}
+      }
+    },1000);
+    newRound();
+  };
+
+  window.cmAnswer=function(ans){
+    if(!roundActive)return;
+    roundActive=false;
+    if(ans===correctColor){
+      score++;
+      const bonus=score>0&&score%5===0;
+      if(bonus)score+=2;
+      renderGame({ok:true,txt:bonus?'🔥 COMBO +3! BENAR!':'✅ BENAR! +1'});
+    } else {
+      lives--;
+      renderGame({ok:false,txt:'❌ SALAH! Jawabannya '+correctColor});
+      if(lives<=0){clearInterval(timer);setTimeout(renderEnd,800);return;}
+    }
+    setTimeout(newRound,600);
+  };
+
+  renderStart();
+}
+
+// ═══════════════════════════════════════════════════
+// PELAJARAN: TEKNIK OTOMOTIF
+// ═══════════════════════════════════════════════════
+function initOtomotif(el){
+  const SOAL=[
+    // MESIN & PEMBAKARAN
+    {q:'Apa fungsi karburator pada mesin bensin konvensional?',o:['Mencampur bahan bakar dan udara','Menghasilkan percikan api','Memompa oli mesin','Mengatur tekanan gas buang'],a:0,kat:'Mesin'},
+    {q:'Sistem EFI (Electronic Fuel Injection) berfungsi untuk?',o:['Mengatur pengapian secara manual','Menyuplai bahan bakar secara elektronik & presisi','Mengatur sistem pengereman','Mengontrol tekanan ban'],a:1,kat:'Mesin'},
+    {q:'Apa yang dimaksud dengan timing pengapian?',o:['Waktu oli diganti','Waktu busi memercikkan api sebelum piston TMA','Jadwal service berkala','Waktu filter udara dibersihkan'],a:1,kat:'Mesin'},
+    {q:'Singkatan TDC (TMA) dalam mesin adalah?',o:['Top Dead Center — titik mati atas piston','Torsi Dalam Crankshaft','Total Drive Capacity','Time Drive Cycle'],a:0,kat:'Mesin'},
+    {q:'Fungsi piston pada mesin 4-tak adalah?',o:['Menyimpan bahan bakar','Mengubah tekanan gas menjadi gerak putar via poros engkol','Menghasilkan listrik','Menyaring udara masuk'],a:1,kat:'Mesin'},
+    {q:'Pada mesin 4-tak, urutan langkah kerja yang benar adalah?',o:['Hisap-Kompresi-Usaha-Buang','Kompresi-Hisap-Usaha-Buang','Usaha-Hisap-Kompresi-Buang','Buang-Usaha-Kompresi-Hisap'],a:0,kat:'Mesin'},
+    {q:'Apa fungsi ring piston pada mesin?',o:['Menutup kepala silinder','Mencegah kebocoran kompresi & oli ke ruang bakar','Menyalurkan bahan bakar','Mengatur putaran mesin'],a:1,kat:'Mesin'},
+    {q:'Kompresi mesin yang terlalu rendah menandakan?',o:['Mesin terlalu kencang','Keausan ring piston atau katup bocor','Bahan bakar terlalu banyak','Aki lemah'],a:1,kat:'Mesin'},
+    {q:'Apa itu stroke pada mesin kendaraan?',o:['Jumlah silinder','Jarak tempuh piston dari TMA ke TMB atau sebaliknya','Volume tangki bahan bakar','Diameter roda'],a:1,kat:'Mesin'},
+    {q:'Mesin DOHC memiliki berapa camshaft per bank silinder?',o:['1 camshaft','2 camshaft (intake & exhaust)','3 camshaft','4 camshaft'],a:1,kat:'Mesin'},
+    // SISTEM TRANSMISI & KOPLING
+    {q:'Fungsi kopling (clutch) pada kendaraan manual adalah?',o:['Mempercepat putaran mesin','Memutus & menghubungkan tenaga dari mesin ke transmisi','Mengatur tekanan ban','Mendinginkan mesin'],a:1,kat:'Transmisi'},
+    {q:'Apa yang terjadi jika kampas kopling habis?',o:['Konsumsi BBM berkurang','Kopling selip sehingga tenaga tidak tersalur optimal','Mesin menjadi lebih bertenaga','Rem menjadi lebih pakem'],a:1,kat:'Transmisi'},
+    {q:'Transmisi CVT (Continuously Variable Transmission) bekerja menggunakan?',o:['Roda gigi konvensional','Sabuk/belt & puli yang dapat berubah diameter','Rantai dan sproket','Poros kardan langsung'],a:1,kat:'Transmisi'},
+    {q:'Differential (gardan) berfungsi untuk?',o:['Menyimpan oli transmisi','Membagi & membedakan putaran roda kiri-kanan saat belok','Mengatur tekanan rem','Menstabilkan kemudi'],a:1,kat:'Transmisi'},
+    {q:'Apa fungsi syncromesh pada transmisi manual?',o:['Menyinkronkan putaran gigi agar perpindahan halus','Mengunci gigi mundur','Mengatur tekanan oli transmisi','Mendinginkan kopling'],a:0,kat:'Transmisi'},
+    {q:'Rasio gigi 1 lebih besar dari gigi 4 artinya?',o:['Kecepatan lebih tinggi di gigi 1','Torsi lebih besar di gigi 1, namun kecepatan lebih rendah','Konsumsi BBM lebih hemat di gigi 1','Mesin bekerja lebih ringan di gigi 1'],a:1,kat:'Transmisi'},
+    {q:'Apa itu final drive ratio?',o:['Perbandingan gigi antara poros input dan output gardan','Rasio kompresi mesin','Perbandingan tekanan ban depan-belakang','Besar sudut belok kemudi'],a:0,kat:'Transmisi'},
+    // SISTEM REM
+    {q:'Rem cakram (disc brake) bekerja dengan cara?',o:['Menekan tromol dari luar','Menekan kampas rem ke piringan/rotor yang berputar','Mengalirkan minyak rem ke tromol','Menggunakan kawat baja'],a:1,kat:'Rem'},
+    {q:'ABS (Anti-lock Braking System) mencegah?',o:['Rem blong saat kampas habis','Roda terkunci saat pengereman mendadak agar kemudi tetap terkontrol','Mesin mati mendadak','Oli rem habis'],a:1,kat:'Rem'},
+    {q:'Minyak rem harus diganti secara berkala karena?',o:['Warnanya berubah','Bersifat higroskopis — menyerap air sehingga titik didih turun','Harganya murah','Tidak ada efek negatif jika tidak diganti'],a:1,kat:'Rem'},
+    {q:'Gejala rem blong disebabkan oleh?',o:['Ban kempes','Udara masuk ke sistem rem hidrolik (angin palsu)','Oli mesin habis','Filter udara kotor'],a:1,kat:'Rem'},
+    {q:'EBD (Electronic Brake Distribution) berfungsi?',o:['Membagi tenaga mesin','Mendistribusikan tenaga pengereman optimal ke tiap roda','Mengatur volume suara','Menyeimbangkan tekanan ban'],a:1,kat:'Rem'},
+    // SISTEM SUSPENSI & KEMUDI
+    {q:'Fungsi suspensi pada kendaraan adalah?',o:['Menggerakkan roda','Meredam getaran & kejutan dari jalan agar penumpang nyaman','Mendinginkan mesin','Menyimpan energi listrik'],a:1,kat:'Suspensi'},
+    {q:'Shock absorber (damper) berfungsi?',o:['Menyimpan energi pegas','Meredam osilasi pegas agar tidak terus memantul','Mengangkat bodi kendaraan','Mengatur camber roda'],a:1,kat:'Suspensi'},
+    {q:'Apa yang dimaksud dengan camber angle?',o:['Sudut belok roda saat kemudi diputar','Kemiringan roda terhadap sumbu vertikal bila dilihat dari depan','Tekanan ban saat bergerak','Ketinggian ground clearance'],a:1,kat:'Suspensi'},
+    {q:'Power steering hidrolik menggunakan apa sebagai penguat?',o:['Motor listrik','Tekanan fluida hidrolik dari pompa power steering','Tekanan angin kompresor','Energi baterai'],a:1,kat:'Kemudi'},
+    {q:'Wheel alignment meliputi pengaturan?',o:['Tekanan ban saja','Camber, caster, toe, dan thrust angle','Ukuran velg','Kecepatan angin masuk'],a:1,kat:'Suspensi'},
+    // SISTEM KELISTRIKAN
+    {q:'Fungsi alternator pada kendaraan?',o:['Menyimpan listrik','Mengubah energi mekanik mesin menjadi listrik untuk mengisi aki','Mengatur suhu mesin','Memompa bahan bakar'],a:1,kat:'Kelistrikan'},
+    {q:'Busi (spark plug) berfungsi untuk?',o:['Menyaring bahan bakar','Menciptakan percikan api untuk membakar campuran bahan bakar-udara','Mengatur aliran listrik','Mendinginkan ruang bakar'],a:1,kat:'Kelistrikan'},
+    {q:'Apa yang menyebabkan aki tekor?',o:['Ban kempes','Alternator rusak, kebocoran arus, atau pemakaian listrik berlebih saat mesin mati','Oli mesin habis','Tekanan ban tinggi'],a:1,kat:'Kelistrikan'},
+    {q:'Sekring (fuse) pada kendaraan berfungsi?',o:['Memperkuat arus listrik','Memutus arus secara otomatis saat terjadi korsleting/kelebihan arus','Menyimpan daya cadangan','Mengatur tegangan aki'],a:1,kat:'Kelistrikan'},
+    {q:'CAN Bus (Controller Area Network) pada kendaraan modern digunakan untuk?',o:['Mengontrol saluran TV mobil','Komunikasi data antar-ECU & modul elektronik','Mengatur suhu AC','Menghitung konsumsi BBM saja'],a:1,kat:'Kelistrikan'},
+    {q:'ECU (Engine Control Unit) berfungsi?',o:['Menyimpan bensin','Mengontrol berbagai parameter mesin secara elektronik','Mengatur tekanan ban','Mendinginkan komponen listrik'],a:1,kat:'Kelistrikan'},
+    // SISTEM PENDINGIN & PELUMASAN
+    {q:'Fungsi thermostat pada sistem pendingin mesin?',o:['Memompa air pendingin','Mengatur aliran air pendingin berdasarkan suhu mesin','Mendinginkan oli','Mengatur tekanan ban'],a:1,kat:'Pendingin'},
+    {q:'Overheating pada mesin dapat disebabkan oleh?',o:['Ban kempes','Radiator tersumbat, coolant habis, atau kipas tidak bekerja','Aki lemah','Knalpot bocor'],a:1,kat:'Pendingin'},
+    {q:'Fungsi oli mesin selain melumasi adalah?',o:['Hanya melumasi saja','Melumasi, mendinginkan, membersihkan, dan mencegah korosi komponen','Menyimpan energi','Menghasilkan tenaga tambahan'],a:1,kat:'Pelumasan'},
+    {q:'Oli SAE 10W-40 — angka "10W" menunjukkan?',o:['Volume oli dalam liter','Viskositas oli pada suhu dingin (W = Winter)','Merk oli','Interval penggantian oli'],a:1,kat:'Pelumasan'},
+    {q:'Apa fungsi oil pressure warning light di dashboard?',o:['Menandakan oli perlu ditambah air','Memberi peringatan tekanan oli mesin turun di bawah batas aman','Menandakan mesin overheat','Menandakan baterai lemah'],a:1,kat:'Pelumasan'},
+    // SISTEM BAHAN BAKAR
+    {q:'Fuel pump (pompa bahan bakar) berfungsi?',o:['Menyaring bahan bakar','Memompa bahan bakar dari tangki ke injektor/karburator','Mengatur tekanan knalpot','Mendinginkan bahan bakar'],a:1,kat:'Bahan Bakar'},
+    {q:'Knocking/detonasi pada mesin sering terjadi karena?',o:['Oli mesin terlalu banyak','Oktan bahan bakar terlalu rendah untuk rasio kompresi mesin','Filter udara kotor','Aki lemah'],a:1,kat:'Bahan Bakar'},
+    {q:'Angka oktan (RON) pada bahan bakar menunjukkan?',o:['Jumlah karbon dalam BBM','Ketahanan bahan bakar terhadap detonasi (knocking)','Volume bahan bakar','Kandungan sulfur'],a:1,kat:'Bahan Bakar'},
+    {q:'Emisi gas buang CO yang tinggi menandakan?',o:['Campuran bahan bakar terlalu kurus (lean)','Campuran bahan bakar terlalu kaya (rich) — pembakaran tidak sempurna','Filter oli kotor','Tekanan ban rendah'],a:1,kat:'Bahan Bakar'},
+    // DIAGNOSIS & PERAWATAN
+    {q:'OBD-II (On-Board Diagnostic) digunakan untuk?',o:['Mengisi bahan bakar','Membaca kode kesalahan sistem kendaraan via scanner','Mengukur tekanan ban','Mengatur ketinggian suspensi'],a:1,kat:'Diagnosa'},
+    {q:'DTC (Diagnostic Trouble Code) adalah?',o:['Nama model kendaraan','Kode numerik/alfanumerik yang menunjukkan lokasi & jenis kerusakan','Kode produksi mesin','Nomor seri aki'],a:1,kat:'Diagnosa'},
+    {q:'Pemeriksaan tekanan kompresi mesin dilakukan menggunakan?',o:['Manometer ban','Compression tester (kompresi tester)','Multimeter','Timing light'],a:1,kat:'Diagnosa'},
+    {q:'Apa yang dimaksud dengan tune-up mesin?',o:['Mengganti mesin baru','Pemeriksaan & penyetelan berkala komponen mesin agar performanya optimal','Mencuci eksterior kendaraan','Mengisi bensin full-tank'],a:1,kat:'Diagnosa'},
+    {q:'Apa fungsi catalytic converter pada sistem pembuangan?',o:['Memperkeras suara knalpot','Mengubah gas berbahaya (CO, HC, NOx) menjadi gas yang lebih aman','Meningkatkan tenaga mesin','Menghemat bahan bakar'],a:1,kat:'Diagnosa'},
+    {q:'Kendaraan hybrid menggunakan kombinasi?',o:['Mesin diesel & bensin','Mesin bensin/diesel & motor listrik yang dapat saling bekerja sama','Dua mesin bensin','Baterai saja tanpa mesin'],a:1,kat:'Teknologi'},
+    {q:'Torsi pada mesin adalah?',o:['Kecepatan putaran mesin (RPM)','Gaya puntir yang dihasilkan mesin, diukur dalam Nm','Daya maksimal mesin','Kapasitas tangki bahan bakar'],a:1,kat:'Mesin'},
+    {q:'Rasio kompresi mesin bensin standar umumnya berkisar?',o:['1:1 hingga 3:1','8:1 hingga 12:1','15:1 hingga 22:1','30:1 hingga 50:1'],a:1,kat:'Mesin'},
+    {q:'Apa itu Torque Converter pada transmisi otomatis?',o:['Kunci kontak otomatis','Kopling hidrolik yang menggantikan fungsi kopling mekanis di transmisi AT','Pengunci diferensial','Pengatur tekanan oli transmisi'],a:1,kat:'Transmisi'},
+    {q:'VVT-i (Variable Valve Timing intelligence) Toyota berfungsi?',o:['Mengatur putaran turbo','Mengoptimalkan waktu buka-tutup katup mesin sesuai kondisi berkendara','Mengatur kecepatan kipas radiator','Menstabilkan sistem ABS'],a:1,kat:'Mesin'},
+  ];
+
+  let idx=0,score=0,answered=false,sessionQ=[],total=10;
+
+  function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+  function startQuiz(){
+    sessionQ=shuffle(SOAL).slice(0,total);
+    idx=0;score=0;answered=false;
+    renderQ();
+  }
+
+  function renderQ(){
+    const q=sessionQ[idx];
+    answered=false;
+    el.innerHTML=`<div class="game-area" style="gap:12px;min-height:320px">
+      <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+        <div class="score-badge" style="border-color:var(--ng);color:var(--ng)">✅ BENAR: ${score}</div>
+        <div class="score-badge">📋 SOAL: ${idx+1}/${total}</div>
+        <div class="score-badge" style="font-size:.58rem;border-color:#00f5ff;color:#00f5ff">🔧 ${q.kat}</div>
+      </div>
+      <div style="width:100%;background:rgba(168,85,247,.06);border-radius:6px;height:6px;overflow:hidden">
+        <div style="background:linear-gradient(90deg,#a855f7,#c084fc);height:100%;width:${(idx/total)*100}%;transition:width .3s"></div>
+      </div>
+      <div class="quiz-question" style="font-size:.88rem">${q.q}</div>
+      <div class="quiz-options">
+        ${q.o.map((o,i)=>`<button class="quiz-opt" id="qo${i}" onclick="otoAns(${i})">${String.fromCharCode(65+i)}. ${o}</button>`).join('')}
+      </div>
+      <div id="otoFb" style="min-height:24px;font-family:Orbitron,monospace;font-size:.78rem;text-align:center"></div>
+    </div>`;
+  }
+
+  function renderResult(){
+    const pct=Math.round((score/total)*100);
+    el.innerHTML=`<div class="game-area" style="gap:12px">
+      <div style="font-size:2rem;text-align:center">🚗</div>
+      <div class="result-banner ${pct>=80?'result-win':pct>=60?'result-tie':'result-lose'}">
+        ${score} / ${total} BENAR
+      </div>
+      <div style="font-size:1.1rem;font-family:Orbitron,monospace;color:var(--nc);text-align:center">${pct}%</div>
+      <div style="font-size:.8rem;color:rgba(237,225,255,.55);text-align:center;line-height:1.6">
+        ${pct>=80?'🔥 Luar biasa! Kamu pakar otomotif!':pct>=60?'👏 Bagus! Terus pelajari teknik otomotif!':pct>=40?'📚 Lumayan! Masih banyak yang bisa dipelajari.':'💪 Jangan menyerah, terus belajar teknik otomotif!'}
+      </div>
+      <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+        <button class="btn btn-cyan" onclick="otoStart()">🔄 ULANGI KUIS</button>
+        <button class="btn btn-outline" onclick="otoAll()">📋 50 SOAL ACAK</button>
+      </div>
+    </div>`;
+  }
+
+  function renderMenu(){
+    el.innerHTML=`<div class="game-area" style="gap:14px">
+      <div style="font-size:2.2rem;text-align:center">⚙️🚗</div>
+      <div class="game-msg">KUIS TEKNIK OTOMOTIF</div>
+      <div style="font-size:.8rem;color:rgba(237,225,255,.5);text-align:center;line-height:1.6;max-width:280px">
+        Uji pengetahuan otomotifmu!<br>50 soal mencakup mesin, transmisi, rem,<br>kelistrikan, suspensi & diagnosa.
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+        <button class="btn btn-cyan" onclick="otoStart()">▶ KUIS 10 SOAL</button>
+        <button class="btn btn-outline" onclick="otoAll()">📋 KUIS 20 SOAL</button>
+      </div>
+    </div>`;
+  }
+
+  window.otoStart=function(){total=10;startQuiz();};
+  window.otoAll=function(){total=20;startQuiz();};
+
+  window.otoAns=function(chosen){
+    if(answered)return;
+    answered=true;
+    const q=sessionQ[idx];
+    const correct=q.a;
+    const opts=el.querySelectorAll('.quiz-opt');
+    opts.forEach((b,i)=>{
+      if(i===correct)b.classList.add('correct');
+      else if(i===chosen&&chosen!==correct)b.classList.add('wrong');
+      b.style.pointerEvents='none';
+    });
+    const fb=document.getElementById('otoFb');
+    if(chosen===correct){
+      score++;
+      fb.innerHTML='<span style="color:var(--ng)">✅ BENAR!</span>';
+    } else {
+      fb.innerHTML='<span style="color:var(--np)">❌ Jawaban: '+String.fromCharCode(65+correct)+'. '+q.o[correct]+'</span>';
+    }
+    setTimeout(()=>{
+      idx++;
+      if(idx>=total)renderResult();
+      else renderQ();
+    },1400);
+  };
+
+  renderMenu();
 }
 
 // ═══════════════════════════════════════════════════
