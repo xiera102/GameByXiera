@@ -212,9 +212,9 @@ svg.thumb-svg{width:100%;height:100%;}
 .mine-cell.revealed{background:rgba(0,0,0,.4);border-color:rgba(168,85,247,.08);cursor:default;}
 .mine-cell.flagged{background:rgba(139,92,246,.1);border-color:rgba(139,92,246,.3);}
 .mine-cell.mine-exp{background:rgba(139,92,246,.3);border-color:var(--np);}
-.mine-1{color:#c084fc;} .mine-2{color:#d8b4fe;} .mine-3{color:#a855f7;}
-.mine-4{color:#e9d5ff;} .mine-5{color:#ff9500;} .mine-6{color:#c084fc;}
-.mine-7{color:#a855f7;} .mine-8{color:rgba(255,255,255,.5);}
+.mine-1{color:#ff69b4;} .mine-2{color:#ff85c2;} .mine-3{color:#ff1493;}
+.mine-4{color:#ffb6c1;} .mine-5{color:#ff9500;} .mine-6{color:#ff69b4;}
+.mine-7{color:#ff1493;} .mine-8{color:rgba(255,255,255,.5);}
 
 /* TYPING */
 .typing-text{font-family:'Rajdhani',sans-serif;font-size:1.1rem;line-height:1.8;max-width:480px;
@@ -287,13 +287,13 @@ svg.thumb-svg{width:100%;height:100%;}
 .g2048-2{background:#0a2a3a;color:#00f5ff;font-size:1.2rem;}
 .g2048-4{background:#0a3a2a;color:#39ff14;}
 .g2048-8{background:#2a1a0a;color:#ff9500;}
-.g2048-16{background:#3a0a1a;color:#a855f7;}
+.g2048-16{background:#3a0a1a;color:#ff006e;}
 .g2048-32{background:#2a0a3a;color:#bf5af2;}
 .g2048-64{background:#3a2a00;color:#ffe600;}
 .g2048-128{background:#1a3a1a;color:#39ff14;font-size:.9rem;}
 .g2048-256{background:#1a1a3a;color:#00f5ff;font-size:.85rem;}
 .g2048-512{background:#3a1a00;color:#ff9500;font-size:.8rem;}
-.g2048-1024{background:#3a0a0a;color:#a855f7;font-size:.72rem;}
+.g2048-1024{background:#3a0a0a;color:#ff006e;font-size:.72rem;}
 .g2048-2048{background:#2a2a00;color:#ffe600;font-size:.68rem;}
 
 /* PONG */
@@ -432,7 +432,7 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(237,
 .rpg-bar-wrap{display:flex;align-items:center;gap:6px;}
 .rpg-bar{height:12px;border-radius:3px;border:1px solid rgba(0,0,0,.4);overflow:hidden;width:100px;}
 .rpg-bar-fill{height:100%;transition:width .3s;}
-.rpg-hp .rpg-bar-fill{background:linear-gradient(90deg,#a855f7,#ff4488);}
+.rpg-hp .rpg-bar-fill{background:linear-gradient(90deg,#ff006e,#ff4488);}
 .rpg-mp .rpg-bar-fill{background:linear-gradient(90deg,#00f5ff,#0088ff);}
 .rpg-xp .rpg-bar-fill{background:linear-gradient(90deg,#ffe600,#ff9500);}
 .rpg-dpad{display:grid;grid-template-columns:repeat(3,36px);grid-template-rows:repeat(2,36px);gap:3px;}
@@ -505,7 +505,7 @@ footer{text-align:center;padding:24px 24px 80px;font-size:.65rem;color:rgba(237,
 .simon-btn.lit{filter:brightness(1.8);transform:scale(1.04);box-shadow:0 0 30px currentColor;}
 .simon-btn.wrong-flash{animation:simonWrong .3s ease;}
 @keyframes simonWrong{0%,100%{transform:scale(1);}50%{transform:scale(.95);filter:brightness(2) saturate(3);}}
-.simon-0{background:rgba(139,92,246,.25);border-color:rgba(139,92,246,.5);color:#a855f7;}
+.simon-0{background:rgba(139,92,246,.25);border-color:rgba(139,92,246,.5);color:#ff1493;}
 .simon-1{background:rgba(0,245,255,.18);border-color:rgba(0,245,255,.4);color:#00f5ff;}
 .simon-2{background:rgba(57,255,20,.18);border-color:rgba(57,255,20,.4);color:#39ff14;}
 .simon-3{background:rgba(255,230,0,.18);border-color:rgba(255,230,0,.4);color:#ffe600;}
@@ -926,7 +926,7 @@ function svgRPS(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a0010"/
 <text x="22%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="24">✊</text>
 <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="24">✋</text>
 <text x="78%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="24">✌️</text>
-<text x="50%" y="82%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#a855f7" opacity=".6">SUIT GAME</text>`;}
+<text x="50%" y="82%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff006e" opacity=".6">SUIT GAME</text>`;}
 function svgBJ(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a1400"/>
 <rect x="22" y="18" width="42" height="58" rx="5" fill="#fff" opacity=".9"/>
 <text x="43" y="52" dominant-baseline="middle" text-anchor="middle" font-size="20" fill="#e00" font-weight="bold">♥</text>
@@ -938,7 +938,7 @@ function svgSnake(s){s.innerHTML=`<rect width="100%" height="100%" fill="#001500
 <rect x="54" y="50" width="12" height="12" rx="2" fill="#39ff14" opacity=".7"/>
 <rect x="70" y="50" width="12" height="12" rx="2" fill="#39ff14" opacity=".5"/>
 <rect x="70" y="34" width="12" height="12" rx="2" fill="#39ff14" opacity=".35"/>
-<rect x="130" y="38" width="10" height="10" rx="2" fill="#a855f7" opacity=".8"/>
+<rect x="130" y="38" width="10" height="10" rx="2" fill="#ff006e" opacity=".8"/>
 <text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#39ff14" opacity=".5">ARROW KEYS</text>`;}
 function svgMemory(s){s.innerHTML=`<rect width="100%" height="100%" fill="#120020"/>
 ${[0,1,2,3].map(i=>`<rect x="${20+i*42}" y="22" width="34" height="40" rx="5" fill="#1a0a30" stroke="#bf5af2" stroke-width="1" opacity=".5"/>
@@ -960,7 +960,7 @@ function svgDice(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a0010"
 <circle cx="40" cy="67" r="5" fill="#c00"/><circle cx="67" cy="67" r="5" fill="#c00"/>
 <rect x="100" y="30" width="66" height="66" rx="9" fill="white" opacity=".9"/>
 <circle cx="133" cy="45" r="5" fill="#333"/><circle cx="133" cy="63" r="5" fill="#333"/><circle cx="133" cy="81" r="5" fill="#333"/>
-<text x="50%" y="90%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#a855f7" opacity=".6">ROLL THE DICE</text>`;}
+<text x="50%" y="90%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff006e" opacity=".6">ROLL THE DICE</text>`;}
 function svgChess(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0a1200"/>
 ${Array.from({length:64},(_,i)=>{const c=i%8,r=Math.floor(i/8),x=18+c*22,y=8+r*11;
 return `<rect x="${x}" y="${y}" width="22" height="11" fill="${(c+r)%2===0?'#1a3a1a':'#0a1a0a'}"/>`;}).join('')}
@@ -976,11 +976,11 @@ function svgTTT(s){s.innerHTML=`<rect width="100%" height="100%" fill="#120020"/
 <line x1="105" y1="20" x2="105" y2="110" stroke="#bf5af2" stroke-width="2" opacity=".5"/>
 <line x1="20" y1="56" x2="150" y2="56" stroke="#bf5af2" stroke-width="2" opacity=".5"/>
 <line x1="20" y1="86" x2="150" y2="86" stroke="#bf5af2" stroke-width="2" opacity=".5"/>
-<text x="39" y="42" dominant-baseline="middle" text-anchor="middle" font-size="18" fill="#a855f7" opacity=".8">X</text>
+<text x="39" y="42" dominant-baseline="middle" text-anchor="middle" font-size="18" fill="#ff006e" opacity=".8">X</text>
 <text x="85" y="42" dominant-baseline="middle" text-anchor="middle" font-size="18" fill="#00f5ff" opacity=".8">O</text>
-<text x="124" y="42" dominant-baseline="middle" text-anchor="middle" font-size="18" fill="#a855f7" opacity=".8">X</text>
+<text x="124" y="42" dominant-baseline="middle" text-anchor="middle" font-size="18" fill="#ff006e" opacity=".8">X</text>
 <text x="39" y="71" dominant-baseline="middle" text-anchor="middle" font-size="18" fill="#00f5ff" opacity=".8">O</text>
-<text x="85" y="71" dominant-baseline="middle" text-anchor="middle" font-size="18" fill="#a855f7" opacity=".8">X</text>
+<text x="85" y="71" dominant-baseline="middle" text-anchor="middle" font-size="18" fill="#ff006e" opacity=".8">X</text>
 <text x="50%" y="92%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#bf5af2" opacity=".5">3 IN A ROW</text>`;}
 function svgMine(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a0a00"/>
 ${Array.from({length:25},(_,i)=>{const c=i%5,r=Math.floor(i/5),x=20+c*30,y=14+r*22;
@@ -999,7 +999,7 @@ return `<rect x="${18+i*34}" y="35" width="28" height="28" rx="4" fill="${bg}" s
 <text x="50%" y="83%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#00f5ff" opacity=".5">TEBAK 5 HURUF</text>`;}
 function svg2048(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a1400"/>
 ${[[2,4,8,16],[32,64,128,256],[2,512,1024,2],[4,8,32,16]].map((row,r)=>row.map((v,c)=>{
-const colors={2:'#00f5ff',4:'#39ff14',8:'#ff9500',16:'#a855f7',32:'#bf5af2',64:'#ffe600',128:'#39ff14',256:'#00f5ff',512:'#ff9500',1024:'#a855f7'};
+const colors={2:'#00f5ff',4:'#39ff14',8:'#ff9500',16:'#ff006e',32:'#bf5af2',64:'#ffe600',128:'#39ff14',256:'#00f5ff',512:'#ff9500',1024:'#ff006e'};
 return `<rect x="${12+c*38}" y="${8+r*24}" width="34" height="19" rx="3" fill="rgba(0,0,0,.4)" stroke="${colors[v]||'#fff'}" stroke-width="1" opacity=".5"/>
 <text x="${29+c*38}" y="${20+r*24}" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="${v>99?'6':v>9?'7':'9'}" fill="${colors[v]||'#fff'}" opacity=".7">${v}</text>`;}).join('')).join('')}
 <text x="50%" y="96%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ffe600" opacity=".5">REACH 2048</text>`;}
@@ -1010,22 +1010,22 @@ function svgTyping(s){s.innerHTML=`<rect width="100%" height="100%" fill="#00150
 <rect x="14" y="82" width="100" height="14" rx="4" fill="rgba(57,255,20,.08)" stroke="rgba(57,255,20,.25)" stroke-width="1"/>
 <text x="94" y="112" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#39ff14" opacity=".5">WPM COUNTER</text>`;}
 function svgHangman(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a0010"/>
-<line x1="30" y1="110" x2="150" y2="110" stroke="#a855f7" stroke-width="2" opacity=".5"/>
-<line x1="60" y1="110" x2="60" y2="20" stroke="#a855f7" stroke-width="2" opacity=".5"/>
-<line x1="60" y1="20" x2="110" y2="20" stroke="#a855f7" stroke-width="2" opacity=".5"/>
-<line x1="110" y1="20" x2="110" y2="38" stroke="#a855f7" stroke-width="2" opacity=".5"/>
-<circle cx="110" cy="48" r="10" fill="none" stroke="#a855f7" stroke-width="2" opacity=".7"/>
-<line x1="110" y1="58" x2="110" y2="85" stroke="#a855f7" stroke-width="2" opacity=".6"/>
-<line x1="110" y1="68" x2="95" y2="80" stroke="#a855f7" stroke-width="2" opacity=".5"/>
-<line x1="110" y1="85" x2="98" y2="100" stroke="#a855f7" stroke-width="2" opacity=".5"/>
-<text x="50%" y="92%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#a855f7" opacity=".5">TEBAK KATA</text>`;}
+<line x1="30" y1="110" x2="150" y2="110" stroke="#ff006e" stroke-width="2" opacity=".5"/>
+<line x1="60" y1="110" x2="60" y2="20" stroke="#ff006e" stroke-width="2" opacity=".5"/>
+<line x1="60" y1="20" x2="110" y2="20" stroke="#ff006e" stroke-width="2" opacity=".5"/>
+<line x1="110" y1="20" x2="110" y2="38" stroke="#ff006e" stroke-width="2" opacity=".5"/>
+<circle cx="110" cy="48" r="10" fill="none" stroke="#ff006e" stroke-width="2" opacity=".7"/>
+<line x1="110" y1="58" x2="110" y2="85" stroke="#ff006e" stroke-width="2" opacity=".6"/>
+<line x1="110" y1="68" x2="95" y2="80" stroke="#ff006e" stroke-width="2" opacity=".5"/>
+<line x1="110" y1="85" x2="98" y2="100" stroke="#ff006e" stroke-width="2" opacity=".5"/>
+<text x="50%" y="92%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff006e" opacity=".5">TEBAK KATA</text>`;}
 function svgRPG(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0a001a"/>
 <rect x="14" y="60" width="160" height="50" rx="3" fill="#0d1a10" stroke="rgba(57,255,20,.2)" stroke-width="1"/>
 <rect x="24" y="68" width="16" height="16" rx="2" fill="#1a3a1a" stroke="rgba(57,255,20,.3)" stroke-width="1"/>
 <text x="32" y="79" dominant-baseline="middle" text-anchor="middle" font-size="10">🧙</text>
 <rect x="148" y="64" width="20" height="22" rx="2" fill="rgba(168,85,247,.1)" stroke="rgba(168,85,247,.4)" stroke-width="1"/>
 <text x="158" y="78" dominant-baseline="middle" text-anchor="middle" font-size="13">👹</text>
-<rect x="24" y="88" width="60" height="5" rx="2" fill="#1a0010"/><rect x="24" y="88" width="42" height="5" rx="2" fill="#a855f7" opacity=".8"/>
+<rect x="24" y="88" width="60" height="5" rx="2" fill="#1a0010"/><rect x="24" y="88" width="42" height="5" rx="2" fill="#ff006e" opacity=".8"/>
 <rect x="24" y="96" width="60" height="5" rx="2" fill="#001a2e"/><rect x="24" y="96" width="55" height="5" rx="2" fill="#00f5ff" opacity=".7"/>
 <text x="50%" y="22%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="8" fill="#bf5af2" opacity=".7">DUNGEON QUEST</text>
 <text x="50%" y="40%" dominant-baseline="middle" text-anchor="middle" font-size="18" opacity=".6">⚔️🛡️🗝️</text>
@@ -1050,7 +1050,7 @@ function svgMario(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a0800
 function svgPong(s){s.innerHTML=`<rect width="100%" height="100%" fill="#001828"/>
 <line x1="94" y1="0" x2="94" y2="120" stroke="rgba(0,245,255,.15)" stroke-width="1" stroke-dasharray="6 4"/>
 <rect x="10" y="35" width="8" height="50" rx="3" fill="#00f5ff" opacity=".8"/>
-<rect x="170" y="40" width="8" height="50" rx="3" fill="#a855f7" opacity=".8"/>
+<rect x="170" y="40" width="8" height="50" rx="3" fill="#ff006e" opacity=".8"/>
 <circle cx="94" cy="60" r="7" fill="#ffe600" opacity=".9"/>
 <circle cx="94" cy="60" r="7" fill="none" stroke="#ffe600" stroke-width="2" opacity=".4"/>
 <text x="50%" y="88%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#00f5ff" opacity=".5">VS CPU</text>`;}
@@ -1065,35 +1065,35 @@ function svgFlappy(s){s.innerHTML=`<rect width="100%" height="100%" fill="#00151
 <text x="50%" y="88%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#39ff14" opacity=".5">TAP TO FLY</text>`;}
 function svgBreakout(s){s.innerHTML=`<rect width="100%" height="100%" fill="#1a1400"/>
 ${Array.from({length:24},(_,i)=>{const c=i%6,r=Math.floor(i/6),x=16+c*30,y=10+r*14;
-const cols=['#a855f7','#ff9500','#ffe600','#39ff14'];
+const cols=['#ff006e','#ff9500','#ffe600','#39ff14'];
 return `<rect x="${x}" y="${y}" width="26" height="10" rx="2" fill="${cols[r%4]}" opacity="${0.5+r*0.08}"/>`;}).join('')}
 <rect x="72" y="108" width="44" height="6" rx="3" fill="#00f5ff" opacity=".9"/>
 <circle cx="94" cy="96" r="5" fill="#ffe600"/>
 <text x="50%" y="96%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ffe600" opacity=".5">BREAK ALL!</text>`;}
 function svgKraeplin(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0d0520"/>
-<text x="30%" y="38%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#c084fc" opacity=".9">7</text>
+<text x="30%" y="38%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#ff69b4" opacity=".9">7</text>
 <text x="50%" y="38%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="14" fill="rgba(237,225,255,.4)">+</text>
-<text x="70%" y="38%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#a855f7" opacity=".9">8</text>
+<text x="70%" y="38%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#ff1493" opacity=".9">8</text>
 <line x1="20" y1="58" x2="168" y2="58" stroke="rgba(168,85,247,.3)" stroke-width="1"/>
-<text x="50%" y="73%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#e9d5ff" opacity=".85">5</text>
-<text x="50%" y="90%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#d8b4fe" opacity=".6">DIGIT TERAKHIR</text>`;}
+<text x="50%" y="73%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#ffb6c1" opacity=".85">5</text>
+<text x="50%" y="90%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff85c2" opacity=".6">DIGIT TERAKHIR</text>`;}
 function svgLogMath(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0d0520"/>
-<text x="50%" y="32%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="13" fill="#c084fc" opacity=".9">log₂(8) = ?</text>
+<text x="50%" y="32%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="13" fill="#ff69b4" opacity=".9">log₂(8) = ?</text>
 <line x1="20" y1="50" x2="168" y2="50" stroke="rgba(168,85,247,.2)" stroke-width="1"/>
-<text x="50%" y="65%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#e9d5ff" opacity=".9">3</text>
-<text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#a855f7" opacity=".6">LOG & EKSPONEN</text>`;}
+<text x="50%" y="65%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#ffb6c1" opacity=".9">3</text>
+<text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff1493" opacity=".6">LOG & EKSPONEN</text>`;}
 function svgAritmatika(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0d0520"/>
 <text x="50%" y="28%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="8" fill="rgba(196,167,255,.5)">DERET</text>
-<text x="50%" y="48%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#c084fc" opacity=".9">2, 5, 8, 11, ?</text>
+<text x="50%" y="48%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#ff69b4" opacity=".9">2, 5, 8, 11, ?</text>
 <line x1="20" y1="62" x2="168" y2="62" stroke="rgba(168,85,247,.2)" stroke-width="1"/>
-<text x="50%" y="77%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#e9d5ff" opacity=".9">14</text>
-<text x="50%" y="91%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#a855f7" opacity=".6">BARIS ARITMATIKA</text>`;}
+<text x="50%" y="77%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="22" fill="#ffb6c1" opacity=".9">14</text>
+<text x="50%" y="91%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff1493" opacity=".6">BARIS ARITMATIKA</text>`;}
 function svgDasarMath(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0d0520"/>
-<text x="25%" y="42%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#c084fc" opacity=".8">+</text>
-<text x="50%" y="42%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#d8b4fe" opacity=".8">−</text>
-<text x="75%" y="42%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#e9d5ff" opacity=".8">×</text>
-<text x="50%" y="68%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#a855f7" opacity=".8">÷</text>
-<text x="50%" y="88%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#c084fc" opacity=".6">MATEMATIKA DASAR</text>`;}
+<text x="25%" y="42%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#ff69b4" opacity=".8">+</text>
+<text x="50%" y="42%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#ff85c2" opacity=".8">−</text>
+<text x="75%" y="42%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#ffb6c1" opacity=".8">×</text>
+<text x="50%" y="68%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="11" fill="#ff1493" opacity=".8">÷</text>
+<text x="50%" y="88%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff69b4" opacity=".6">MATEMATIKA DASAR</text>`;}
 
 function svgSoalCerita(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0d0520"/>
 <text x="50%" y="22%" dominant-baseline="middle" text-anchor="middle" font-size="18">📖</text>
@@ -1101,11 +1101,11 @@ function svgSoalCerita(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0
 <text x="94" y="48" dominant-baseline="middle" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="7" fill="rgba(237,225,255,.5)">Adi membeli 5 buku</text>
 <text x="94" y="60" dominant-baseline="middle" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="7" fill="rgba(237,225,255,.5)">@ Rp2.000. Berapa total?</text>
 <rect x="54" y="82" width="80" height="14" rx="4" fill="rgba(168,85,247,.08)" stroke="rgba(168,85,247,.3)" stroke-width="1"/>
-<text x="94" y="90" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#c084fc" opacity=".8">Rp 10.000</text>
-<text x="50%" y="96%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#a855f7" opacity=".6">SOAL CERITA</text>`;}
+<text x="94" y="90" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff69b4" opacity=".8">Rp 10.000</text>
+<text x="50%" y="96%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff1493" opacity=".6">SOAL CERITA</text>`;}
 
 function svgSimon(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0a0520"/>
-<rect x="14" y="10" width="74" height="50" rx="6" fill="rgba(139,92,246,.2)" stroke="#a855f7" stroke-width="1.5" opacity=".8"/>
+<rect x="14" y="10" width="74" height="50" rx="6" fill="rgba(139,92,246,.2)" stroke="#ff1493" stroke-width="1.5" opacity=".8"/>
 <rect x="100" y="10" width="74" height="50" rx="6" fill="rgba(0,245,255,.15)" stroke="#00f5ff" stroke-width="1.5" opacity=".8"/>
 <rect x="14" y="68" width="74" height="50" rx="6" fill="rgba(57,255,20,.15)" stroke="#39ff14" stroke-width="1.5" opacity=".8"/>
 <rect x="100" y="68" width="74" height="50" rx="6" fill="rgba(255,230,0,.15)" stroke="#ffe600" stroke-width="1.5" opacity=".8"/>
@@ -1113,15 +1113,15 @@ function svgSimon(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0a0520
 <text x="137" y="40" dominant-baseline="middle" text-anchor="middle" font-size="18">🔵</text>
 <text x="51" y="98" dominant-baseline="middle" text-anchor="middle" font-size="18">🟢</text>
 <text x="137" y="98" dominant-baseline="middle" text-anchor="middle" font-size="18">🟡</text>
-<text x="50%" y="96%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#c084fc" opacity=".6">IKUTI POLA!</text>`;}
+<text x="50%" y="96%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff69b4" opacity=".6">IKUTI POLA!</text>`;}
 
 function svgPattern(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0a0015"/>
 <text x="19%" y="44%" dominant-baseline="middle" text-anchor="middle" font-size="20">🔷</text>
 <text x="38%" y="44%" dominant-baseline="middle" text-anchor="middle" font-size="20">🔶</text>
 <text x="57%" y="44%" dominant-baseline="middle" text-anchor="middle" font-size="20">🔷</text>
 <text x="76%" y="44%" dominant-baseline="middle" text-anchor="middle" font-size="20">🔶</text>
-<rect x="138" y="26" width="30" height="30" rx="5" fill="rgba(168,85,247,.15)" stroke="#c084fc" stroke-width="1.5"/>
-<text x="153" y="47" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="14" fill="#c084fc" font-weight="900">?</text>
+<rect x="138" y="26" width="30" height="30" rx="5" fill="rgba(168,85,247,.15)" stroke="#ff69b4" stroke-width="1.5"/>
+<text x="153" y="47" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="14" fill="#ff69b4" font-weight="900">?</text>
 <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="rgba(237,225,255,.4)">PILIH YANG TEPAT:</text>
 <text x="25%" y="88%" dominant-baseline="middle" text-anchor="middle" font-size="16">🔶</text>
 <text x="50%" y="88%" dominant-baseline="middle" text-anchor="middle" font-size="16">🟥</text>
@@ -1155,72 +1155,38 @@ return `<ellipse cx="${x+22}" cy="${y+20}" rx="22" ry="12" fill="${active?'rgba(
 ${active?`<text x="${x+22}" y="${y+10}" dominant-baseline="middle" text-anchor="middle" font-size="14">🐭</text>`:''}`;}).join('')}
 <text x="50%" y="95%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#c084fc" opacity=".6">PUKUL TIKUSNYA!</text>`;}
 
-function svgSpace(s){s.innerHTML=`<rect width="100%" height="100%" fill="#020818"/>
-<circle cx="20" cy="15" r="1" fill="white" opacity=".6"/><circle cx="55" cy="8" r="1.2" fill="white" opacity=".8"/>
-<circle cx="140" cy="20" r="1" fill="white" opacity=".5"/><circle cx="170" cy="10" r="1.5" fill="white"/>
-<circle cx="90" cy="5" r="1" fill="white" opacity=".7"/><circle cx="160" cy="55" r="1" fill="white" opacity=".6"/>
-<circle cx="30" cy="60" r="1.2" fill="white" opacity=".4"/><circle cx="120" cy="35" r="1" fill="white" opacity=".8"/>
-<!-- alien enemies -->
-<text x="28" y="28" dominant-baseline="middle" text-anchor="middle" font-size="13">👾</text>
-<text x="78" y="22" dominant-baseline="middle" text-anchor="middle" font-size="13">👾</text>
-<text x="128" y="28" dominant-baseline="middle" text-anchor="middle" font-size="13">👾</text>
-<text x="163" y="22" dominant-baseline="middle" text-anchor="middle" font-size="13">👾</text>
-<!-- bullet -->
-<rect x="92" y="50" width="4" height="12" rx="2" fill="#00f5ff" opacity=".9"/>
-<line x1="94" y1="50" x2="94" y2="42" stroke="#00f5ff" stroke-width="1" opacity=".4"/>
-<!-- player ship -->
-<polygon points="94,90 80,110 108,110" fill="#a855f7" stroke="#c084fc" stroke-width="1.5"/>
-<rect x="88" y="108" width="12" height="5" rx="2" fill="#7c3aed"/>
-<text x="50%" y="97%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#00f5ff" opacity=".6">SPACE SHOOTER!</text>`;}
-
-function svgTKR(s){s.innerHTML=`<rect width="100%" height="100%" fill="#0a0520"/>
-<!-- car body -->
-<rect x="20" y="55" width="150" height="40" rx="8" fill="rgba(255,149,0,.15)" stroke="#ff9500" stroke-width="1.5"/>
-<rect x="45" y="35" width="95" height="28" rx="6" fill="rgba(255,149,0,.1)" stroke="#ff9500" stroke-width="1"/>
-<!-- wheels -->
-<circle cx="50" cy="96" r="14" fill="rgba(255,149,0,.1)" stroke="#ff9500" stroke-width="1.5"/>
-<circle cx="50" cy="96" r="6" fill="rgba(255,149,0,.2)"/>
-<circle cx="140" cy="96" r="14" fill="rgba(255,149,0,.1)" stroke="#ff9500" stroke-width="1.5"/>
-<circle cx="140" cy="96" r="6" fill="rgba(255,149,0,.2)"/>
-<!-- engine icon -->
-<text x="94" y="72" dominant-baseline="middle" text-anchor="middle" font-size="14">🔧</text>
-<text x="50%" y="25%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" fill="#ff9500" opacity=".8">TKR OTOMOTIF</text>
-<text x="50%" y="97%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron,monospace" font-size="6" fill="#ff9500" opacity=".5">100 SOAL • TEKNIK KENDARAAN</text>`;}
-
 const games=[
   // ── KELOMPOK: GAME ──
   {id:'tebak',tag:'PUZZLE',name:'Tebak Angka',desc:'Tebak angka 1–100 dengan petunjuk arah.',color:'#00f5ff',thumb:svgTebak,group:'game'},
-  {id:'rps',tag:'KLASIK',name:'Suit RPS',desc:'Gunting Batu Kertas vs CPU.',color:'#a855f7',thumb:svgRPS,group:'game'},
+  {id:'rps',tag:'KLASIK',name:'Suit RPS',desc:'Gunting Batu Kertas vs CPU.',color:'#ff006e',thumb:svgRPS,group:'game'},
   {id:'blackjack',tag:'KARTU',name:'Blackjack',desc:'Raih 21, tantang dealer!',color:'#ffe600',thumb:svgBJ,group:'game'},
   {id:'snake',tag:'ARCADE',name:'Snake',desc:'Makan apel, jangan nabrak!',color:'#39ff14',thumb:svgSnake,group:'game'},
   {id:'memory',tag:'OTAK',name:'Memory Match',desc:'Cocokkan pasangan kartu emoji.',color:'#bf5af2',thumb:svgMemory,group:'game'},
   {id:'puzzle',tag:'PUZZLE',name:'Slide Puzzle',desc:'Susun angka 1–15 ke posisi benar.',color:'#ff9500',thumb:svgPuzzle,group:'game'},
-  {id:'dice',tag:'DADU',name:'Duel Dadu',desc:'Lempar dadu, total tertinggi menang.',color:'#a855f7',thumb:svgDice,group:'game'},
+  {id:'dice',tag:'DADU',name:'Duel Dadu',desc:'Lempar dadu, total tertinggi menang.',color:'#ff006e',thumb:svgDice,group:'game'},
   {id:'chess',tag:'STRATEGI',name:'Catur',desc:'Catur klasik vs CPU + Rokade Raja-Benteng.',color:'#ffe600',thumb:svgChess,group:'game'},
   {id:'ttt',tag:'KLASIK',name:'Tic Tac Toe',desc:'3 baris duluan, menang!',color:'#bf5af2',thumb:svgTTT,group:'game'},
   {id:'minesweeper',tag:'PUZZLE',name:'Minesweeper',desc:'Buka kotak, hindari ranjau!',color:'#ff9500',thumb:svgMine,group:'game'},
   {id:'g2048',tag:'ANGKA',name:'2048',desc:'Gabungkan angka, raih 2048!',color:'#ffe600',thumb:svg2048,group:'game'},
   {id:'typing',tag:'KECEPATAN',name:'Typing Race',desc:'Uji kecepatan mengetik kamu!',color:'#39ff14',thumb:svgTyping,group:'game'},
-  {id:'hangman',tag:'KATA',name:'Hangman',desc:'Tebak kata sebelum tiang gantungan penuh.',color:'#a855f7',thumb:svgHangman,group:'game'},
+  {id:'hangman',tag:'KATA',name:'Hangman',desc:'Tebak kata sebelum tiang gantungan penuh.',color:'#ff006e',thumb:svgHangman,group:'game'},
   {id:'rpg',tag:'RPG',name:'Dungeon Quest',desc:'Jelajahi dungeon, lawan monster, naik level!',color:'#bf5af2',thumb:svgRPG,group:'game'},
   {id:'mario',tag:'PLATFORMER',name:'Super Pixel Run',desc:'Lompat, hindari musuh, capai bendera!',color:'#ff9500',thumb:svgMario,group:'game'},
   {id:'pong',tag:'ARCADE',name:'Pong Neon',desc:'Pantulkan bola, kalahkan CPU!',color:'#00f5ff',thumb:svgPong,group:'game'},
   {id:'flappy',tag:'ARCADE',name:'Flappy Pixel',desc:'Terbang melewati pipa tanpa menyentuh!',color:'#39ff14',thumb:svgFlappy,group:'game'},
   {id:'breakout',tag:'ARCADE',name:'Breakout',desc:'Hancurkan semua blok dengan bola!',color:'#ffe600',thumb:svgBreakout,group:'game'},
   {id:'whackamole',tag:'ARCADE',name:'Whack-a-Mole',desc:'Pukul tikus yang muncul secepat mungkin!',color:'#c084fc',thumb:svgWhack,group:'game'},
-  {id:'spaceshooter',tag:'SHOOTER',name:'Space Shooter',desc:'Tembak alien! Hindari tembakan balik & raih skor tertinggi!',color:'#00f5ff',thumb:svgSpace,group:'game'},
   // ── KELOMPOK: BELAJAR ──
   {id:'quiz',tag:'EDUKASI',name:'Kuis Sains',desc:'100 soal sains, random 10 per sesi.',color:'#00f5ff',thumb:svgQuiz,group:'belajar'},
-  {id:'quiztkr',tag:'OTOMOTIF',name:'Kuis TKR Otomotif',desc:'100 soal Teknik Kendaraan Ringan! Mesin, transmisi, rem, kelistrikan.',color:'#ff9500',thumb:svgTKR,group:'belajar'},
   {id:'sudoku',tag:'LOGIKA',name:'Sudoku',desc:'Isi 9×9 grid tanpa angka ganda.',color:'#39ff14',thumb:svgSudoku,group:'belajar'},
   {id:'wordle',tag:'KATA',name:'Wordle Indonesia',desc:'Tebak kata 5 huruf dalam 6 percobaan.',color:'#00f5ff',thumb:svgWordle,group:'belajar'},
-  {id:'kraeplin',tag:'MATEMATIKA',name:'Kraeplin Math',desc:'Penjumlahan cepat! Tulis digit terakhir jawaban.',color:'#c084fc',thumb:svgKraeplin,group:'belajar'},
-  {id:'logmath',tag:'MATEMATIKA',name:'Soal Logaritma',desc:'Uji kemampuan log & eksponen dalam waktu terbatas!',color:'#c084fc',thumb:svgLogMath,group:'belajar'},
-  {id:'aritmatika',tag:'MATEMATIKA',name:'Baris Aritmatika',desc:'Temukan suku berikutnya dalam deret aritmatika!',color:'#e9d5ff',thumb:svgAritmatika,group:'belajar'},
-  {id:'dasarmath',tag:'MATEMATIKA',name:'Matematika Dasar',desc:'Operasi dasar: +, -, ×, ÷. Cepat & tepat!',color:'#a855f7',thumb:svgDasarMath,group:'belajar'},
-  {id:'soalcerita',tag:'MATEMATIKA',name:'Soal Cerita',desc:'Selesaikan soal cerita matematika! Ketik jawaban kamu.',color:'#c084fc',thumb:svgSoalCerita,group:'belajar'},
+  {id:'kraeplin',tag:'MATEMATIKA',name:'Kraeplin Math',desc:'Penjumlahan cepat! Tulis digit terakhir jawaban.',color:'#ff69b4',thumb:svgKraeplin,group:'belajar'},
+  {id:'logmath',tag:'MATEMATIKA',name:'Soal Logaritma',desc:'Uji kemampuan log & eksponen dalam waktu terbatas!',color:'#ff69b4',thumb:svgLogMath,group:'belajar'},
+  {id:'aritmatika',tag:'MATEMATIKA',name:'Baris Aritmatika',desc:'Temukan suku berikutnya dalam deret aritmatika!',color:'#ffb6c1',thumb:svgAritmatika,group:'belajar'},
+  {id:'dasarmath',tag:'MATEMATIKA',name:'Matematika Dasar',desc:'Operasi dasar: +, -, ×, ÷. Cepat & tepat!',color:'#ff1493',thumb:svgDasarMath,group:'belajar'},
+  {id:'soalcerita',tag:'MATEMATIKA',name:'Soal Cerita',desc:'Selesaikan soal cerita matematika! Ketik jawaban kamu.',color:'#ff69b4',thumb:svgSoalCerita,group:'belajar'},
   // ── ASAH OTAK (BELAJAR) ──
-  {id:'simon',tag:'MEMORI',name:'Simon Says',desc:'Ikuti urutan warna & suara yang makin panjang!',color:'#a855f7',thumb:svgSimon,group:'belajar'},
+  {id:'simon',tag:'MEMORI',name:'Simon Says',desc:'Ikuti urutan warna & suara yang makin panjang!',color:'#ff1493',thumb:svgSimon,group:'belajar'},
   {id:'pattern',tag:'LOGIKA',name:'Pola Urutan',desc:'Temukan pola dan pilih jawaban yang tepat!',color:'#bf5af2',thumb:svgPattern,group:'belajar'},
   {id:'logicgrid',tag:'DEDUKSI',name:'Grid Logika',desc:'Gunakan petunjuk untuk memecahkan teka-teki deduksi!',color:'#00f5ff',thumb:svgLogicGrid,group:'belajar'},
 ];
@@ -1290,8 +1256,7 @@ function openGame(id){
     wordle:initWordle,g2048:init2048,typing:initTyping,hangman:initHangman,
     rpg:initRPG,mario:initMario,pong:initPong,flappy:initFlappy,breakout:initBreakout,
     kraeplin:initKraeplin,logmath:initLogMath,aritmatika:initAritmatika,dasarmath:initDasarMath,soalcerita:initSoalCerita,
-    simon:initSimon,pattern:initPattern,logicgrid:initLogicGrid,whackamole:initWhackAMole,
-    spaceshooter:initSpaceShooter,quiztkr:initQuizTKR};
+    simon:initSimon,pattern:initPattern,logicgrid:initLogicGrid,whackamole:initWhackAMole};
   if(map[id]) map[id](body);
 }
 function closeModal(){
@@ -1340,7 +1305,7 @@ function initTebak(el){
     if(v===secret){wins++;games++;th.innerHTML=`<span class="result-win">🎉 BENAR! Angka ${secret} dalam ${tries}x!</span>`;
       setTimeout(()=>{secret=Math.floor(Math.random()*100)+1;tries=0;hist=[];render();},2200);}
     else if(v<secret){th.textContent='⬆ Terlalu kecil!';th.style.color='#ff9500';}
-    else{th.textContent='⬇ Terlalu besar!';th.style.color='#a855f7';}
+    else{th.textContent='⬇ Terlalu besar!';th.style.color='#ff006e';}
     document.getElementById('ti').value='';document.getElementById('ti').focus();
   };
   render();
@@ -1443,7 +1408,7 @@ function initSnake(el){
     ctx.strokeStyle='rgba(0,245,255,.04)';
     for(let i=0;i<=CL;i++){ctx.beginPath();ctx.moveTo(i*C,0);ctx.lineTo(i*C,280);ctx.stroke();}
     for(let i=0;i<=RW;i++){ctx.beginPath();ctx.moveTo(0,i*C);ctx.lineTo(280,i*C);ctx.stroke();}
-    ctx.fillStyle='#a855f7';ctx.shadowColor='#a855f7';ctx.shadowBlur=10;
+    ctx.fillStyle='#ff006e';ctx.shadowColor='#ff006e';ctx.shadowBlur=10;
     ctx.fillRect(food.x*C+3,food.y*C+3,C-6,C-6);ctx.shadowBlur=0;
     snake.forEach((s,i)=>{ctx.fillStyle=i===0?'#39ff14':`rgba(57,255,20,${Math.max(.25,1-i*.07)})`;
       if(i===0){ctx.shadowColor='#39ff14';ctx.shadowBlur=8;}
@@ -1881,19 +1846,19 @@ function initChess(el){
       <div style="font-family:Orbitron,monospace;font-size:1rem;font-weight:700;color:var(--nc);text-align:center">♟ CATUR</div>
       <div style="font-size:.7rem;color:rgba(237,225,255,.45);text-align:center">PILIH MODE PERMAINAN</div>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-        <button onclick="cMode('ai')" style="background:rgba(168,85,247,.07);border:2px solid rgba(168,85,247,.3);color:var(--tm);font-family:Orbitron,monospace;font-size:.68rem;padding:16px 20px;border-radius:12px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;min-width:110px;transition:all .2s" onmouseover="this.style.borderColor='#c084fc';this.style.background='rgba(168,85,247,.18)'" onmouseout="this.style.borderColor='rgba(168,85,247,.3)';this.style.background='rgba(168,85,247,.07)'">
+        <button onclick="cMode('ai')" style="background:rgba(168,85,247,.07);border:2px solid rgba(168,85,247,.3);color:var(--tm);font-family:Orbitron,monospace;font-size:.68rem;padding:16px 20px;border-radius:12px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;min-width:110px;transition:all .2s" onmouseover="this.style.borderColor='#ff69b4';this.style.background='rgba(168,85,247,.18)'" onmouseout="this.style.borderColor='rgba(168,85,247,.3)';this.style.background='rgba(168,85,247,.07)'">
           <span style="font-size:2rem">🤖</span><span>VS AI</span>
           <span style="font-family:Rajdhani,sans-serif;font-size:.65rem;color:rgba(237,225,255,.4)">Lawan komputer</span>
         </button>
-        <button onclick="cMode('2p')" style="background:rgba(168,85,247,.07);border:2px solid rgba(168,85,247,.3);color:var(--tm);font-family:Orbitron,monospace;font-size:.68rem;padding:16px 20px;border-radius:12px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;min-width:110px;transition:all .2s" onmouseover="this.style.borderColor='#c084fc';this.style.background='rgba(168,85,247,.18)'" onmouseout="this.style.borderColor='rgba(168,85,247,.3)';this.style.background='rgba(168,85,247,.07)'">
+        <button onclick="cMode('2p')" style="background:rgba(168,85,247,.07);border:2px solid rgba(168,85,247,.3);color:var(--tm);font-family:Orbitron,monospace;font-size:.68rem;padding:16px 20px;border-radius:12px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;min-width:110px;transition:all .2s" onmouseover="this.style.borderColor='#ff69b4';this.style.background='rgba(168,85,247,.18)'" onmouseout="this.style.borderColor='rgba(168,85,247,.3)';this.style.background='rgba(168,85,247,.07)'">
           <span style="font-size:2rem">👥</span><span>2 PEMAIN</span>
           <span style="font-family:Rajdhani,sans-serif;font-size:.65rem;color:rgba(237,225,255,.4)">Lokal bersama</span>
         </button>
       </div>
       <div style="font-size:.65rem;color:rgba(237,225,255,.5);text-align:center;font-family:Orbitron,monospace;letter-spacing:.1em">⏱ PILIH WAKTU PER PEMAIN</div>
       <div style="display:flex;gap:7px;flex-wrap:wrap;justify-content:center">
-        <button onclick="cSetTime(null)" style="background:${timeMode===null?'rgba(168,85,247,.3)':'rgba(168,85,247,.07)'};border:1.5px solid ${timeMode===null?'#c084fc':'rgba(168,85,247,.3)'};color:var(--tm);font-family:Orbitron,monospace;font-size:.58rem;padding:7px 12px;border-radius:8px;cursor:pointer">∞ Bebas</button>
-        ${TIME_OPTIONS.map(t=>`<button onclick="cSetTime(${t.val})" style="background:${timeMode===t.val?'rgba(168,85,247,.3)':'rgba(168,85,247,.07)'};border:1.5px solid ${timeMode===t.val?'#c084fc':'rgba(168,85,247,.3)'};color:var(--tm);font-family:Orbitron,monospace;font-size:.58rem;padding:7px 12px;border-radius:8px;cursor:pointer">${t.label}</button>`).join('')}
+        <button onclick="cSetTime(null)" style="background:${timeMode===null?'rgba(168,85,247,.3)':'rgba(168,85,247,.07)'};border:1.5px solid ${timeMode===null?'#ff69b4':'rgba(168,85,247,.3)'};color:var(--tm);font-family:Orbitron,monospace;font-size:.58rem;padding:7px 12px;border-radius:8px;cursor:pointer">∞ Bebas</button>
+        ${TIME_OPTIONS.map(t=>`<button onclick="cSetTime(${t.val})" style="background:${timeMode===t.val?'rgba(168,85,247,.3)':'rgba(168,85,247,.07)'};border:1.5px solid ${timeMode===t.val?'#ff69b4':'rgba(168,85,247,.3)'};color:var(--tm);font-family:Orbitron,monospace;font-size:.58rem;padding:7px 12px;border-radius:8px;cursor:pointer">${t.label}</button>`).join('')}
       </div>
     </div>`;
     window.cSetTime=function(v){timeMode=v;renderMenu();};
@@ -2133,435 +2098,9 @@ function initWhackAMole(el){
   renderMenu();
 }
 
-  renderMenu();
-}
-
 // ═══════════════════════════════════════════════════
-// GAME: SPACE SHOOTER 🚀
+// GAME 10: SUDOKU
 // ═══════════════════════════════════════════════════
-function initSpaceShooter(el){
-  let canvas,ctx,animId,gameRunning=false;
-  let player,bullets,enemies,enemyBullets,stars,score,lives,level,enemyDir,enemySpeed,shootTimer,enemyShootTimer,hiScore=0;
-  const W=320,H=480;
-
-  function init(){
-    score=0;lives=3;level=1;enemyDir=1;enemySpeed=0.8;shootTimer=0;enemyShootTimer=0;
-    player={x:W/2,y:H-60,w:32,h:32,speed:4,vx:0};
-    bullets=[];enemyBullets=[];
-    stars=Array.from({length:60},()=>({x:Math.random()*W,y:Math.random()*H,s:Math.random()*2+0.5,v:Math.random()*1.5+0.5}));
-    spawnEnemies();
-  }
-
-  function spawnEnemies(){
-    enemies=[];
-    const cols=8,rows=3;
-    for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){
-      enemies.push({x:20+c*37,y:30+r*42,w:28,h:28,alive:true,row:r});
-    }
-  }
-
-  function renderEl(){
-    el.innerHTML=`<div class="game-area" style="padding:10px;gap:8px;align-items:center">
-      <div style="display:flex;gap:10px;align-items:center">
-        <div class="score-badge" style="border-color:#00f5ff;color:#00f5ff">⭐ <span id="ss-score">0</span></div>
-        <div class="score-badge" id="ss-lives">❤️❤️❤️</div>
-        <div class="score-badge">LVL <span id="ss-level">1</span></div>
-        <div class="score-badge" style="color:#c084fc">🏆 ${hiScore}</div>
-      </div>
-      <canvas id="ssCanvas" width="${W}" height="${H}" style="border:2px solid rgba(0,245,255,.3);border-radius:8px;display:block;box-shadow:0 0 20px rgba(0,245,255,.15);touch-action:none;max-width:100%;"></canvas>
-      <div style="font-size:.6rem;color:rgba(237,225,255,.3);font-family:Orbitron,monospace;text-align:center">← → GERAK • KETUK/KLIK TEMBAK</div>
-      <button class="btn btn-outline btn-sm" onclick="ssStop()">⏹ KELUAR</button>
-    </div>`;
-    canvas=document.getElementById('ssCanvas');
-    ctx=canvas.getContext('2d');
-    window.ssStop=function(){gameRunning=false;if(animId)cancelAnimationFrame(animId);renderMenu();};
-
-    // Touch controls
-    let touchStartX=null;
-    canvas.addEventListener('touchstart',function(e){
-      e.preventDefault();
-      touchStartX=e.touches[0].clientX;
-      fireBullet();
-    },{passive:false});
-    canvas.addEventListener('touchmove',function(e){
-      e.preventDefault();
-      if(touchStartX!==null){
-        const dx=e.touches[0].clientX-touchStartX;
-        player.vx=dx*0.12;
-        touchStartX=e.touches[0].clientX;
-      }
-    },{passive:false});
-    canvas.addEventListener('click',function(){fireBullet();});
-  }
-
-  const keys={};
-  function keyDown(e){keys[e.key]=true;}
-  function keyUp(e){keys[e.key]=false;}
-  document.addEventListener('keydown',keyDown);
-  document.addEventListener('keyup',keyUp);
-
-  function fireBullet(){
-    if(!gameRunning)return;
-    bullets.push({x:player.x+player.w/2-2,y:player.y,w:4,h:14,v:8});
-  }
-
-  function loop(){
-    if(!gameRunning)return;
-    update();draw();
-    animId=requestAnimationFrame(loop);
-  }
-
-  function update(){
-    // stars
-    stars.forEach(s=>{s.y+=s.v;if(s.y>H)s.y=0;});
-    // player movement
-    if(keys['ArrowLeft']||keys['a'])player.vx=-player.speed;
-    else if(keys['ArrowRight']||keys['d'])player.vx=player.speed;
-    else player.vx*=0.8;
-    player.x+=player.vx;
-    player.x=Math.max(0,Math.min(W-player.w,player.x));
-    // fire with space
-    shootTimer++;
-    if((keys[' ']||keys['ArrowUp'])&&shootTimer>10){shootTimer=0;fireBullet();}
-    // bullets
-    bullets=bullets.filter(b=>{b.y-=b.v;return b.y>-20;});
-    // enemies move
-    let hitEdge=false;
-    enemies.forEach(e=>{if(e.alive){e.x+=enemyDir*enemySpeed;if(e.x<10||e.x>W-e.w-10)hitEdge=true;}});
-    if(hitEdge){enemyDir*=-1;enemies.forEach(e=>{if(e.alive)e.y+=16;});}
-    // enemy shoot
-    enemyShootTimer++;
-    if(enemyShootTimer>Math.max(40,90-level*8)){
-      enemyShootTimer=0;
-      const alive=enemies.filter(e=>e.alive);
-      if(alive.length){
-        const e=alive[Math.floor(Math.random()*alive.length)];
-        enemyBullets.push({x:e.x+e.w/2-2,y:e.y+e.h,w:4,h:10,v:3+level*0.4});
-      }
-    }
-    enemyBullets=enemyBullets.filter(b=>{b.y+=b.v;return b.y<H+20;});
-    // collision: player bullets vs enemies
-    bullets.forEach(b=>{
-      enemies.forEach(e=>{
-        if(e.alive&&b.x<e.x+e.w&&b.x+b.w>e.x&&b.y<e.y+e.h&&b.y+b.h>e.y){
-          e.alive=false;b.y=-999;
-          score+=10*(e.row+1);
-          document.getElementById('ss-score').textContent=score;
-        }
-      });
-    });
-    // collision: enemy bullets vs player
-    enemyBullets.forEach(b=>{
-      if(b.x<player.x+player.w&&b.x+b.w>player.x&&b.y<player.y+player.h&&b.y+b.h>player.y){
-        b.y=H+99;lives--;
-        const lv=document.getElementById('ss-lives');
-        if(lv)lv.textContent='❤️'.repeat(Math.max(0,lives))+'🖤'.repeat(Math.max(0,3-lives));
-        if(lives<=0){endGame();return;}
-      }
-    });
-    // enemy reaches bottom
-    enemies.forEach(e=>{if(e.alive&&e.y+e.h>H-50){lives=0;endGame();}});
-    // all enemies dead → next level
-    if(enemies.every(e=>!e.alive)){
-      level++;enemySpeed+=0.3;
-      document.getElementById('ss-level').textContent=level;
-      spawnEnemies();
-    }
-  }
-
-  function draw(){
-    ctx.fillStyle='#020818';ctx.fillRect(0,0,W,H);
-    // stars
-    stars.forEach(s=>{ctx.fillStyle=`rgba(255,255,255,${s.s/3})`;ctx.beginPath();ctx.arc(s.x,s.y,s.s*0.5,0,Math.PI*2);ctx.fill();});
-    // enemies
-    enemies.forEach(e=>{
-      if(!e.alive)return;
-      ctx.font=`${e.w}px serif`;ctx.textAlign='center';ctx.textBaseline='middle';
-      ctx.fillText(e.row===0?'👾':e.row===1?'🛸':'👽',e.x+e.w/2,e.y+e.h/2);
-    });
-    // enemy bullets
-    enemyBullets.forEach(b=>{
-      ctx.fillStyle='#ff4444';
-      ctx.shadowBlur=8;ctx.shadowColor='#ff0000';
-      ctx.fillRect(b.x,b.y,b.w,b.h);ctx.shadowBlur=0;
-    });
-    // player bullets
-    bullets.forEach(b=>{
-      ctx.fillStyle='#00f5ff';
-      ctx.shadowBlur=10;ctx.shadowColor='#00f5ff';
-      ctx.fillRect(b.x,b.y,b.w,b.h);ctx.shadowBlur=0;
-    });
-    // player ship
-    ctx.shadowBlur=15;ctx.shadowColor='#a855f7';
-    ctx.font='32px serif';ctx.textAlign='center';ctx.textBaseline='middle';
-    ctx.fillText('🚀',player.x+player.w/2,player.y+player.h/2);
-    ctx.shadowBlur=0;
-  }
-
-  function endGame(){
-    gameRunning=false;
-    if(animId)cancelAnimationFrame(animId);
-    document.removeEventListener('keydown',keyDown);
-    document.removeEventListener('keyup',keyUp);
-    if(score>hiScore)hiScore=score;
-    el.innerHTML=`<div class="game-area" style="gap:14px;padding:20px">
-      <div style="font-family:Orbitron,monospace;font-size:1.2rem;font-weight:900;color:#00f5ff;text-align:center">🚀 GAME OVER!</div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
-        <div class="score-badge" style="border-color:#00f5ff;color:#00f5ff">SKOR: ${score}</div>
-        <div class="score-badge">LEVEL: ${level}</div>
-        <div class="score-badge" style="color:#c084fc">🏆 REKOR: ${hiScore}</div>
-      </div>
-      <div class="choice-row">
-        <button class="btn btn-cyan" onclick="ssRetry()">🔄 MAIN LAGI</button>
-        <button class="btn btn-outline btn-sm" onclick="ssMenu2()">🏠 MENU</button>
-      </div></div>`;
-    window.ssRetry=function(){startGame();};
-    window.ssMenu2=function(){renderMenu();};
-  }
-
-  function renderMenu(){
-    document.removeEventListener('keydown',keyDown);
-    document.removeEventListener('keyup',keyUp);
-    el.innerHTML=`<div class="game-area" style="gap:14px;padding:20px">
-      <div style="font-family:Orbitron,monospace;font-size:1.1rem;font-weight:900;color:#00f5ff;text-align:center">🚀 SPACE SHOOTER</div>
-      <div style="font-size:.72rem;color:rgba(237,225,255,.5);text-align:center;line-height:1.6">Tembak semua alien sebelum mereka<br>mencapai bumi! Hindari tembakan balik!</div>
-      <div style="font-size:.6rem;color:rgba(237,225,255,.3);font-family:Orbitron,monospace;text-align:center">← → GERAK &nbsp;|&nbsp; SPASI/↑ TEMBAK<br>Di HP: Geser + Ketuk layar</div>
-      ${hiScore>0?`<div style="font-family:Orbitron,monospace;font-size:.7rem;color:#c084fc;text-align:center">🏆 REKOR: ${hiScore}</div>`:''}
-      <button class="btn btn-cyan" onclick="ssBegin()" style="min-width:160px">🚀 MULAI GAME</button>
-    </div>`;
-    window.ssBegin=function(){startGame();};
-  }
-
-  function startGame(){
-    init();renderEl();gameRunning=true;
-    document.addEventListener('keydown',keyDown);
-    document.addEventListener('keyup',keyUp);
-    loop();
-  }
-
-  renderMenu();
-}
-
-// ═══════════════════════════════════════════════════
-// BELAJAR: KUIS TKR OTOMOTIF 🔧
-// ═══════════════════════════════════════════════════
-function initQuizTKR(el){
-  const ALL_QUESTIONS=[
-    // MESIN (1-25)
-    {q:"Apa fungsi utama sistem pendingin mesin?",a:["Mendinginkan mesin agar tidak overheat","Menambah tenaga mesin","Menghemat bahan bakar","Menstabilkan tegangan"],c:0,cat:"Mesin"},
-    {q:"Komponen yang mengubah gerak bolak-balik piston menjadi gerak putar adalah?",a:["Poros engkol (crankshaft)","Camshaft","Connecting rod","Flywheel"],c:0,cat:"Mesin"},
-    {q:"Fungsi katup (valve) pada mesin adalah?",a:["Mengatur masuk/keluarnya gas dari ruang bakar","Mengatur tekanan oli","Mengatur aliran air pendingin","Mengontrol tegangan baterai"],c:0,cat:"Mesin"},
-    {q:"Apa yang dimaksud dengan TMA (Titik Mati Atas)?",a:["Posisi piston paling atas dalam silinder","Posisi piston paling bawah","Posisi klep terbuka penuh","Saat terjadi pembakaran"],c:0,cat:"Mesin"},
-    {q:"Berapa langkah kerja pada mesin 4 tak?",a:["4 langkah","2 langkah","6 langkah","3 langkah"],c:0,cat:"Mesin"},
-    {q:"Urutan langkah kerja mesin 4 tak yang benar adalah?",a:["Hisap-Kompresi-Usaha-Buang","Hisap-Usaha-Kompresi-Buang","Kompresi-Hisap-Usaha-Buang","Buang-Hisap-Kompresi-Usaha"],c:0,cat:"Mesin"},
-    {q:"Komponen yang berfungsi menyekat ruang bakar agar tidak ada kebocoran kompresi adalah?",a:["Ring piston","Bearing","Gasket kepala silinder","Baut kepala silinder"],c:0,cat:"Mesin"},
-    {q:"Apa fungsi flywheel (roda gila)?",a:["Menyimpan energi putar dan menstabilkan putaran mesin","Memompa bahan bakar","Mengatur timing pengapian","Mendinginkan mesin"],c:0,cat:"Mesin"},
-    {q:"Komponen yang mengatur waktu buka-tutup katup sesuai siklus mesin adalah?",a:["Camshaft (poros bubungan)","Crankshaft","Piston","Karburator"],c:0,cat:"Mesin"},
-    {q:"Apa yang menyebabkan mesin mengalami overheating?",a:["Coolant kurang, termostat rusak, atau radiator tersumbat","Aki lemah","Tekanan ban kurang","Kopling aus"],c:0,cat:"Mesin"},
-    {q:"Rasio kompresi mesin bensin umumnya berkisar pada?",a:["8:1 hingga 11:1","2:1 hingga 4:1","15:1 hingga 20:1","20:1 hingga 25:1"],c:0,cat:"Mesin"},
-    {q:"Apa fungsi oli mesin?",a:["Melumasi, mendinginkan, dan membersihkan komponen mesin","Hanya melumasi saja","Hanya mendinginkan saja","Memompa bahan bakar"],c:0,cat:"Mesin"},
-    {q:"Komponen yang mengubah energi panas hasil pembakaran menjadi gerak mekanik adalah?",a:["Piston","Camshaft","Alternator","Kopling"],c:0,cat:"Mesin"},
-    {q:"Apa itu blowby pada mesin?",a:["Kebocoran gas dari ruang bakar melewati ring piston menuju crankcase","Kebocoran oli dari gasket","Bunyi ketukan pada mesin","Getaran berlebih pada mesin"],c:0,cat:"Mesin"},
-    {q:"Fungsi termostat pada sistem pendingin adalah?",a:["Mengatur suhu operasi mesin agar tetap optimal","Memompa coolant","Menyaring coolant","Membuang panas ke udara"],c:0,cat:"Mesin"},
-    {q:"Apa fungsi timing belt/chain?",a:["Menghubungkan crankshaft dengan camshaft agar sinkron","Menghubungkan mesin dengan transmisi","Menggerakkan pompa power steering","Menggerakkan alternator"],c:0,cat:"Mesin"},
-    {q:"Apa yang dimaksud dengan clearance valve (celah katup)?",a:["Jarak antara rocker arm dengan batang katup","Tekanan kompresi mesin","Ukuran diameter katup","Panjang langkah piston"],c:0,cat:"Mesin"},
-    {q:"Mesin diesel menggunakan sistem pengapian?",a:["Kompresi tinggi (tanpa busi)","Busi seperti mesin bensin","Koil pengapian","CDI"],c:0,cat:"Mesin"},
-    {q:"Apa fungsi pompa oli pada mesin?",a:["Mensirkulasikan oli ke seluruh bagian mesin yang memerlukan pelumasan","Memompa bahan bakar ke injektor","Memompa air pendingin","Mengisi aki"],c:0,cat:"Mesin"},
-    {q:"Pada mesin 4 tak, berapa kali piston naik-turun dalam satu siklus pembakaran?",a:["2 kali naik dan 2 kali turun (4 langkah)","1 kali naik dan 1 kali turun","3 kali naik dan 3 kali turun","4 kali naik dan 4 kali turun"],c:0,cat:"Mesin"},
-    {q:"Kepanjangan dari EFI adalah?",a:["Electronic Fuel Injection","Engine Fuel Ignition","Electronic Firing Injection","Engine Fuel Indicator"],c:0,cat:"Mesin"},
-    {q:"Apa fungsi injektor pada sistem EFI?",a:["Menyemprotkan bahan bakar ke dalam silinder atau intake manifold","Mengontrol pengapian","Mengatur tekanan kompresi","Mensirkulasikan coolant"],c:0,cat:"Mesin"},
-    {q:"Komponen sensor yang mengukur posisi pedal gas pada sistem EFI adalah?",a:["TPS (Throttle Position Sensor)","MAP sensor","O2 sensor","Crankshaft position sensor"],c:0,cat:"Mesin"},
-    {q:"Apa yang dimaksud dengan displacement (kapasitas mesin)?",a:["Volume total silinder yang ditempuh piston dari TMB ke TMA","Tekanan kompresi","Jumlah silinder","Daya output mesin"],c:0,cat:"Mesin"},
-    {q:"Fungsi gasket kepala silinder adalah?",a:["Menyekat antara blok mesin dan kepala silinder agar tidak bocor","Mengatur timing katup","Melumasi piston","Mendinginkan mesin"],c:0,cat:"Mesin"},
-
-    // TRANSMISI & KOPLING (26-45)
-    {q:"Fungsi kopling (clutch) pada kendaraan adalah?",a:["Menghubungkan dan memutus tenaga dari mesin ke transmisi","Menambah kecepatan kendaraan","Mengurangi konsumsi BBM","Mengatur tekanan rem"],c:0,cat:"Transmisi"},
-    {q:"Komponen kopling yang berfungsi sebagai bidang gesek utama adalah?",a:["Piringan kopling (clutch disc)","Pressure plate","Release bearing","Flywheel"],c:0,cat:"Transmisi"},
-    {q:"Apa yang dimaksud dengan gigi transmisi?",a:["Perbandingan reduksi putaran mesin terhadap putaran roda","Jumlah silinder mesin","Kapasitas mesin","Tekanan ban"],c:0,cat:"Transmisi"},
-    {q:"Pada transmisi manual, fungsi synchronizer adalah?",a:["Menyamakan putaran gigi yang akan masuk agar perpindahan gigi menjadi halus","Mengunci gigi agar tidak keluar","Melumasi roda gigi","Mengatur tekanan hidraulik"],c:0,cat:"Transmisi"},
-    {q:"Transmisi otomatis menggunakan komponen utama berupa?",a:["Torque converter dan planetary gear set","Kopling dan garpu pemindah","Rantai dan sproket","Sabuk dan pulley"],c:0,cat:"Transmisi"},
-    {q:"Apa fungsi differential (gardan)?",a:["Membagi torsi ke dua roda penggerak saat berbelok","Menambah tenaga mesin","Mengatur tinggi kendaraan","Menyimpan energi kinetik"],c:0,cat:"Transmisi"},
-    {q:"Transfer case pada kendaraan 4WD berfungsi untuk?",a:["Membagi tenaga antara poros depan dan belakang","Mengatur rem ABS","Mengontrol suspensi","Mengatur tenaga mesin"],c:0,cat:"Transmisi"},
-    {q:"Apa yang menyebabkan kopling selip?",a:["Piringan kopling aus atau pegas pressure plate lemah","Oli mesin terlalu penuh","Tekanan ban kurang","Aki lemah"],c:0,cat:"Transmisi"},
-    {q:"Torque converter pada transmisi otomatis berfungsi sebagai?",a:["Pengganti kopling, meneruskan tenaga melalui fluida","Differential","Filter oli","Pompa bahan bakar"],c:0,cat:"Transmisi"},
-    {q:"Apa fungsi poros propeller (drive shaft)?",a:["Meneruskan putaran dari transmisi ke differential","Menggerakkan pompa power steering","Menghubungkan roda dengan suspensi","Menggerakkan alternator"],c:0,cat:"Transmisi"},
-    {q:"CV joint (Constant Velocity joint) berfungsi untuk?",a:["Meneruskan putaran dengan sudut konstan tanpa perubahan kecepatan saat roda berbelok","Menghubungkan mesin ke transmisi","Menyerap getaran suspensi","Mengunci diferensial"],c:0,cat:"Transmisi"},
-    {q:"Apa itu overdrive pada transmisi?",a:["Perbandingan gigi lebih kecil dari 1:1 sehingga putaran roda lebih cepat dari mesin","Gigi 1 dengan torsi terbesar","Sistem penguncian diferensial","Gigi mundur"],c:0,cat:"Transmisi"},
-    {q:"Tanda kopling sudah aus biasanya ditandai dengan?",a:["Kopling selip, perpindahan gigi kasar, bau gosong","Konsumsi BBM berkurang","Mesin mudah hidup","Rem menjadi lebih pakem"],c:0,cat:"Transmisi"},
-    {q:"Apa fungsi release bearing pada sistem kopling?",a:["Meneruskan gaya pedal kopling ke pressure plate","Menahan poros input transmisi","Melumasi piringan kopling","Mengunci flywheel"],c:0,cat:"Transmisi"},
-    {q:"Pada CVT (Continuously Variable Transmission), perpindahan rasio menggunakan?",a:["Sabuk (belt) dan pulley yang bisa berubah diameter efektif","Planetary gear set","Synchronizer","Kopling basah"],c:0,cat:"Transmisi"},
-    {q:"Apa yang dimaksud dengan final drive ratio?",a:["Perbandingan antara ring gear dan pinion gear pada diferensial","Torsi maksimum mesin","Kapasitas oli gardan","Ukuran ban belakang"],c:0,cat:"Transmisi"},
-    {q:"Fungsi free wheeling hub pada kendaraan 4WD adalah?",a:["Memutus hubungan poros roda depan saat 2WD agar tidak berputar sia-sia","Mengunci diferensial tengah","Mengatur distribusi torsi","Mengunci poros belakang"],c:0,cat:"Transmisi"},
-    {q:"Gejala transmisi manual yang bermasalah antara lain?",a:["Gigi susah masuk, loncat sendiri, atau suara berisik saat netral","Konsumsi BBM meningkat","Mesin overheat","Rem tidak pakem"],c:0,cat:"Transmisi"},
-    {q:"Apa fungsi oli transmisi?",a:["Melumasi roda gigi dan bearing di dalam transmisi","Mendinginkan mesin","Memompa rem hidraulik","Melumasi piston"],c:0,cat:"Transmisi"},
-    {q:"Pada sistem 4WD, perbedaan 4H dan 4L adalah?",a:["4H untuk kecepatan normal di medan berat, 4L untuk torsi lebih besar di medan sangat berat","4H untuk gigi mundur, 4L untuk gigi maju","4H untuk jalan aspal, 4L untuk jalan tol","Tidak ada perbedaan"],c:0,cat:"Transmisi"},
-
-    // SISTEM REM (46-60)
-    {q:"Apa prinsip kerja sistem rem hidraulik?",a:["Tekanan fluida (Pascal) diteruskan secara merata ke semua silinder roda","Tekanan mekanik dari kawat baja","Tekanan udara dari kompresor","Tekanan elektromagnetik"],c:0,cat:"Rem"},
-    {q:"Komponen rem yang berfungsi sebagai bidang gesek pada rem cakram adalah?",a:["Kampas rem (brake pad)","Master silinder","Caliper","Brake line"],c:0,cat:"Rem"},
-    {q:"Apa fungsi master silinder pada sistem rem?",a:["Mengubah tekanan mekanik pedal menjadi tekanan hidraulik","Mendistribusikan tenaga pengereman ke 4 roda","Menyimpan minyak rem","Memperkuat daya pengereman"],c:0,cat:"Rem"},
-    {q:"ABS (Anti-lock Braking System) berfungsi untuk?",a:["Mencegah roda terkunci saat pengereman mendadak agar kemudi tetap terkontrol","Menambah jarak pengereman","Mengunci semua roda sekaligus","Memperkuat pedal rem"],c:0,cat:"Rem"},
-    {q:"Apa tanda minyak rem perlu diganti?",a:["Warna minyak rem gelap/hitam, titik didih turun, rem terasa ngempos","Mesin overheat","Kopling selip","Getaran pada setir"],c:0,cat:"Rem"},
-    {q:"Rem tromol (drum brake) menggunakan komponen gesekan berupa?",a:["Sepatu rem (brake shoe) yang menekan ke dalam tromol","Brake pad yang menjepit rotor","Kawat baja","Piston hidraulik langsung"],c:0,cat:"Rem"},
-    {q:"Apa fungsi booster rem (brake booster)?",a:["Memperkuat tenaga pengereman dengan bantuan vakum mesin","Menyimpan minyak rem","Mengunci roda","Mengaktifkan ABS"],c:0,cat:"Rem"},
-    {q:"Penyebab rem terasa ngempos (spongy) adalah?",a:["Ada angin (udara) di dalam sistem rem hidraulik","Kampas rem aus","Ban kempes","Oli mesin habis"],c:0,cat:"Rem"},
-    {q:"Apa itu bleeding rem?",a:["Proses membuang angin dari sistem rem hidraulik","Mengganti minyak rem","Menyetel jarak bebas pedal rem","Membersihkan kaliper"],c:0,cat:"Rem"},
-    {q:"Fungsi proportioning valve pada sistem rem adalah?",a:["Membagi tekanan rem antara roda depan dan belakang agar seimbang","Mengunci roda belakang","Meningkatkan tekanan rem depan","Mengaktifkan rem parkir"],c:0,cat:"Rem"},
-    {q:"Apa tanda kampas rem cakram sudah habis?",a:["Bunyi decit/besi bergesekan saat mengerem, indikator menyala","Mesin sulit dihidupkan","Konsumsi BBM meningkat","Transmisi selip"],c:0,cat:"Rem"},
-    {q:"EBD (Electronic Brake Distribution) berfungsi untuk?",a:["Mendistribusikan tekanan rem secara elektronik sesuai beban roda","Mengunci semua roda sekaligus","Memperkuat pedal rem","Menggantikan sistem ABS"],c:0,cat:"Rem"},
-    {q:"Apa yang menyebabkan rem berbunyi saat diinjak?",a:["Kampas rem aus, kotoran pada rotor, atau kampas rem keras","Tekanan ban kurang","Aki lemah","Kopling aus"],c:0,cat:"Rem"},
-    {q:"Fungsi rem parkir (handbrake) adalah?",a:["Menahan kendaraan agar tidak bergerak saat diparkir","Membantu pengereman darurat di jalan tol","Mengunci transmisi","Mengaktifkan 4WD"],c:0,cat:"Rem"},
-    {q:"Rotor (disc) rem yang bergelombang menyebabkan?",a:["Getaran pada pedal rem dan setir saat mengerem","Mesin mati mendadak","Transmisi tidak mau pindah gigi","Kopling selip"],c:0,cat:"Rem"},
-
-    // SUSPENSI & KEMUDI (61-75)
-    {q:"Fungsi utama sistem suspensi kendaraan adalah?",a:["Menyerap guncangan dari jalan dan menjaga kestabilan kendaraan","Menambah kecepatan kendaraan","Menghemat bahan bakar","Mengontrol sistem rem"],c:0,cat:"Suspensi"},
-    {q:"Apa perbedaan suspensi independen dengan suspensi rigid?",a:["Suspensi independen tiap roda bergerak bebas, rigid kedua roda dihubungkan poros kaku","Suspensi independen lebih keras","Suspensi rigid lebih nyaman","Tidak ada perbedaan"],c:0,cat:"Suspensi"},
-    {q:"Komponen suspensi yang menyerap energi guncangan dan mencegah pantulan berulang adalah?",a:["Shock absorber (peredam kejut)","Per/pegas","Arm suspensi","Ball joint"],c:0,cat:"Suspensi"},
-    {q:"Apa itu wheel alignment (spooring)?",a:["Penyetelan sudut-sudut roda (camber, caster, toe) agar kendaraan berjalan lurus","Penggantian ban","Penyetelan tekanan ban","Balancing roda"],c:0,cat:"Suspensi"},
-    {q:"Fungsi ball joint pada suspensi adalah?",a:["Sebagai titik engsel yang menghubungkan knuckle roda dengan lengan suspensi","Menyerap getaran dari jalan","Mengunci roda","Mengatur tinggi suspensi"],c:0,cat:"Suspensi"},
-    {q:"Apa yang dimaksud dengan camber negatif?",a:["Bagian atas roda miring ke dalam (menuju kendaraan)","Bagian atas roda miring ke luar","Roda miring ke depan","Roda miring ke belakang"],c:0,cat:"Suspensi"},
-    {q:"Apa itu toe-in pada roda kendaraan?",a:["Bagian depan roda lebih dekat satu sama lain dibanding bagian belakangnya","Bagian depan roda lebih jauh","Roda miring ke dalam","Roda miring ke luar"],c:0,cat:"Suspensi"},
-    {q:"Power steering elektrik (EPS) menggunakan?",a:["Motor listrik untuk membantu pemutaran setir","Pompa hidraulik dan power steering fluid","Vakum mesin","Kompresor udara"],c:0,cat:"Suspensi"},
-    {q:"Tanda tie rod end perlu diganti adalah?",a:["Setir oblak/goyang, ban aus tidak merata, kendaraan tidak lurus","Mesin sulit dihidupkan","Konsumsi BBM meningkat","Transmisi selip"],c:0,cat:"Suspensi"},
-    {q:"Fungsi stabilizer bar (anti-roll bar) adalah?",a:["Mengurangi body roll (kemiringan bodi) saat berbelok","Menyerap guncangan vertikal","Mengunci diferensial","Mengatur ketinggian bodi"],c:0,cat:"Suspensi"},
-    {q:"Apa itu wheel balancing?",a:["Proses menyeimbangkan distribusi massa pada roda agar tidak bergetar saat berputar","Penyetelan sudut roda","Penggantian ban","Menyetel tekanan ban"],c:0,cat:"Suspensi"},
-    {q:"Apa gejala shock absorber sudah rusak/lemah?",a:["Kendaraan memantul berlebihan, miring saat berbelok, ban aus tidak merata","Mesin sulit hidup","Rem tidak pakem","Kopling selip"],c:0,cat:"Suspensi"},
-    {q:"Rack and pinion steering berfungsi untuk?",a:["Mengubah putaran setir menjadi gerakan linear untuk mengarahkan roda","Menyerap getaran kemudi","Mengunci setir saat parkir","Mengaktifkan power steering"],c:0,cat:"Suspensi"},
-    {q:"Apa yang dimaksud dengan turning radius kendaraan?",a:["Radius lingkaran terkecil yang bisa dilakukan kendaraan saat berbelok penuh","Radius ban","Ukuran setir","Jarak sumbu roda"],c:0,cat:"Suspensi"},
-    {q:"Fungsi strut bar (tension rod) pada suspensi adalah?",a:["Menguatkan lower arm agar tidak bergerak maju-mundur saat ada beban","Menyerap guncangan vertikal","Mengatur camber roda","Menghubungkan per dengan bodi"],c:0,cat:"Suspensi"},
-
-    // KELISTRIKAN (76-90)
-    {q:"Fungsi alternator pada kendaraan adalah?",a:["Mengisi baterai dan mensuplai listrik ke komponen kendaraan saat mesin hidup","Menyalakan mesin","Mengontrol sistem rem","Menggerakkan kopling"],c:0,cat:"Kelistrikan"},
-    {q:"Apa fungsi baterai/aki pada kendaraan?",a:["Menyimpan energi listrik untuk menghidupkan starter dan mensuplai listrik saat mesin mati","Mengisi daya alternator","Mengontrol sistem bahan bakar","Melumasi komponen"],c:0,cat:"Kelistrikan"},
-    {q:"Satuan kapasitas aki kendaraan adalah?",a:["Ah (Ampere-hour)","Volt","Watt","Ohm"],c:0,cat:"Kelistrikan"},
-    {q:"Fungsi motor starter adalah?",a:["Memutar mesin saat pertama dihidupkan","Mengisi aki","Mengontrol sistem pengapian","Menggerakkan pompa bahan bakar"],c:0,cat:"Kelistrikan"},
-    {q:"Apa fungsi sekring (fuse) pada kendaraan?",a:["Melindungi komponen listrik dari arus berlebih (korsleting)","Menstabilkan tegangan","Memperkuat arus listrik","Mengisi aki"],c:0,cat:"Kelistrikan"},
-    {q:"Sistem pengapian konvensional menggunakan komponen?",a:["Koil, distributor, busi, platina/kontak poin","Koil, ECU, injektor","Alternator, regulator, baterai","CDI, koil, busi"],c:0,cat:"Kelistrikan"},
-    {q:"Fungsi koil pengapian (ignition coil) adalah?",a:["Menaikkan tegangan aki (12V) menjadi tegangan tinggi (10.000-30.000V) untuk memercik busi","Mengontrol waktu pengapian","Mengisi baterai","Mendistribusikan arus ke semua busi"],c:0,cat:"Kelistrikan"},
-    {q:"Apa fungsi busi (spark plug) pada mesin bensin?",a:["Memercikkan api untuk membakar campuran bahan bakar dan udara di ruang bakar","Mengatur timing pengapian","Melumasi ruang bakar","Menyaring bahan bakar"],c:0,cat:"Kelistrikan"},
-    {q:"Apa yang dimaksud dengan timing pengapian?",a:["Saat tepat percikan busi terjadi sebelum TMA (derajat sebelum TMA)","Interval penggantian busi","Tegangan percikan busi","Urutan pengapian antar silinder"],c:0,cat:"Kelistrikan"},
-    {q:"Sensor yang mendeteksi ketukan (knocking) mesin adalah?",a:["Knock sensor","O2 sensor","MAP sensor","IAT sensor"],c:0,cat:"Kelistrikan"},
-    {q:"ECU (Engine Control Unit) berfungsi sebagai?",a:["Otak elektronik kendaraan yang mengontrol sistem mesin berdasarkan input sensor","Alternator cadangan","Filter bahan bakar elektronik","Pengatur tekanan rem"],c:0,cat:"Kelistrikan"},
-    {q:"Apa yang menyebabkan aki cepat tekor?",a:["Alternator rusak, ada kebocoran arus, atau sel aki sudah lemah","Kopling aus","Ban kempes","Filter udara kotor"],c:0,cat:"Kelistrikan"},
-    {q:"Apa fungsi relay pada sistem kelistrikan kendaraan?",a:["Saklar elektromagnetik yang memungkinkan arus kecil mengontrol arus besar","Menstabilkan tegangan aki","Memperkuat sinyal sensor","Mengisi aki"],c:0,cat:"Kelistrikan"},
-    {q:"Tegangan operasi normal sistem kelistrikan kendaraan penumpang adalah?",a:["12 Volt DC","24 Volt DC","6 Volt DC","220 Volt AC"],c:0,cat:"Kelistrikan"},
-    {q:"Apa itu OBD (On-Board Diagnostics)?",a:["Sistem diagnosis elektronik bawaan kendaraan yang menyimpan kode kerusakan (DTC)","Sistem audio kendaraan","Sistem navigasi GPS","Sistem pendingin elektronik"],c:0,cat:"Kelistrikan"},
-
-    // BAHAN BAKAR & EMISI (91-100)
-    {q:"Apa fungsi filter bahan bakar?",a:["Menyaring kotoran dan air dari bahan bakar sebelum masuk ke mesin","Memompa bahan bakar","Mengatur tekanan bahan bakar","Menyimpan bahan bakar cadangan"],c:0,cat:"BBM & Emisi"},
-    {q:"Angka oktan bahan bakar bensin menunjukkan?",a:["Kemampuan bahan bakar menahan kompresi sebelum terbakar sendiri (anti-knocking)","Kandungan energi bahan bakar","Viskositas bahan bakar","Titik nyala bahan bakar"],c:0,cat:"BBM & Emisi"},
-    {q:"Apa itu catalytic converter?",a:["Komponen knalpot yang mengubah gas beracun (HC, CO, NOx) menjadi gas yang lebih aman","Filter udara mesin","Pompa bahan bakar","Sensor emisi"],c:0,cat:"BBM & Emisi"},
-    {q:"Gas emisi berbahaya yang dihasilkan pembakaran tidak sempurna adalah?",a:["CO (karbon monoksida)","CO2 (karbon dioksida)","H2O (air)","N2 (nitrogen)"],c:0,cat:"BBM & Emisi"},
-    {q:"Fuel pump (pompa bahan bakar) pada kendaraan EFI umumnya dipasang di?",a:["Di dalam tangki bahan bakar","Di luar tangki, di ruang mesin","Di filter bahan bakar","Di intake manifold"],c:0,cat:"BBM & Emisi"},
-    {q:"Apa fungsi MAP sensor pada sistem EFI?",a:["Mengukur tekanan absolut di intake manifold untuk menentukan beban mesin","Mengukur posisi throttle","Mengukur suhu udara masuk","Mengukur kecepatan kendaraan"],c:0,cat:"BBM & Emisi"},
-    {q:"O2 sensor (lambda sensor) berfungsi untuk?",a:["Mendeteksi kadar oksigen di gas buang agar ECU bisa mengatur campuran bahan bakar-udara","Mengukur tekanan mesin","Mengontrol timing pengapian","Mengukur suhu coolant"],c:0,cat:"BBM & Emisi"},
-    {q:"Campuran bahan bakar-udara yang ideal (stoikiometri) untuk bensin adalah?",a:["14.7 : 1 (udara : bensin)","10 : 1","20 : 1","7 : 1"],c:0,cat:"BBM & Emisi"},
-    {q:"Apa yang menyebabkan asap knalpot berwarna putih tebal?",a:["Coolant masuk ke ruang bakar (gasket kepala silinder bocor)","Terlalu banyak bahan bakar","Filter udara kotor","Aki lemah"],c:0,cat:"BBM & Emisi"},
-    {q:"Apa yang menyebabkan asap knalpot berwarna biru/hitam?",a:["Biru: oli terbakar; Hitam: campuran terlalu kaya (terlalu banyak BBM)","Biru: BBM berlebih; Hitam: oli terbakar","Keduanya berarti coolant bocor","Keduanya berarti pengapian terlambat"],c:0,cat:"BBM & Emisi"},
-  ];
-
-  let questions=[],qIdx=0,score=0,wrong=0,timer=null,timeLeft=30,answered=false;
-  const PER_SESSION=15;
-
-  function shuffle(arr){return arr.slice().sort(()=>Math.random()-.5);}
-
-  function startQuiz(){
-    questions=shuffle(ALL_QUESTIONS).slice(0,PER_SESSION);
-    qIdx=0;score=0;wrong=0;
-    nextQuestion();
-  }
-
-  function nextQuestion(){
-    if(qIdx>=questions.length){endQuiz();return;}
-    answered=false;timeLeft=30;
-    const q=questions[qIdx];
-    const choices=shuffle(q.a.map((a,i)=>({a,correct:i===q.c})));
-    el.innerHTML=`<div class="game-area" style="gap:10px;padding:14px">
-      <div style="display:flex;gap:8px;align-items:center;justify-content:space-between;width:100%">
-        <div class="score-badge" style="border-color:#ff9500;color:#ff9500">🔧 ${q.cat}</div>
-        <div class="score-badge">${qIdx+1}/${PER_SESSION}</div>
-        <div class="score-badge" style="color:#39ff14">✓${score}</div>
-        <div class="score-badge" id="tkr-timer" style="color:#ff4444">⏱${timeLeft}s</div>
-      </div>
-      <div style="width:100%;background:rgba(255,149,0,.15);border-radius:4px;height:5px">
-        <div id="tkr-prog" style="height:100%;background:#ff9500;border-radius:4px;width:${(qIdx/PER_SESSION)*100}%;transition:width .3s"></div>
-      </div>
-      <div style="font-family:'Rajdhani',sans-serif;font-size:.88rem;font-weight:700;color:var(--tm);text-align:center;line-height:1.5;background:rgba(255,149,0,.07);border:1px solid rgba(255,149,0,.2);border-radius:8px;padding:12px">${q.q}</div>
-      <div id="tkr-choices" style="display:flex;flex-direction:column;gap:7px;width:100%"></div>
-    </div>`;
-    const cc=document.getElementById('tkr-choices');
-    choices.forEach((c,i)=>{
-      const btn=document.createElement('button');
-      btn.style.cssText=`background:rgba(255,149,0,.06);border:1.5px solid rgba(255,149,0,.25);color:var(--tm);font-family:'Rajdhani',sans-serif;font-size:.8rem;padding:10px 12px;border-radius:8px;cursor:pointer;text-align:left;transition:all .15s;line-height:1.4`;
-      btn.textContent=`${['A','B','C','D'][i]}. ${c.a}`;
-      btn.onmouseover=()=>{if(!answered)btn.style.borderColor='#ff9500';};
-      btn.onmouseout=()=>{if(!answered)btn.style.borderColor='rgba(255,149,0,.25)';};
-      btn.onclick=()=>{
-        if(answered)return;
-        answered=true;clearInterval(timer);
-        if(c.correct){
-          score++;
-          btn.style.background='rgba(57,255,20,.2)';btn.style.borderColor='#39ff14';btn.style.color='#39ff14';
-        }else{
-          wrong++;
-          btn.style.background='rgba(255,0,0,.18)';btn.style.borderColor='#ff4444';btn.style.color='#ff4444';
-          // show correct
-          Array.from(cc.children).forEach((b,j)=>{if(choices[j].correct){b.style.background='rgba(57,255,20,.15)';b.style.borderColor='#39ff14';}});
-        }
-        setTimeout(()=>{qIdx++;nextQuestion();},1200);
-      };
-      cc.appendChild(btn);
-    });
-    // countdown timer
-    timer=setInterval(()=>{
-      timeLeft--;
-      const t=document.getElementById('tkr-timer');
-      if(t)t.textContent='⏱'+timeLeft+'s';
-      if(timeLeft<=0){
-        clearInterval(timer);
-        if(!answered){answered=true;wrong++;qIdx++;setTimeout(nextQuestion,500);}
-      }
-    },1000);
-  }
-
-  function endQuiz(){
-    clearInterval(timer);
-    const pct=Math.round((score/PER_SESSION)*100);
-    const grade=pct>=90?'A':pct>=75?'B':pct>=60?'C':pct>=50?'D':'E';
-    const msg=pct>=90?'Luar biasa! Kamu calon mekanik handal! 🏆':pct>=75?'Bagus sekali! Terus tingkatkan! 💪':pct>=60?'Cukup baik, perbanyak latihan 📚':pct>=50?'Perlu banyak belajar lagi 📖':'Yuk baca materi TKR lebih giat! 🔧';
-    el.innerHTML=`<div class="game-area" style="gap:12px;padding:18px">
-      <div style="font-family:Orbitron,monospace;font-size:1rem;font-weight:900;color:#ff9500;text-align:center">🔧 HASIL KUIS TKR</div>
-      <div style="font-family:Orbitron,monospace;font-size:2.5rem;font-weight:900;color:#ff9500;text-align:center;text-shadow:0 0 20px rgba(255,149,0,.6)">${grade}</div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
-        <div class="score-badge" style="border-color:#ff9500;color:#ff9500">BENAR: ${score}/${PER_SESSION}</div>
-        <div class="score-badge" style="color:#ff4444">SALAH: ${wrong}</div>
-        <div class="score-badge" style="color:#c084fc">NILAI: ${pct}%</div>
-      </div>
-      <div style="font-family:'Rajdhani',sans-serif;font-size:.82rem;color:rgba(237,225,255,.6);text-align:center;background:rgba(255,149,0,.07);border:1px solid rgba(255,149,0,.2);border-radius:8px;padding:10px">${msg}</div>
-      <div class="choice-row">
-        <button class="btn" style="background:linear-gradient(135deg,#ff9500,#ffb347);border:none;color:#000;font-family:Orbitron,monospace;font-size:.65rem;padding:11px 18px;border-radius:8px;cursor:pointer;font-weight:700" onclick="tkrRetry()">🔄 COBA LAGI</button>
-        <button class="btn btn-outline btn-sm" onclick="tkrMenu()">🏠 MENU</button>
-      </div>
-    </div>`;
-    window.tkrRetry=startQuiz;
-    window.tkrMenu=renderMenu;
-  }
-
-  function renderMenu(){
-    clearInterval(timer);
-    el.innerHTML=`<div class="game-area" style="gap:14px;padding:20px">
-      <div style="font-family:Orbitron,monospace;font-size:1rem;font-weight:900;color:#ff9500;text-align:center">🔧 KUIS TKR OTOMOTIF</div>
-      <div style="font-size:.72rem;color:rgba(237,225,255,.5);text-align:center;line-height:1.7">100 soal Teknik Kendaraan Ringan<br>Random <strong style="color:#ff9500">${PER_SESSION} soal</strong> per sesi • Timer 30 detik/soal</div>
-      <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center">
-        ${['⚙️ Mesin','🔄 Transmisi','🛑 Rem','🔩 Suspensi','⚡ Kelistrikan','⛽ BBM & Emisi'].map(t=>`<span style="font-size:.6rem;background:rgba(255,149,0,.1);border:1px solid rgba(255,149,0,.3);border-radius:12px;padding:4px 10px;color:#ff9500">${t}</span>`).join('')}
-      </div>
-      <button class="btn" style="background:linear-gradient(135deg,#ff9500,#ffb347);border:none;color:#000;font-family:Orbitron,monospace;font-size:.7rem;padding:13px 28px;border-radius:10px;cursor:pointer;font-weight:700;min-width:180px" onclick="tkrStart()">🔧 MULAI KUIS</button>
-    </div>`;
-    window.tkrStart=startQuiz;
-  }
-
-  renderMenu();
-}
 function initSudoku(el){
   const base=[[5,3,0,0,7,0,0,0,0],[6,0,0,1,9,5,0,0,0],[0,9,8,0,0,0,0,6,0],
     [8,0,0,0,6,0,0,0,3],[4,0,0,8,0,3,0,0,1],[7,0,0,0,2,0,0,0,6],
@@ -2827,16 +2366,16 @@ function initHangman(el){
   let pick,word,guessed,wrong,wins=0,losses=0;const maxWrong=6;
   function init(){pick=wordBank[Math.floor(Math.random()*wordBank.length)];word=pick.w;guessed=new Set();wrong=0;}
   function renderHang(){return`<svg viewBox="0 0 180 140" width="180" height="140" xmlns="http://www.w3.org/2000/svg">
-    <line x1="20" y1="130" x2="160" y2="130" stroke="#a855f7" stroke-width="2" opacity=".5"/>
-    <line x1="50" y1="130" x2="50" y2="15" stroke="#a855f7" stroke-width="2" opacity=".5"/>
-    <line x1="50" y1="15" x2="110" y2="15" stroke="#a855f7" stroke-width="2" opacity=".5"/>
-    <line x1="110" y1="15" x2="110" y2="32" stroke="#a855f7" stroke-width="2" opacity=".5"/>
-    ${wrong>0?`<circle cx="110" cy="44" r="12" fill="none" stroke="#a855f7" stroke-width="2" opacity=".8"/>`:''}
-    ${wrong>1?`<line x1="110" y1="56" x2="110" y2="88" stroke="#a855f7" stroke-width="2" opacity=".7"/>`:''}
-    ${wrong>2?`<line x1="110" y1="65" x2="92" y2="80" stroke="#a855f7" stroke-width="2" opacity=".65"/>`:''}
-    ${wrong>3?`<line x1="110" y1="65" x2="128" y2="80" stroke="#a855f7" stroke-width="2" opacity=".65"/>`:''}
-    ${wrong>4?`<line x1="110" y1="88" x2="95" y2="108" stroke="#a855f7" stroke-width="2" opacity=".6"/>`:''}
-    ${wrong>5?`<line x1="110" y1="88" x2="125" y2="108" stroke="#a855f7" stroke-width="2" opacity=".6"/>`:''}
+    <line x1="20" y1="130" x2="160" y2="130" stroke="#ff006e" stroke-width="2" opacity=".5"/>
+    <line x1="50" y1="130" x2="50" y2="15" stroke="#ff006e" stroke-width="2" opacity=".5"/>
+    <line x1="50" y1="15" x2="110" y2="15" stroke="#ff006e" stroke-width="2" opacity=".5"/>
+    <line x1="110" y1="15" x2="110" y2="32" stroke="#ff006e" stroke-width="2" opacity=".5"/>
+    ${wrong>0?`<circle cx="110" cy="44" r="12" fill="none" stroke="#ff006e" stroke-width="2" opacity=".8"/>`:''}
+    ${wrong>1?`<line x1="110" y1="56" x2="110" y2="88" stroke="#ff006e" stroke-width="2" opacity=".7"/>`:''}
+    ${wrong>2?`<line x1="110" y1="65" x2="92" y2="80" stroke="#ff006e" stroke-width="2" opacity=".65"/>`:''}
+    ${wrong>3?`<line x1="110" y1="65" x2="128" y2="80" stroke="#ff006e" stroke-width="2" opacity=".65"/>`:''}
+    ${wrong>4?`<line x1="110" y1="88" x2="95" y2="108" stroke="#ff006e" stroke-width="2" opacity=".6"/>`:''}
+    ${wrong>5?`<line x1="110" y1="88" x2="125" y2="108" stroke="#ff006e" stroke-width="2" opacity=".6"/>`:''}
     </svg>`;}
   function render(){
     const won=word.split('').every(c=>guessed.has(c));const lost=wrong>=maxWrong;
@@ -3087,7 +2626,7 @@ function initMario(el){
       if(en.x<=0||en.x>=cfg.w-en.w)en.vx*=-1;
       let onG=false;for(const pl of platforms){if(rectOverlap({x:en.x,y:en.y+1,w:en.w,h:en.h},pl)){onG=true;break;}}
       if(!onG)en.vx*=-1;
-      if(player.invincible<=0&&rectOverlap(player,en)){if(player.vy>0&&player.y+player.h<en.y+en.h/2){en.alive=false;score+=100;player.vy=-7;addParticle(en.x+13,en.y,'#a855f7');}else{lives--;player.invincible=120;if(lives<=0)gameState='dead';else{player.x=60;player.y=H-80;player.vx=0;player.vy=0;}}}});
+      if(player.invincible<=0&&rectOverlap(player,en)){if(player.vy>0&&player.y+player.h<en.y+en.h/2){en.alive=false;score+=100;player.vy=-7;addParticle(en.x+13,en.y,'#ff006e');}else{lives--;player.invincible=120;if(lives<=0)gameState='dead';else{player.x=60;player.y=H-80;player.vx=0;player.vy=0;}}}});
     coins.forEach(c=>{if(!c.taken&&rectOverlap(player,c)){c.taken=true;score+=10;addParticle(c.x+9,c.y,'#ffe600');}});
     if(player.x+player.w>flagX){score+=500;gameState='win';addParticle(flagX,H-80,'#39ff14');}
     particles=particles.filter(p=>p.life>0);particles.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=0.15;p.life-=0.04;});
@@ -3132,7 +2671,7 @@ function initMario(el){
     if(gameState==='dead'||gameState==='win'){
       ctx.fillStyle='rgba(4,8,18,.8)';ctx.fillRect(0,H/2-36,W,72);
       ctx.font='bold 18px Orbitron,monospace';ctx.textAlign='center';ctx.textBaseline='middle';
-      ctx.fillStyle=gameState==='win'?'#39ff14':'#a855f7';ctx.shadowColor=ctx.fillStyle;ctx.shadowBlur=16;
+      ctx.fillStyle=gameState==='win'?'#39ff14':'#ff006e';ctx.shadowColor=ctx.fillStyle;ctx.shadowBlur=16;
       ctx.fillText(gameState==='win'?'🎉 MENANG!':'💀 GAME OVER',W/2,H/2-10);ctx.shadowBlur=0;
       ctx.font='10px Orbitron,monospace';ctx.fillStyle='#e0e8ff';ctx.fillText('Tekan BARU untuk main lagi',W/2,H/2+18);}
   }
@@ -3215,7 +2754,7 @@ function initPong(el){
     ctx.shadowBlur=14;
     ctx.shadowColor='#00f5ff';ctx.fillStyle='#00f5ff';
     ctx.fillRect(8,playerY,PAD_W,PAD_H);
-    ctx.shadowColor='#a855f7';ctx.fillStyle='#a855f7';
+    ctx.shadowColor='#ff006e';ctx.fillStyle='#ff006e';
     ctx.fillRect(W-8-PAD_W,cpuY,PAD_W,PAD_H);
     // ball
     ctx.shadowColor='#ffe600';ctx.fillStyle='#ffe600';
@@ -3411,7 +2950,7 @@ function initFlappy(el){
     if(gameState==='dead'){
       ctx.fillStyle='rgba(4,8,18,.82)';ctx.fillRect(0,H/2-60,W,120);
       ctx.font='bold 20px Orbitron,monospace';ctx.textAlign='center';ctx.textBaseline='middle';
-      ctx.fillStyle='#a855f7';ctx.shadowColor='#a855f7';ctx.shadowBlur=14;
+      ctx.fillStyle='#ff006e';ctx.shadowColor='#ff006e';ctx.shadowBlur=14;
       ctx.fillText('💀 GAME OVER',W/2,H/2-18);ctx.shadowBlur=0;
       ctx.font='13px Orbitron,monospace';ctx.fillStyle='#ffe600';
       ctx.fillText(`SKOR: ${score}  BEST: ${bestScore}`,W/2,H/2+10);
@@ -3434,7 +2973,7 @@ function initFlappy(el){
 function initBreakout(el){
   const W=340,H=300,PAD_W=70,PAD_H=10,BALL_R=6,ROWS=5,COLS=8;
   const BRICK_W=Math.floor((W-20)/COLS),BRICK_H=14,BRICK_MARGIN=3;
-  const COLORS=['#a855f7','#ff9500','#ffe600','#39ff14','#00f5ff'];
+  const COLORS=['#ff006e','#ff9500','#ffe600','#39ff14','#00f5ff'];
   let pad,ball,bricks,score,lives,gameState,best=0,frameCount=0;
 
   el.innerHTML=`<div class="game-area" style="gap:8px;padding:8px">
@@ -3546,7 +3085,7 @@ function initBreakout(el){
     if(gameState==='dead'){
       ctx.fillStyle='rgba(4,8,18,.85)';ctx.fillRect(0,H/2-50,W,100);
       ctx.font='bold 18px Orbitron,monospace';ctx.textAlign='center';ctx.textBaseline='middle';
-      ctx.fillStyle='#a855f7';ctx.shadowColor='#a855f7';ctx.shadowBlur=14;
+      ctx.fillStyle='#ff006e';ctx.shadowColor='#ff006e';ctx.shadowBlur=14;
       ctx.fillText('💀 GAME OVER',W/2,H/2-14);ctx.shadowBlur=0;
       ctx.font='11px Orbitron,monospace';ctx.fillStyle='#ffe600';
       ctx.fillText(`SKOR: ${score}  BEST: ${best}`,W/2,H/2+14);
@@ -3648,7 +3187,7 @@ function initKraeplin(el){
         const pct=krpRemain/krpDuration;
         const circ=2*Math.PI*34;
         ringEl.style.strokeDashoffset=(circ*(1-pct)).toFixed(2);
-        ringEl.style.stroke=pct>.5?'#c084fc':pct>.25?'#e9d5ff':'#a855f7';
+        ringEl.style.stroke=pct>.5?'#ff69b4':pct>.25?'#ffb6c1':'#ff1493';
       }
       const cEl=document.getElementById('krpCorrect');
       const wEl=document.getElementById('krpWrong');
@@ -3887,7 +3426,7 @@ function initLogMath(el){
       const tv=document.getElementById('lmTimer');if(tv)tv.textContent=fmtTime(remain);
       const circ=2*Math.PI*34;
       const ring=document.getElementById('lmRing');
-      if(ring){ring.style.strokeDashoffset=(circ*(1-remain/duration)).toFixed(2);ring.style.stroke=remain/duration>.5?'#c084fc':remain/duration>.25?'#e9d5ff':'#a855f7';}
+      if(ring){ring.style.strokeDashoffset=(circ*(1-remain/duration)).toFixed(2);ring.style.stroke=remain/duration>.5?'#ff69b4':remain/duration>.25?'#ffb6c1':'#ff1493';}
       if(remain<=0){clearInterval(timer);timer=null;running=false;showResult();}
     },1000);
   }
@@ -3902,7 +3441,7 @@ function initLogMath(el){
         </div>
         <div class="krp-timer-ring">
           <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="34" fill="none" stroke="rgba(168,85,247,.12)" stroke-width="6"/>
-          <circle id="lmRing" cx="40" cy="40" r="34" fill="none" stroke="#c084fc" stroke-width="6" stroke-dasharray="${circ.toFixed(2)}" stroke-dashoffset="0" style="transition:stroke-dashoffset .9s linear,stroke .5s ease"/></svg>
+          <circle id="lmRing" cx="40" cy="40" r="34" fill="none" stroke="#ff69b4" stroke-width="6" stroke-dasharray="${circ.toFixed(2)}" stroke-dashoffset="0" style="transition:stroke-dashoffset .9s linear,stroke .5s ease"/></svg>
           <div class="krp-timer-val" id="lmTimer">${fmtTime(remain)}</div>
         </div>
         <div style="flex:1;display:flex;justify-content:flex-end">
@@ -4033,7 +3572,7 @@ function initAritmatika(el){
       remain--;
       const tv=document.getElementById('arTimer');if(tv)tv.textContent=fmtTime(remain);
       const circ=2*Math.PI*34;const ring=document.getElementById('arRing');
-      if(ring){ring.style.strokeDashoffset=(circ*(1-remain/duration)).toFixed(2);ring.style.stroke=remain/duration>.5?'#c084fc':remain/duration>.25?'#e9d5ff':'#a855f7';}
+      if(ring){ring.style.strokeDashoffset=(circ*(1-remain/duration)).toFixed(2);ring.style.stroke=remain/duration>.5?'#ff69b4':remain/duration>.25?'#ffb6c1':'#ff1493';}
       if(remain<=0){clearInterval(timer);timer=null;running=false;showResult();}
     },1000);
   }
@@ -4048,7 +3587,7 @@ function initAritmatika(el){
         </div>
         <div class="krp-timer-ring">
           <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="34" fill="none" stroke="rgba(168,85,247,.12)" stroke-width="6"/>
-          <circle id="arRing" cx="40" cy="40" r="34" fill="none" stroke="#c084fc" stroke-width="6" stroke-dasharray="${circ.toFixed(2)}" stroke-dashoffset="0" style="transition:stroke-dashoffset .9s linear,stroke .5s ease"/></svg>
+          <circle id="arRing" cx="40" cy="40" r="34" fill="none" stroke="#ff69b4" stroke-width="6" stroke-dasharray="${circ.toFixed(2)}" stroke-dashoffset="0" style="transition:stroke-dashoffset .9s linear,stroke .5s ease"/></svg>
           <div class="krp-timer-val" id="arTimer">${fmtTime(remain)}</div>
         </div>
         <div style="flex:1;display:flex;justify-content:flex-end">
@@ -4180,7 +3719,7 @@ function initDasarMath(el){
       remain--;
       const tv=document.getElementById('dmTimer');if(tv)tv.textContent=fmtTime(remain);
       const circ=2*Math.PI*34;const ring=document.getElementById('dmRing');
-      if(ring){ring.style.strokeDashoffset=(circ*(1-remain/duration)).toFixed(2);ring.style.stroke=remain/duration>.5?'#c084fc':remain/duration>.25?'#e9d5ff':'#a855f7';}
+      if(ring){ring.style.strokeDashoffset=(circ*(1-remain/duration)).toFixed(2);ring.style.stroke=remain/duration>.5?'#ff69b4':remain/duration>.25?'#ffb6c1':'#ff1493';}
       if(remain<=0){clearInterval(timer);timer=null;running=false;showResult();}
     },1000);
   }
@@ -4195,7 +3734,7 @@ function initDasarMath(el){
         </div>
         <div class="krp-timer-ring">
           <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="34" fill="none" stroke="rgba(168,85,247,.12)" stroke-width="6"/>
-          <circle id="dmRing" cx="40" cy="40" r="34" fill="none" stroke="#c084fc" stroke-width="6" stroke-dasharray="${circ.toFixed(2)}" stroke-dashoffset="0" style="transition:stroke-dashoffset .9s linear,stroke .5s ease"/></svg>
+          <circle id="dmRing" cx="40" cy="40" r="34" fill="none" stroke="#ff69b4" stroke-width="6" stroke-dasharray="${circ.toFixed(2)}" stroke-dashoffset="0" style="transition:stroke-dashoffset .9s linear,stroke .5s ease"/></svg>
           <div class="krp-timer-val" id="dmTimer">${fmtTime(remain)}</div>
         </div>
         <div style="flex:1;display:flex;justify-content:flex-end">
@@ -4399,7 +3938,7 @@ function initSoalCerita(el){
       const tv=document.getElementById('scTimer');if(tv)tv.textContent=fmtTime(remain);
       const circ=2*Math.PI*34;
       const ring=document.getElementById('scRing');
-      if(ring){ring.style.strokeDashoffset=(circ*(1-remain/duration)).toFixed(2);ring.style.stroke=remain/duration>.5?'#c084fc':remain/duration>.25?'#e9d5ff':'#a855f7';}
+      if(ring){ring.style.strokeDashoffset=(circ*(1-remain/duration)).toFixed(2);ring.style.stroke=remain/duration>.5?'#ff69b4':remain/duration>.25?'#ffb6c1':'#ff1493';}
       if(remain<=0){clearInterval(timer);timer=null;running=false;showResult();}
     },1000);
   }
@@ -4415,7 +3954,7 @@ function initSoalCerita(el){
         <div class="krp-timer-ring">
           <svg width="80" height="80" viewBox="0 0 80 80">
             <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(168,85,247,.12)" stroke-width="6"/>
-            <circle id="scRing" cx="40" cy="40" r="34" fill="none" stroke="#c084fc" stroke-width="6"
+            <circle id="scRing" cx="40" cy="40" r="34" fill="none" stroke="#ff69b4" stroke-width="6"
               stroke-dasharray="${circ.toFixed(2)}" stroke-dashoffset="0"
               style="transition:stroke-dashoffset .9s linear,stroke .5s ease"/>
           </svg>
