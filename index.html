@@ -2005,9 +2005,17 @@ function initWhackAMole(el){
     {name:'SUSAH',moleTime:650,interval:750,duration:30},
     {name:'GILA',moleTime:380,interval:450,duration:25},
   ];
-  let score=0,miss=0,combo=0,maxCombo=0,timeLeft=0,activeMole=-1,moleTimer=null,gameTimer=null,lvl=1,running=false,hi=0;
+  let score=0,miss=0,combo=0,maxCombo=0,timeLeft=0,activeMole=-1;
+  let moleTimer=null,gameTimer=null,lvl=1,running=false,hi=0;
+  let spawnLock=false; // prevent double-spawn
+
+  function clearAllTimers(){
+    if(moleTimer!==null){clearTimeout(moleTimer);moleTimer=null;}
+    if(gameTimer!==null){clearInterval(gameTimer);gameTimer=null;}
+  }
 
   function renderMenu(){
+    clearAllTimers();running=false;
     el.innerHTML=`<div class="game-area" style="gap:14px;padding:20px">
       <div style="font-family:Orbitron,monospace;font-size:1.1rem;font-weight:900;color:#c084fc;text-align:center">🐭 WHACK-A-MOLE</div>
       <div style="font-size:.7rem;color:rgba(237,225,255,.5);text-align:center">Pukul tikus yang muncul dari lubang!</div>
@@ -2021,47 +2029,78 @@ function initWhackAMole(el){
   }
 
   function startGame(){
+    clearAllTimers();
     const L=LEVELS[lvl];
-    score=0;miss=0;combo=0;maxCombo=0;timeLeft=L.duration;activeMole=-1;running=true;
-    clearInterval(moleTimer);clearInterval(gameTimer);
+    score=0;miss=0;combo=0;maxCombo=0;timeLeft=L.duration;activeMole=-1;running=true;spawnLock=false;
     renderBoard();
+    // game countdown timer
     gameTimer=setInterval(function(){
+      if(!running){clearInterval(gameTimer);gameTimer=null;return;}
       timeLeft--;
-      if(timeLeft<=0){endGame();return;}
       updateHUD();
+      if(timeLeft<=0){endGame();}
     },1000);
     spawnMole();
   }
 
   function spawnMole(){
-    if(!running)return;
+    if(!running||spawnLock)return;
+    spawnLock=true;
     const L=LEVELS[lvl];
-    hideMole();
+    // hide current mole first
+    activeMole=-1;
+    updateHoles();
+    // pick new hole
     const next=Math.floor(Math.random()*9);
     activeMole=next;
-    renderHoles();
+    updateHoles();
+    // auto-hide after moleTime
     moleTimer=setTimeout(function(){
-      if(activeMole===next){miss++;combo=0;activeMole=-1;renderHoles();updateHUD();}
-      if(running)setTimeout(spawnMole,100);
+      moleTimer=null;
+      if(!running){spawnLock=false;return;}
+      if(activeMole===next){
+        // missed
+        miss++;combo=0;
+        activeMole=-1;
+        updateHoles();updateHUD();
+      }
+      spawnLock=false;
+      // schedule next spawn
+      if(running){
+        var delay=Math.max(50,L.interval-L.moleTime);
+        moleTimer=setTimeout(function(){moleTimer=null;spawnMole();},delay);
+      }
     },L.moleTime);
   }
 
-  function hideMole(){activeMole=-1;}
-
-  function whack(i){
-    if(!running||activeMole!==i)return;
-    clearTimeout(moleTimer);
+  function whack(idx){
+    if(!running||activeMole!==idx)return;
+    // cancel the auto-hide timer
+    if(moleTimer!==null){clearTimeout(moleTimer);moleTimer=null;}
     score+=10+(combo*2);combo++;if(combo>maxCombo)maxCombo=combo;
     activeMole=-1;
-    renderHoles();updateHUD();
-    // flash
-    const hole=document.getElementById('wam-'+i);
-    if(hole){hole.style.transform='scale(1.3)';hole.style.background='rgba(192,132,252,.5)';setTimeout(()=>{hole.style.transform='';hole.style.background='';},180);}
-    if(running)setTimeout(spawnMole,100);
+    updateHoles();updateHUD();
+    // flash effect on the hole
+    var hole=document.getElementById('wam-'+idx);
+    if(hole){
+      hole.style.transform='scale(1.3)';
+      hole.style.background='rgba(192,132,252,.5)';
+      setTimeout(function(){
+        if(hole){hole.style.transform='';hole.style.background='';}
+      },180);
+    }
+    spawnLock=false;
+    if(running){
+      var L=LEVELS[lvl];
+      var delay=Math.max(50,L.interval-L.moleTime);
+      moleTimer=setTimeout(function(){moleTimer=null;spawnMole();},delay);
+    }
   }
 
   function endGame(){
-    running=false;clearInterval(moleTimer);clearInterval(gameTimer);
+    running=false;
+    clearAllTimers();
+    activeMole=-1;
     if(score>hi)hi=score;
     el.innerHTML=`<div class="game-area" style="gap:12px">
       <div style="font-family:Orbitron,monospace;font-size:1.1rem;color:#c084fc;text-align:center">🎯 SELESAI!</div>
@@ -2075,46 +2114,71 @@ function initWhackAMole(el){
         <button class="btn btn-cyan" onclick="wamStart(${lvl})">🔄 MAIN LAGI</button>
         <button class="btn btn-outline btn-sm" onclick="wamMenu()">🏠 MENU</button>
       </div></div>`;
+    window.wamStart=function(i){lvl=i;startGame();};
     window.wamMenu=function(){renderMenu();};
   }
 
   function updateHUD(){
-    const hud=document.getElementById('wam-hud');
-    if(hud)hud.innerHTML=`
-      <div class="score-badge" style="border-color:#c084fc;color:#c084fc">⭐ ${score}</div>
-      <div class="score-badge" style="color:${timeLeft<=5?'#ff4444':'inherit'}">⏱ ${timeLeft}s</div>
-      <div class="score-badge">🔥 x${combo}</div>
-      <div class="score-badge">✗ ${miss}</div>`;
+    var hud=document.getElementById('wam-hud');
+    if(!hud)return;
+    var scoreEl=hud.querySelector('.wam-score');
+    var timeEl=hud.querySelector('.wam-time');
+    var comboEl=hud.querySelector('.wam-combo');
+    var missEl=hud.querySelector('.wam-miss');
+    if(scoreEl)scoreEl.textContent='⭐ '+score;
+    if(timeEl){timeEl.textContent='⏱ '+timeLeft+'s';timeEl.style.color=timeLeft<=5?'#ff4444':'inherit';}
+    if(comboEl)comboEl.textContent='🔥 x'+combo;
+    if(missEl)missEl.textContent='✗ '+miss;
   }
 
-  function renderHoles(){
-    const grid=document.getElementById('wam-grid');
-    if(!grid)return;
-    grid.innerHTML='';
-    for(let i=0;i<9;i++){
-      const div=document.createElement('div');
-      const isActive=activeMole===i;
-      div.id='wam-'+i;
-      div.style.cssText=`width:82px;height:82px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-        background:${isActive?'rgba(192,132,252,.2)':'rgba(50,20,100,.4)'};
-        border:2px solid ${isActive?'#c084fc':'rgba(100,60,180,.4)'};
-        cursor:${isActive?'pointer':'default'};font-size:${isActive?'2.6rem':'1rem'};
-        transition:all .15s;user-select:none;box-shadow:${isActive?'0 0 18px rgba(192,132,252,.5)':'none'};`;
-      div.textContent=isActive?'🐭':'🕳️';
-      if(isActive)div.addEventListener('click',function(){whack(i);});
-      grid.appendChild(div);
+  // Only update the visual state of each hole cell, never rebuild the grid
+  function updateHoles(){
+    for(var i=0;i<9;i++){
+      var hole=document.getElementById('wam-'+i);
+      if(!hole)return; // grid not ready
+      var isActive=(activeMole===i);
+      hole.style.background=isActive?'rgba(192,132,252,.2)':'rgba(50,20,100,.4)';
+      hole.style.borderColor=isActive?'#c084fc':'rgba(100,60,180,.4)';
+      hole.style.cursor=isActive?'pointer':'default';
+      hole.style.fontSize=isActive?'2.6rem':'1rem';
+      hole.style.boxShadow=isActive?'0 0 18px rgba(192,132,252,.5)':'none';
+      hole.textContent=isActive?'🐭':'🕳️';
+      // data-active flag for click handler
+      hole.dataset.active=isActive?'1':'0';
     }
   }
 
   function renderBoard(){
     el.innerHTML=`<div class="game-area" style="gap:10px;padding:14px">
-      <div id="wam-hud" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center"></div>
+      <div id="wam-hud" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+        <div class="score-badge wam-score" style="border-color:#c084fc;color:#c084fc">⭐ 0</div>
+        <div class="score-badge wam-time">⏱ ${timeLeft}s</div>
+        <div class="score-badge wam-combo">🔥 x0</div>
+        <div class="score-badge wam-miss">✗ 0</div>
+      </div>
       <div id="wam-grid" style="display:grid;grid-template-columns:repeat(3,82px);gap:10px"></div>
       <div style="font-size:.6rem;color:rgba(237,225,255,.3);font-family:Orbitron,monospace;text-align:center">LEVEL: ${LEVELS[lvl].name}</div>
-      <button class="btn btn-outline btn-sm" onclick="wamStopEarly()">⏹ BERHENTI</button>
+      <button class="btn btn-outline btn-sm" id="wam-stop-btn">⏹ BERHENTI</button>
     </div>`;
-    window.wamStopEarly=function(){running=false;clearInterval(moleTimer);clearInterval(gameTimer);endGame();};
-    updateHUD();renderHoles();
+    document.getElementById('wam-stop-btn').addEventListener('click',function(){
+      running=false;clearAllTimers();endGame();
+    });
+    // Build holes ONCE with stable click handlers
+    var grid=document.getElementById('wam-grid');
+    for(var i=0;i<9;i++){
+      var div=document.createElement('div');
+      div.id='wam-'+i;
+      div.dataset.active='0';
+      div.style.cssText='width:82px;height:82px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(50,20,100,.4);border:2px solid rgba(100,60,180,.4);cursor:default;font-size:1rem;transition:all .15s;user-select:none;box-shadow:none;';
+      div.textContent='🕳️';
+      // Closure to capture index
+      (function(idx){
+        div.addEventListener('click',function(){
+          if(div.dataset.active==='1')whack(idx);
+        });
+      })(i);
+      grid.appendChild(div);
+    }
   }
 
   renderMenu();
